@@ -219,9 +219,10 @@ s0.parentNode.insertBefore(s1,s0);
 <!--cuerpo3-->
 
 <div class="cuerpo3">
-	<div map-lazy-load="https://maps.google.com/maps/api/js" >
+	<div map-lazy-load="https://maps.google.com/maps/api/js" 
+		map-lazy-load-params="{{googleMapsUrl}}">
   		<ng-map class = "ng-map" default-style="false" center="21.146880, -86.836168" zoom-to-inlude-markers="true" scrollwheel = "false"
-  		map-lazy-load-params="{{googleMapsUrl}}"
+
   		styles="[
   		{stylers:[
   		{visibility:'simplified'},
