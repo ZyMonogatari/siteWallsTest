@@ -36,13 +36,14 @@
 
 angular.module('application').controller('homeCtrl',
   ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
-
+    
     /*NgMap.getMap().then(function(map) {
       console.log(map.getCenter());
       console.log('markers', map.markers);
       console.log('shapes', map.shapes);
     });*/
 
+    var cuerpo2top = document.getElementById('cuerpo2').getBoundingClientRect().top;
     $scope.actualBody = 0;
 
     //static scenes values
@@ -63,7 +64,13 @@ angular.module('application').controller('homeCtrl',
 
     //body1 position & resize
     var body1ImageWidth = screen.width/ body1StaticWidth;
-    var body1Height = 2000 * body1ImageWidth;
+    var body1Height;
+    if(screen.width <= 414){
+      body1Height = 2300 * body1ImageWidth;
+    }
+    else{
+      body1Height = 2000 * body1ImageWidth;
+    }
     var body1Top = (cabeceraHeight/4) * 3;
     $scope.body1Top = body1Top + 'px';
     $scope.body1Height = body1Height + 'px';    
@@ -77,10 +84,11 @@ angular.module('application').controller('homeCtrl',
     var body3Top = body1Height + body2Top;
     $scope.body3Top = body3Top + 'px';
 
+    /*
     //browser events
     $window.onresize = function(event) {
       $window.location.reload();
-    }
+    }*/
 
    $window.onscroll = function(event){
     if(window.scrollY >= (body1Height/2)){
@@ -90,11 +98,12 @@ angular.module('application').controller('homeCtrl',
       $scope.actualBody = 0;
       $scope.$apply();
     }
-    if(window.scrollY >= (body1Height + (body1Height/9 * 8))){
+    if(window.scrollY >= cuerpo2top){
       $scope.actualBody = 2;
+      console.log('cuerpo2');
       $scope.$apply();
     }
-    else if(window.scrollY <= (body1Height) & window.scrollY >= (body1Height/2) ){
+    else if(window.scrollY <= (cuerpo2top) & window.scrollY >= (body1Height/2) ){
       $scope.actualBody = 1;
       $scope.$apply();
     }

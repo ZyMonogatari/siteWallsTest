@@ -5908,7 +5908,7 @@ blockquote p {
   position: absolute;
   bottom: 40%;
   width: 10%;
-  height: 4%;
+  height: auto;
   margin: auto;
   left: 0;
   right: 0;
@@ -5921,7 +5921,7 @@ blockquote p {
   position: absolute;
   bottom: 10%;
   width: 10%;
-  height: 3%;
+  height: auto;
   margin: auto;
   left: 0;
   right: 0;
@@ -5933,14 +5933,14 @@ blockquote p {
 .angleDiv {
   position: absolute;
   bottom: 20%;
-  width: 5%;
+  width: 3%;
   margin: auto;
   left: 0;
   right: 0; }
 
 .wallsCardLogoDiv {
   position: absolute;
-  bottom: 40%;
+  bottom: 50%;
   width: 20%;
   height: 5%;
   margin: auto;
@@ -5949,14 +5949,14 @@ blockquote p {
 
 .wallsCardDiv {
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
   width: 20%;
   height: auto;
   margin: auto;
   left: 0;
   right: 0; }
 
-.Textcenter {
+.text-center {
   text-align: center; }
 
 .cabecera {
@@ -5964,20 +5964,368 @@ blockquote p {
   background-size: cover;
   width: 100%;
   position: fixed;
-  z-index: 0;
-  background-repeat: no-repeat; }
+  z-index: -1;
+  background-repeat: no-repeat;
+  height: 100%; }
 
 .borde-sesgado-top {
   /* IE 9 */
   /* Chrome, Safari, Opera */
-  transform: rotate(-7deg); }
+  transform: rotate(-7deg);
+  z-index: 0; }
 
 .borde-sesgado-bottom {
   /* IE 9 */
   /* Chrome, Safari, Opera */
   transform: rotate(176deg);
   position: absolute;
-  bottom: -8%; }
+  bottom: -8%;
+  z-index: -1; }
+
+.fondo-fixed {
+  background-image: url(/assets/img/fondo-fixed.jpg);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  background-repeat: no-repeat; }
+
+.fondo-footer {
+  background-image: url(/assets/img/fondo-footer.jpg);
+  height: 140%;
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  background-repeat: no-repeat;
+  top: -40%; }
+
+.cuerpo1 {
+  position: absolute;
+  top: 80%;
+  width: 110%;
+  left: -5%; }
+
+.cuerpo2 {
+  height: 130%;
+  position: absolute;
+  width: 110%;
+  left: -5%;
+  top: 380%; }
+
+.cuerpo3 {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 630%; }
+
+.titulos-div-cabecera {
+  position: relative;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 55%;
+  height: 25%;
+  word-wrap: break-word; }
+
+.underline {
+  text-decoration: underline; }
+
+.white-sello {
+  position: absolute;
+  left: 0;
+  bottom: 0%; }
+
+.titulos-div-footer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  right: 0;
+  margin: auto;
+  word-wrap: break-word; }
+
+#titulos-div-fondo-fixed {
+  position: absolute;
+  bottom: 10%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 20%; }
+
+.frase {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center; }
+
+.firma {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -10%; }
+
+.cuerpo1-white-div {
+  position: absolute;
+  top: 9%;
+  width: 100%;
+  height: 90%;
+  background: white; }
+
+.cuerpo1-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%; }
+
+.cabecera-logo {
+  transform: scale(0.4, 0.4);
+  -ms-transform: scale(0.4, 0.4);
+  -webkit-transform: scale(0.4, 0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 5%; }
+
+.cuerpo1-titulos-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  top: 20%; }
+
+.cuerpo2-div {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 80%;
+  z-index: 0;
+  background: white; }
+
+.cuerpo2-titulos-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  top: 40%; }
+
+.sello-gris {
+  position: absolute;
+  right: 0%;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  z-index: 1; }
+
+.ng-map {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+.borde-sesgado-bottom-black {
+  position: absolute;
+  top: 0;
+  z-index: 1; }
+
+@media only screen and (max-width: 1400px) {
+  .cuerpo2 {
+    top: 450%; }
+  .cuerpo3 {
+    top: 700%; } }
+
+@media only screen and (max-width: 1200px) {
+  .cabecera {
+    background-size: contain; }
+  .white-sello {
+    bottom: auto; }
+  .leerMas {
+    bottom: 50%; }
+  .angleDiv {
+    bottom: 40%; }
+  .cuerpo1 {
+    top: 60%; } }
+
+@media only screen and (max-width: 1024px) {
+  .navBar {
+    display: none; }
+  .titulos-div-cabecera {
+    top: 10%; }
+  .leerMas {
+    bottom: 60%;
+    width: 15%; }
+  .angleDiv {
+    bottom: 50%;
+    width: 5%; }
+  .white-sello {
+    bottom: 35%;
+    transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -webkit-transform: scale(0.7, 0.7);
+    left: -10%; }
+  .cuerpo1 {
+    top: 50%; }
+  .cabecera-logo {
+    transform: scale(0.3, 0.3);
+    -ms-transform: scale(0.3, 0.3);
+    -webkit-transform: scale(0.3, 0.3);
+    top: -10%; }
+  .cuerpo1-titulos-div {
+    top: 12%;
+    left: 10%;
+    right: 10%; }
+  .wallsCardLogoDiv {
+    bottom: 50%; }
+  .fondo-fixed {
+    background-size: contain; }
+  #titulos-div-fondo-fixed {
+    bottom: 40%; }
+  .cuerpo2 {
+    top: 230%;
+    height: 90%;
+    width: 110%; }
+  .cuerpo2-div {
+    top: 10%;
+    height: 90%; }
+  .fondo-footer {
+    top: 15%;
+    background-size: contain; }
+  .titulos-div-footer {
+    top: 10%; }
+  .leerMasFooter {
+    bottom: 60%;
+    width: 15%; }
+  .cuerpo3 {
+    top: 420%; } }
+
+@media only screen and (max-width: 580px) {
+  .white-sello {
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+    left: -23%; }
+  .iconsDiv {
+    width: 25%; }
+  .leerMas {
+    bottom: 70%;
+    width: 20%; }
+  .angleDiv {
+    bottom: 60%; }
+  .cuerpo1 {
+    top: 40%; }
+  .wallsCardDiv {
+    bottom: -3%; }
+  .wallsCardLogoDiv {
+    bottom: 40%; }
+  .firma {
+    bottom: -60%; }
+  .sello-gris {
+    transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    right: -12%; }
+  .leerMasFooter {
+    bottom: 56%;
+    width: 20%; } }
+
+@media only screen and (max-width: 414px) {
+  .leerMas {
+    width: 25%; }
+  .leerMasFooter {
+    width: 25%;
+    bottom: 70%; }
+  .iconsDiv {
+    width: 35%; }
+  .white-sello {
+    left: -28%; }
+  .cuerpo1-titulos-div, h4 {
+    font-size: 100%; }
+  .walls-titulo {
+    font-size: 150%; }
+  .cuerpo1 {
+    height: 10%; }
+  .cuerpo1-white-div {
+    top: 8%; }
+  .wallsCardLogoDiv {
+    bottom: 43%;
+    width: 25%; }
+  .cuerpo2-div, h1 {
+    top: 8%;
+    font-size: 150%; }
+  .titulos-div-footer, h1, h2, h3 {
+    top: 6%;
+    font-size: 100%; }
+  .cuerpo3 {
+    top: 400%; }
+  .firma {
+    bottom: -10%; }
+  #titulos-div-fondo-fixed {
+    bottom: 50%; }
+  .cuerpo2 {
+    top: 210%; }
+  .angleDiv {
+    width: 8%; } }
+
+@media only screen and (max-width: 375px) {
+  .wallsCardLogoDiv {
+    width: 30%;
+    bottom: 48%; }
+  .cuerpo1-titulos-div, h4 {
+    font-size: 90%; }
+  .cuerpo2-div, h1 {
+    font-size: 130%; }
+  .sello-gris {
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+    right: -25%; }
+  .cuerpo3 {
+    top: 380%; }
+  .leerMasFooter {
+    width: 35%;
+    transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -webkit-transform: scale(0.7, 0.7); }
+  .leerMas {
+    transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -webkit-transform: scale(0.7, 0.7);
+    bottom: 68%; }
+  .iconsDiv {
+    transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -webkit-transform: scale(0.7, 0.7); } }
+
+@media only screen and (max-width: 320px) {
+  .leerMas {
+    width: 35%; }
+  .cuerpo1-titulos-div, h4 {
+    font-size: 85%; }
+  .membresia-text {
+    font-size: 90%; }
+  #titulos-div-fondo-fixed {
+    width: 60%; }
+  .firma {
+    bottom: -80%; }
+  .cuerpo2 {
+    top: 230%; }
+  .cuerpo3 {
+    top: 400%; }
+  .leerMasFooter {
+    bottom: 60%; }
+  .angleDiv {
+    transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.7, 0.7); } }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
