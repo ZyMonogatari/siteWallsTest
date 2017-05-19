@@ -6294,7 +6294,8 @@ blockquote p {
     width: 35%;
     transform: scale(0.7, 0.7);
     -ms-transform: scale(0.7, 0.7);
-    -webkit-transform: scale(0.7, 0.7); }
+    -webkit-transform: scale(0.7, 0.7);
+    bottom: 50%; }
   .leerMas {
     transform: scale(0.7, 0.7);
     -ms-transform: scale(0.7, 0.7);
@@ -6303,7 +6304,9 @@ blockquote p {
   .iconsDiv {
     transform: scale(0.7, 0.7);
     -ms-transform: scale(0.7, 0.7);
-    -webkit-transform: scale(0.7, 0.7); } }
+    -webkit-transform: scale(0.7, 0.7); }
+  .firma {
+    bottom: -50%; } }
 
 @media only screen and (max-width: 320px) {
   .leerMas {
