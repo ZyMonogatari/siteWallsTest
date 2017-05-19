@@ -42,6 +42,9 @@ angular.module('application').controller('homeCtrl',
       console.log('markers', map.markers);
       console.log('shapes', map.shapes);
     });*/
+    $scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/logo.png';
+    $scope.cabecera.position = 'absolute';
     if(screen.width <= 414){
       $scope.zoom = 13;
     }
@@ -97,6 +100,21 @@ angular.module('application').controller('homeCtrl',
     }*/
 
    $window.onscroll = function(event){
+    
+    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0){
+      $scope.cabecera.position = 'fixed';
+      $scope.cabecera.top = '0px';
+      $scope.cabecera.background = '#E7E7E7';
+      $scope.cabecera.fontColor = 'black';
+      $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+    }
+    if(window.scrollY <= 50){
+      $scope.cabecera.position = 'absolute';
+      $scope.cabecera.top = '8%';
+      $scope.cabecera.background = '';
+      $scope.cabecera.fontColor = 'white';
+      $scope.cabecera.source = '/assets/img/logo.png';
+    }
     if(window.scrollY >= (body1Height/2)){
       $scope.actualBody = 1;
       $scope.$apply();

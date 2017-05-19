@@ -12,16 +12,15 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<div style="width: 100%; position: fixed;
-    height: 15%;
-    top: 10%; background: white">
+<div class="cabeceraDiv" ng-style="{'position' : cabecera.position, 'top' : cabecera.top, 'background' : cabecera.background}" id="cabeceraDiv">
 		<div class="grid-block navBar">
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="homeText = 'underline'"  
 					ng-mouseleave="homeText = ''" 
-					ng-style="{'text-decoration' : homeText}"
+					ng-style="{'text-decoration' : homeText, 'color' : cabecera.fontColor}"
 				>
 					HOME
 				</h5>
@@ -29,9 +28,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="serviciosText = 'underline'"  
 					ng-mouseleave="serviciosText = ''" 
-					ng-style="{'text-decoration' : serviciosText}"
+					ng-style="{'text-decoration' : serviciosText, 'color' : cabecera.fontColor}"
 				>
 					SERVICIOS
 				</h5>
@@ -39,9 +39,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="sucursalesText = 'underline'"  
 					ng-mouseleave="sucursalesText = ''" 
-					ng-style="{'text-decoration' : sucursalesText}"
+					ng-style="{'text-decoration' : sucursalesText, 'color' : cabecera.fontColor}"
 				>
 					SUCURSALES
 				</h5>
@@ -49,22 +50,24 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="galeriasText = 'underline'"  
 					ng-mouseleave="galeriasText = ''" 
-					ng-style="{'text-decoration' : galeriasText}"
+					ng-style="{'text-decoration' : galeriasText, 'color' : cabecera.fontColor}"
 				>
 					GALERÍAS
 				</h5>
 			</div>
 			<div class="grid-block" >
-				<img src="/assets/img/logo.png" style="position: relative; top: -70%;">
+				<img src="{{cabecera.source}}" style="position: relative; top: -70%;">
 			</div>
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="nosotrosText = 'underline'"  
 					ng-mouseleave="nosotrosText = ''" 
-					ng-style="{'text-decoration' : nosotrosText}"
+					ng-style="{'text-decoration' : nosotrosText, 'color' : cabecera.fontColor}"
 				>
 					NOSOTROS
 				</h5>
@@ -72,9 +75,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="cardText = 'underline'"  
 					ng-mouseleave="cardText = ''" 
-					ng-style="{'text-decoration' : cardText}"
+					ng-style="{'text-decoration' : cardText, 'color' : cabecera.fontColor}"
 				>
 					WALL'S CARD
 				</h5>
@@ -82,9 +86,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="franquiciasText = 'underline'"  
 					ng-mouseleave="franquiciasText = ''" 
-					ng-style="{'text-decoration' : franquiciasText}"
+					ng-style="{'text-decoration' : franquiciasText, 'color' : cabecera.fontColor}"
 				>
 					FRANQUICIAS
 				</h5>
@@ -92,9 +97,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
+
 					ng-mouseover="blogText = 'underline'"  
 					ng-mouseleave="blogText = ''" 
-					ng-style="{'text-decoration' : blogText}"
+					ng-style="{'text-decoration' : blogText, 'color' : cabecera.fontColor}"
 				>
 					BLOG
 				</h5>
