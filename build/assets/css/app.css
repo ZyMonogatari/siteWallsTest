@@ -5993,7 +5993,7 @@ blockquote p {
 
 .fondo-footer {
   background-image: url(/assets/img/fondo-footer.jpg);
-  height: 140%;
+  height: 100%;
   background-size: cover;
   width: 100%;
   position: fixed;
