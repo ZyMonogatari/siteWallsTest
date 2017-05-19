@@ -6315,13 +6315,13 @@ blockquote p {
   #titulos-div-fondo-fixed {
     width: 60%; }
   .firma {
-    bottom: -80%; }
+    bottom: -100%; }
   .cuerpo2 {
     top: 230%; }
   .cuerpo3 {
     top: 400%; }
   .leerMasFooter {
-    bottom: 60%; }
+    bottom: 50%; }
   .angleDiv {
     transform: scale(0.8, 0.8);
     -ms-transform: scale(0.8, 0.8);
