@@ -209,7 +209,7 @@ s0.parentNode.insertBefore(s1,s0);
 	<div class="cuerpo2-div" >
 		<img src="/assets/img/wCabecera.png" class="cabecera-logo">
         <div class="cuerpo2-titulos-div">
-        	<h2>"Más que un corte, creamos un Estilo" {{googleMapsUrl}}</h2>
+        	<h2>"Más que un corte, creamos un Estilo"</h2>
         </div>
 	</div>
 	<img src="/assets/img/sello-gris.png" class="sello-gris">
@@ -221,7 +221,7 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="cuerpo3">
 	<div map-lazy-load="https://maps.google.com/maps/api/js" 
 		map-lazy-load-params="{{googleMapsUrl}}">
-  		<ng-map class = "ng-map" default-style="false" center="21.146880, -86.836168" zoom-to-inlude-markers="true" scrollwheel = "false"
+  		<ng-map class = "ng-map" default-style="false" center="21.146880, -86.836168"  scrollwheel = "false" zoom="{{zoom}}"
 
   		styles="[
   		{stylers:[

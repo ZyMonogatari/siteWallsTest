@@ -42,7 +42,12 @@ angular.module('application').controller('homeCtrl',
       console.log('markers', map.markers);
       console.log('shapes', map.shapes);
     });*/
-
+    if(screen.width <= 375){
+      $scope.zoom = 13;
+    }
+    else{
+      $scope.zoom = 15;
+    }
     var cuerpo2top = document.getElementById('cuerpo2').getBoundingClientRect().top;
     $scope.actualBody = 0;
 
