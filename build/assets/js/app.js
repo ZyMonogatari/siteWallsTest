@@ -36,7 +36,7 @@
 
 angular.module('application').controller('homeCtrl',
   ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
-    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=YAIzaSyCdSClB6h7OSRwa0ozpN-pmtpF6dah2B7s";
+    $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
     /*NgMap.getMap().then(function(map) {
       console.log(map.getCenter());
       console.log('markers', map.markers);
