@@ -45,6 +45,7 @@ angular.module('application').controller('homeCtrl',
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
+   
     if(screen.width <= 414){
       $scope.zoom = 13;
     }
@@ -101,19 +102,21 @@ angular.module('application').controller('homeCtrl',
 
    $window.onscroll = function(event){
     
-    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0){
+    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 30){
       $scope.cabecera.position = 'fixed';
-      $scope.cabecera.top = '0px';
+      $scope.cabecera.top = '30px';
       $scope.cabecera.background = '#E7E7E7';
       $scope.cabecera.fontColor = 'black';
       $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+      $scope.$apply();
     }
     if(window.scrollY <= 50){
       $scope.cabecera.position = 'absolute';
-      $scope.cabecera.top = '8%';
+      $scope.cabecera.top = '6%';
       $scope.cabecera.background = '';
       $scope.cabecera.fontColor = 'white';
       $scope.cabecera.source = '/assets/img/logo.png';
+      $scope.$apply();
     }
     if(window.scrollY >= (body1Height/2)){
       $scope.actualBody = 1;
@@ -131,5 +134,102 @@ angular.module('application').controller('homeCtrl',
       $scope.actualBody = 1;
       $scope.$apply();
     }
+   }
+}]);
+
+angular.module('application').controller('serviciosCtrl',
+  ['$scope', '$window',  function($scope, $window){
+
+	var cuerpoAbsoluteTop;
+    var cuerpo1TopInicial = document.getElementById('cuerpo1-servicios').getBoundingClientRect().top;
+
+  	$scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/logo.png';
+    $scope.cabecera.position = 'absolute';
+    $scope.actualBody = 0;
+    $scope.cuerpo1 = {};
+    $scope.cuerpo1.position = 'absolute';
+    $window.onscroll = function(event){
+    	//console.log(document.getElementById('foto-fila-1').getBoundingClientRect().bottom + " - " + screen.height);
+    	console.log(document.getElementById('cuerpo-absolute').getBoundingClientRect().bottom + " - " + document.getElementById('cuerpo-absolute').getBoundingClientRect().top);
+    	//console.log(document.getElementById('cuerpo1-servicios').getBoundingClientRect());
+    	if((document.getElementById('foto-fila-1').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#foto-fila-1')).addClass('slide-left-to-right');
+    	}
+    	if((document.getElementById('texto-fila-1').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#texto-fila-1')).addClass('slide-right-to-left');
+    	}
+    	if((document.getElementById('foto-fila-2').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#foto-fila-2')).addClass('slide-right-to-left');
+    	}
+    	if((document.getElementById('texto-fila-2').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#texto-fila-2')).addClass('slide-left-to-right');
+    	}
+    	if((document.getElementById('foto-fila-3').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#foto-fila-3')).addClass('slide-left-to-right');
+    	}
+    	if((document.getElementById('texto-fila-3').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#texto-fila-3')).addClass('slide-right-to-left');
+    	}
+    	if((document.getElementById('foto-fila-4').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#foto-fila-4')).addClass('slide-right-to-left');
+    	}
+    	if((document.getElementById('texto-fila-4').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#texto-fila-4')).addClass('slide-left-to-right');
+    	}
+    	if((document.getElementById('foto-fila-5').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#foto-fila-5')).addClass('slide-left-to-right');
+    	}
+    	if((document.getElementById('texto-fila-5').getBoundingClientRect().bottom - 700) <= screen.height){
+    		angular.element(document.querySelector('#texto-fila-5')).addClass('slide-right-to-left');
+    	}
+    	if((document.getElementById('borde').getBoundingClientRect().top) <= 0){
+    		if(!cuerpoAbsoluteTop){
+    			cuerpoAbsoluteTop = document.getElementById('cuerpo-absolute').getBoundingClientRect().top;
+    		}
+    		console.log("Top: " + cuerpoAbsoluteTop);
+    		$scope.cuerpo1.position = 'fixed';
+    		if(screen.width >= 800){
+    			$scope.cuerpo1.top = '100px';
+    		}
+    		else{
+    			$scope.cuerpo1.top = '0px';
+    		}
+	      	$scope.$apply();
+
+    	}
+    	if((cuerpoAbsoluteTop - 10) <= document.getElementById('cuerpo-absolute').getBoundingClientRect().top){
+    		$scope.cuerpo1.position = 'absolute';
+    		$scope.cuerpo1.top = cuerpo1TopInicial;
+	      	$scope.$apply();
+    	}
+	    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 30){
+	      $scope.cabecera.position = 'fixed';
+	      $scope.cabecera.top = '30px';
+	      $scope.cabecera.background = '#E7E7E7';
+	      $scope.cabecera.fontColor = 'black';
+	      $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+	      $scope.$apply();
+
+	    }
+	    if(window.scrollY <= 50){
+	      $scope.cabecera.position = 'absolute';
+	      $scope.cabecera.top = '6%';
+	      $scope.cabecera.background = '';
+	      $scope.cabecera.fontColor = 'white';
+	      $scope.cabecera.source = '/assets/img/logo.png';
+	      $scope.$apply();
+
+	    }
+	    if(window.scrollY >= 1600)
+	    {
+	    	$scope.actualBody = 1;
+	    	$scope.cuerpo1.display = 'none'
+	    	$scope.$apply();
+	    } else if(window.scrollY <= 1600){
+	    	$scope.actualBody = 0;
+	    	$scope.cuerpo1.display = 'initial'
+	    	$scope.$apply();
+	    }
    }
 }]);

@@ -5896,10 +5896,23 @@ body {
   max-width: 100%;
   overflow-x: hidden; }
 
+.video {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%; }
+
+.walls-logo {
+  position: relative;
+  top: -70%; }
+
 .cabeceraDiv {
   width: 100%;
   height: 15%;
-  top: 8%;
+  top: 6%;
   z-index: 3; }
 
 .wallsLogo {
@@ -6026,7 +6039,7 @@ body {
   position: absolute;
   width: 110%;
   left: -5%;
-  top: 380%; }
+  top: 400%; }
 
 .cuerpo3 {
   height: 100%;
@@ -6083,7 +6096,7 @@ body {
   margin: auto;
   left: 0;
   right: 0;
-  bottom: -10%; }
+  bottom: -30%; }
 
 .cuerpo1-white-div {
   position: absolute;
@@ -6151,13 +6164,24 @@ body {
   top: 0;
   z-index: 1; }
 
+@media only screen and (max-width: 768px) {
+  .video {
+    top: 10% !important;
+    height: 25%; } }
+
 @media only screen and (max-width: 1400px) {
   .cuerpo2 {
-    top: 450%; }
+    top: 480%; }
   .cuerpo3 {
-    top: 700%; } }
+    top: 700%; }
+  .video {
+    top: 20%; }
+  #titulos-div-fondo-fixed {
+    bottom: 7%; } }
 
 @media only screen and (max-width: 1024px) {
+  .cabeceraDiv {
+    display: none; }
   .navBar {
     display: none; }
   .titulos-div-cabecera {
@@ -6212,6 +6236,8 @@ body {
     background-size: contain; } }
 
 @media only screen and (max-width: 580px) {
+  .video {
+    width: 60%; }
   .white-sello {
     transform: scale(0.5, 0.5);
     -ms-transform: scale(0.5, 0.5);
@@ -6274,7 +6300,7 @@ body {
   .firma {
     bottom: -10%; }
   #titulos-div-fondo-fixed {
-    bottom: 50%; }
+    bottom: 40%; }
   .cuerpo2 {
     top: 210%; }
   .angleDiv {
@@ -8679,3 +8705,348 @@ body {
   margin: 0;
   overflow: visible;
   clip: auto; }
+
+.top {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+.columna-top-1 {
+  position: absolute;
+  width: 33.3%;
+  height: 100%;
+  left: 0%;
+  background-image: url(/assets/img/columna-uno-min.jpg);
+  background-size: 280% 130%;
+  background-repeat: no-repeat;
+  background-position: 45% -20%; }
+
+.columna-top-2 {
+  position: absolute;
+  width: 33.3%;
+  height: 100%;
+  right: 33.3%;
+  left: 33.3%;
+  background-image: url(/assets/img/columna-dos-min.jpg);
+  background-size: 280% 130%;
+  background-repeat: no-repeat;
+  background-position: 50% -15%; }
+
+.columna-top-3 {
+  position: absolute;
+  width: 33.3%;
+  height: 100%;
+  right: 0%;
+  background-image: url(/assets/img/columna-tres-min.jpg);
+  background-size: 280% 130%;
+  background-repeat: no-repeat;
+  background-position: 50% -15%; }
+
+.titulo-columna-top {
+  width: 60%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%; }
+
+.cuerpo-absolute {
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  height: 1710px; }
+
+.cuerpo1-servicios {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  top: 90%; }
+
+.cuerpo1-servicios-div {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 20%;
+  background: #1C1C1C; }
+
+.cuerpo1-servicios-content {
+  position: absolute;
+  left: 5%;
+  width: 80%;
+  height: 474px; }
+
+.text-left {
+  text-align: right; }
+
+.cuerpo1-servicios-titulos {
+  position: absolute;
+  left: 8%;
+  width: 70%;
+  height: 40%;
+  bottom: 0;
+  top: 0;
+  margin: auto; }
+
+.cuerpo1-servicios-image {
+  position: absolute;
+  left: 80%; }
+
+.gray-text {
+  color: #7B7B7B; }
+
+.cuerpo2-servicios {
+  position: absolute;
+  top: 600px;
+  width: 100%;
+  height: 1710px;
+  background: #1C1C1C; }
+
+.cuerpo2-fila {
+  height: 342px;
+  width: 100%;
+  position: relative;
+  opacity: 0; }
+
+.cuerpo2-columna {
+  width: 50%;
+  height: 100%;
+  position: absolute; }
+
+.columna-right {
+  right: 0%; }
+
+.columna-left {
+  left: 0%; }
+
+.columna-2 {
+  right: 0%; }
+
+.columna-1 {
+  left: 0%; }
+
+.cuerpo2-image {
+  height: 100%;
+  width: 100%; }
+
+.columna-gris {
+  background: #F3F3F3; }
+
+.columna-blanca {
+  background: white; }
+
+.borde-sesgado-gris {
+  position: absolute;
+  top: -250px;
+  width: 100%; }
+
+.borde-sesgado-servicios {
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(-6deg);
+  z-index: 0;
+  position: absolute;
+  top: -200px; }
+
+.cuerpo2-titulos {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word; }
+
+.video-servicios-div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.video-servicios {
+  position: absolute;
+  top: 0%;
+  width: 110%;
+  height: 100%;
+  left: -5%; }
+
+.footer-servicios {
+  position: absolute;
+  top: 4000px;
+  width: 110%;
+  height: 110%;
+  left: -5%; }
+
+.footer-servicios-div {
+  background-image: url(/assets/img/fondo-pie-degradado.png);
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 20%; }
+
+.footer-servicios-titulos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 60%; }
+
+.footer-servicios-brand {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: #454545; }
+
+.leer-mas-servicios {
+  position: absolute;
+  bottom: 20%;
+  width: 10%;
+  height: auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background: #353432;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center; }
+
+@media only screen and (max-width: 1280px) {
+  .cuerpo1-servicios {
+    top: 70%; }
+  .borde-sesgado-gris {
+    top: -200px; }
+  .cuerpo-absolute {
+    top: 70%; }
+  .borde-sesgado-servicios {
+    top: -150px; } }
+
+@media only screen and (max-width: 1024px) {
+  .borde-sesgado-gris {
+    top: -150px; }
+  .columna-top-1 {
+    top: 0%;
+    width: 100%;
+    height: 365px;
+    background-size: 100% 130%; }
+  .columna-top-2 {
+    top: 365px;
+    width: 100%;
+    height: 365px;
+    right: 0;
+    left: 0;
+    background-size: 100% 130%; }
+  .columna-top-3 {
+    top: 730px;
+    width: 100%;
+    height: 365px;
+    background-size: 100% 130%; }
+  .titulo-columna-top {
+    top: 35%; } }
+
+@media only screen and (max-width: 768px) {
+  .borde-sesgado-gris {
+    top: -100px; }
+  .cuerpo1-servicios {
+    top: 90%; }
+  .cuerpo-absolute {
+    top: 90%; }
+  .borde-sesgado-servicios {
+    top: -100px; } }
+
+@media only screen and (max-width: 414px) {
+  .columna-top-1 {
+    top: 0%;
+    width: 100%;
+    height: 33.3%; }
+  .columna-top-2 {
+    top: 33.3%;
+    width: 100%;
+    height: 33.3%; }
+  .columna-top-3 {
+    top: 66.6%;
+    width: 100%;
+    height: 33.3%; }
+  .borde-sesgado-gris {
+    top: -60px; }
+  .cuerpo1-servicios-titulos {
+    font-size: 70%; }
+  .cuerpo1-servicios-content {
+    height: auto; }
+  .cuerpo1-servicios-div {
+    height: 200px; }
+  .cuerpo-absolute {
+    top: 40%; }
+  .cuerpo2-servicios {
+    height: 1710px; }
+  .cuerpo1-servicios {
+    top: 85%; }
+  .columna-1 {
+    width: 100%; }
+  .columna-2 {
+    top: 1710px;
+    width: 100%; }
+  .footer-servicios {
+    top: 4120px; }
+  .borde-sesgado-servicios {
+    top: -45px; }
+  .video-servicios-div {
+    display: none; }
+  .leer-mas-servicios {
+    width: 30%; } }
+
+@media only screen and (max-width: 320px) {
+  .borde-sesgado-gris {
+    top: -25%; }
+  .cuerpo-absolute {
+    top: 20%; }
+  .cuerpo1-servicios {
+    top: 80%; }
+  .footer-servicios {
+    top: 4020px; }
+  .footer-servicios-brand {
+    font-size: 80%; } }
+
+/* Standard syntax */
+@keyframes slide-left-to-right {
+  from {
+    left: -200%;
+    opacity: 0; }
+  to {
+    opacity: 1;
+    left: 0%; } }
+
+/* Standard syntax */
+@keyframes slide-right-to-left {
+  from {
+    right: -200%;
+    opacity: 0; }
+  to {
+    opacity: 1;
+    right: 0%; } }
+
+.slide-left-to-right {
+  -webkit-animation-name: slide-left-to-right;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: slide-left-to-right;
+  animation-duration: 4s;
+  animation-fill-mode: forwards; }
+
+.slide-right-to-left {
+  -webkit-animation-name: slide-right-to-left;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: slide-right-to-left;
+  animation-duration: 4s;
+  animation-fill-mode: forwards; }
