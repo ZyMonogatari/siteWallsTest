@@ -5926,7 +5926,8 @@ body {
   color: white; }
 
 .iconsDiv {
-  position: absolute;
+  position: fixed;
+  z-index: 3;
   top: 3%;
   width: 15%;
   right: 3%; }

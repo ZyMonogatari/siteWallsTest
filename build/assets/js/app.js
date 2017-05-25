@@ -203,10 +203,10 @@ angular.module('application').controller('serviciosCtrl',
     		$scope.cuerpo1.top = cuerpo1TopInicial;
 	      	$scope.$apply();
     	}
-	    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 30){
+	    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0){
 	      $scope.cabecera.position = 'fixed';
-	      $scope.cabecera.top = '30px';
-	      $scope.cabecera.background = '#E7E7E7';
+	      $scope.cabecera.top = '0px';
+	      $scope.cabecera.background = 'rgba(255, 255, 255, .9)';
 	      $scope.cabecera.fontColor = 'black';
 	      $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
 	      $scope.$apply();
