@@ -9054,3 +9054,24 @@ body {
   animation-name: slide-right-to-left;
   animation-duration: 4s;
   animation-fill-mode: forwards; }
+
+.sucursales-cabecera {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/ryukoblur.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.sucursales-div-circular {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  border-radius: 200px;
+  width: 350px;
+  height: 350px;
+  background-image: url(/assets/img/ryuko.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-style: solid; }

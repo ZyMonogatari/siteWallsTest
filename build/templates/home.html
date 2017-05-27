@@ -1,18 +1,8 @@
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5917524e64f23d19a89b2034/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
 <!--End of Tawk.to Script-->
 <div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+
 <!--Cabecera--> 
 <div ng-if="actualBody == 0" class="cabecera">
 	
@@ -22,19 +12,6 @@ s0.parentNode.insertBefore(s1,s0);
 		<h1 class="whiteFont text-center underline"> Soy un texto</h1>
 	</div>
 	<img src="/assets/img/sello.png" class="white-sello">
-	<div class="grid-block iconsDiv">	
-		<div class="grid-block">
-			<i class="fa fa-whatsapp whiteFont  fa-2x" aria-hidden="true"></i>
-		</div>
-
-		<div class="grid-block">
-			<i class="fa fa-search whiteFont fa-2x" aria-hidden="true"></i>
-		</div>
-
-		<div class="grid-block">
-			<i class="fa fa-user whiteFont fa-2x" aria-hidden="true"></i>
-		</div>
-	</div>
 	<div class="leerMas">
 		<h6 class="whiteFont">
 			<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
@@ -49,7 +26,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 
 <!--fondo-fixed-->
-<div ng-if="actualBody == 1" class="fondo-fixed">
+<div ng-show="actualBody == 1" class="fondo-fixed">
 
 	<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="video" frameborder="0" allowfullscreen>
 	</iframe>

@@ -17,7 +17,7 @@
 
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
-  function config($urlProvider, $locationProvider) {
+  function config($urlProvider, $locationProvider ) {
     $urlProvider.otherwise('/');
 
     $locationProvider.html5Mode({
@@ -102,10 +102,10 @@ angular.module('application').controller('homeCtrl',
 
    $window.onscroll = function(event){
     
-    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 30){
+    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0){
       $scope.cabecera.position = 'fixed';
-      $scope.cabecera.top = '30px';
-      $scope.cabecera.background = '#E7E7E7';
+      $scope.cabecera.top = '0px';
+      $scope.cabecera.background = 'rgba(255, 255, 255, .9)';
       $scope.cabecera.fontColor = 'black';
       $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
       $scope.$apply();
@@ -138,8 +138,14 @@ angular.module('application').controller('homeCtrl',
 }]);
 
 angular.module('application').controller('serviciosCtrl',
-  ['$scope', '$window',  function($scope, $window){
+  ['$scope', '$window', '$state', function($scope, $window, $state){
+    $scope.go = function(){
+        
+        $state.go('home').then(function(){
+           window.location.reload(true); 
+        });
 
+    }
 	var cuerpoAbsoluteTop;
     var cuerpo1TopInicial = document.getElementById('cuerpo1-servicios').getBoundingClientRect().top;
 
@@ -232,4 +238,16 @@ angular.module('application').controller('serviciosCtrl',
 	    	$scope.$apply();
 	    }
    }
+}]);
+angular.module('application').controller('sucursalesCtrl',
+  ['$scope', '$window', 'NgMap',  function($scope, $window, NgMap){
+    /*
+    NgMap.getMap().then(function(map) {
+        var swBound = new google.maps.LatLng(84.984656, -179.741569);
+        var neBound = new google.maps.LatLng(-84.764846, 179.599832);
+        var bounds = new google.maps.LatLngBounds(swBound, neBound);
+        var srcImage = 'https://developers.google.com/maps/documentation/javascript/';
+        srcImage += 'examples/full/images/talkeetna.png';
+         new google.maps.OverlayView(bounds, srcImage, map);
+    });*/
 }]);

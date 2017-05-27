@@ -1,31 +1,35 @@
 <div class="cabeceraDiv" ng-style="{'position' : cabecera.position, 'top' : cabecera.top, 'background' : cabecera.background}" id="cabeceraDiv">
 		<div class="grid-block navBar">
 			<div class="grid-block">
-				<h5 
-					class="whiteFont"
+				<a href="/#!/">
+					<h5 
+						class="whiteFont"
 
-					ng-mouseover="homeText = 'underline'"  
-					ng-mouseleave="homeText = ''" 
-					ng-style="{'text-decoration' : homeText, 'color' : cabecera.fontColor}"
-				>
-					HOME
-				</h5>
+						ng-mouseover="homeText = 'underline'"  
+						ng-mouseleave="homeText = ''" 
+						ng-style="{'text-decoration' : homeText, 'color' : cabecera.fontColor}"
+					>
+						HOME
+					</h5>
+				</a>
+			</div>
+			<div class="grid-block" ">
+				<a ui-sref="servicios({reload: true})">
+					<h5 
+						class="whiteFont"
+
+						ng-mouseover="serviciosText = 'underline'"  
+						ng-mouseleave="serviciosText = ''" 
+						ng-style="{'text-decoration' : serviciosText, 'color' : cabecera.fontColor}"
+					>
+						SERVICIOS
+					</h5>
+				</a>
 			</div>
 			<div class="grid-block">
 				<h5 
 					class="whiteFont"
-
-					ng-mouseover="serviciosText = 'underline'"  
-					ng-mouseleave="serviciosText = ''" 
-					ng-style="{'text-decoration' : serviciosText, 'color' : cabecera.fontColor}"
-				>
-					SERVICIOS
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont"
-
+					ng-click="go()"
 					ng-mouseover="sucursalesText = 'underline'"  
 					ng-mouseleave="sucursalesText = ''" 
 					ng-style="{'text-decoration' : sucursalesText, 'color' : cabecera.fontColor}"

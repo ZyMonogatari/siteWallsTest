@@ -1,1 +1,1 @@
-var foundationRoutes = [{"name":"servicios","url":"/servicios","controller":"serviciosCtrl","path":"templates/servicios.html"},{"name":"home","url":"/","controller":"homeCtrl","path":"templates/home.html"}]; 
+var foundationRoutes = [{"name":"sucursales","url":"/sucursales","controller":"sucursalesCtrl","path":"templates/sucursales.html"},{"name":"servicios","url":"/servicios","controller":"serviciosCtrl","path":"templates/servicios.html"},{"name":"home","url":"/","controller":"homeCtrl","path":"templates/home.html"}]; 
