@@ -9037,6 +9037,20 @@ body {
     opacity: 1;
     right: 0%; } }
 
+/* Standard syntax */
+@keyframes slide-right-to-left-enter {
+  from {
+    right: -200%;
+    opacity: 0; }
+  to { } }
+
+/* Standard syntax */
+@keyframes slide-right-to-left-exit {
+  from {
+    opacity: 1; }
+  to {
+    left: 200%; } }
+
 .slide-left-to-right {
   -webkit-animation-name: slide-left-to-right;
   /* Safari 4.0 - 8.0 */
@@ -9055,23 +9069,253 @@ body {
   animation-duration: 4s;
   animation-fill-mode: forwards; }
 
+.slide-right-to-left-enter {
+  -webkit-animation-name: slide-right-to-left-enter;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: slide-right-to-left-enter;
+  animation-duration: 4s;
+  animation-fill-mode: forwards; }
+
 .sucursales-cabecera {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url(/assets/img/ryukoblur.jpg);
+  background-image: url(/assets/img/fondo-top-sucursales-min.jpg);
   background-size: cover;
   background-repeat: no-repeat; }
 
 .sucursales-div-circular {
   position: absolute;
-  left: 30%;
-  top: 50%;
-  border-radius: 200px;
-  width: 350px;
-  height: 350px;
-  background-image: url(/assets/img/ryuko.jpg);
+  left: 12%;
+  top: 22%;
+  border-radius: 280px;
+  width: 450px;
+  height: 450px;
+  background-image: url(/assets/img/fondo-top-sucursales-circulo-min.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  border-style: solid; }
+  border-style: solid;
+  border-color: rgba(192, 192, 192, 0.9);
+  border-width: 10px; }
+
+.sucursales-cabecera-titulos {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 40%;
+  height: 30%;
+  background: blue; }
+
+.sucursales-cuerpo-absolute {
+  position: absolute;
+  width: 100%;
+  height: 2000px;
+  top: 110%; }
+
+.sucursales-cuerpo2 {
+  position: absolute;
+  width: 100%;
+  height: 1000px; }
+
+.sucursales-fondo {
+  position: absolute;
+  width: 100%;
+  height: 1400px;
+  background: black;
+  top: 500px; }
+
+.sucursales-cuerpo2-div-diagonal {
+  position: absolute;
+  width: 120%;
+  left: -20%;
+  height: 700px;
+  top: -10%;
+  background: black;
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(23deg);
+  z-index: 0; }
+
+.sucursales-cuerpo2-contenido {
+  position: absolute;
+  width: 100%;
+  height: 900px;
+  top: 300px;
+  background-image: url(/assets/img/fondo-maquinas-min.jpg);
+  background-size: cover;
+  background-position: 100% 90%;
+  background-repeat: no-repeat; }
+
+.sucursales-cuerpo2-contenido-silla {
+  position: absolute;
+  top: -500px;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.sucursales-cuerpo2-titulos {
+  position: absolute;
+  top: 10%;
+  width: 40%;
+  height: 30%;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.sucursales-cuerpo3 {
+  position: absolute;
+  width: 100%;
+  height: 1000px;
+  top: 1400px; }
+
+.sucursales-cuerpo3-div {
+  background-image: url(/assets/img/fondo-pie-degradado.png);
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  top: 300px; }
+
+.sucursales-cuerpo3-div-diagonal {
+  position: absolute;
+  width: 120%;
+  left: -20%;
+  height: 700px;
+  top: -10%;
+  background: white;
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(23deg);
+  z-index: 0; }
+
+.sucursales-cuerpo-mapa {
+  position: absolute;
+  width: 1250px;
+  height: 1280px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  margin-bottom: 200px;
+  top: -800px; }
+
+.google-maps-div {
+  position: absolute;
+  width: 1138px;
+  height: 837px;
+  top: 244px;
+  left: 57px;
+  z-index: -1; }
+
+.sucursales-cuerpo2-titulos-top {
+  display: none; }
+
+@media only screen and (max-width: 1400px) {
+  .sucursales-div-circular {
+    position: absolute;
+    left: 12%;
+    top: 22%;
+    border-radius: 280px;
+    width: 380px;
+    height: 380px; }
+  .sucursales-cabecera-titulos {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    width: 40%;
+    height: 30%;
+    background: blue; } }
+
+@media only screen and (max-width: 1024px) {
+  .sucursales-cabecera-titulos {
+    display: none; }
+  .sucursales-cuerpo2-titulos-top {
+    display: inherit;
+    position: absolute;
+    top: -200px; }
+  .sucursales-div-circular {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    border-radius: 280px;
+    width: 450px;
+    height: 450px; }
+  .sucursales-cuerpo-absolute {
+    top: 70%; }
+  .sucursales-cuerpo2-contenido {
+    background-size: contain; }
+  .sucursales-cuerpo-mapa {
+    width: 100%;
+    height: 80%; }
+  .google-maps-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 244px;
+    left: 57px;
+    z-index: -1; }
+  .sucursales-cuerpo2-titulos {
+    top: 38%;
+    width: 90%; }
+  .sucursales-cuerpo2-div-diagonal {
+    width: 130%;
+    height: 770px; }
+  .sucursales-cuerpo2-contenido-silla {
+    position: absolute;
+    top: -170px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8); }
+  .sucursales-cuerpo2-contenido {
+    top: 330px;
+    background-position: 100% 200%;
+    background-repeat: no-repeat; } }
+
+@media only screen and (max-width: 768px) {
+  .sucursales-cuerpo2-div-diagonal {
+    width: 140%;
+    height: 770px;
+    left: -25%; }
+  .sucursales-cuerpo2-titulos-top {
+    top: -250px; }
+  .sucursales-cuerpo2-contenido {
+    background-position: 100% 120%; }
+  .sucursales-div-circular {
+    left: 20%;
+    top: 15%;
+    width: 400px;
+    height: 400px; }
+  .sucursales-cuerpo3-div-diagonal {
+    width: 130%;
+    left: -25%; } }
+
+@media only screen and (max-width: 414px) {
+  .sucursales-cuerpo2-div-diagonal {
+    width: 200%;
+    left: -55%; }
+  .sucursales-cuerpo-absolute {
+    top: 90%; }
+  .sucursales-div-circular {
+    width: 300px;
+    height: 300px; }
+  .sucursales-cuerpo3-div-diagonal {
+    width: 150%;
+    left: -50%; }
+  .sucursales-cuerpo2-contenido {
+    background-position: 100% 65%; } }
+
+@media only screen and (max-width: 360px) {
+  .sucursales-div-circular {
+    width: 280px;
+    height: 280px; } }
+
+@media only screen and (max-width: 320px) {
+  .sucursales-div-circular {
+    width: 220px;
+    height: 220px; } }

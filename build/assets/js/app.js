@@ -240,14 +240,38 @@ angular.module('application').controller('serviciosCtrl',
    }
 }]);
 angular.module('application').controller('sucursalesCtrl',
-  ['$scope', '$window', 'NgMap',  function($scope, $window, NgMap){
-    /*
-    NgMap.getMap().then(function(map) {
-        var swBound = new google.maps.LatLng(84.984656, -179.741569);
-        var neBound = new google.maps.LatLng(-84.764846, 179.599832);
-        var bounds = new google.maps.LatLngBounds(swBound, neBound);
-        var srcImage = 'https://developers.google.com/maps/documentation/javascript/';
-        srcImage += 'examples/full/images/talkeetna.png';
-         new google.maps.OverlayView(bounds, srcImage, map);
-    });*/
+  ['$scope', '$window', 'NgMap', '$interval', function($scope, $window, NgMap, $interval){
+    $scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/logo.png';
+    $scope.cabecera.position = 'absolute';
+    angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
+    var i = 0;
+    var cambiarTexto = function(){
+        console.log("aqui");
+        if(i == 0){
+            angular.element(document.querySelector('#texto1')).removeClass('slide-right-to-left-enter');
+            angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-exit');
+        }
+    }
+    
+    $interval(cambiarTexto, 4200);
+    
+    $window.onscroll = function(event){
+        if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0){
+          $scope.cabecera.position = 'fixed';
+          $scope.cabecera.top = '0px';
+          $scope.cabecera.background = 'rgba(255, 255, 255, .9)';
+          $scope.cabecera.fontColor = 'black';
+          $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+          $scope.$apply();
+        }
+        if(window.scrollY <= 50){
+          $scope.cabecera.position = 'absolute';
+          $scope.cabecera.top = '6%';
+          $scope.cabecera.background = '';
+          $scope.cabecera.fontColor = 'white';
+          $scope.cabecera.source = '/assets/img/logo.png';
+          $scope.$apply();
+        }
+    }
 }]);

@@ -1,47 +1,113 @@
+
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
 <div class="sucursales-cabecera">
+  <div class="sucursales-cabecera-titulos" id="texto1">
+    <h4>
+       Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
+    </h4>
+   
+  </div>
+  <!--<div class="sucursales-cabecera-titulos">
+    <h4>
+       Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
+    </h4>
+  </div>-->
 </div>
 <div class="sucursales-div-circular">
 </div>
-<div style="position: absolute; height: 200%; width: 100%;"></div>
-<!--
-<div map-lazy-load="https://maps.google.com/maps/api/js" 
-		map-lazy-load-params="{{googleMapsUrl}}">
-  		<ng-map class = "ng-map"
-	  		zoom="5"
-	  		center="23.848025, -98.605808"
-	  		draggable="false"
-	  		disable-double-click-zoom="true"
-	  		scrollwheel="false"
-	  		disable-default-u-i="true"
-  		>
 
-	      	<shape name="image"
-			     url="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"
-			     bounds="[[7.103470, -132.267917], [39.776765, -60.109715]]">
-			 </shape>
-  			<marker position="21.155072, -86.821708" title="Wall's Barbershop Bonampak"
-  			icon="{
-		        url:'/assets/img/black-W.png',
-		        scaledSize:[100,100],
-		        origin: [10,10],
-		        anchor: [50,50]
-		      }"></marker>
-  			<marker position="21.133608, -86.856630" title="Wall's Barbershop las Torres"></marker>
-  			<marker position="21.156970, -86.847210" title="Wall's Barbershop Kabah"></marker>
-  			<marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal"></marker>
-  			<marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres"></marker>
-  			<marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel"></marker>
-  			<marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen"></marker>
-  			<marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena"></marker>
-  			<marker position="21.039818, -89.631276" title="Wall's Barbershop Galerias Merida"></marker>
-  			<marker position="21.012636, -89.583264" title="Wall's Barbershop Merida Uptown"></marker>
-  			<marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche"></marker>
-  			<marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz"></marker>
-  			<marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes"></marker>
-  			<marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ"></marker>
-  			<marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite"></marker>
-  			<marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma"></marker>
-  			<marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara"></marker>
-  			<marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro"></marker>		
-  		</ng-map>
+   
+<div class="sucursales-cuerpo-absolute">
+  <div class="sucursales-fondo"></div>
+  <div class="sucursales-cuerpo2">
+    <div class="sucursales-cuerpo2-div-diagonal"></div>
+    <div class="sucursales-cuerpo2-contenido">
+      <div class="sucursales-cuerpo2-titulos-top">
+        <h4 class="whiteFont text-center" id="#texto1">
+           Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
+        </h4>
+      </div>
+      <!--<div class="sucursales-cabecera-titulos">
+        <h4 class="whiteFont text-center">
+           Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
+        </h4>
+      </div>-->
+      <img src="/assets/img/silla-min.png" class="sucursales-cuerpo2-contenido-silla">
+      <div class="sucursales-cuerpo2-titulos">
+        <h4 class="whiteFont text-center">
+          Gracias a ustedes nos encontramos en constante crecimiento y nos podrás encontrar en nuestras siguientes sucursales, donde lograrás vivir toda la experiencia Wall's Barbershop:
+        </h4>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="sucursales-cuerpo3">
+    <div class="sucursales-cuerpo-mapa">
+      <img src="/assets/img/fondo-mapa-sello-min.png">
+      <div map-lazy-load="https://maps.google.com/maps/api/js"                  map-lazy-load-params="{{googleMapsUrl}}" class="google-maps-div">
+        <ng-map class = "ng-map"
+          zoom="5"
+          center="23.848025, -98.605808"
+          draggable="false"
+          disable-double-click-zoom="true"
+          scrollwheel="false"
+          disable-default-u-i="true">
+            <shape name="image"
+             url="/assets/img/BG-mapa-min.jpg"
+             bounds="[[5.10000, -125.100000], [40.400000, -72.300000]]">
+            </shape>
+            <marker position="21.155072, -86.821708" title="Wall's Barbershop Bonampak"
+            icon="{
+                url:'/assets/img/black-W.png',
+                scaledSize:[100,100],
+                origin: [10,10],
+                anchor: [50,50]
+              }"></marker>
+            <marker position="21.133608, -86.856630" title="Wall's Barbershop las Torres"></marker>
+            <marker position="21.156970, -86.847210" title="Wall's Barbershop Kabah"></marker>
+            <marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal"></marker>
+            <marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres"></marker>
+            <marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel"></marker>
+            <marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen"></marker>
+            <marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena"></marker>
+            <marker position="21.039818, -89.631276" title="Wall's Barbershop Galerias Merida"></marker>
+            <marker position="21.012636, -89.583264" title="Wall's Barbershop Merida Uptown"></marker>
+            <marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche"></marker>
+            <marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz"></marker>
+            <marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes"></marker>
+            <marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ"></marker>
+            <marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite"></marker>
+            <marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma"></marker>
+            <marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara"></marker>
+            <marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro"></marker>    
+          </ng-map>
+      </div>
+    </div>
+
+    <div class="sucursales-cuerpo3-div-diagonal"></div>
+    <div class="sucursales-cuerpo3-div">
+      <div class="footer-servicios-titulos">
+        <h1 class="text-center gray-text">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+        <h2 class="text-center gray-text">¡CONTÁCTANOS!</h2>
+        <h3 class="text-center gray-text"> LIC. AARON ALVARADO </h3>
+        <h3 class="text-center gray-text"> TEL: 044 9981 45 96 50 </h3>
+        <h3 class="text-center gray-text"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+        <div class="leer-mas-servicios">
+          <h6 class="whiteFont">
+            <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+            Leer más
+          </h6>
+        </div>
+      </div>
+      
+    </div>
+    <div class="footer-servicios-brand">
+      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+    </div>
+  </div>
+</div>
+<!--
+
 	</div> -->
