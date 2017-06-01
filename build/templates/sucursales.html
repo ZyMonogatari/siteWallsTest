@@ -8,11 +8,11 @@
     </h4>
    
   </div>
-  <!--<div class="sucursales-cabecera-titulos">
+  <div class="sucursales-cabecera-titulos" id="texto2">
     <h4>
        Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
     </h4>
-  </div>-->
+  </div>
 </div>
 <div class="sucursales-div-circular">
 </div>
@@ -23,16 +23,16 @@
   <div class="sucursales-cuerpo2">
     <div class="sucursales-cuerpo2-div-diagonal"></div>
     <div class="sucursales-cuerpo2-contenido">
-      <div class="sucursales-cuerpo2-titulos-top">
-        <h4 class="whiteFont text-center" id="#texto1">
+      <div class="sucursales-cuerpo2-titulos-top" id="texto1-movil">
+        <h4 class="whiteFont text-center" >
            Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
         </h4>
       </div>
-      <!--<div class="sucursales-cabecera-titulos">
+      <div class="sucursales-cuerpo2-titulos-top" id="texto2-movil">
         <h4 class="whiteFont text-center">
            Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
         </h4>
-      </div>-->
+      </div>
       <img src="/assets/img/silla-min.png" class="sucursales-cuerpo2-contenido-silla">
       <div class="sucursales-cuerpo2-titulos">
         <h4 class="whiteFont text-center">
@@ -44,8 +44,7 @@
   
 
   <div class="sucursales-cuerpo3">
-    <div class="sucursales-cuerpo-mapa">
-      <img src="/assets/img/fondo-mapa-sello-min.png">
+    <div class="sucursales-cuerpo-mapa" >
       <div map-lazy-load="https://maps.google.com/maps/api/js"                  map-lazy-load-params="{{googleMapsUrl}}" class="google-maps-div">
         <ng-map class = "ng-map"
           zoom="5"
@@ -54,38 +53,174 @@
           disable-double-click-zoom="true"
           scrollwheel="false"
           disable-default-u-i="true">
+            <!--shapes-->
             <shape name="image"
              url="/assets/img/BG-mapa-min.jpg"
              bounds="[[5.10000, -125.100000], [40.400000, -72.300000]]">
             </shape>
-            <marker position="21.155072, -86.821708" title="Wall's Barbershop Bonampak"
+
+            <shape name="image"
+             url="/assets/img/MapaWall's.png"
+             bounds="[[12.00000, -123.500000], [31.000000, -98.000000]]">
+            </shape>
+            <!--Markers-->
+            <marker position="20.000000, -98.3000000" title="Cancún, Quintana Roo"
             icon="{
-                url:'/assets/img/black-W.png',
-                scaledSize:[100,100],
-                origin: [10,10],
-                anchor: [50,50]
-              }"></marker>
-            <marker position="21.133608, -86.856630" title="Wall's Barbershop las Torres"></marker>
-            <marker position="21.156970, -86.847210" title="Wall's Barbershop Kabah"></marker>
-            <marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal"></marker>
-            <marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres"></marker>
-            <marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel"></marker>
-            <marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen"></marker>
-            <marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena"></marker>
-            <marker position="21.039818, -89.631276" title="Wall's Barbershop Galerias Merida"></marker>
-            <marker position="21.012636, -89.583264" title="Wall's Barbershop Merida Uptown"></marker>
-            <marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche"></marker>
-            <marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz"></marker>
-            <marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes"></marker>
-            <marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ"></marker>
-            <marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite"></marker>
-            <marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma"></marker>
-            <marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara"></marker>
-            <marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro"></marker>    
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('cancun')"></marker>
+
+              <marker position="18.800000, -97.7000000" title="Isla Mujeres, Quintana Roo"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('isla')"></marker>
+
+             <marker position="17.500000, -98.0000000" title="Cozumel, Quintana Roo"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('cozumel')"></marker>
+
+            <marker position="18.800000, -98.8000000" title="Playa del carmen, Quintana Roo"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('playa')"></marker>
+
+             <marker position="17.500000, -99.3000000" title="Chetumal, Quintana Roo"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('chetumal')"></marker>
+
+            <marker position="19.000000, -100.0000000" title="Merida, Yucatan"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('merida')"></marker>
+
+            <marker position="17.2000000,-101.0000000" title="Campeche"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('campeche')"></marker>
+            <marker position="17.0000000,-106.0000000" title="Boca del rio, Veracruz"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('veracruz')"></marker>
+            <marker position="20.000000,-111.500000" title="Aguascalientes, AGS"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('aguasCalientes')"></marker>
+            <marker position="15.0000000,-102.5000000" title="Tuxtla GTZ, Chiapas"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('tuxtla')"></marker>
+            <marker position="17.700000,-108.600000" title="Ciudad de Mexico"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }"
+              on-click="cambiarSucursalDesktop('cdMx')"></marker>
+
+            <marker position="18.4000000,-112.5000000" title="Guadalajara, Jalisco"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('guadalajara')"></marker>
+
+            <marker position="19.0000000,-109.4000000" title="Queretaro"
+            icon="{
+                url:'/assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('queretaro')"></marker>
+
+            <!--Custom Markers-->
+            <custom-marker ng-repeat="sucursal in sucursales" position={{sucursal.position}}>
+              <div class="sucursal-map-div">
+                <div class="sucursales-map-image-div">
+                  <div class="image-circular-margin">
+                    <img width="100" src="/assets/img/walls-bonampak.png" class="sucursal-map-sucursal-img">
+                  </div>
+                </div>
+                <div class="sucursales-map-info-div">  
+                  <h4>{{sucursal.nombre}}</h4>
+                  <h6 >{{sucursal.direccion}}</h6>
+                  <h6>{{sucursal.contacto}}</h6>
+                </div>
+              </div>
+            </custom-marker>
           </ng-map>
       </div>
+      <img src="/assets/img/marco-top.png" class="margin-map-top">
+      <!--<img src="/assets/img/marco-bottom.png">-->
     </div>
+    <div class="sucursales-cuerpo-mapa-movil">
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1>+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1>-</h1>
+        </div>
+      </div>
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1>+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1>-</h1>
+        </div>
+      </div>
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1>+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1>-</h1>
+        </div>
+      </div>
+      <div class="sucursales-sucursales-div">
+        <div class="sucursales-map-div-columna1" style="background: red;">
+          <div class="sucursal">
+          
+          </div>
+          <div class="sucursal">
+            
+          </div>
 
+          <div class="sucursal">
+            
+          </div>
+          <div class="sucursal">
+            
+          </div>
+        </div>
+
+        <div class="sucursales-map-div-columna2" style="background: green;">
+          <div class="sucursal">
+          
+          </div>
+          <div class="sucursal">
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
     <div class="sucursales-cuerpo3-div-diagonal"></div>
     <div class="sucursales-cuerpo3-div">
       <div class="footer-servicios-titulos">
