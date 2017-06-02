@@ -141,9 +141,9 @@
 
             <!--Custom Markers-->
             <custom-marker ng-repeat="sucursal in sucursales" position={{sucursal.position}}>
-              <div class="sucursal-map-div">
-                <div class="sucursales-map-image-div">
-                  <div class="image-circular-margin">
+              <div class="sucursal-map-div appear">
+                <div class="sucursales-map-image-div" >
+                  <div class="image-circular-margin" >
                     <img width="100" src="/assets/img/walls-bonampak.png" class="sucursal-map-sucursal-img">
                   </div>
                 </div>
@@ -159,63 +159,55 @@
       <img src="/assets/img/marco-top.png" class="margin-map-top">
       <!--<img src="/assets/img/marco-bottom.png">-->
     </div>
-    <div class="sucursales-cuerpo-mapa-movil">
-      <div class="sucursales-map-bar">
-        <div class="sucursales-plus-button">
-          <h1>+</h1>
-        </div>
-        <div class="sucursales-map-bar-title">
-          <h1 class="text-center">SUCURSALES</h1>
-        </div>
-        <div class="sucursales-less-button">
-          <h1>-</h1>
-        </div>
-      </div>
-      <div class="sucursales-map-bar">
-        <div class="sucursales-plus-button">
-          <h1>+</h1>
-        </div>
-        <div class="sucursales-map-bar-title">
-          <h1 class="text-center">SUCURSALES</h1>
-        </div>
-        <div class="sucursales-less-button">
-          <h1>-</h1>
-        </div>
-      </div>
-      <div class="sucursales-map-bar">
-        <div class="sucursales-plus-button">
-          <h1>+</h1>
-        </div>
-        <div class="sucursales-map-bar-title">
-          <h1 class="text-center">SUCURSALES</h1>
-        </div>
-        <div class="sucursales-less-button">
-          <h1>-</h1>
-        </div>
-      </div>
-      <div class="sucursales-sucursales-div">
-        <div class="sucursales-map-div-columna1" style="background: red;">
-          <div class="sucursal">
-          
-          </div>
-          <div class="sucursal">
-            
-          </div>
 
-          <div class="sucursal">
-            
-          </div>
-          <div class="sucursal">
-            
+    <div class="sucursales-cuerpo-mapa-movil" >
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1 ng-click="cambiarSucursalMovil(1)">+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1 ng-click="cambiarSucursalMovil(0)">-</h1>
+        </div>
+      </div>
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1 ng-click="cambiarSucursalMovil(2)">+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1 ng-click="cambiarSucursalMovil(0)">-</h1>
+        </div>
+      </div>
+      <div class="sucursales-map-bar">
+        <div class="sucursales-plus-button">
+          <h1 ng-click="cambiarSucursalMovil(3)">+</h1>
+        </div>
+        <div class="sucursales-map-bar-title">
+          <h1 class="text-center">SUCURSALES</h1>
+        </div>
+        <div class="sucursales-less-button">
+          <h1 ng-click="cambiarSucursalMovil(0)">-</h1>
+        </div>
+      </div>
+      <div class="sucursales-sucursales-div" id="sucursal-movil">
+        <div class="sucursales-map-div-columna1">
+          <div class="sucursal text-center" ng-repeat="sucursal in sucursales.columna1">
+            <h4>{{sucursal.nombre}}</h4>
+            <h6>{{sucursal.direccion}}</h6>
+            <h6>{{sucursal.contacto}}</h6>
           </div>
         </div>
 
-        <div class="sucursales-map-div-columna2" style="background: green;">
-          <div class="sucursal">
-          
-          </div>
-          <div class="sucursal">
-            
+        <div class="sucursales-map-div-columna2">
+          <div class="sucursal text-center" ng-repeat="sucursal in sucursales.columna2">
+            <h4>{{sucursal.nombre}}</h4>
+            <h6>{{sucursal.direccion}}</h6>
+            <h6>{{sucursal.contacto}}</h6>
           </div>
         </div>
         

@@ -9335,8 +9335,7 @@ body {
   position: absolute;
   top: 260px;
   width: 100%;
-  height: 100%;
-  background: blue; }
+  height: 100%; }
 
 .sucursal {
   position: relative;
@@ -9347,7 +9346,7 @@ body {
   right: 0;
   margin: auto;
   margin-top: 20px;
-  background: white; }
+  background: #F6F6F6; }
 
 .sucursales-map-div-columna1 {
   position: absolute;
@@ -9389,8 +9388,7 @@ body {
     margin: auto;
     z-index: 1;
     margin-bottom: 200px;
-    top: -600px;
-    background: black; }
+    top: -600px; }
   .sucursales-cuerpo2-titulos-top {
     display: inherit;
     position: absolute;
@@ -9438,9 +9436,9 @@ body {
     background-position: 100% 200%;
     background-repeat: no-repeat; }
   .sucursales-cuerpo3 {
-    height: 1600px; }
+    height: 1400px; }
   .sucursales-cuerpo3-div {
-    top: 850px; }
+    top: 670px; }
   .sucursales-cuerpo3-div-diagonal {
     width: 150%;
     left: -30%;
@@ -9461,8 +9459,8 @@ body {
     width: 400px;
     height: 400px; }
   .sucursales-cuerpo3-div-diagonal {
-    width: 130%;
-    left: -25%; } }
+    width: 150%;
+    left: -40%; } }
 
 @media only screen and (max-width: 414px) {
   .sucursales-cuerpo2-div-diagonal {
@@ -9475,14 +9473,32 @@ body {
     height: 300px; }
   .sucursales-cuerpo3-div-diagonal {
     width: 150%;
-    left: -50%; }
+    left: -35%;
+    height: 600px; }
   .sucursales-cuerpo2-contenido {
-    background-position: 100% 65%; } }
+    background-position: 100% 65%; }
+  .sucursales-map-bar {
+    height: 50px; }
+  .sucursales-cuerpo-mapa-movil {
+    width: 100%; }
+  .sucursales-sucursales-div {
+    top: 200px; }
+  .sucursal {
+    width: 95%;
+    height: 180px; }
+  .sucursales-cuerpo3-div {
+    top: 400px;
+    height: 500px; }
+  .sucursales-cuerpo3 {
+    height: 900px; } }
 
 @media only screen and (max-width: 360px) {
   .sucursales-div-circular {
     width: 280px;
-    height: 280px; } }
+    height: 280px; }
+  .sucursales-cuerpo3-div-diagonal {
+    width: 180%;
+    left: -45%; } }
 
 @media only screen and (max-width: 320px) {
   .sucursales-div-circular {

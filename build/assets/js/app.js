@@ -240,7 +240,7 @@ angular.module('application').controller('serviciosCtrl',
    }
 }]);
 angular.module('application').controller('sucursalesCtrl',
-  ['$scope', '$window', 'NgMap', '$interval', function($scope, $window, NgMap, $interval){
+  ['$scope', '$window', 'NgMap', '$interval', '$timeout', function($scope, $window, NgMap, $interval, $timeout){
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
@@ -411,15 +411,46 @@ angular.module('application').controller('sucursalesCtrl',
     sucursalesSeccion3.columna2.cdMx = sucursales.cdMx.cdMx;
     sucursalesSeccion3.columna2.edoMx = sucursales.cdMx.edoMx;
     sucursalesSeccion3.columna2.guadalajara = sucursales.guadalajara.guadalajara
-
-    $scope.sucursales = sucursales.cancun;
-    console.log(sucursales['cancun']);
-/*
+    if(screen.width <= 1024){
+        $scope.sucursales = sucursalesSeccion3;
+    }
+    else
+    {
+        $scope.sucursales = sucursales.cancun;
+    }
     
-    }*/
     $scope.cambiarSucursalDesktop = function(e, key){
-        console.log(key);
-        $scope.sucursales = sucursales[key];
+        NgMap.getMap().then(function(map) {
+            for (var i in map.customMarkers) {
+                map.customMarkers[i].el.className = 'disappear'
+            }
+        });
+        $timeout(function(){
+            $scope.sucursales = sucursales[key];
+        },1300);
+    }
+    $scope.cambiarSucursalMovil = function(table){
+        angular.element(document.querySelector('#sucursal-movil')).addClass('disappear');
+        $timeout(function(){
+            if(table == 1){
+            $scope.sucursales = sucursalesSeccion1
+            }
+            if(table == 2){
+                $scope.sucursales = sucursalesSeccion2
+            }
+            if(table == 3){
+                $scope.sucursales = sucursalesSeccion3
+            }
+            if(table == 0){
+                $scope.sucursales = {};
+            }
+            angular.element(document.querySelector('#sucursal-movil')).removeClass('disappear');
+            angular.element(document.querySelector('#sucursal-movil')).addClass('appear');
+            //angular.element(document.querySelector('#sucursal-movil')).removeClass('appear');
+        },1200);
+        
+        /**/
+
     }
     var i = 0;
     var cambiarTexto = function(){
