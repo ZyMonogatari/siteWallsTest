@@ -1,5 +1,6 @@
 
 <div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
 <div class="sucursales-cabecera">
   <div class="sucursales-cabecera-titulos" id="texto1">
@@ -164,9 +165,9 @@
      
       <div class="acordeon-contain">
 
-        <div class="sucursales-map-bar">
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(1)">
           <div class="sucursales-plus-button">
-            <h1 ng-click="mostrarSucursalMovil(1)">+</h1>
+            <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
             <h1 class="text-center">SUCURSALES</h1>
@@ -197,9 +198,9 @@
       </div>
 
       <div class="acordeon-contain">
-        <div class="sucursales-map-bar">
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(2)">
           <div class="sucursales-plus-button">
-            <h1 ng-click="mostrarSucursalMovil(2)">+</h1>
+            <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
             <h1 class="text-center">SUCURSALES</h1>
@@ -229,9 +230,9 @@
       </div>
 
       <div class="acordeon-contain">
-        <div class="sucursales-map-bar">
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(3)">
           <div class="sucursales-plus-button">
-            <h1 ng-click="mostrarSucursalMovil(3)">+</h1>
+            <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
             <h1 class="text-center">SUCURSALES</h1>
