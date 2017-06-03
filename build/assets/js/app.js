@@ -411,13 +411,15 @@ angular.module('application').controller('sucursalesCtrl',
     sucursalesSeccion3.columna2.cdMx = sucursales.cdMx.cdMx;
     sucursalesSeccion3.columna2.edoMx = sucursales.cdMx.edoMx;
     sucursalesSeccion3.columna2.guadalajara = sucursales.guadalajara.guadalajara
-    if(screen.width <= 1024){
-        $scope.sucursales = sucursalesSeccion3;
-    }
-    else
-    {
-        $scope.sucursales = sucursales.cancun;
-    }
+    $scope.sucursalesSeccion1 = sucursalesSeccion1;
+    $scope.sucursalesSeccion2 = sucursalesSeccion2;
+    $scope.sucursalesSeccion3 = sucursalesSeccion3;
+    $scope.seccion1Show = 'none';
+    $scope.seccion2Show = 'none';
+    $scope.seccion3Show = 'inithial';
+
+    $scope.sucursales = sucursales.cancun;
+    
     
     $scope.cambiarSucursalDesktop = function(e, key){
         NgMap.getMap().then(function(map) {
@@ -427,30 +429,41 @@ angular.module('application').controller('sucursalesCtrl',
         });
         $timeout(function(){
             $scope.sucursales = sucursales[key];
-        },1300);
+        },1200);
     }
-    $scope.cambiarSucursalMovil = function(table){
-        angular.element(document.querySelector('#sucursal-movil')).addClass('disappear');
-        $timeout(function(){
+    $scope.mostrarSucursalMovil = function(table){
+        //angular.element(document.querySelector('#sucursal-movil')).addClass('disappear');
+        //$timeout(function(){ 
             if(table == 1){
-            $scope.sucursales = sucursalesSeccion1
+                $scope.seccion1Show = 'inithial';
             }
             if(table == 2){
-                $scope.sucursales = sucursalesSeccion2
+                $scope.seccion2Show = 'inithial';
             }
             if(table == 3){
-                $scope.sucursales = sucursalesSeccion3
+                $scope.seccion3Show = 'inithial';
             }
-            if(table == 0){
-                $scope.sucursales = {};
-            }
-            angular.element(document.querySelector('#sucursal-movil')).removeClass('disappear');
-            angular.element(document.querySelector('#sucursal-movil')).addClass('appear');
+            //angular.element(document.querySelector('#sucursal-movil')).removeClass('disappear');
+            //angular.element(document.querySelector('#sucursal-movil')).addClass('appear');
             //angular.element(document.querySelector('#sucursal-movil')).removeClass('appear');
-        },1200);
-        
-        /**/
-
+        //},1200);
+    }
+    $scope.cerrarSucursalMovil = function(table){
+        //angular.element(document.querySelector('#sucursal-movil')).addClass('disappear');
+        //$timeout(function(){ 
+            if(table == 1){
+                $scope.seccion1Show = 'none';
+            }
+            if(table == 2){
+                $scope.seccion2Show = 'none';
+            }
+            if(table == 3){
+                $scope.seccion3Show = 'none';
+            }
+            //angular.element(document.querySelector('#sucursal-movil')).removeClass('disappear');
+            //angular.element(document.querySelector('#sucursal-movil')).addClass('appear');
+            //angular.element(document.querySelector('#sucursal-movil')).removeClass('appear');
+        //},1200);
     }
     var i = 0;
     var cambiarTexto = function(){

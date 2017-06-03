@@ -9067,6 +9067,12 @@ body {
   to {
     opacity: 0; } }
 
+/* Standard syntax */
+@keyframes to-white {
+  from { }
+  to {
+    background: rgba(255, 255, 255, 0.9); } }
+
 .slide-left-to-right {
   -webkit-animation-name: slide-left-to-right;
   /* Safari 4.0 - 8.0 */
@@ -9332,21 +9338,22 @@ body {
   margin: auto; }
 
 .sucursales-sucursales-div {
-  position: absolute;
-  top: 260px;
+  position: relative;
   width: 100%;
-  height: 100%; }
+  height: 800px; }
 
 .sucursal {
-  position: relative;
-  width: 300px;
   height: 250px;
-  top: 0%;
+  width: 95%;
+  margin: auto;
   left: 0;
   right: 0;
-  margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   background: #F6F6F6; }
+
+.acordeon-contain {
+  position: relative;
+  height: initial; }
 
 .sucursales-map-div-columna1 {
   position: absolute;
@@ -9463,6 +9470,10 @@ body {
     left: -40%; } }
 
 @media only screen and (max-width: 414px) {
+  .sucursal {
+    height: 190px; }
+  .sucursales-sucursales-div {
+    height: 600px; }
   .sucursales-cuerpo2-div-diagonal {
     width: 200%;
     left: -55%; }
@@ -9481,11 +9492,6 @@ body {
     height: 50px; }
   .sucursales-cuerpo-mapa-movil {
     width: 100%; }
-  .sucursales-sucursales-div {
-    top: 200px; }
-  .sucursal {
-    width: 95%;
-    height: 180px; }
   .sucursales-cuerpo3-div {
     top: 400px;
     height: 500px; }
