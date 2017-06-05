@@ -36,6 +36,16 @@
 
 angular.module('application').controller('homeCtrl',
   ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
+
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
     /*NgMap.getMap().then(function(map) {
       console.log(map.getCenter());
@@ -109,11 +119,14 @@ angular.module('application').controller('homeCtrl',
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
           $scope.$apply();
         }
     if(window.scrollY <= 50){
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+        angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
         $scope.cabecera.top = '6%';
         $scope.cabecera.fontColor = 'white';
         $scope.cabecera.source = '/assets/img/logo.png';
@@ -140,6 +153,16 @@ angular.module('application').controller('homeCtrl',
 
 angular.module('application').controller('serviciosCtrl',
   ['$scope', '$window', '$state', function($scope, $window, $state){
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
+
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $scope.go = function(){
         
         $state.go('home').then(function(){
@@ -217,11 +240,15 @@ angular.module('application').controller('serviciosCtrl',
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
           $scope.$apply();
         }
         if(window.scrollY <= 50){
           $scope.cabecera.position = 'absolute';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
+            
           $scope.cabecera.top = '6%';
           $scope.cabecera.fontColor = 'white';
           $scope.cabecera.source = '/assets/img/logo.png';
@@ -244,7 +271,7 @@ angular.module('application').controller('sucursalesCtrl',
     $scope.cabecera = {};
     var displayMenu = 'none';
     $scope.displayMenu = displayMenu ;
-    $scope.cabecera.source = '/assets/img/logo.png';
+    $scope.cabecera.source = './assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
     angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
     angular.element(document.querySelector('#texto1-movil')).addClass('appear');
