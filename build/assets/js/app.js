@@ -242,6 +242,8 @@ angular.module('application').controller('serviciosCtrl',
 angular.module('application').controller('sucursalesCtrl',
   ['$scope', '$window', 'NgMap', '$interval', '$timeout', function($scope, $window, NgMap, $interval, $timeout){
     $scope.cabecera = {};
+    var displayMenu = 'none';
+    $scope.displayMenu = displayMenu ;
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
     angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
@@ -420,7 +422,16 @@ angular.module('application').controller('sucursalesCtrl',
 
     $scope.sucursales = sucursales.cancun;
     
-    
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
+
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $scope.cambiarSucursalDesktop = function(e, key){
         NgMap.getMap().then(function(map) {
             for (var i in map.customMarkers) {
@@ -512,11 +523,15 @@ angular.module('application').controller('sucursalesCtrl',
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
+
           $scope.$apply();
         }
         if(window.scrollY <= 50){
           $scope.cabecera.position = 'absolute';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
           $scope.cabecera.top = '6%';
           $scope.cabecera.fontColor = 'white';
           $scope.cabecera.source = '/assets/img/logo.png';
