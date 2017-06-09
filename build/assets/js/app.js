@@ -34,6 +34,71 @@
 
 })();
 
+angular.module('application').controller('galeriaCtrl',
+  ['$scope', '$window', function($scope, $window){
+    $scope.cabecera = {};
+    $scope.cabecera.source = './assets/img/logo.png';
+    $scope.cabecera.position = 'absolute';
+    $scope.actualBody = 1;
+    $scope.gallery = [
+      '/assets/img/prueba/1.jpg',
+      '/assets/img/prueba/2.jpg',
+      '/assets/img/prueba/3.jpg',
+      '/assets/img/prueba/4.jpg',
+      '/assets/img/prueba/5.jpg',
+      '/assets/img/prueba/6.jpg',
+      '/assets/img/prueba/7.jpg',
+      '/assets/img/prueba/8.jpg',
+      '/assets/img/prueba/9.jpg',
+      '/assets/img/prueba/10.jpg'
+    ];
+
+    $window.onscroll = function(event){
+    
+    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
+          $scope.cabecera.position = 'fixed';
+          $scope.cabecera.top = '0px';
+          $scope.cabecera.fontColor = 'black';
+          $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+            angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
+          $scope.$apply();
+        }
+    if(window.scrollY <= 50){
+        $scope.cabecera.position = 'absolute';
+        angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+        angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
+        $scope.cabecera.top = '6%';
+        $scope.cabecera.fontColor = 'white';
+        $scope.cabecera.source = '/assets/img/logo.png';
+        $scope.$apply();
+      }
+    if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0){
+      $scope.actualBody = 2;
+      $scope.$apply();
+    } /*else if(window.scrollY <= (body1Height/2)){
+      $scope.actualBody = 0;
+      $scope.$apply();
+    }*/
+    if((document.getElementById('cuerpo2').getBoundingClientRect().top -100)  <= 0){
+      console.log("aqui")
+      $scope.actualBody = 3;
+      $scope.$apply();
+    }/*
+    if(window.scrollY >= cuerpo2top){
+      $scope.actualBody = 2;
+      console.log('cuerpo2');
+      $scope.$apply();
+    }
+    else if(window.scrollY <= (cuerpo2top) & window.scrollY >= (body1Height/2) ){
+      $scope.actualBody = 1;
+      $scope.$apply();
+    }*/
+   }
+}]);
+
 angular.module('application').controller('homeCtrl',
   ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
     $scope.mostrarMenu = function (){

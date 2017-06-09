@@ -1,0 +1,122 @@
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+
+<div class="galeria-fondo1" ng-show="actualBody == 1">
+	<img src="/assets/img/sello-galeria-min.png" class="sello-galeria">
+</div>
+
+<div class="galeria-fondo2" ng-show="actualBody == 2">
+	<div class="galeria-fondo2-titulos">
+		<h5 class="whiteFont">
+			SOMOS UNA EMPRESA JOVEN CON GRAN ESPÍRITU DE SUPERACIÓN 
+			BUSCAMOS LOGRAR OBTENER LA PREFERENCIA DE NUESTROS CLIENTES.
+		</h5>
+	</div>
+</div>
+
+<div class="galeria-fondo3" ng-show="actualBody == 3">
+	<div class="galeria-fondo3-titulos1">	
+		<h1 class="whiteFont">
+			VIDEOS
+		</h1>
+	</div>
+	<div class="galeria-videos-grid">
+		<div class="galeria-videos-col">
+			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
+			</iframe>
+			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
+			</iframe>
+			
+			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+		<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video" frameborder="0" allowfullscreen>
+		</iframe>
+	</div>
+	<div class="galeria-fondo3-titulos2">
+		<h5 class="whiteFont">
+			Somos apasionados en lo que hacemos, buscamos crear experiencias que satisfagan las necesidades de nuestros clientes, ofreciendo nuestro mejor servicio, la preparación para un afeitado prefecto. Trabajamos para quienes tienen mucha personalidad, eso nos motiva aún más a hacerlo bien. Queremos conservar la fidelidad de quienes confían en nosotros, estableciendo con ellos relaciones personales y comerciales para llegar así a ser líderes en este campo
+		</h5>
+		<h6 class="whiteFont"><strong>Pase y tome asiento!!!</strong></h6>
+	</div>
+</div>
+<div class="galeria-cuerpo-absolute">
+	<div class="galeria-diagonal diagonal-izquierda"></div>
+	<div class="galeria-diagonal diagonal-derecha"></div>
+	<div class="galeria-cuerpo1" id="cuerpo1">
+		<div class="galeria-cuerpo1-titulos">
+				<h1>
+					MAS
+				</h1>
+				<h1>
+					QUE
+				</h1>
+				<h1>
+					UN
+				</h1>
+				<h1>
+					CORTE
+				</h1>
+				<br>
+				<h1>
+					CREAMOS
+				</h1>
+				<h1>
+					UN
+				</h1>
+				<h1>
+					ESTILO
+				</h1>
+		</div>
+		<div class="gallery grid-block small-up-3">
+			<div zf-open="basicModal" class="grid-container" ng-repeat="imagen in gallery">
+				<img src="{{imagen}}">
+			</div>
+		</div>
+	</div>
+
+	<div class="galeria-cuerpo2" id="cuerpo2">
+		<div class="galeria-cuerpo2-diagonal"></div>
+		<div class="galeria-cuerpo2-titulos-1">
+			<h5>
+				Satisfacer las necesidades de nuestros clientes ofreciendo nuestro mejor servicio y asi conservar la fidelidad de nuestros clientes, estableciendo con ellos relaciones comerciales mutuamente benéficas para llegar a ser lideres en este campo.
+			</h5>
+			<div class="galeria-image-circular-margin" >
+        		<img width="100" src="./assets/img/prueba/6.jpg" class="galeria-image-circular-img">
+        	</div>
+		</div>
+		<div class="galeria-cuerpo2-content">
+			<img src="./assets/img/prueba/7.jpg" class="galeria-cuerpo2-content-img">
+			<div class="galeria-cuerpo2-content-titulos">
+				<h6>
+					La mayoría de las personas que acude a Wall's Barbershop son hombres de entre 14 y 32 años o aún mayores desde 45 años hasta 65, estos serían nuestros potenciales clientes, para esto debemos tener una oferta para cada tipo de edad, esto es segmentar el mercado. Con nivel económico medio y medio alto. Los más jóvenes tambien son potenciales consumidores   
+				</h6>
+			</div>
+		</div>
+	</div>
+
+	<div class="galeria-cuerpo3">
+		<div class="sucursales-cuerpo3-div-diagonal"></div>
+	    <div class="galeria-cuerpo3-div">
+	      <div class="footer-servicios-titulos">
+	        <h1 class="text-center gray-text">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+	        <h2 class="text-center gray-text">¡CONTÁCTANOS!</h2>
+	        <h3 class="text-center gray-text"> LIC. AARON ALVARADO </h3>
+	        <h3 class="text-center gray-text"> TEL: 044 9981 45 96 50 </h3>
+	        <h3 class="text-center gray-text"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+	        <div class="leer-mas-servicios">
+	          <h6 class="whiteFont">
+	            <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+	            Leer más
+	          </h6>
+	        </div>
+	      </div>
+	      
+	    </div>
+	    <div class="footer-servicios-brand">
+	      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+	    </div>
+	  </div>
+	</div>
+</div>

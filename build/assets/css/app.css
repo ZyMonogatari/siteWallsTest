@@ -9583,3 +9583,227 @@ body {
   .sucursales-div-circular {
     width: 220px;
     height: 220px; } }
+
+.galeria-fondo1 {
+  position: fixed;
+  width: 100%;
+  height: 889px;
+  background-image: url(/assets/img/bg-rostros-min.jpg);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.galeria-fondo2 {
+  position: fixed;
+  width: 100%;
+  height: 272px;
+  background-image: url(/assets/img/fondo-galeria-de-fotos-min.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%; }
+
+.galeria-cuerpo-absolute {
+  position: absolute;
+  top: 650px;
+  width: 100%;
+  height: 2024px; }
+
+.galeria-diagonal {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 720px;
+  top: -300px; }
+
+.diagonal-izquierda {
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(44deg);
+  left: -500px; }
+
+.diagonal-derecha {
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(-44deg);
+  right: -500px; }
+
+.sello-galeria {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 300px; }
+
+.galeria-cuerpo1 {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  height: 800px;
+  background: white; }
+
+.gallery {
+  width: 40%;
+  height: 1200px;
+  background: white;
+  left: 35%;
+  z-index: 1; }
+
+.galeria-cuerpo1-titulos {
+  position: absolute;
+  left: 0px;
+  width: 30%;
+  height: 100%;
+  text-align: right;
+  top: 200px; }
+
+.galeria-cuerpo2 {
+  position: absolute;
+  height: 600px;
+  background: white;
+  width: 100%;
+  top: 1100px; }
+
+.galeria-fondo2-titulos {
+  position: absolute;
+  width: 20%;
+  left: 10%; }
+
+.galeria-cuerpo2-titulos-1 {
+  position: absolute;
+  left: 10%;
+  width: 20%;
+  height: 300px;
+  text-align: right;
+  top: 50px; }
+
+.galeria-image-circular-margin {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #D3D1D1;
+  border-radius: 100px; }
+
+.galeria-image-circular-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 120px; }
+
+.galeria-cuerpo2-content {
+  position: absolute;
+  width: 60%;
+  height: 400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 580px; }
+
+.galeria-cuerpo2-content-img {
+  position: absolute;
+  width: 60%;
+  height: 300px; }
+
+.galeria-cuerpo2-content-titulos {
+  position: absolute;
+  width: 30%;
+  left: 63%;
+  top: 50px; }
+
+.galeria-cuerpo2-diagonal {
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(15deg);
+  position: absolute;
+  background: white;
+  width: 120%;
+  height: 500px;
+  top: 400px; }
+
+.galeria-fondo3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/fondo-galeria-de-videos-min.png);
+  background-size: contain;
+  background-position: 100% 30%;
+  background-repeat: no-repeat; }
+
+.galeria-cuerpo3 {
+  position: absolute;
+  top: 3500px;
+  width: 100%;
+  height: 1000px; }
+
+.galeria-cuerpo3-div {
+  background-image: url(/assets/img/fondo-pie-degradado.png);
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  top: 300px; }
+
+.sucursales-cuerpo3-div-diagonal {
+  position: absolute;
+  width: 120%;
+  left: -20%;
+  height: 700px;
+  top: -10%;
+  background: white;
+  /* IE 9 */
+  /* Chrome, Safari, Opera */
+  transform: rotate(23deg);
+  z-index: 0; }
+
+.galeria-fondo3-titulos1 {
+  position: absolute;
+  left: 15%;
+  width: 20%;
+  height: 20%;
+  top: 200px; }
+
+.galeria-videos-grid {
+  position: absolute;
+  top: 300px;
+  width: 60%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 450px; }
+
+.galeria-videos-col {
+  position: absolute;
+  width: 30%;
+  height: 100%; }
+
+.galeria-video-item {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: 30px;
+  margin-top: 10px;
+  width: 80%;
+  height: 30%; }
+
+.galeria-video {
+  position: absolute;
+  left: 30%;
+  width: 60%;
+  height: 400px;
+  top: 50px; }
+
+.galeria-fondo3-titulos2 {
+  position: absolute;
+  right: 10%;
+  width: 50%;
+  height: 300px;
+  top: 800px;
+  text-align: right;
+  font-size: 20%; }
