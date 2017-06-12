@@ -1,3 +1,7 @@
+<div zf-modal="" id="basicModal" >
+<a zf-close="" class="close-button">×</a>
+	<img src="{{actualImage}}">
+</div>
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
@@ -8,7 +12,7 @@
 
 <div class="galeria-fondo2" ng-show="actualBody == 2">
 	<div class="galeria-fondo2-titulos">
-		<h5 class="whiteFont">
+		<h5 class="whiteFont galeria-fondo2-titulos-text">
 			SOMOS UNA EMPRESA JOVEN CON GRAN ESPÍRITU DE SUPERACIÓN 
 			BUSCAMOS LOGRAR OBTENER LA PREFERENCIA DE NUESTROS CLIENTES.
 		</h5>
@@ -35,10 +39,10 @@
 		</iframe>
 	</div>
 	<div class="galeria-fondo3-titulos2">
-		<h5 class="whiteFont">
+		<h5 class="whiteFont font-13px">
 			Somos apasionados en lo que hacemos, buscamos crear experiencias que satisfagan las necesidades de nuestros clientes, ofreciendo nuestro mejor servicio, la preparación para un afeitado prefecto. Trabajamos para quienes tienen mucha personalidad, eso nos motiva aún más a hacerlo bien. Queremos conservar la fidelidad de quienes confían en nosotros, estableciendo con ellos relaciones personales y comerciales para llegar así a ser líderes en este campo
 		</h5>
-		<h6 class="whiteFont"><strong>Pase y tome asiento!!!</strong></h6>
+		<h6 class="whiteFont font-13px"><strong>Pase y tome asiento!!!</strong></h6>
 	</div>
 </div>
 <div class="galeria-cuerpo-absolute">
@@ -70,8 +74,20 @@
 				</h1>
 		</div>
 		<div class="gallery grid-block small-up-3">
-			<div zf-open="basicModal" class="grid-container" ng-repeat="imagen in gallery">
-				<img src="{{imagen}}">
+			<div>
+				<div zf-open="basicModal" ng-repeat="img in gallery.col1" ng-click="openModal(img)" class="galleryBox">
+					<img src="{{img}}" class="galleryItem">
+				</div>
+			</div>
+			<div>
+				<div zf-open="basicModal" ng-repeat="img in gallery.col2" ng-click="openModal(img)" class="galleryBox">
+					<img src="{{img}}" class="galleryItem">
+				</div>
+			</div>
+			<div>
+				<div zf-open="basicModal" ng-repeat="img in gallery.col3" ng-click="openModal(img)" class="galleryBox">
+					<img src="{{img}}" class="galleryItem">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -79,15 +95,15 @@
 	<div class="galeria-cuerpo2" id="cuerpo2">
 		<div class="galeria-cuerpo2-diagonal"></div>
 		<div class="galeria-cuerpo2-titulos-1">
-			<h5>
+			<h5 class="galeria-cuerpo2-titulos-1-text">
 				Satisfacer las necesidades de nuestros clientes ofreciendo nuestro mejor servicio y asi conservar la fidelidad de nuestros clientes, estableciendo con ellos relaciones comerciales mutuamente benéficas para llegar a ser lideres en este campo.
 			</h5>
 			<div class="galeria-image-circular-margin" >
-        		<img width="100" src="./assets/img/prueba/6.jpg" class="galeria-image-circular-img">
+        		<img width="100" src="./assets/img/galeria/22.jpg" class="galeria-image-circular-img">
         	</div>
 		</div>
 		<div class="galeria-cuerpo2-content">
-			<img src="./assets/img/prueba/7.jpg" class="galeria-cuerpo2-content-img">
+			<img src="./assets/img/galeria/25.jpg" class="galeria-cuerpo2-content-img">
 			<div class="galeria-cuerpo2-content-titulos">
 				<h6>
 					La mayoría de las personas que acude a Wall's Barbershop son hombres de entre 14 y 32 años o aún mayores desde 45 años hasta 65, estos serían nuestros potenciales clientes, para esto debemos tener una oferta para cada tipo de edad, esto es segmentar el mercado. Con nivel económico medio y medio alto. Los más jóvenes tambien son potenciales consumidores   

@@ -35,23 +35,39 @@
 })();
 
 angular.module('application').controller('galeriaCtrl',
-  ['$scope', '$window', function($scope, $window){
+  ['$scope', '$window', 'FoundationApi', function($scope, $window, FoundationApi){
     $scope.cabecera = {};
     $scope.cabecera.source = './assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
     $scope.actualBody = 1;
-    $scope.gallery = [
-      '/assets/img/prueba/1.jpg',
-      '/assets/img/prueba/2.jpg',
-      '/assets/img/prueba/3.jpg',
-      '/assets/img/prueba/4.jpg',
-      '/assets/img/prueba/5.jpg',
-      '/assets/img/prueba/6.jpg',
-      '/assets/img/prueba/7.jpg',
-      '/assets/img/prueba/8.jpg',
-      '/assets/img/prueba/9.jpg',
-      '/assets/img/prueba/10.jpg'
-    ];
+    $scope.gallery = {
+      col1: [
+        '/assets/img/galeria/1.jpg',
+        '/assets/img/galeria/3.jpg',
+        '/assets/img/galeria/9.jpg',
+        '/assets/img/galeria/2.jpg',
+        '/assets/img/galeria/4.jpg',
+      ],
+      col2: [
+        '/assets/img/galeria/7.jpg',
+        '/assets/img/galeria/6.jpg',
+        '/assets/img/galeria/13.jpg',
+        '/assets/img/galeria/5.jpg',
+        '/assets/img/galeria/8.jpg',
+      ],
+      col3: [
+        '/assets/img/galeria/20.jpg',
+        '/assets/img/galeria/21.jpg', 
+        '/assets/img/galeria/12.jpg',
+        '/assets/img/galeria/24.jpg',
+        '/assets/img/galeria/10.jpg'        
+      ]
+    };
+    $scope.openModal = function(image){
+      $scope.actualImage = image;
+    }
+      
+      
 
     $window.onscroll = function(event){
     
