@@ -2,6 +2,7 @@
 <a zf-close="" class="close-button">×</a>
 	<img src="{{actualImage}}">
 </div>
+
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
@@ -27,15 +28,13 @@
 	</div>
 	<div class="galeria-videos-grid">
 		<div class="galeria-videos-col">
-			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
-			</iframe>
-			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
-			</iframe>
-			
-			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video-item" frameborder="0" allowfullscreen>
-			</iframe>
+			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg"
+			ng-click = "changeVideo('XHERW5GT_Tk')" class="galeria-video-item">
+			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg"
+			ng-click = "changeVideo('ouK2RK8ahEc')" class="galeria-video-item">
+			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg" class="galeria-video-item">
 		</div>
-		<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="galeria-video" frameborder="0" allowfullscreen>
+		<iframe class="galeria-video" ng-src="{{actualVideo}}" frameborder="0" allowfullscreen>
 		</iframe>
 	</div>
 	<div class="galeria-fondo3-titulos2">
@@ -50,26 +49,26 @@
 	<div class="galeria-diagonal diagonal-derecha"></div>
 	<div class="galeria-cuerpo1" id="cuerpo1">
 		<div class="galeria-cuerpo1-titulos">
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					MAS
 				</h1>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					QUE
 				</h1>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					UN
 				</h1>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					CORTE
 				</h1>
 				<br>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					CREAMOS
 				</h1>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					UN
 				</h1>
-				<h1>
+				<h1 class="galeria-cuerpo1-titulos-text">
 					ESTILO
 				</h1>
 		</div>
@@ -105,7 +104,7 @@
 		<div class="galeria-cuerpo2-content">
 			<img src="./assets/img/galeria/25.jpg" class="galeria-cuerpo2-content-img">
 			<div class="galeria-cuerpo2-content-titulos">
-				<h6>
+				<h6 class="galeria-cuerpo2-content-titulos-text">
 					La mayoría de las personas que acude a Wall's Barbershop son hombres de entre 14 y 32 años o aún mayores desde 45 años hasta 65, estos serían nuestros potenciales clientes, para esto debemos tener una oferta para cada tipo de edad, esto es segmentar el mercado. Con nivel económico medio y medio alto. Los más jóvenes tambien son potenciales consumidores   
 				</h6>
 			</div>

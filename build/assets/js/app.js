@@ -34,18 +34,99 @@
 
 })();
 
-angular.module('application').controller('galeriaCtrl',
-  ['$scope', '$window', 'FoundationApi', function($scope, $window, FoundationApi){
+angular.module('application').controller('franquiciasCtrl',
+  ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
+
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $scope.cabecera = {};
-    $scope.cabecera.source = './assets/img/logo.png';
+    $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
+    angular.element(document.querySelector('#bounceIn')).addClass('bounceIn2s');
+    angular.element(document.querySelector('#bounceIn-button')).addClass('bounceIn3s');
+    
+   $window.onscroll = function(event){
+    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
+          $scope.cabecera.position = 'fixed';
+          $scope.cabecera.top = '0px';
+          $scope.cabecera.fontColor = 'black';
+          $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+            angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
+          $scope.$apply();
+        }
+    if(window.scrollY <= 50){
+        $scope.cabecera.position = 'absolute';
+        angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+        angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
+        $scope.cabecera.top = '6%';
+        $scope.cabecera.fontColor = 'white';
+        $scope.cabecera.source = '/assets/img/logo.png';
+        $scope.$apply();
+      }
+    if((document.getElementById('fadeInLeft-logo').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#fadeInLeft-logo')).addClass('fadeInLeft1s');
+    }
+    if((document.getElementById('fadeIn-text').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#fadeIn-text')).addClass('fadeInLeft1s');
+    }
+    if((document.getElementById('single1').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#single1')).addClass('fadeInUp1s');
+    }
+    if((document.getElementById('single2').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#single2')).addClass('fadeInUp1s');
+    }
+    if((document.getElementById('single3').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#single3')).addClass('fadeInUp1s');
+    }
+    if((document.getElementById('fadeInLeftBig-title').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#fadeInLeftBig-title')).addClass('fadeInLeftBig2s');
+    }
+    if((document.getElementById('fadeInLeft-text').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#fadeInLeft-text')).addClass('fadeInLeft1s');
+    }
+    if((document.getElementById('single2').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#single2')).addClass('fadeInUp1s');
+    }
+    if((document.getElementById('single-area2').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#single-area2')).addClass('fadeInUp1s');
+    }
+    if((document.getElementById('info-bounce').getBoundingClientRect().top + 300) <= screen.height){
+        angular.element(document.querySelector('#info-bounce')).addClass('bounceIn1s');
+    }    
+   }
+}]);
+
+angular.module('application').controller('galeriaCtrl',
+  ['$scope', '$window', 'FoundationApi', '$sce', function($scope, $window, FoundationApi, $sce){
+    $scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+    $scope.cabecera.position = 'absolute';
+    $scope.cabecera.fontColor = 'black';
     $scope.actualBody = 1;
+    $scope.actualVideo = $sce.trustAsResourceUrl(
+     'https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0');
+    $scope.changeVideo =  function(videoId){
+      console.log(videoId);
+      $scope.actualVideo = $sce.trustAsResourceUrl(
+     'https://www.youtube.com/embed/' + videoId + '?modestbranding=1&autohide=1&showinfo=0');
+    
+    }
     $scope.gallery = {
       col1: [
         '/assets/img/galeria/1.jpg',
         '/assets/img/galeria/3.jpg',
-        '/assets/img/galeria/9.jpg',
         '/assets/img/galeria/2.jpg',
+        '/assets/img/galeria/9.jpg',
         '/assets/img/galeria/4.jpg',
       ],
       col2: [
@@ -68,14 +149,21 @@ angular.module('application').controller('galeriaCtrl',
     }
       
       
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
 
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $window.onscroll = function(event){
     
     if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
-          $scope.cabecera.fontColor = 'black';
-          $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
@@ -87,32 +175,26 @@ angular.module('application').controller('galeriaCtrl',
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
         $scope.cabecera.top = '6%';
-        $scope.cabecera.fontColor = 'white';
-        $scope.cabecera.source = '/assets/img/logo.png';
         $scope.$apply();
       }
     if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0){
       $scope.actualBody = 2;
       $scope.$apply();
-    } /*else if(window.scrollY <= (body1Height/2)){
-      $scope.actualBody = 0;
+    } else if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  >= 0){
+      $scope.actualBody = 1;
       $scope.$apply();
-    }*/
+    }
     if((document.getElementById('cuerpo2').getBoundingClientRect().top -100)  <= 0){
       console.log("aqui")
       $scope.actualBody = 3;
       $scope.$apply();
-    }/*
-    if(window.scrollY >= cuerpo2top){
-      $scope.actualBody = 2;
-      console.log('cuerpo2');
-      $scope.$apply();
     }
-    else if(window.scrollY <= (cuerpo2top) & window.scrollY >= (body1Height/2) ){
-      $scope.actualBody = 1;
-      $scope.$apply();
-    }*/
-   }
+    for(var i = 0; i < document.getElementsByClassName('galleryBox').length; i++){
+      if((document.getElementsByClassName('galleryBox')[i].getBoundingClientRect().top + 50) <= screen.height){
+          angular.element(document.getElementsByClassName('galleryBox')[i]).addClass('appear');
+      }
+    }
+  }
 }]);
 
 angular.module('application').controller('homeCtrl',
