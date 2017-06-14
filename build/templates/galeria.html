@@ -28,11 +28,12 @@
 	</div>
 	<div class="galeria-videos-grid">
 		<div class="galeria-videos-col">
-			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg"
-			ng-click = "changeVideo('XHERW5GT_Tk')" class="galeria-video-item">
-			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg"
-			ng-click = "changeVideo('ouK2RK8ahEc')" class="galeria-video-item">
-			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg" class="galeria-video-item">
+			<img src="http://img.youtube.com/vi/GCSO2HcQBDs/hqdefault.jpg"
+			ng-click = "changeVideo('GCSO2HcQBDs')" class="galeria-video-item">
+			<img src="http://img.youtube.com/vi/UqTm41bPAIc/hqdefault.jpg"
+			ng-click = "changeVideo('UqTm41bPAIc')" class="galeria-video-item">
+			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg" class="galeria-video-item"
+			ng-click = "changeVideo('yGQljG8kJvo')">
 		</div>
 		<iframe class="galeria-video" ng-src="{{actualVideo}}" frameborder="0" allowfullscreen>
 		</iframe>
@@ -75,16 +76,20 @@
 		<div class="gallery grid-block small-up-3">
 			<div>
 				<div zf-open="basicModal" ng-repeat="img in gallery.col1" ng-click="openModal(img)" class="galleryBox">
+					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
+
 				</div>
 			</div>
 			<div>
 				<div zf-open="basicModal" ng-repeat="img in gallery.col2" ng-click="openModal(img)" class="galleryBox">
+					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
 				</div>
 			</div>
 			<div>
 				<div zf-open="basicModal" ng-repeat="img in gallery.col3" ng-click="openModal(img)" class="galleryBox">
+					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
 				</div>
 			</div>

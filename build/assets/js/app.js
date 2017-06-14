@@ -35,7 +35,7 @@
 })();
 
 angular.module('application').controller('franquiciasCtrl',
-  ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
+  ['$scope', '$window', 'NgMap', '$state', function($scope, $window, NgMap, $state){
     $scope.mostrarMenu = function (){
             console.log($scope.displayMenu);
 
@@ -46,9 +46,19 @@ angular.module('application').controller('franquiciasCtrl',
             $scope.displayMenu = 'initial';
         }
     }
+    $scope.go = function(state){
+        $state.go(state).then(function(){
+           window.location.reload(true); 
+        });
+    }
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
+    $scope.logoTransform = '';
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.cabecera.fontColor = 'white';
+    $scope.iconColor = 'white';
     angular.element(document.querySelector('#bounceIn')).addClass('bounceIn2s');
     angular.element(document.querySelector('#bounceIn-button')).addClass('bounceIn3s');
     
@@ -56,7 +66,9 @@ angular.module('application').controller('franquiciasCtrl',
     if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
           $scope.cabecera.fontColor = 'black';
+          $scope.iconColor = '#333';
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
@@ -69,7 +81,9 @@ angular.module('application').controller('franquiciasCtrl',
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
         $scope.cabecera.top = '6%';
+        $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
+        $scope.iconColor = 'white';
         $scope.cabecera.source = '/assets/img/logo.png';
         $scope.$apply();
       }
@@ -107,12 +121,20 @@ angular.module('application').controller('franquiciasCtrl',
 }]);
 
 angular.module('application').controller('galeriaCtrl',
-  ['$scope', '$window', 'FoundationApi', '$sce', function($scope, $window, FoundationApi, $sce){
+  ['$scope', '$window', 'FoundationApi', '$sce', '$state', function($scope, $window, FoundationApi, $sce, $state){
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
     $scope.cabecera.position = 'absolute';
     $scope.cabecera.fontColor = 'black';
     $scope.actualBody = 1;
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.iconColor = '#333';
+    $scope.go = function(state){
+        $state.go(state).then(function(){
+           window.location.reload(true); 
+        });
+    }
     $scope.actualVideo = $sce.trustAsResourceUrl(
      'https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0');
     $scope.changeVideo =  function(videoId){
@@ -163,6 +185,7 @@ angular.module('application').controller('galeriaCtrl',
     
     if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
           $scope.cabecera.top = '0px';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
@@ -175,6 +198,7 @@ angular.module('application').controller('galeriaCtrl',
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
         $scope.cabecera.top = '6%';
+        $scope.logoTransform = 'scale(1, 1)';
         $scope.$apply();
       }
     if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0){
@@ -198,9 +222,8 @@ angular.module('application').controller('galeriaCtrl',
 }]);
 
 angular.module('application').controller('homeCtrl',
-  ['$scope', '$window', 'NgMap', function($scope, $window, NgMap){
+  ['$scope', '$window', 'NgMap', '$state', function($scope, $window, NgMap, $state){
     $scope.mostrarMenu = function (){
-            console.log($scope.displayMenu);
 
         if($scope.displayMenu == 'initial'){
             $scope.displayMenu = 'none';
@@ -209,6 +232,19 @@ angular.module('application').controller('homeCtrl',
             $scope.displayMenu = 'initial';
         }
     }
+    $scope.goMap = function(e, state){
+      $state.go(state).then(function(){
+           window.location.reload(true); 
+        });
+    }
+    $scope.go = function(state){
+        $state.go(state).then(function(){
+           window.location.reload(true); 
+        });
+    }
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
     /*NgMap.getMap().then(function(map) {
       console.log(map.getCenter());
@@ -218,12 +254,15 @@ angular.module('application').controller('homeCtrl',
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
+    $scope.cabecera.fontColor = 'white';
+    $scope.iconColor = 'white';
+
    
-    if(screen.width <= 414){
-      $scope.zoom = 13;
+    if(screen.width <= 768){
+      $scope.zoom = 5;
     }
     else{
-      $scope.zoom = 15;
+      $scope.zoom = 6;
     }
     $scope.navBarBackground = 'red';
     var cuerpo2top = document.getElementById('cuerpo2').getBoundingClientRect().top;
@@ -278,7 +317,9 @@ angular.module('application').controller('homeCtrl',
     if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
           $scope.cabecera.fontColor = 'black';
+          $scope.iconColor = '#333';
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
@@ -291,7 +332,9 @@ angular.module('application').controller('homeCtrl',
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
         $scope.cabecera.top = '6%';
+        $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
+        $scope.iconColor = 'white';
         $scope.cabecera.source = '/assets/img/logo.png';
         $scope.$apply();
       }
@@ -326,12 +369,10 @@ angular.module('application').controller('serviciosCtrl',
             $scope.displayMenu = 'initial';
         }
     }
-    $scope.go = function(){
-        
-        $state.go('home').then(function(){
+    $scope.go = function(state){
+        $state.go(state).then(function(){
            window.location.reload(true); 
         });
-
     }
 	var cuerpoAbsoluteTop;
     var cuerpo1TopInicial = document.getElementById('cuerpo1-servicios').getBoundingClientRect().top;
@@ -342,6 +383,10 @@ angular.module('application').controller('serviciosCtrl',
     $scope.actualBody = 0;
     $scope.cuerpo1 = {};
     $scope.cuerpo1.position = 'absolute';
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.cabecera.fontColor = 'white';
+    $scope.iconColor = 'white';
     $window.onscroll = function(event){
     	//console.log(document.getElementById('foto-fila-1').getBoundingClientRect().bottom + " - " + screen.height);
     	console.log(document.getElementById('cuerpo-absolute').getBoundingClientRect().bottom + " - " + document.getElementById('cuerpo-absolute').getBoundingClientRect().top);
@@ -399,6 +444,8 @@ angular.module('application').controller('serviciosCtrl',
 	    if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
+          $scope.iconColor = '#333';
           $scope.cabecera.fontColor = 'black';
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
@@ -413,7 +460,9 @@ angular.module('application').controller('serviciosCtrl',
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
             
           $scope.cabecera.top = '6%';
+          $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
+          $scope.iconColor = 'white';
           $scope.cabecera.source = '/assets/img/logo.png';
           $scope.$apply();
         }
@@ -430,12 +479,21 @@ angular.module('application').controller('serviciosCtrl',
    }
 }]);
 angular.module('application').controller('sucursalesCtrl',
-  ['$scope', '$window', 'NgMap', '$interval', '$timeout', function($scope, $window, NgMap, $interval, $timeout){
+  ['$scope', '$window', 'NgMap', '$interval', '$timeout', '$state', function($scope, $window, NgMap, $interval, $timeout, $state){
     $scope.cabecera = {};
     var displayMenu = 'none';
     $scope.displayMenu = displayMenu ;
     $scope.cabecera.source = './assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.cabecera.fontColor = 'white';
+    $scope.iconColor = 'white';
+    $scope.go = function(state){
+        $state.go(state).then(function(){
+           window.location.reload(true); 
+        });
+    }
     angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
     angular.element(document.querySelector('#texto1-movil')).addClass('appear');
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
@@ -709,7 +767,9 @@ angular.module('application').controller('sucursalesCtrl',
         if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
           $scope.cabecera.fontColor = 'black';
+          $scope.iconColor = '#333';
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
             angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
@@ -723,7 +783,9 @@ angular.module('application').controller('sucursalesCtrl',
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
           $scope.cabecera.top = '6%';
+          $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
+          $scope.iconColor = 'white';
           $scope.cabecera.source = '/assets/img/logo.png';
           $scope.$apply();
         }
