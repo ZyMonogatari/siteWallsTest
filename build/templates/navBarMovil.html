@@ -1,0 +1,87 @@
+<div class="navBar-movil" ng-style="{'position' : cabecera.position, 'top' : cabecera.top, 'background' : cabecera.background}" id="cabeceraDivMovil">
+		<div class="navBar-movil-image" >
+				<img src="{{cabecera.source}}" class="walls-logo">
+		</div>
+		<div class="grid-block navBar-movil-icon" ng-click="mostrarMenu()">
+			<i class="fa fa-bars fa-4x whiteFont" ng-style="{'color' : cabecera.fontColor}"></i>
+		</div>
+		<div class="grid-block navBar-movil-titulos" ng-style="{'display' : displayMenu}">
+			<div class="grid-block navBar-item" 
+						ng-mouseover="homeBackground = 'rgba(56, 58, 57, .9)'"  
+						ng-mouseleave="homeBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : homeBackground}"
+						ng-click="go('home')"
+						>
+				<a href="/#!/">
+					<h5 class="margin-left-10px Lato-Regular">
+						HOME
+					</h5>
+				</a>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="serviciosBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="serviciosBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : serviciosBackground}"
+						ng-click="go('servicios')"
+						>
+				<a ui-sref="servicios({reload: true})">
+					<h5 class="margin-left-10px Lato-Regular">
+						SERVICIOS
+					</h5>
+				</a>
+			</div>
+			<div class="grid-block navBar-item" 
+						ng-mouseover="sucursalesBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="sucursalesBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : sucursalesBackground}"
+						ng-click="go('sucursales')"
+						>
+				<h5 class="margin-left-10px Lato-Regular">
+					SUCURSALES
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="galeriasBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="galeriasBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : galeriasBackground}"
+						ng-click="go('galeria')"
+						>
+				<h5 class="margin-left-10px Lato-Regular">
+					GALERÍAS
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="nosotrosBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="nosotrosBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : nosotrosBackground}">
+				<h5 class="margin-left-10px Lato-Regular">
+					NOSOTROS
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="cardBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="cardBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : cardBackground}">
+				<h5 class="margin-left-10px Lato-Regular">
+					WALL'S CARD
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="franquiciasBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="franquiciasBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : franquiciasBackground}"
+						ng-click="go('franquicias')">
+				<h5 class="margin-left-10px Lato-Regular">
+					FRANQUICIAS
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="blogBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="blogBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : blogBackground}">
+				<h5 class="margin-left-10px Lato-Regular">
+					BLOG
+				</h5>
+			</div>
+		</div>
+	</div>

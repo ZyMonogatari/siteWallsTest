@@ -1,0 +1,164 @@
+
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
+
+
+<!--Cabecera--> 
+<div ng-if="actualBody == 0" class="cabecera">
+	
+	
+	<div class="titulos-div-cabecera">
+		<h4 class="whiteFont text-center Lato-Regular"> soy un titulo</h4>
+		<h1 class="whiteFont text-center underline Lato-Regular"> Soy un texto</h1>
+	</div>
+	<img src="./assets/img/sello.png" class="white-sello">
+	<div class="leerMas">
+		<h6 class="whiteFont Lato-Regular">
+			<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+			Leer más
+		</h6>
+	</div>
+
+	<div class="angleDiv">
+		<i class="fa fa-angle-down whiteFont fa-4x " aria-hidden="true"></i>
+	</div>
+
+</div>
+
+<!--fondo-fixed-->
+<div ng-show="actualBody == 1" class="fondo-fixed">
+
+	<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="video" frameborder="0" allowfullscreen>
+	</iframe>
+	<div class="grid-block small-up-1" id = "titulos-div-fondo-fixed">
+    <div class="grid-block">
+		<h3 class="whiteFont frase Lato-Italic">"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"</h3>
+    </div>
+    <div class="grid-block">
+    	<img class="firma" src="./assets/img/FirmaOscar.png">
+    </div>
+		
+	</div>
+</div>
+
+
+<!--fondo-footer-->
+<div ng-if="actualBody == 2" class="fondo-footer" >
+
+	<div class="titulos-div-footer">
+		<h1 class="text-center whiteFont Oswald-Bold"> ¿TE INTERESA ADQUIRIR UNA FRANQUICIA? </h1>
+		<h2 class="text-center whiteFont Oswald-Bold"> ¡CONTÁCTANOS! </h2>
+		<h3 class="text-center whiteFont Roboto-Bold"> LIC. AARON ALVARADO </h3>
+		<h3 class="text-center whiteFont Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
+		<h3 class="text-center whiteFont Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+	</div>
+	<div class="leerMasFooter">
+		<h6 class="whiteFont Lato-Regular">
+			<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+			Leer más
+		</h6>
+	</div>
+</div>
+
+<!--cuerpo1-->
+<div  ng-style="{'height': body1Height}" class="cuerpo1" id="cuerpo1">
+	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
+	<div class="cuerpo1-white-div">
+		<img src="./assets/img/bg_cuerpo_1_centro-min.jpg" class="cuerpo1-background">
+		<img src="./assets/img/wCabecera.png" class="cabecera-logo" >
+        
+        <div class="cuerpo1-titulos-div">
+         	<h1 class="walls-titulo Oswald-Bold">
+				WALL'S BARBERSHOP
+			</h1>
+			<h4 class="Lato-Light">Barbería con un ambiente masculino y moderno.</h4>
+			<h4 class="Lato-Light">Ideal para que el hombre que le gusta consentirse.</h4>
+			<h4 class="Lato-Light">Nos gusta dar un excelente servicio al cliente, un trato personalizado y de calidad,</h4>
+			<h4 class="Lato-Light">ofreciendo tanto cortes modernos como tradicionales a tijera. Tratamos ir siempre un paso adelante.</h4>
+        </div>
+
+		<div class="wallsCardLogoDiv">
+			<h6 class="text-center membresia-text Lato-Bold">conoce nuestra membresía</h6>
+			<img src="./assets/img/wallscardcuadro.png" >
+		</div>
+
+		<div class="wallsCardDiv">
+			<img src="./assets/img/wallstarjeta.png">
+			<div class="grid-block sesion">
+				<div class="grid-block">
+					<a class="dark button Lato-Light" href="#">Registrarse</a>
+				</div>
+
+				<div class="grid-block">
+					<a class="dark button Lato-Light" href="#">Iniciar sesión</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom">
+</div>
+<!--cuerpo2-->
+<div  class="cuerpo2" id="cuerpo2">
+	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
+	<div class="cuerpo2-div" >
+		<img src="./assets/img/wCabecera.png" class="cabecera-logo">
+        <div class="cuerpo2-titulos-div">
+        	<h2 class="Lato-Regular">"Más que un corte, creamos un Estilo"</h2>
+        </div>
+	</div>
+	<img src="./assets/img/sello-gris.png" class="sello-gris">
+	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom">
+</div>
+
+<!--cuerpo3-->
+
+<div class="cuerpo3">
+	<div map-lazy-load="https://maps.google.com/maps/api/js" 
+		map-lazy-load-params="{{googleMapsUrl}}">
+  		<ng-map class = "ng-map" default-style="false" center="22.051021, -95.320716"  scrollwheel = "false" zoom="{{zoom}}"
+
+  		styles="[
+  		{stylers:[
+  		{visibility:'simplified'},
+  		{gamma:0.5},
+  		{invert_lightness: true},
+  		{weight:0.5}]},
+  		{featureType:'water', elementType : 'geometry', stylers:[{color:'#4E4E4E'}]},
+  		{featureType:'poi', elementType : 'geometry', stylers:[{color:'#252525'}]},
+  		{featureType:'road', elementType : 'geometry', stylers:[{color:'#1A1A1A'}]},
+  		{featureType:'transit', elementType : 'geometry', stylers:[{color:'#1A1A1A'}]},
+  		{featureType:'administrative', elementType : 'geometry', stylers:[{color:'#1A1A1A'}]},
+  		{featureType:'landscape', elementType : 'geometry', stylers:[{color:'#101010'}]}
+  		]" zoom-control="true" disable-default-u-i="true">
+  			<img src="./assets/img/border_sesgado_bottom_black-min.png" class="borde-sesgado-bottom-black">
+  			<a href="/sucursales">
+  				<marker position="21.155072, -86.821708" title="Wall's Barbershop Bonampak" on-click="goMap('sucursales')"></marker>
+  			</a>
+  			<!--
+  			<marker position="21.133608, -86.856630" title="Wall's Barbershop las Torres"></marker>
+  			<marker position="21.156970, -86.847210" title="Wall's Barbershop Kabah"></marker>-->
+  			<marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal" on-click="goMap('sucursales')"></marker>
+  			<marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres" on-click="goMap('sucursales')"></marker>
+  			<marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel" on-click="goMap('sucursales')"></marker>
+  			<marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen" on-click="goMap('sucursales')"></marker>
+  			<marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena" on-click="goMap('sucursales')"></marker><!--
+  			<marker position="21.039818, -89.631276" title="Wall's Barbershop Galerias Merida"></marker>
+  			<marker position="21.012636, -89.583264" title="Wall's Barbershop Merida Uptown"></marker>-->
+  			<marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche"></marker on-click="goMap('sucursales')">
+  			<marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz"></marker on-click="goMap('sucursales')">
+  			<marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes" on-click="goMap('sucursales')"></marker>
+  			<marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ" on-click="goMap('sucursales')"></marker>
+  			<marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite" on-click="goMap('sucursales')"></marker>
+  			<marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma" on-click="goMap('sucursales')"></marker>
+  			<marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara" on-click="goMap('sucursales')"></marker>
+  			<marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro" on-click="goMap('sucursales')"></marker>		
+  		</ng-map>
+  		<div class="footer-servicios-brand">
+	      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+	    </div>
+	</div>
+</div>
+
+

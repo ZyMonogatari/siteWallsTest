@@ -1,0 +1,232 @@
+
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
+<!--Fondo Fixed Cebecera-->
+<div class="top" ng-if="actualBody == 0">
+	<div class="columna-top-1">
+		<div class="titulo-columna-top slide-left-to-right">
+			<h2 class="whiteFont text-center Oswald-Bold">PROFESIONALES </h2>
+			<h6 class="whiteFont text-center Lato-Regular">
+				Queremos ser una empresa jove, líderes en este campo, pero con gran espíritu de superación para lograr obtener la preferencia de nuestros clientes.
+			</h6>
+		</div>
+	</div>
+
+	<div class="columna-top-2">
+		<div class="titulo-columna-top">
+			<h2 class="whiteFont text-center Oswald-Bold">COMPRIMISO</h2>
+			<h6 class="whiteFont text-center Lato-Regular">
+				Nos preocupamos por la calidad del servicio y de los productos con los que ser trabajan, buscando superar las expectativas y satisfacción de los clientes.
+			</h6>
+		</div>
+	</div>
+
+	<div class="columna-top-3" id='columna-top-3'>
+		<div class="titulo-columna-top slide-right-to-left">
+			<h2 class="whiteFont text-center Oswald-Bold">CREATIVIDAD</h2>
+			<h6 class="whiteFont text-center Lato-Regular">
+				Juntamos conceptos tradicionales y bien afirmados, con técnicas e instrumentos avanzados apostando por la actualidad en estilos y tendencias.
+			</h6>
+		</div>
+	</div>
+</div>
+
+<div class="cuerpo1-servicios" id="cuerpo1-servicios" ng-style="{'position' : cuerpo1.position, 'top' : cuerpo1.top, 'display' : cuerpo1.display}">
+	<div class="cuerpo1-servicios-div">
+		<img src="/assets/img/fondo-sesgado-min.png" class="borde-sesgado-gris" id="borde">
+		<div class="cuerpo1-servicios-content">
+			<div class="cuerpo1-servicios-titulos"> 
+				<h2 class="text-left gray-text Oswald-Bold">
+					FILOSOFÍA
+				</h2>
+				<h6 class="text-left gray-text Lato-Italic">
+					Más que un corte creamos un estilo. Somos apasionados en lo que hacemos, buscamos crear experiencias que satisfagan las necesidades de nuestros clientes, ofreciendo nuestro mejor servicio, la preparación para un afeitado perfecto. Trabajamos para quienes tienen mucha personalidad, eso nos motiva aún más para hacerlo bien. Queremos conservar la fidelidad de quienes confían en nosotros, estableciendo con ellos relaciones personales y comerciales para llegar así a ser líderes en este campo
+				</h6>
+				<h5 class="text-left gray-text Lato-BoldItalic"><strong>¡Pase y tome asiento!</strong></h5>
+			</div>
+			<div class="cuerpo1-servicios-image">
+				<img src="/assets/img/sello-filigrana-min.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!--cuerpo absolute-->
+<div class="cuerpo-absolute" id="cuerpo-absolute">
+	<div class="cuerpo2-servicios">
+		<div class="cuerpo2-columna columna-1">
+			<div class="cuerpo2-fila" id="foto-fila-1">
+				<img src="/assets/img/ima-cuerpo-dos-1-min.jpg" class="cuerpo2-image">
+			</div>
+			<div class="cuerpo2-fila" id="texto-fila-2">
+				<div class="cuerpo2-columna columna-left columna-blanca">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							CORTE DE BARBA
+						</h4>
+						<h6 class="text-center">
+							Recorte, arreglo y delineado de barba con maquina, tijeras y navaja.
+							Incluye facial exfoliante para rostro y máquina de vapor.
+						</h6>
+					</div>
+				</div>
+				<div class="cuerpo2-columna columna-right columna-gris">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							CORTE Y BARBA
+						</h4>
+						<h6 class="text-center">
+							Le damos forma a tu cabello. Delineamos, recortamos y afeitamos tu barba con maquina, tijeras y navaja.
+							Incluye facial exfoliante para rostro y máquina de vapor.
+						</h6>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="cuerpo2-fila" id="foto-fila-3">
+				<img src="/assets/img/ima-cuerpo-dos-3-min.jpg" class="cuerpo2-image">
+			</div>
+			<div class="cuerpo2-fila" id="texto-fila-4">
+				<div class="cuerpo2-columna columna-left columna-blanca">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							DELINEADO DE BARBA
+						</h4>
+						<h6 class="text-center">
+							Delineado de Barba con Navaja, tijeras y maquina.
+						</h6>
+					</div>
+				</div>
+				<div class="cuerpo2-columna columna-right columna-gris">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							AFEITADO DE CABEZA
+						</h4>
+						<h6 class="text-center">
+							Toalla caliente, aceite pre- shave de la marca EleganceMX, afeitado de cabeza y bálsamo after shave de la marca EleganceMx.
+							Incluye facial para rostro y máquina de vapor.	
+						</h6>
+					</div>
+				</div>
+			</div>
+			<div class="cuerpo2-fila" id="foto-fila-5">
+				<img src="/assets/img/ima-cuerpo-dos-5-min.jpg" class="cuerpo2-image">
+			</div>
+		</div>
+
+
+		<div class="cuerpo2-columna columna-2">
+			<div class="cuerpo2-fila" id="texto-fila-1">
+				<div class="cuerpo2-columna columna-left columna-gris">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							CORTE DE CABELLO ADULTOS
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Con él damos forma a tu cabello y te creamos un estilo propio y personal. Incluye facial exfoliante para rostro, maquina de vapor, secado y peinado.
+						</h6>
+					</div>
+				</div>
+				<div class="cuerpo2-columna columna-right columna-blanca">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							CORTE DE CABELLO NIÑOS
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Ejecutado  por nuestros barberos con productos 100% profesionales, ideal para el cuidado del cabello de los mas jóvenes. Incluye secado y peinado.
+						</h6>
+					</div>
+				</div>
+			</div>
+
+			<div class="cuerpo2-fila" id="foto-fila-2">
+				<img src="/assets/img/ima-cuerpo-dos-2-min.jpg" class="cuerpo2-image">
+			</div>
+
+			<div class="cuerpo2-fila" id="texto-fila-3">
+				<div class="cuerpo2-columna columna-left columna-gris">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							DELINEADO GENERAL
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Recorte, arreglo y delineado general de tu barba o bigote.
+							Uso de navaja, tijeras y maquina.
+							Incluye facial exfoliante para rostro y máquina de vapor.
+
+						</h6>
+					</div>
+				</div>
+				<div class="cuerpo2-columna columna-right columna-blanca">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+							DELINEADO DE CEJA
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Delineado de ceja con navaja.
+							Incluye facial exfoliante para rostro y máquina de vapor.(Opcional)
+						</h6>
+					</div>
+				</div>
+			</div>
+
+			<div class="cuerpo2-fila" id="foto-fila-4">
+				<img src="/assets/img/ima-cuerpo-dos-4-min.jpg" class="cuerpo2-image">
+			</div>
+
+			<div class="cuerpo2-fila" id="texto-fila-5">
+				<div class="cuerpo2-columna columna-left columna-gris">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+						AFEITADO DE BARBA
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Afeitado a navaja y tijeras. Preparación con producto EleganceMx y máquina de vapor, after-shave de la marca EleganceMx y masaje exfoliante facial.
+						</h6>
+					</div>
+				</div>
+				<div class="cuerpo2-columna columna-right columna-blanca">
+					<div class="cuerpo2-titulos">
+						<h4 class="text-center Oswald-Bold">
+						LAVADO DE CABELLO
+						</h4>
+						<h6 class="text-center Lato-Regular">
+							Lavado con agua tibia para abrir la cutícula y permitir que el champú penetre, limpie y deje sus nutrientes.
+						</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--fondo fixed video-->
+<div class="video-servicios-div" ng-show="actualBody == 1">
+	<iframe src="https://www.youtube.com/embed/0dbig-gLoCo?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=0dbig-gLoCo" frameborder="0" allowfullscreen class="video-servicios"></iframe>
+	<div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+      </div>    
+</div>
+
+<div class="footer-servicios">
+	<div class="footer-servicios-div">
+		<img src="/assets/img/border_segado_top-min.png" class="borde-sesgado-servicios">
+		<div class="footer-servicios-titulos">
+			<h1 class="text-center gray-text Oswald-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+			<h2 class="text-center gray-text Oswald-Bold">¡CONTÁCTANOS!</h2>
+			<h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
+			<h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
+			<h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+			<div class="leer-mas-servicios">
+				<h6 class="whiteFont Lato-Regular">
+					<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+					Leer más
+				</h6>
+			</div>
+		</div>
+		
+	</div>
+	<div class="footer-servicios-brand">
+		<h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+	</div>
+</div>
