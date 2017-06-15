@@ -9,7 +9,9 @@
 			<div class="grid-block navBar-item" 
 						ng-mouseover="homeBackground = 'rgba(56, 58, 57, .9)'"  
 						ng-mouseleave="homeBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : homeBackground}">
+						ng-style="{'background' : homeBackground}"
+						ng-click="go('home')"
+						>
 				<a href="/#!/">
 					<h5 class="margin-left-10px Lato-Regular">
 						HOME
@@ -19,7 +21,9 @@
 			<div class="grid-block navBar-item"
 						ng-mouseover="serviciosBackground = 'rgba(56, 58, 57, .9)'" 
 						ng-mouseleave="serviciosBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : serviciosBackground}">
+						ng-style="{'background' : serviciosBackground}"
+						ng-click="go('servicios')"
+						>
 				<a ui-sref="servicios({reload: true})">
 					<h5 class="margin-left-10px Lato-Regular">
 						SERVICIOS
@@ -29,7 +33,9 @@
 			<div class="grid-block navBar-item" 
 						ng-mouseover="sucursalesBackground = 'rgba(56, 58, 57, .9)'" 
 						ng-mouseleave="sucursalesBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : sucursalesBackground}">
+						ng-style="{'background' : sucursalesBackground}"
+						ng-click="go('sucursales')"
+						>
 				<h5 class="margin-left-10px Lato-Regular">
 					SUCURSALES
 				</h5>
@@ -37,7 +43,9 @@
 			<div class="grid-block navBar-item"
 						ng-mouseover="galeriasBackground = 'rgba(56, 58, 57, .9)'" 
 						ng-mouseleave="galeriasBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : galeriasBackground}">
+						ng-style="{'background' : galeriasBackground}"
+						ng-click="go('galeria')"
+						>
 				<h5 class="margin-left-10px Lato-Regular">
 					GALERÍAS
 				</h5>
@@ -61,7 +69,8 @@
 			<div class="grid-block navBar-item"
 						ng-mouseover="franquiciasBackground = 'rgba(56, 58, 57, .9)'" 
 						ng-mouseleave="franquiciasBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : franquiciasBackground}">
+						ng-style="{'background' : franquiciasBackground}"
+						ng-click="go('franquicias')">
 				<h5 class="margin-left-10px Lato-Regular">
 					FRANQUICIAS
 				</h5>

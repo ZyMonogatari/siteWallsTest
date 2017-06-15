@@ -51,6 +51,9 @@ angular.module('application').controller('franquiciasCtrl',
            window.location.reload(true); 
         });
     }
+    $scope.scroll = function(){
+        window.scrollTo(0, 1000);
+    }
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
@@ -80,7 +83,7 @@ angular.module('application').controller('franquiciasCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '6%';
+        $scope.cabecera.top = '3%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
         $scope.iconColor = 'white';
@@ -197,19 +200,21 @@ angular.module('application').controller('galeriaCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '6%';
+        $scope.cabecera.top = '3%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.$apply();
       }
-    if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0){
+    if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0 & (document.getElementById('cuerpo1').getBoundingClientRect().top) >= -1000){
       $scope.actualBody = 2;
+      console.log("pequeño" + " - " + document.getElementById('cuerpo1').getBoundingClientRect().top);
       $scope.$apply();
     } else if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  >= 0){
       $scope.actualBody = 1;
+      console.log("head")
       $scope.$apply();
     }
-    if((document.getElementById('cuerpo2').getBoundingClientRect().top -100)  <= 0){
-      console.log("aqui")
+    if((document.getElementById('cuerpo2').getBoundingClientRect().top -50)  <= 0){
+      console.log("video")
       $scope.actualBody = 3;
       $scope.$apply();
     }
@@ -331,7 +336,7 @@ angular.module('application').controller('homeCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '6%';
+        $scope.cabecera.top = '3%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
         $scope.iconColor = 'white';
@@ -459,7 +464,7 @@ angular.module('application').controller('serviciosCtrl',
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
             
-          $scope.cabecera.top = '6%';
+          $scope.cabecera.top = '3%';
           $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
           $scope.iconColor = 'white';
@@ -782,7 +787,7 @@ angular.module('application').controller('sucursalesCtrl',
           $scope.cabecera.position = 'absolute';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-          $scope.cabecera.top = '6%';
+          $scope.cabecera.top = '3%';
           $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
           $scope.iconColor = 'white';

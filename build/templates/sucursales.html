@@ -2,14 +2,15 @@
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
 <div class="sucursales-cabecera">
-  <div class="sucursales-cabecera-titulos" id="texto1">
+  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto1">
     <h4>
        Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
     </h4>
    
   </div>
-  <div class="sucursales-cabecera-titulos" id="texto2">
+  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto2">
     <h4>
        Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
     </h4>
@@ -25,18 +26,18 @@
     <div class="sucursales-cuerpo2-div-diagonal"></div>
     <div class="sucursales-cuerpo2-contenido">
       <div class="sucursales-cuerpo2-titulos-top" id="texto1-movil">
-        <h4 class="whiteFont text-center" >
+        <h4 class="whiteFont text-center Lato-Italic" >
            Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
         </h4>
       </div>
       <div class="sucursales-cuerpo2-titulos-top" id="texto2-movil">
-        <h4 class="whiteFont text-center">
+        <h4 class="whiteFont text-center Lato-Italic">
            Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
         </h4>
       </div>
       <img src="./assets/img/silla-min.png" class="sucursales-cuerpo2-contenido-silla">
       <div class="sucursales-cuerpo2-titulos">
-        <h4 class="whiteFont text-center">
+        <h4 class="whiteFont text-center Lato-Italic">
           Gracias a ustedes nos encontramos en constante crecimiento y nos podrás encontrar en nuestras siguientes sucursales, donde lograrás vivir toda la experiencia Wall's Barbershop:
         </h4>
       </div>
@@ -149,9 +150,9 @@
                   </div>
                 </div>
                 <div class="sucursales-map-info-div">  
-                  <h4>{{sucursal.nombre}}</h4>
-                  <h6 >{{sucursal.direccion}}</h6>
-                  <h6>{{sucursal.contacto}}</h6>
+                  <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+                  <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+                  <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
                 </div>
               </div>
             </custom-marker>
@@ -170,7 +171,7 @@
             <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
-            <h1 class="text-center">SUCURSALES</h1>
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
           </div>
           <div class="sucursales-less-button">
             <h1 ng-click="cerrarSucursalMovil(1)">-</h1>
@@ -181,17 +182,17 @@
       
           <div class="sucursales-map-div-columna1">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna1">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
 
           <div class="sucursales-map-div-columna2">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna2">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
         </div>
@@ -203,7 +204,7 @@
             <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
-            <h1 class="text-center">SUCURSALES</h1>
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
           </div>
           <div class="sucursales-less-button">
             <h1 ng-click="cerrarSucursalMovil(2)">-</h1>
@@ -213,17 +214,17 @@
       
           <div class="sucursales-map-div-columna1">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna1">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
 
           <div class="sucursales-map-div-columna2">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna2">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
         </div>
@@ -235,7 +236,7 @@
             <h1>+</h1>
           </div>
           <div class="sucursales-map-bar-title">
-            <h1 class="text-center">SUCURSALES</h1>
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
           </div>
           <div class="sucursales-less-button">
             <h1 ng-click="cerrarSucursalMovil(3)">-</h1>
@@ -245,17 +246,17 @@
       
           <div class="sucursales-map-div-columna1">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna1">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
 
           <div class="sucursales-map-div-columna2">
             <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna2">
-              <h4>{{sucursal.nombre}}</h4>
-              <h6>{{sucursal.direccion}}</h6>
-              <h6>{{sucursal.contacto}}</h6>
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
             </div>
           </div>
         </div>
@@ -266,13 +267,13 @@
     <div class="sucursales-cuerpo3-div-diagonal"></div>
     <div class="sucursales-cuerpo3-div">
       <div class="footer-servicios-titulos">
-        <h1 class="text-center gray-text">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
-        <h2 class="text-center gray-text">¡CONTÁCTANOS!</h2>
-        <h3 class="text-center gray-text"> LIC. AARON ALVARADO </h3>
-        <h3 class="text-center gray-text"> TEL: 044 9981 45 96 50 </h3>
-        <h3 class="text-center gray-text"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+        <h1 class="text-center gray-text Oswald-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+        <h2 class="text-center gray-text Oswald-Bold">¡CONTÁCTANOS!</h2>
+        <h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
+        <h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
+        <h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
         <div class="leer-mas-servicios">
-          <h6 class="whiteFont">
+          <h6 class="whiteFont Lato-Regular">
             <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
             Leer más
           </h6>

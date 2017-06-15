@@ -2,6 +2,7 @@
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
  <!-- =========================
      START 
 ============================== -->
@@ -96,7 +97,7 @@
                             
                         </div>
                         <div class="boton_top_centrado">
-                        <a class="boton-estilo" data-wow-duration="3s" href="#CONTACT" role="button" id="bounceIn-button">¡INICIA AHORA!</a>
+                        <a class="boton-estilo" data-wow-duration="3s" ng-click="scroll()" role="button" id="bounceIn-button">¡INICIA AHORA!</a>
                          </div>
             </div>
         </div>
