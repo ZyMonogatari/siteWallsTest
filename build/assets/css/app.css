@@ -9653,7 +9653,6 @@ blockquote p {
   font-size: 60px; }
 
 body {
-  z-index: -99;
   max-width: 100%;
   overflow-x: hidden; }
 
