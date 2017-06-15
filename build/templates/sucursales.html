@@ -70,78 +70,84 @@
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('cancun')"></marker>
+              }" on-click="cambiarSucursalDesktop('cancun', 'Cancún, Quintana Roo')"></marker>
 
               <marker position="18.800000, -97.7000000" title="Isla Mujeres, Quintana Roo"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('isla')"></marker>
+              }" on-click="cambiarSucursalDesktop('isla', 'Isla Mujeres, Quintana Roo')"></marker>
 
              <marker position="17.500000, -98.0000000" title="Cozumel, Quintana Roo"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('cozumel')"></marker>
+              }" on-click="cambiarSucursalDesktop('cozumel', 'Cozumel, Quintana Roo')"></marker>
 
             <marker position="18.800000, -98.8000000" title="Playa del carmen, Quintana Roo"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('playa')"></marker>
+              }" on-click="cambiarSucursalDesktop('playa', 'Playa del Carmen, Quintana Roo')"></marker>
 
              <marker position="17.500000, -99.3000000" title="Chetumal, Quintana Roo"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('chetumal')"></marker>
+              }" on-click="cambiarSucursalDesktop('chetumal', 'Chetumal, Quintana Roo')"></marker>
 
             <marker position="19.000000, -100.0000000" title="Merida, Yucatan"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('merida')"></marker>
+              }" on-click="cambiarSucursalDesktop('merida', 'Merida, Yucatan')"></marker>
 
             <marker position="17.2000000,-101.0000000" title="Campeche"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('campeche')"></marker>
+              }" on-click="cambiarSucursalDesktop('campeche', 'Campeche')"></marker>
             <marker position="17.0000000,-106.0000000" title="Boca del rio, Veracruz"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('veracruz')"></marker>
+              }" on-click="cambiarSucursalDesktop('veracruz', 'Boca del Rio, Veracruz')"></marker>
             <marker position="20.000000,-111.500000" title="Aguascalientes, AGS"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('aguasCalientes')"></marker>
+              }" on-click="cambiarSucursalDesktop('aguasCalientes', 'Aguascalientes, AGS')"></marker>
             <marker position="15.0000000,-102.5000000" title="Tuxtla GTZ, Chiapas"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('tuxtla')"></marker>
+              }" on-click="cambiarSucursalDesktop('tuxtla', 'Tuxtla, GTZ')"></marker>
             <marker position="17.700000,-108.600000" title="Ciudad de Mexico"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
               }"
-              on-click="cambiarSucursalDesktop('cdMx')"></marker>
+              on-click="cambiarSucursalDesktop('cdMx', 'CDMX - EDO MEX')"></marker>
 
             <marker position="18.4000000,-112.5000000" title="Guadalajara, Jalisco"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('guadalajara')"></marker>
+              }" on-click="cambiarSucursalDesktop('guadalajara', 'Guadalajara, Jalisco')"></marker>
 
             <marker position="19.0000000,-109.4000000" title="Queretaro"
             icon="{
                 url:'./assets/img/ubicacion-no-select.png',
                 scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('queretaro')"></marker>
+              }" on-click="cambiarSucursalDesktop('queretaro', 'Queretaro')"></marker>
 
             <!--Custom Markers-->
+            <custom-marker  position="31.000000, -115.0000000"}>
+              <div class="sucursal-state appear">
+                <h1 class="Oswald-Bold">{{actualMap}}</h1>
+              </div>
+            </custom-marker>
+
             <custom-marker ng-repeat="sucursal in sucursales" position={{sucursal.position}}>
               <div class="sucursal-map-div appear">
                 <div class="sucursales-map-image-div" >
@@ -272,7 +278,7 @@
         <h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
         <h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
         <h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
-        <div class="leer-mas-servicios">
+        <div class="leer-mas-servicios" ng-click="go('franquicias')">
           <h6 class="whiteFont Lato-Regular">
             <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
             Leer más

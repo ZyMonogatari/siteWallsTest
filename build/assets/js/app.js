@@ -47,12 +47,13 @@ angular.module('application').controller('franquiciasCtrl',
         }
     }
     $scope.go = function(state){
-        $state.go(state).then(function(){
-           window.location.reload(true); 
-        });
+        window.scrollTo(0, 0)
+        $state.go(state);
     }
     $scope.scroll = function(){
-        window.scrollTo(0, 1000);
+        var elementTop = document.getElementById('info-bounce').getBoundingClientRect().top;
+        elementTop = elementTop + 100;
+        window.scrollTo(0, elementTop);
     }
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
@@ -134,9 +135,8 @@ angular.module('application').controller('galeriaCtrl',
     $scope.displayNumber = 'none';
     $scope.iconColor = '#333';
     $scope.go = function(state){
-        $state.go(state).then(function(){
-           window.location.reload(true); 
-        });
+        window.scrollTo(0, 0)
+        $state.go(state);
     }
     $scope.actualVideo = $sce.trustAsResourceUrl(
      'https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0');
@@ -243,19 +243,14 @@ angular.module('application').controller('homeCtrl',
         });
     }
     $scope.go = function(state){
-        $state.go(state).then(function(){
-           window.location.reload(true); 
-        });
+        window.scrollTo(0, 0)
+        $state.go(state);
     }
     $scope.displaySesion = 'none';
     $scope.displayNumber = 'none';
 
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
-    /*NgMap.getMap().then(function(map) {
-      console.log(map.getCenter());
-      console.log('markers', map.markers);
-      console.log('shapes', map.shapes);
-    });*/
+    
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
@@ -375,9 +370,8 @@ angular.module('application').controller('serviciosCtrl',
         }
     }
     $scope.go = function(state){
-        $state.go(state).then(function(){
-           window.location.reload(true); 
-        });
+        window.scrollTo(0, 0)
+        $state.go(state);
     }
 	var cuerpoAbsoluteTop;
     var cuerpo1TopInicial = document.getElementById('cuerpo1-servicios').getBoundingClientRect().top;
@@ -494,10 +488,10 @@ angular.module('application').controller('sucursalesCtrl',
     $scope.displayNumber = 'none';
     $scope.cabecera.fontColor = 'white';
     $scope.iconColor = 'white';
+    $scope.actualMap = 'Cancún, Quintana Roo';
     $scope.go = function(state){
-        $state.go(state).then(function(){
-           window.location.reload(true); 
-        });
+        window.scrollTo(0, 0)
+        $state.go(state);
     }
     angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
     angular.element(document.querySelector('#texto1-movil')).addClass('appear');
@@ -685,9 +679,10 @@ angular.module('application').controller('sucursalesCtrl',
             $scope.displayMenu = 'initial';
         }
     }
-    $scope.cambiarSucursalDesktop = function(e, key){
+    $scope.cambiarSucursalDesktop = function(e, key, state){
+        $scope.actualMap = state;
         NgMap.getMap().then(function(map) {
-            for (var i in map.customMarkers) {
+            for (var i in map.customMarkers[2]) {
                 map.customMarkers[i].el.className = 'disappear'
             }
         });

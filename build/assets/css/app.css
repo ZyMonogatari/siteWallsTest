@@ -9700,7 +9700,8 @@ body {
   background: #353432;
   border: 2px solid white;
   border-radius: 5px;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 .leerMasFooter {
   position: absolute;
@@ -9713,7 +9714,8 @@ body {
   background: #353432;
   border: 2px solid white;
   border-radius: 5px;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 .angleDiv {
   position: absolute;
@@ -9923,7 +9925,11 @@ body {
 @media only screen and (max-width: 768px) {
   .video {
     top: 10% !important;
-    height: 25%; } }
+    height: 25%; }
+  .wallsCardDiv {
+    bottom: 35%;
+    width: 30%;
+    height: 50px; } }
 
 @media only screen and (max-width: 1400px) {
   .cuerpo2 {
@@ -10066,8 +10072,21 @@ body {
     width: 20%; } }
 
 @media only screen and (max-width: 414px) {
+  .sesion {
+    left: -45%;
+    top: -20px;
+    width: 250%;
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5); }
+  .wallsCardDiv {
+    width: 20%;
+    height: auto; }
   .iconsDivMovil {
-    right: 6%; }
+    right: 0%;
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5); }
   .walls-logo {
     top: -10px; }
   .sesion, h6 {
@@ -10119,10 +10138,6 @@ body {
     width: 8%; } }
 
 @media only screen and (max-width: 375px) {
-  .iconsDivMovil {
-    width: 50%;
-    transform: scale(0.7, 0.7);
-    right: -8%; }
   .wallsCardLogoDiv {
     width: 30%;
     bottom: 48%; }
@@ -10179,7 +10194,10 @@ body {
     -ms-transform: scale(0.8, 0.8);
     -webkit-transform: scale(0.7, 0.7); }
   .sesion, h6 {
-    font-size: 70%; } }
+    font-size: 70%; }
+  .iconsDivMovil {
+    width: 120px;
+    top: 0%; } }
 
 @media (max-width: 1200px) and (orientation: landscape) {
   .cabecera {
@@ -12733,7 +12751,8 @@ body {
   background: #353432;
   border: 2px solid white;
   border-radius: 5px;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 @media only screen and (max-width: 1280px) {
   .cuerpo1-servicios {
@@ -13125,6 +13144,10 @@ body {
   top: 244px;
   left: 57px;
   z-index: -1; }
+
+.sucursal-state {
+  width: 300px;
+  height: 190px; }
 
 .sucursal-map-div {
   background: #F6F6F6;
@@ -13627,7 +13650,7 @@ body {
   .galeria-video {
     top: 0px; }
   .galeria-fondo3-titulos2 {
-    top: 570px; }
+    top: 560px; }
   .galeria-fondo3-titulos1 {
     top: 100px; }
   .galeria-videos-grid {
