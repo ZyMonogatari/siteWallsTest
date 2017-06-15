@@ -6021,13 +6021,13 @@ meter {
   -ms-flex-order: 0;
       order: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
 
 .grid-content {
   display: block;
   padding: 0 1rem;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-flex: 1 1 auto;
       flex: 1 1 auto; }
@@ -6078,6 +6078,7 @@ meter {
   -ms-flex-order: 0;
       order: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
   .small-grid-block.panel {
     transform: none;
@@ -6096,7 +6097,6 @@ meter {
   display: block;
   padding: 0 1rem;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-flex: 1 1 auto;
       flex: 1 1 auto; }
@@ -6135,6 +6135,7 @@ meter {
     -ms-flex-order: 0;
         order: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .medium-grid-block.panel {
       transform: none;
@@ -6154,7 +6155,6 @@ meter {
     display: block;
     padding: 0 1rem;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -ms-flex: 1 1 auto;
         flex: 1 1 auto; }
@@ -6193,6 +6193,7 @@ meter {
     -ms-flex-order: 0;
         order: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .large-grid-block.panel {
       transform: none;
@@ -6212,7 +6213,6 @@ meter {
     display: block;
     padding: 0 1rem;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -ms-flex: 1 1 auto;
         flex: 1 1 auto; }
