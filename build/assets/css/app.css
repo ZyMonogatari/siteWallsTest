@@ -9703,6 +9703,12 @@ body {
   text-align: center;
   cursor: pointer; }
 
+.leerMas:hover {
+  background: #7A7A7A; }
+
+.leerMasFooter:hover {
+  background: #7A7A7A; }
+
 .leerMasFooter {
   position: absolute;
   bottom: 10%;
@@ -9751,7 +9757,6 @@ body {
   background-size: cover;
   width: 100%;
   position: fixed;
-  z-index: -1;
   background-repeat: no-repeat;
   height: 100%; }
 
@@ -12753,6 +12758,9 @@ body {
   border-radius: 5px;
   text-align: center;
   cursor: pointer; }
+
+.leer-mas-servicios:hover {
+  background: #7A7A7A; }
 
 @media only screen and (max-width: 1280px) {
   .cuerpo1-servicios {

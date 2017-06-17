@@ -35,7 +35,7 @@
 })();
 
 angular.module('application').controller('franquiciasCtrl',
-  ['$scope', '$window', 'NgMap', '$state', function($scope, $window, NgMap, $state){
+  ['$scope', '$window', 'NgMap', '$state', '$messageApi', function($scope, $window, NgMap, $state, $messageApi){
     $scope.mostrarMenu = function (){
             console.log($scope.displayMenu);
 
@@ -50,6 +50,12 @@ angular.module('application').controller('franquiciasCtrl',
         window.scrollTo(0, 0)
         $state.go(state);
     }
+    $scope.message = {};
+    $scope.send = function(){
+        console.log($scope.message);
+        $messageApi.sendMessage($scope.message);
+    }
+
     $scope.scroll = function(){
         var elementTop = document.getElementById('info-bounce').getBoundingClientRect().top;
         elementTop = elementTop + 100;
@@ -357,6 +363,25 @@ angular.module('application').controller('homeCtrl',
    }
 }]);
 
+angular.module('application')
+.factory('$messageApi', function($http){
+    var baseUrl = 'https://www.mr-barbas.com/php/';
+
+    var post = function(url, body){
+      body = body || {};
+      return $http.post(baseUrl+url, body);
+    }
+    var get = function(url){
+      return $http.get(baseUrl+url);
+    }
+
+    return {
+      sendMessage : function(message){
+       return get('sendMessage.php?name=' + message.name + '&email=' + message.email + '&empresa=' + message.empresa +
+        '&address=' + message.address + '&phone=' + message.phone + '&state=' + message.state +'&why=' + message.why);
+      }
+    }
+  });
 angular.module('application').controller('serviciosCtrl',
   ['$scope', '$window', '$state', function($scope, $window, $state){
     $scope.mostrarMenu = function (){
