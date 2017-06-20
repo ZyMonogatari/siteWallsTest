@@ -36,6 +36,7 @@
 
 angular.module('application').controller('franquiciasCtrl',
   ['$scope', '$window', 'NgMap', '$state', '$messageApi', function($scope, $window, NgMap, $state, $messageApi){
+    document.title = "Franquicias - Wall´s Barbershop";    
     $scope.mostrarMenu = function (){
             console.log($scope.displayMenu);
 
@@ -60,6 +61,14 @@ angular.module('application').controller('franquiciasCtrl',
         var elementTop = document.getElementById('info-bounce').getBoundingClientRect().top;
         elementTop = elementTop + 100;
         window.scrollTo(0, elementTop);
+    }
+
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
     }
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
@@ -90,7 +99,7 @@ angular.module('application').controller('franquiciasCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '3%';
+        $scope.cabecera.top = '5%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
         $scope.iconColor = 'white';
@@ -132,6 +141,7 @@ angular.module('application').controller('franquiciasCtrl',
 
 angular.module('application').controller('galeriaCtrl',
   ['$scope', '$window', 'FoundationApi', '$sce', '$state', function($scope, $window, FoundationApi, $sce, $state){
+    document.title = "Galería - Wall´s Barbershop";
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
     $scope.cabecera.position = 'absolute';
@@ -151,6 +161,13 @@ angular.module('application').controller('galeriaCtrl',
       $scope.actualVideo = $sce.trustAsResourceUrl(
      'https://www.youtube.com/embed/' + videoId + '?modestbranding=1&autohide=1&showinfo=0');
     
+    }
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
     }
     $scope.gallery = {
       col1: [
@@ -206,7 +223,7 @@ angular.module('application').controller('galeriaCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '3%';
+        $scope.cabecera.top = '5%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.$apply();
       }
@@ -235,7 +252,6 @@ angular.module('application').controller('galeriaCtrl',
 angular.module('application').controller('homeCtrl',
   ['$scope', '$window', 'NgMap', '$state', function($scope, $window, NgMap, $state){
     $scope.mostrarMenu = function (){
-
         if($scope.displayMenu == 'initial'){
             $scope.displayMenu = 'none';
         }
@@ -252,8 +268,15 @@ angular.module('application').controller('homeCtrl',
         window.scrollTo(0, 0)
         $state.go(state);
     }
-    $scope.displaySesion = 'none';
-    $scope.displayNumber = 'none';
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
+    }
+    $scope.displaySesion = '0';
+    $scope.displayNumber = '0';
 
     $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHEDIPSO32Z4XxR71iW71oP29-B7Zh4Y";
     
@@ -337,7 +360,7 @@ angular.module('application').controller('homeCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '3%';
+        $scope.cabecera.top = '5%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
         $scope.iconColor = 'white';
@@ -384,6 +407,7 @@ angular.module('application')
   });
 angular.module('application').controller('serviciosCtrl',
   ['$scope', '$window', '$state', function($scope, $window, $state){
+    document.title = "Servicios - Wall´s Barbershop";
     $scope.mostrarMenu = function (){
             console.log($scope.displayMenu);
 
@@ -397,6 +421,13 @@ angular.module('application').controller('serviciosCtrl',
     $scope.go = function(state){
         window.scrollTo(0, 0)
         $state.go(state);
+    }
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
     }
 	var cuerpoAbsoluteTop;
     var cuerpo1TopInicial = document.getElementById('cuerpo1-servicios').getBoundingClientRect().top;
@@ -483,7 +514,7 @@ angular.module('application').controller('serviciosCtrl',
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
             
-          $scope.cabecera.top = '3%';
+          $scope.cabecera.top = '5%';
           $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
           $scope.iconColor = 'white';
@@ -504,6 +535,7 @@ angular.module('application').controller('serviciosCtrl',
 }]);
 angular.module('application').controller('sucursalesCtrl',
   ['$scope', '$window', 'NgMap', '$interval', '$timeout', '$state', function($scope, $window, NgMap, $interval, $timeout, $state){
+    document.title = "Sucursales- Wall´s Barbershop";
     $scope.cabecera = {};
     var displayMenu = 'none';
     $scope.displayMenu = displayMenu ;
@@ -517,6 +549,13 @@ angular.module('application').controller('sucursalesCtrl',
     $scope.go = function(state){
         window.scrollTo(0, 0)
         $state.go(state);
+    }
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
     }
     angular.element(document.querySelector('#texto1')).addClass('slide-right-to-left-enter');
     angular.element(document.querySelector('#texto1-movil')).addClass('appear');
@@ -807,7 +846,7 @@ angular.module('application').controller('sucursalesCtrl',
           $scope.cabecera.position = 'absolute';
             angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
             angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-          $scope.cabecera.top = '3%';
+          $scope.cabecera.top = '5%';
           $scope.logoTransform = 'scale(1, 1)';
           $scope.cabecera.fontColor = 'white';
           $scope.iconColor = 'white';

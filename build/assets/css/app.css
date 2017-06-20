@@ -9686,8 +9686,13 @@ body {
   position: fixed;
   z-index: 3;
   top: 1%;
-  width: 15%;
-  right: 0%; }
+  right: 30px; }
+
+.socialIconsDiv {
+  position: fixed;
+  z-index: 3;
+  top: 1%;
+  left: 20px; }
 
 .leerMas {
   position: absolute;
@@ -9802,13 +9807,13 @@ body {
   position: absolute;
   width: 110%;
   left: -5%;
-  top: 400%; }
+  top: 450%; }
 
 .cuerpo3 {
   height: 100%;
   position: absolute;
   width: 100%;
-  top: 630%; }
+  top: 680%; }
 
 .titulos-div-cabecera {
   position: relative;
@@ -9947,13 +9952,15 @@ body {
     bottom: 7%; } }
 
 @media only screen and (max-width: 1024px) {
+  .socialIconsDiv {
+    left: 150px; }
   .navBar-movil {
     display: initial;
     position: absolute;
     width: 100%;
     height: 90px;
     z-index: 2;
-    top: 3%; }
+    top: 5%; }
   .navBar-movil-titulos {
     position: absolute;
     width: 5%;
@@ -10046,6 +10053,8 @@ body {
     right: -8%; } }
 
 @media only screen and (max-width: 580px) {
+  .socialIconsDiv {
+    left: 8%; }
   .video {
     width: 60%; }
   .white-sello {
@@ -10092,6 +10101,11 @@ body {
     transform: scale(0.5, 0.5);
     -ms-transform: scale(0.5, 0.5);
     -webkit-transform: scale(0.5, 0.5); }
+  .socialIconsDiv {
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+    top: -1%; }
   .walls-logo {
     top: -10px; }
   .sesion, h6 {
@@ -12967,6 +12981,15 @@ body {
   animation-duration: 2s;
   animation-fill-mode: forwards; }
 
+.appear1S {
+  -webkit-animation-name: appear;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
 .disappear {
   -webkit-animation-name: disappear;
   /* Safari 4.0 - 8.0 */
@@ -12974,6 +12997,15 @@ body {
   /* Safari 4.0 - 8.0 */
   animation-name: disappear;
   animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+.disappear1S {
+  -webkit-animation-name: disappear;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: disappear;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .to-white {

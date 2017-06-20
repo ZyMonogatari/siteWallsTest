@@ -1,12 +1,14 @@
-<div class="grid-block iconsDiv" style="z-index: 4;">	
-	<div class="grid-block" ng-mouseover="displayNumber = 'inithial'"  
-			ng-mouseleave="displayNumber = 'none'">
-		<h6 style="margin-right: 10px; color: white;" ng-style="{'display' : displayNumber, 'color' : cabecera.fontColor}" class="Lato-Regular">+52 9981 45 96 50</h6>
-		<i class="fa fa-whatsapp whiteFont  fa-2x" aria-hidden="true" ng-style="{'color': iconColor}"></i>
-	</div>
-	<div class="grid-block" ng-mouseover="displaySesion = 'inithial'"  
-			ng-mouseleave="displaySesion = 'none'">
-		<h6 style="margin-right: 10px; color: white;" ng-style="{'display' : displaySesion, 'color' : cabecera.fontColor}" class="Lato-Regular">Iniciar sesión</h6>
-		<i class="fa fa-user whiteFont fa-2x" aria-hidden="true" ng-style="{'color': iconColor}"></i>
-	</div>
+<div class="grid-block iconsDiv small-up-2" style="z-index: 4;">	
+
+		<h6 style="margin-right: 10px; color: white; opacity: 0;" ng-style="{'color' : cabecera.fontColor}" class="Lato-Regular" id="number">+52 9981 45 96 50</h6>
+		<i class="fa fa-whatsapp whiteFont  fa-2x" aria-hidden="true" 
+			ng-style="{'color': iconColor}" 
+			ng-mouseover="appearItem('number')"  
+			ng-mouseleave="disappearItem('number')" style="margin-right: 10px"></i>
+
+		<h6 style="margin-right: 10px; color: white; opacity: 0;" ng-style="{'color' : cabecera.fontColor}" class="Lato-Regular" id="session">Iniciar sesión</h6>
+		<i class="fa fa-user whiteFont fa-2x" aria-hidden="true" ng-style="{'color': iconColor}"
+			ng-mouseover="appearItem('session')"  
+			ng-mouseleave="disappearItem('session')"></i>
+	
 </div>
