@@ -259,6 +259,14 @@ angular.module('application').controller('homeCtrl',
             $scope.displayMenu = 'initial';
         }
     }
+    $scope.titles = [
+    'Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.',
+    'Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.',
+    'Actualmente 19 sucursales en toda la república mexicana.',
+    'Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.',
+    'Espíritu emprendedor con potencial de crecimiento a escala.',
+    'Espacios acogedores con servicios diseñados a tus necesidades.'
+    ]
     $scope.goMap = function(e, state){
       $state.go(state).then(function(){
            window.location.reload(true); 

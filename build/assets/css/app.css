@@ -9631,6 +9631,111 @@ blockquote p {
 .float-none {
   float: none; }
 
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6 {
+  position: absolute;
+  display: block;
+  top: 2em;
+  width: 100%;
+  font-size: 2em;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+
+.item-1 {
+  animation-name: anim-1;
+  animation-duration: 42s; }
+
+.item-2 {
+  animation-name: anim-2;
+  animation-duration: 42s; }
+
+.item-3 {
+  animation-name: anim-3;
+  animation-duration: 42s; }
+
+.item-4 {
+  animation-name: anim-4;
+  animation-duration: 42s; }
+
+.item-5 {
+  animation-name: anim-5;
+  animation-duration: 42s; }
+
+.item-6 {
+  animation-name: anim-6;
+  animation-duration: 42s; }
+
+@keyframes anim-1 {
+  0%, 2.38% {
+    right: -100%;
+    opacity: 0; }
+  2.38%, 14.28% {
+    right: 0%;
+    opacity: 1; }
+  16.66%, 100% {
+    right: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 16.66% {
+    right: -100%;
+    opacity: 0; }
+  19.04%, 30.94% {
+    right: 0%;
+    opacity: 1; }
+  33.32%, 100% {
+    right: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 33.32% {
+    right: -100%;
+    opacity: 0; }
+  35.7%, 47.6% {
+    right: 0%;
+    opacity: 1; }
+  49.98%, 100% {
+    right: 110%;
+    opacity: 0; } }
+
+@keyframes anim-4 {
+  0%, 49.98% {
+    right: -100%;
+    opacity: 0; }
+  52.36%, 64.25% {
+    right: 0%;
+    opacity: 1; }
+  66.64%, 100% {
+    right: 110%;
+    opacity: 0; } }
+
+@keyframes anim-5 {
+  0%, 66.64% {
+    right: -100%;
+    opacity: 0; }
+  69.02%, 80.92% {
+    right: 0%;
+    opacity: 1; }
+  83.3%, 100% {
+    right: 110%;
+    opacity: 0; } }
+
+@keyframes anim-6 {
+  0%, 83.3% {
+    right: -100%;
+    opacity: 0; }
+  85.68%, 97.58% {
+    right: 0%;
+    opacity: 1; }
+  100% {
+    right: 110%;
+    opacity: 0; } }
+
 .navBar {
   position: absolute;
   top: 50%;
@@ -9692,11 +9797,11 @@ body {
   position: fixed;
   z-index: 3;
   top: 1%;
-  left: 20px; }
+  left: 30px; }
 
 .leerMas {
   position: absolute;
-  bottom: 40%;
+  bottom: 30%;
   width: 10%;
   height: auto;
   margin: auto;
@@ -9753,9 +9858,6 @@ body {
   margin: auto;
   left: 0;
   right: 0; }
-
-.text-center {
-  text-align: center; }
 
 .cabecera {
   background-image: url(/assets/img/fondo-cabecera.jpg);
@@ -9822,7 +9924,7 @@ body {
   right: 0;
   margin: auto;
   width: 55%;
-  height: 25%;
+  height: 30%;
   word-wrap: break-word; }
 
 .underline {
@@ -9931,15 +10033,6 @@ body {
   position: absolute;
   top: 0;
   z-index: 1; }
-
-@media only screen and (max-width: 768px) {
-  .video {
-    top: 10% !important;
-    height: 25%; }
-  .wallsCardDiv {
-    bottom: 35%;
-    width: 30%;
-    height: 50px; } }
 
 @media only screen and (max-width: 1400px) {
   .cuerpo2 {
@@ -10052,6 +10145,19 @@ body {
     width: 30%;
     right: -8%; } }
 
+@media only screen and (max-width: 768px) {
+  .video {
+    top: 10% !important;
+    height: 25%; }
+  .wallsCardDiv {
+    bottom: 35%;
+    width: 30%;
+    height: 50px; }
+  .titulos-div-cabecera {
+    width: 85%; }
+  .leerMas {
+    bottom: 58%; } }
+
 @media only screen and (max-width: 580px) {
   .socialIconsDiv {
     left: 8%; }
@@ -10154,7 +10260,16 @@ body {
   .cuerpo2 {
     top: 210%; }
   .angleDiv {
-    width: 8%; } }
+    width: 8%; }
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6 {
+    font-size: 13px; }
+  .titulos-div-cabecera {
+    width: 90%; } }
 
 @media only screen and (max-width: 375px) {
   .wallsCardLogoDiv {
@@ -12894,6 +13009,13 @@ body {
     right: 0%; } }
 
 /* Standard syntax */
+@keyframes slide-to-left {
+  from {
+    right: -200%; }
+  to {
+    right: 0%; } }
+
+/* Standard syntax */
 @keyframes slide-right-to-left-enter {
   from {
     right: -200%;
@@ -12952,6 +13074,15 @@ body {
   /* Safari 4.0 - 8.0 */
   animation-name: slide-right-to-left;
   animation-duration: 4s;
+  animation-fill-mode: forwards; }
+
+.slide-to-left {
+  -webkit-animation-name: slide-to-left;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: slide-to-left;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .slide-right-to-left-enter {
