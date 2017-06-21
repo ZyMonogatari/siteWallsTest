@@ -9640,6 +9640,7 @@ blockquote p {
   position: absolute;
   display: block;
   top: 2em;
+  line-height: 1.3;
   width: 100%;
   font-size: 2em;
   animation-duration: 20s;
