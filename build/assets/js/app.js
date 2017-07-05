@@ -34,6 +34,28 @@
 
 })();
 
+angular.module('application')
+.factory('$dbApi', function($http){
+    var baseUrl = 'http://www.mr-barbas.com/php/';
+
+    var post = function(url, body){
+      body = body || {};
+      return $http.post(baseUrl+url, body);
+    }
+    var get = function(url){
+      return $http.get(baseUrl+url);
+    }
+
+    return {
+      registUser : function(regist){
+       return get('insertForm.php?name=' + regist.name + '&lastname=' + regist.lastname + '&email=' + regist.email + '&birthday=' + regist.birthday +
+        '&sucursal=' + regist.sucursal + '&phone=' + regist.phone + '&state=' + regist.state +'&card=' + regist.card + '&password=' + regist.password);
+      },
+      getClientData : function(clientData){
+        return get('getClientInfo.php?cardMail=' + clientData.cardMail + '&password=' + clientData.password);
+      }
+    }
+  });
 angular.module('application').controller('franquiciasCtrl',
   ['$scope', '$window', 'NgMap', '$state', '$messageApi', function($scope, $window, NgMap, $state, $messageApi){
     document.title = "Franquicias - Wall´s Barbershop";    
@@ -250,7 +272,7 @@ angular.module('application').controller('galeriaCtrl',
 }]);
 
 angular.module('application').controller('homeCtrl',
-  ['$scope', '$window', 'NgMap', '$state', function($scope, $window, NgMap, $state){
+  ['$scope', '$window', 'NgMap', '$state',  function($scope, $window, NgMap, $state){
     $scope.mostrarMenu = function (){
         if($scope.displayMenu == 'initial'){
             $scope.displayMenu = 'none';
@@ -259,14 +281,6 @@ angular.module('application').controller('homeCtrl',
             $scope.displayMenu = 'initial';
         }
     }
-    $scope.titles = [
-    'Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.',
-    'Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.',
-    'Actualmente 19 sucursales en toda la república mexicana.',
-    'Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.',
-    'Espíritu emprendedor con potencial de crecimiento a escala.',
-    'Espacios acogedores con servicios diseñados a tus necesidades.'
-    ]
     $scope.goMap = function(e, state){
       $state.go(state).then(function(){
            window.location.reload(true); 
@@ -275,6 +289,20 @@ angular.module('application').controller('homeCtrl',
     $scope.go = function(state){
         window.scrollTo(0, 0)
         $state.go(state);
+    }
+    $scope.gotoRegist = function(){
+        window.scrollTo(0,0);        
+        $state.go('wallsCard').then(function(){
+          var elementTop= document.getElementById('bounceInForm1s').getBoundingClientRect().top -300;
+          window.scrollTo(0, elementTop);
+        });
+    }
+     $scope.gotoLogin = function(){
+        window.scrollTo(0,0);        
+        $state.go('wallsCard').then(function(){
+          var elementTop= document.getElementById('bounceInPointsForm1s').getBoundingClientRect().top +50;
+          window.scrollTo(0, elementTop);
+        });
     }
     $scope.appearItem = function(item){
       angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
@@ -574,19 +602,22 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP BONAMPAK',
             direccion: 'SM 4 MZA 3 Plaza Atlantis, Av. Bonampak con Av. Kukulcán, Frente a Km 0, Entrada Zona Hotelera, Cancún, Quintana Roo, México.',
             contacto: 'Tel. (998) 255 5569 y WhatsApp. (998) 293 4177',
-            position: '25.000000, -85.0000000'
+            position: '25.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-bonampak.png'
         },
         torres: {
             nombre: 'WALL´S LAS TORRES',
             direccion: 'SM 510 MZA 9 LT 10 Y 12 Planta Alta, Plaza Bamboo, Cancún, Quintana Roo, México.',
             contacto: 'Tel. (998) 251 0726 y WhatsApp. (998) 293 4599',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-torres.png'
         },
         kabah: {
             nombre: 'WALL´S BARBERSHOP KABAH',
             direccion: 'SMZ 38 MZ 9 LT 1 al 15 Local #5 Av. Sabah, Plaza Real 10 (frente a UNID) Cancún, Quintana Roo, México.',
             contacto: 'Tel. (998) 206 8098 y WhatsApp. (998) 293 4931',
-            position: '8.000000, -85.0000000'
+            position: '8.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-kabah.png'
         }
     };
     sucursales.chetumal = {
@@ -594,7 +625,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALLS CHETUMAL',
             direccion: 'Bulevar Bahía #301, entre Av. Rafael E. Melgar y Emiliano Zapata, Chetumal.',
             contacto:  'Tel. (983) 129 2705 y WhatsApp. (998) 293 4162',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-chetumal.png'
         }
     };
     sucursales.isla = {
@@ -602,7 +634,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP ISLA MUJERES',
             direccion: 'Nicolás Bravo S/N Centro, Isla Mujeres.',
             contacto: 'Tel. 877 0496 y WhatsApp. (998) 117 1259',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-isla.png'
         }  
     };
     sucursales.cozumel = {
@@ -610,7 +643,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP COZUMEL',
             direccion: 'Plaza Leones, 30 Avenida esquina con 1 sur cozumel, Quintana Roo, México.',
             contacto: 'WhatsApp. (987) 101 0138',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-cozumel.png'
         }
     };
     sucursales.playa = {
@@ -618,13 +652,15 @@ angular.module('application').controller('sucursalesCtrl',
             nombre : 'WALL´S BARBERSHOP PLAYA DEL CARMEN CENTRO',
             direccion: 'SM. 56 MZA. 1 Lote 55, Av. Prolongación, Luis Donaldo Colosio, Fracc. Santa Fé, Playa del Carmen, México.',
             contacto: 'WhatsApp. (984) 187 6258',
-            position: '25.000000, -85.0000000'
+            position: '25.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-playa.png'
         }, 
         playa: {
             nombre: 'WALL´S BARBERSHOP PLAYA DEL CARMEN',
             direccion: '15 Avenida norte, entre calle 8 y calle 10, Colonia centro, plaza pelícanos, Playa del Carmen, Quintana Roo, México.',
             contacto: 'Tel. (984) 803 3742 y WhatsApp. (984) 142 3333',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-playa.png'
         }
     };
     sucursales.merida = {
@@ -632,19 +668,22 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S MERIDA PLAZA ARENA',
             direccion: 'Av. Cámara de comercio #3276 por 50 y 52 Local 2 Benito Juarez Norte',
             contacto: 'WhatsApp. 998 293 4349',
-            position: '25.000000, -85.0000000'
+            position: '25.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-arena.png'
         },
         meridaGalerias: {
             nombre: 'WALL´S GALERIAS MERIDA',
             direccion: 'Calle 3 #300 entre 24 y 60 Av. Revolución, Plaza Galerías Mérida, Yucatán, México.',
             contacto: 'WhatsApp. 998 293 4627',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-galerias.png'
         },
         meridaUptown: {
             nombre: 'WALL´S BARBERSHOP MERIDA UPTOWN',
             direccion: 'Centro comercial Uptown Mérida, Calle 17 # 104 -A por calle 10 y calle 32-A Col. Vista alegre',
             contacto: 'WhatsApp. 999 304 7933',
-            position: '8.000000, -85.0000000'
+            position: '8.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-arena.png'
         }
     };
     sucursales.campeche = {
@@ -652,7 +691,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALLS CAMPECHE',
             direccion: 'Av. López Portillo #28, Plaza Kaniste Local 1, San Francisco, Campeche.',
             contacto: 'Tel. (981) 812 7975 y WhatsApp. (981) 107 2609',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-torres.png'
         }
     }
     sucursales.veracruz = {
@@ -660,7 +700,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre : 'WALL´S BARBERSHOP BOCA DEL RIO',
             direccion: 'Paseo costa verde #583 interior 107 Plaza Marlyn, fraccionamiento costa verde esquina jacarandás.',
             contacto: 'Tel. 688 4491  y WhatsApp. 229 110 47 41',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-bonampak.png'
         }
     };
     sucursales.aguasCalientes = {
@@ -668,7 +709,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP AGUASCALIENTES',
             direccion: 'Plaza Santa Fe, local 38, Av. Universidad #811, Bosques del prado sur, Aguascalientes, México.',
             contacto: 'Tel. 449 288 1015 y WhatsApp. 449 196 1237',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-aguascalientes.png'
         }
     };
     sucursales.tuxtla = {
@@ -676,7 +718,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP TUXTLA GTZ',
             direccion: 'Boulevard Doctor Belisario Domínguez, Plaza Santa Elena Tuxtla, Gtz, Chiapas, México.',
             contacto: 'Tel. (961) 121 4081 y WhatsApp. (961) 243 1583 ',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-tuxtla.png'
         }
     };
     sucursales.queretaro = {
@@ -684,7 +727,8 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP QUERETARO',
             direccion: 'Calle Camino Real de Carretas #139, Lomas de Carreta, Querétaro, México.',
             contacto: 'Tel. (442) 403 2574 y WhatsApp. (442) 466 2384',
-            position: '16.800000, -85.0000000'      
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-queretaro.png'     
         }
     };
     sucursales.cdMx = {
@@ -692,13 +736,15 @@ angular.module('application').controller('sucursalesCtrl',
             nombre: 'WALL´S BARBERSHOP SATÉLITE',
             direccion: 'Calle Manuel E Izaguirre #4 Local C. Ciudad Satélite Naucalpan de Juárez, Estado de México.',
             contacto: 'Tel. 2155 4934',
-            position: '25.000000, -85.0000000'
+            position: '25.000000, -85.0000000',
+            img: '/assets/img/sucursales/walls-roma.png'
         },
         cdMx: {
             nombre: 'WALL´S BARBERSHOP LA ROMA',
             direccion: 'Calle Cozumel esquina con Puebla, Colonia La Roma, Ciudad de México.',
             contacto: 'Tel. 7045 7224 y WhatsApp. (045) 998 293 4626',
-            position: '16.800000, -85.0000000'
+            position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-roma.png'
         }
     };
     sucursales.guadalajara = {
@@ -706,7 +752,8 @@ angular.module('application').controller('sucursalesCtrl',
                 nombre: 'WALL´S BARBERSHOP GUADALAJARA',
                 direccion: 'Av. Aviación 3000, San Juan de Ocotán, 45019 Zapopan, Jal.Guadalajara (México)',
                 contacto: 'Tel. (044) 332 066 34 88',
-                position: '16.800000, -85.0000000'
+                position: '16.800000, -85.0000000',
+            img: '/assets/img/sucursales/walls-bonampak.png'  
             }
     };
 
@@ -863,3 +910,153 @@ angular.module('application').controller('sucursalesCtrl',
         }
     }
 }]);
+angular.module('application').controller('wallsCardCtrl',
+  ['$scope', '$window', '$state', '$dbApi', 'FoundationApi', function($scope, $window,  $state, $dbApi, FoundationApi){
+  	
+    angular.element(document.querySelector('#selloBounce2s')).addClass('bounceIn2s');
+    angular.element(document.querySelector('#fadeInLeftIcon2s')).addClass('fadeInLeft2s');
+    angular.element(document.querySelector('#fadeInRight2sIcon')).addClass('fadeInRight2s');
+	
+	$scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
+    $scope.cabecera.position = 'absolute';
+    $scope.cabecera.fontColor = 'black';
+    $scope.actualBody = 1;
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.iconColor = '#333';
+
+    $scope.go = function(state){
+        window.scrollTo(0, 0)
+        $state.go(state);
+    }
+
+    $scope.appearItem = function(item){
+      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
+      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    }
+    $scope.disappearItem = function(item){
+      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
+    }
+
+    $scope.scrollToRegist = function(){
+        var elementTop = document.getElementById('bounceInForm1s').getBoundingClientRect().top - 200;
+        window.scrollTo(0, elementTop);
+    }
+     $scope.scrollToPoints = function(){
+        var elementTop = document.getElementById('bounceInPointsForm1s').getBoundingClientRect().top;
+        window.scrollTo(0, elementTop);
+    }
+
+
+	$scope.clientInfoError = false;
+	$scope.clientData = {};
+	$scope.regist = {};
+	$scope.sucursales = [];
+	$scope.clientInfo;
+	$scope.loadSucursal = function(){
+		switch($scope.regist.state){
+			case '14':
+				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP GUADALAJARA',
+										id: '23'}];
+				break;
+			case '22':
+				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP QUERETARO' , id : '20'}];
+				break;
+			case '9':
+				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP LA ROMA', id: '21'}];
+				break;
+			case '30':
+				$scope.sucursales = [{nombre: 'WALL´S BARBERSHOP BOCA DEL RIO', id: '9'}];
+				break;
+			case '5':
+				$scope.sucursales = [{nombre: 'WALL´S BARBERSHOP TUXTLA GTZ', id: '18'}];
+				break;
+			case '4':
+				$scope.sucursales = [{nombre: 'WALLS CAMPECHE', id: '11'}];
+				break;
+			case '31':
+				$scope.sucursales = [{nombre: 'WALL´S MERIDA PLAZA ARENA', id: '15'}, {nombre:'WALL´S GALERIAS MERIDA', id: '16'}, {nombre: 'WALL´S BARBERSHOP MERIDA UPTOWN', id: '17'}];
+				break;
+			case '23':
+				$scope.sucursales = [{nombre: 'WALLS CHETUMAL', id: '14'}, {nombre: 'WALL´S BARBERSHOP PLAYA DEL CARMEN CENTRO', id: '13'}, 
+				{nombre: 'WALL´S BARBERSHOP PLAYA DEL CARMEN', id: '7'}, {nombre: 'WALL´S BARBERSHOP COZUMEL', id: '5'},
+				{nombre: 'WALL´S BARBERSHOP ISLA MUJERES', id: '10'}, {nombre: 'WALL´S BARBERSHOP BONAMPAK', id: '1'}, {nombre: 'WALL´S LAS TORRES', id: '2'},
+				{nombre: 'WALL´S BARBERSHOP KABAH', id: '12'}];
+				break;
+		};
+	}
+	$scope.sendRegist = function(){
+		$dbApi.registUser($scope.regist).then(function(response){
+			console.log(response.data);
+			if(response.data == 'exito'){
+				FoundationApi.publish('main-notifications', { title: '¡Registrado!', content: 'Registrado correctamente', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png' });
+			}else{
+				FoundationApi.publish('main-notifications', { title: 'Error', content: 'cuenta ya registrada', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png' });
+			}
+		});
+	}
+	$scope.getClientData = function(){
+		$scope.clientInfo = null;
+		$scope.clientInfoError = null;
+		FoundationApi.publish('pointsModal', 'open');
+		$dbApi.getClientData($scope.clientData).then(function(clientData){
+			if(clientData.data){
+				console.log("data")
+				$scope.clientInfo = clientData.data;
+			}
+			else{
+				console.log("error");
+				$scope.clientInfoError = true;
+			}
+			
+		});
+	}
+
+	$window.onscroll = function(event){
+		if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
+          $scope.cabecera.position = 'fixed';
+          $scope.cabecera.top = '0px';
+          $scope.logoTransform = 'scale(0.8, 0.8)';
+          $scope.cabecera.fontColor = 'black';
+          $scope.iconColor = '#333';
+            angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
+          $scope.$apply();
+        }
+	    if(window.scrollY <= 50){
+	        $scope.cabecera.position = 'absolute';
+	        angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
+	        angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
+	        $scope.cabecera.top = '5%';
+	        $scope.logoTransform = 'scale(1, 1)';
+	        $scope.cabecera.fontColor = 'white';
+	        $scope.iconColor = 'white';
+	        $scope.$apply();
+	      }
+		if((document.getElementById('bounceIn1sMembrecia').getBoundingClientRect().top + 00) <= screen.height){
+        	angular.element(document.querySelector('#bounceIn1sMembrecia')).addClass('bounceIn1s');
+    	}
+		if((document.getElementById('fadeInLeftIcons1s').getBoundingClientRect().top + 100) <= screen.height){
+        	angular.element(document.querySelector('#fadeInLeftIcons1s')).addClass('fadeInLeft1s');
+        	angular.element(document.querySelector('#fadeInRightIcons1s')).addClass('fadeInRight1s');
+    	}
+    	if((document.getElementById('bounceInCard1s').getBoundingClientRect().top + 100) <= screen.height){
+        	angular.element(document.querySelector('#bounceInCard1s')).addClass('bounceIn1s');
+    	}
+    	if((document.getElementById('bounceInRegistraText1s').getBoundingClientRect().top +100) <= screen.height){
+        	angular.element(document.querySelector('#bounceInRegistraText1s')).addClass('bounceIn1s');
+    	}
+    	if((document.getElementById('bounceInRegistraText1s').getBoundingClientRect().top +200) <= screen.height){
+        	angular.element(document.querySelector('#bounceInForm1s')).addClass('bounceIn1s');
+    	}
+    	if((document.getElementById('bounceInPointsForm1s').getBoundingClientRect().top +100) <= screen.height){
+        	angular.element(document.querySelector('#bounceInPointsForm1s')).addClass('bounceIn1s');
+    	}
+    	if((document.getElementById('fadeInLeftBigText2s').getBoundingClientRect().top +00) <= screen.height){
+        	angular.element(document.querySelector('#fadeInLeftBigText2s')).addClass('fadeInLeftBig2s');
+    	}
+	}
+ }]);

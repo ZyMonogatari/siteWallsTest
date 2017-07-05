@@ -7859,7 +7859,7 @@ meter {
 .modal {
   position: relative;
   z-index: 1001;
-  background: #fff;
+  background: #333333;
   -ms-flex: 0 0 auto;
       flex: 0 0 auto;
   width: 100%;
@@ -13064,6 +13064,14 @@ body {
   to {
     background: initial; } }
 
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
 .slide-left-to-right {
   -webkit-animation-name: slide-left-to-right;
   /* Safari 4.0 - 8.0 */
@@ -13163,6 +13171,10 @@ body {
   animation-duration: 2s;
   animation-fill-mode: forwards; }
 
+.bounceIn1s {
+  animation-name: bounceIn;
+  animation-duration: 1s; }
+
 .bounceIn2s {
   animation-name: bounceIn;
   animation-duration: 2s; }
@@ -13176,6 +13188,11 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards; }
 
+.fadeInLeft2s {
+  animation-name: fadeInLeft;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
 .fadeInUp1s {
   animation-name: fadeInUp;
   animation-duration: 1s;
@@ -13184,6 +13201,16 @@ body {
 .fadeInLeftBig2s {
   animation-name: fadeInLeftBig;
   animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+.fadeInRight2s {
+  animation-name: fadeInRight;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+.fadeInRight1s {
+  animation-name: fadeInRight;
+  animation-duration: 1s;
   animation-fill-mode: forwards; }
 
 .sucursales-cabecera {
@@ -16447,3 +16474,86 @@ a {
 
 .Roboto-Bold {
   font-family: Roboto-Bold; }
+
+.wallsCard-modal-tab-border {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px; }
+
+.wallsCard-tab-div {
+  position: absolute;
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.wallsCard-tab-content {
+  width: 100%;
+  height: 300px; }
+
+.wallsCard-tab-left {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 70%;
+  height: 50px;
+  font-size: 20px;
+  text-align: center; }
+
+.wallsCard-tab-right {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 30%;
+  height: 50px;
+  text-align: center; }
+
+.wallsCard-tab-fila {
+  position: relative;
+  height: 50px; }
+
+.wallsCard-tab-center {
+  width: 100%;
+  height: 100px;
+  font-size: 20px;
+  text-align: center; }
+
+.wallsCard-saludo {
+  text-align: center; }
+
+.wallsCard-logo-div {
+  position: relative;
+  width: 100%;
+  height: 100px; }
+
+.wallsCard-logo {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.wallsCard-spinner {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.wallsCard-spinner-div {
+  position: relative;
+  width: 100%;
+  height: 100px; }
+
+.wallsCard-modal-content {
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: scroll;
+  max-height: 600px; }
+
+.wallsCard-modal-text {
+  line-height: 1.2; }
+
+.wallsCard-error-div {
+  width: 100%;
+  height: 100px;
+  text-align: center; }
