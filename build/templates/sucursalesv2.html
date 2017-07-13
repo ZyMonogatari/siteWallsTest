@@ -1,0 +1,792 @@
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+<div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
+<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
+<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
+
+<div class="sucursales-cabecerav2">
+  <div class="sucursales-cabecera-titulos-div">
+    <h2 class="whiteFont">Trabajamos desde el 2010, sin parar, con entuciasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
+  </div>
+</div>
+
+<div class="sucursalesv2-cuerpo-absolute">
+  <div class="sucursales-cuerpo-sello">
+    <img src="/assets/img/sello-sucursales-min.png" class="sucursales-cuerpo-sello-img">
+    <div class="sucursales-cuerpo-sello-mascara"></div>
+    <div class="sucursales-cuerpo-sello-titulos-div">
+      <h3 class="whiteFont">
+        NOS PODRÁS ENCONTRAR EN NUESTRAS SIGUIENTES SUCURSALES, 
+      </h3>
+      <h5 class="whiteFont">
+        donde lograrás vivir toda la experiencia Wall´s Barbershop:
+      </h5>
+    </div>
+  </div>
+
+  <div class="sucursales-mapa-div">
+    <div map-lazy-load="https://maps.google.com/maps/api/js" 
+      map-lazy-load-params="{{googleMapsUrl}}" >
+      <ng-map class = "ng-map"
+        zoom="{{mapZoom}}"
+        center="{{mapPosition}}"
+        draggable="false"
+        disable-double-click-zoom="true"
+        scrollwheel="false"
+        disable-default-u-i="true">
+
+        <shape name="image"
+            url="./assets/img/Mapa-BN-min (1).jpg"
+            bounds="[[5.10000, -134.100000], [40.400000, -64.200000]]"
+            ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)"
+            >
+        </shape>
+
+        <custom-marker  position="10.000000, -115.0000000"}>
+          <div class="sucursal-map-instrucciones" >
+            <h4>EXPLORA EL MAPA</h4>
+            <h5>Haga click en las zonas o marcadores, en la barra derecha para ver donde están nuestras franquicias</h5>
+          </div>
+        </custom-marker >
+        <custom-marker position="0, 0">
+        </custom-marker>
+        <custom-marker position="0, 0">
+        </custom-marker>
+        <custom-marker  position="{{estado3.position}}">
+          <div >
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/2-min.png" ng-style="{'width':estado3.width, 'height': estado3.height}" class="state" >
+          </div>
+          
+          
+        </custom-marker>
+
+        <custom-marker  position="17.000000, -80.0000000">
+          <div >
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/1-min.png" ng-style="{'width': estado4.width, 'height': estado4.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        
+         <custom-marker  position="{{estado5.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/3-min.png" ng-style="{'width': estado5.width, 'height': estado5.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado6.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/4-min.png" ng-style="{'width': estado6.width, 'height': estado6.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado7.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/5-min.png" ng-style="{'width': estado7.width, 'height': estado7.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado8.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/6-min.png" class="state" ng-style="{'width': estado8.width, 'height': estado8.height}">
+          </div>
+        </custom-marker>
+
+         <custom-marker  position="{{estado9.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/7-min.png" class="state" ng-style="{'width': estado9.width, 'height': estado9.height}">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado10.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/8-min.png" ng-style="{'width': estado10.width, 'height': estado10.height}"  class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado11.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/9-min.png" class="state" ng-style="{'width': estado11.width, 'height': estado11.height}"  >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado12.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/12-min.png" class="state" ng-style="{'width': estado12.width, 'height': estado12.height}" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado13.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/13-min.png" class="state" ng-style="{'width': estado13.width, 'height': estado13.height}">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado14.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/11-min.png" class="state" ng-style="{'width': estado14.width, 'height': estado14.height}" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado15.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/14-min.png" class="state"  ng-style="{'width': estado15.width, 'height': estado15.height}">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado16.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/15-min.png"  ng-style="{'width': estado16.width, 'height': estado16.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado17.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/16-min.png" ng-style="{'width': estado17.width, 'height': estado17.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado18.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/17-min.png" ng-style="{'width': estado18.width, 'height': estado18.height}"  class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado19.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/18-min.png" ng-style="{'width': estado19.width, 'height': estado19.height}" class="state" >
+          </div>
+        </custom-marker>
+        <custom-marker  position="{{estado20.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/10-min.png"  ng-style="{'width': estado20.width, 'height': estado20.height}" class="state" >
+          </div>
+        </custom-marker>
+        <custom-marker  position="{{estado21.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/19-min.png"  ng-style="{'width': estado21.width, 'height': estado21.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado22.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/20-min.png"  ng-style="{'width': estado22.width, 'height': estado22.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado23.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/21-min.png"  ng-style="{'width': estado23.width, 'height': estado23.height}" class="state" >
+          </div>
+        </custom-marker>
+
+         <custom-marker  position="{{estado24.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/22-min.png"  ng-style="{'width': estado24.width, 'height': estado24.height}" class="state" >
+          </div>
+        </custom-marker>
+        <custom-marker  position="{{estado25.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/23-min.png"  ng-style="{'width': estado25.width, 'height': estado25.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado26.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/24-min.png" ng-style="{'width': estado26.width, 'height': estado26.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado27.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/25-min.png" ng-style="{'width': estado27.width, 'height': estado27.height}" class="state" >
+          </div>
+        </custom-marker>
+
+         <custom-marker  position="{{estado28.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/26-min.png" ng-style="{'width': estado28.width, 'height': estado28.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado29.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/27-min.png"  ng-style="{'width': estado29.width, 'height': estado29.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado30.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/28-min.png"  ng-style="{'width': estado30.width, 'height': estado30.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado31.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/29-min.png" ng-style="{'width': estado31.width, 'height': estado31.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado32.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/30-min.png" ng-style="{'width': estado32.width, 'height': estado32.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado33.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/31-min.png"  ng-style="{'width': estado33.width, 'height': estado33.height}" class="state">
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="{{estado34.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/32-min.png" ng-style="{'width': estado34.width, 'height': estado34.height}" class="state" >
+          </div>
+        </custom-marker>
+
+         <custom-marker  position="{{estado35.position}}">
+          <div style="">
+            <img src="./assets/img/ESTADOS-grandes-optimizadas/33-min.png" ng-style="{'width': estado35.width, 'height': estado35.height}" class="state" >
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="10.000000, -98.605808">
+          <div  ng-style="{'height': layout.height, 'width': layout.width}">
+            <!-- Marcador 3 (imagen 1)-->
+            <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 89%; top: 72%; height: 9%; width: 5%;"></div>
+            <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 90%; top: 69%;  height: 3%; width: 4%;"></div>
+            <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 93%; top: 62%;  height: 7%; width: 3%;"></div>
+            <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 92%; top: 66%;  height: 3%; width: 3%;"></div>
+            <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 88.5%; top: 72%;  height: 6%; width: 1%;"></div>
+            
+            <!-- Marcador 4 (imagen 2)-->
+              <div ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)" ng-click="changePosition('15.100000, -79.000000', 4)" style=" position: absolute; left: 88%; top: 61%; height: 4%; width: 5%;"></div>
+              <div ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)" ng-click="changePosition('15.100000, -79.000000', 4)" style=" position: absolute; left: 84%; top: 64%; height: 4%; width: 8%;"></div>
+              <div ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)" ng-click="changePosition('15.100000, -79.000000', 4)" style=" position: absolute; left: 84%; top: 68%; height: 1%; width: 8%;"></div>
+              <div ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)" ng-click="changePosition('15.100000, -79.000000', 4)" style=" position: absolute; left: 86.5%; top: 69%; height: 3%; width: 3%;"></div>
+              <div ng-mouseover="appearMap(4)" ng-mouseleave="disappearMap(4)" ng-click="changePosition('15.100000, -79.000000', 4)" style=" position: absolute; left: 87.5%; top: 72%; height: 1%; width: 1%;"></div>
+
+            <!-- Marcador 5 (imagen 3)-->
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 83%; top: 73%; height: 9%; width: 6%;"></div>
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 83%; top: 69%;  height: 4%; width: 3%;"></div>
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 85%; top: 71%; height: 3%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 81%; top: 76%; height: 5%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 79%; top: 77%; height: 5%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(5)" ng-mouseleave="disappearMap(5)" ng-click="changePosition('15.100000, -79.000000', 5)" style=" position: absolute; left: 78%; top: 78%;  height: 2%; width: 1%;"></div>
+
+            <!-- Marcador 6 (imagen 4)-->
+            <div  ng-mouseover="appearMap(6)" ng-mouseleave="disappearMap(6)" ng-click="changePosition('15.100000, -79.000000', 6)" style=" position: absolute; left: 73%; top: 80%;  height: 2%; width: 6%;"></div>
+            <div  ng-mouseover="appearMap(6)" ng-mouseleave="disappearMap(6)" ng-click="changePosition('15.100000, -79.000000', 6)" style=" position: absolute; left: 74.5%; top: 82%;  height: 3%; width: 1%;"></div>
+            <div ng-mouseover="appearMap(6)" ng-mouseleave="disappearMap(6)" ng-click="changePosition('15.100000, -79.000000', 6)" style=" position: absolute; left: 73%; top: 82%; height: 2%; width: 2%;"></div>
+            <div   ng-mouseover="appearMap(6)" ng-mouseleave="disappearMap(6)" ng-click="changePosition('15.100000, -79.000000', 6)" style=" position: absolute; left: 76%; top: 82%;  height: 2%; width: 3%;"></div>
+            <div  ng-mouseover="appearMap(6)" ng-mouseleave="disappearMap(6)" ng-click="changePosition('15.100000, -79.000000', 6)" style=" position: absolute; left: 81%; top: 82%;  height: 3%; width: 2%;"></div>
+            
+            <!-- Marcador 7 (imagen 5)-->
+            <div ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 73%; top: 89%;  height: 2%; width: 12%;"></div>
+             <div    ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 74%; top: 87%; height: 9%; width: 5%;"></div>
+             <div   ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 74%; top: 85%; height: 3%; width: 9%;"></div>
+             <div   ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 79%; top: 87%;  height: 3%; width: 6%;"></div>
+             <div    ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 79%; top: 91%;  height: 8%; width: 2%;"></div>
+             <div    ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 77%; top: 96%; height: 3%; width: 2%;"></div>
+             <div   ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 79%; top: 82%;  height: 3%; width: 2%;"></div>
+             <div  ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 75%; top: 82%;  height: 3%; width: 2%;"></div>
+             <div  ng-mouseover="appearMap(7)" ng-mouseleave="disappearMap(7)" ng-click="changePosition('15.100000, -79.000000', 7)" style=" position: absolute; left: 78%; top: 84%;  height: 1%; width: 1%;"></div>
+             <!-- Marcador 8 (imagen 6)-->
+            <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 67%; top: 80%;  height: 5%; width: 6%;"></div>
+            <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 68%; top: 83%;  height: 2%; width: 6%;"></div>
+            <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 70%; top: 85%;  height: 2%; width: 4%;"></div>
+            <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 62%; top: 72%;  height: 4%; width: 3%;"></div>
+             <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 62.5%; top: 76%;  height: 5%; width: 6%;"></div>
+              <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 66%; top: 81%;  height: 1%; width: 1%;"></div>
+              <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 61%; top: 66%;  height: 6%; width: 3%;"></div>
+              <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 59%; top: 66%;  height: 4%; width: 3%;"></div>
+              <div ng-mouseover="appearMap(8)" ng-mouseleave="disappearMap(8)" ng-click="changePosition('15.100000, -84.000000', 8)" style=" position: absolute; left: 58%; top: 61%;  height: 5%; width: 4%;"></div>
+              <!-- Marcador 9 (imagen 7)-->
+            <div ng-mouseover="appearMap(9)" ng-mouseleave="disappearMap(9)" ng-click="changePosition('15.100000, -84.000000', 9)" style=" position: absolute; left: 60%; top: 87%;  height: 7%; width: 13%;"></div>
+            <div ng-mouseover="appearMap(9)" ng-mouseleave="disappearMap(9)" ng-click="changePosition('15.100000, -84.000000', 9)" style=" position: absolute; left: 59.5%; top: 85%;  height: 2%; width: 10%;"></div>
+            <div ng-mouseover="appearMap(9)" ng-mouseleave="disappearMap(9)" ng-click="changePosition('15.100000, -84.000000', 9)" style=" position: absolute; left: 59.5%; top: 83%;  height: 2%; width: 8%;"></div>
+            <div ng-mouseover="appearMap(9)" ng-mouseleave="disappearMap(9)" ng-click="changePosition('15.100000, -84.000000', 9)" style=" position: absolute; left: 60%; top: 81%;  height: 2%; width: 6%;"></div>
+            <!-- Marcador 10 (imagen 8)-->
+            <div ng-mouseover="appearMap(10)" ng-mouseleave="disappearMap(10)" ng-click="changePosition('15.100000, -88.000000', 10)" style=" position: absolute; left: 58%; top: 76%;  height: 5%; width: 5%;"></div>
+            <div ng-mouseover="appearMap(10)" ng-mouseleave="disappearMap(10)" ng-click="changePosition('15.100000, -88.000000', 10)" style=" position: absolute; left: 57%; top: 81%;  height: 2%; width: 5%;"></div>
+            <div ng-mouseover="appearMap(10)" ng-mouseleave="disappearMap(10)" ng-click="changePosition('15.100000, -88.000000', 10)" style=" position: absolute; left: 60%; top: 71%;  height: 4%; width: 2%;"></div>
+            <!-- Marcador 11 (imagen 9)-->
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 54%; top: 85%;  height: 5%; width: 6%;"></div>
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 50%; top: 80%;  height: 5%; width: 6%;"></div>
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 49%; top: 85%;  height: 3%; width: 5%;"></div>
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 47%; top: 80%;  height: 5%; width: 3%;"></div>
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 56%; top: 80%;  height: 5%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(11)" ng-mouseleave="disappearMap(11)" ng-click="changePosition('15.100000, -88.000000', 11)" style=" position: absolute; left: 58%; top: 83%;  height: 3%; width: 1%;"></div>
+            <!-- Marcador 12 (imagen 9)-->
+            <div ng-mouseover="appearMap(12)" ng-mouseleave="disappearMap(12)" ng-click="changePosition('15.100000, -88.000000', 12)" style=" position: absolute; left: 56%; top: 76%; height: 2%; width: 1.5%;"></div>
+            <!-- Marcador 13 (imagen 9)-->
+            <div  ng-mouseover="appearMap(13)" ng-mouseleave="disappearMap(13)" ng-click="changePosition('15.100000, -88.000000', 13)" style=" position: absolute; left: 53%; top: 76%; height: 3%; width: 3%;"></div>
+            <div  ng-mouseover="appearMap(13)" ng-mouseleave="disappearMap(13)" ng-click="changePosition('15.100000, -88.000000', 13)" style=" position: absolute; left: 53%; top: 73%; height: 3%; width: 3%;"></div>
+            <div  ng-mouseover="appearMap(13)" ng-mouseleave="disappearMap(13)" ng-click="changePosition('15.100000, -88.000000', 13)" style=" position: absolute; left: 52.5%; top: 77%; height: 3%; width: 2%;"></div>
+            <div  ng-mouseover="appearMap(13)" ng-mouseleave="disappearMap(13)" ng-click="changePosition('15.100000, -88.000000', 13)" style=" position: absolute; left: 56%; top: 73%; height: 3%; width: 2%;"></div>
+            <div  ng-mouseover="appearMap(13)" ng-mouseleave="disappearMap(13)" ng-click="changePosition('15.100000, -88.000000', 13)" style=" position: absolute; left: 57%; top: 76%; height: 2%; width: 1%;"></div>
+            <!-- Marcador 14  (imagen 9)-->
+            <div  ng-mouseover="appearMap(14)" ng-mouseleave="disappearMap(14)" ng-click="changePosition('15.100000, -88.000000', 14)" style=" position: absolute; left: 55.8%; top: 78%; height: 4%; width: 2%;"></div>
+            <!-- Marcador 15  (imagen 9)-->
+            <div ng-mouseover="appearMap(15)" ng-mouseleave="disappearMap(15)" ng-click="changePosition('15.100000, -88.000000', 15)" style=" position: absolute; left: 59%; top: 74%; height: 3%; width: 2%;"></div>
+            <!-- Marcador 16  (imagen 9)-->
+            <div ng-mouseover="appearMap(16)" ng-mouseleave="disappearMap(16)" ng-click="changePosition('15.100000, -88.000000', 16)" style=" position: absolute; left: 58%; top: 70%; height: 4%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(16)" ng-mouseleave="disappearMap(16)" ng-click="changePosition('15.100000, -88.000000', 16)" style=" position: absolute; left: 55%; top: 67%; height: 6%; width: 4%;"></div>
+            <div ng-mouseover="appearMap(16)" ng-mouseleave="disappearMap(16)" ng-click="changePosition('15.100000, -88.000000', 16)" style=" position: absolute; left: 54%; top: 70%; height: 2%; width: 1%;"></div>
+            <!-- Marcador 17  (imagen 9)-->
+           <div ng-mouseover="appearMap(17)" ng-mouseleave="disappearMap(17)" ng-click="changePosition('15.100000, -88.000000', 17)" style=" position: absolute; left: 54%; top: 68%; height: 2%; width: 1%;"></div>
+            <div ng-mouseover="appearMap(17)" ng-mouseleave="disappearMap(17)" ng-click="changePosition('15.100000, -88.000000', 17)" style=" position: absolute; left: 52%; top: 69%; height: 2%; width: 2%;"></div>
+            <div ng-mouseover="appearMap(17)" ng-mouseleave="disappearMap(17)" ng-click="changePosition('15.100000, -88.000000', 17)" style=" position: absolute; left: 53%; top: 71%; height: 2%; width: 1%;"></div>
+            <div ng-mouseover="appearMap(17)" ng-mouseleave="disappearMap(17)" ng-click="changePosition('15.100000, -88.000000', 17)" style=" position: absolute; left: 54%; top: 65%; height: 2%; width: 3%;"></div>
+             <!-- Marcador 18  (imagen 9)-->
+             <div ng-mouseover="appearMap(18)" ng-mouseleave="disappearMap(18)" ng-click="changePosition('15.100000, -88.000000', 18)" style=" position: absolute; left: 49%; top: 64%; height: 8%; width: 3%;"></div>
+             <div ng-mouseover="appearMap(18)" ng-mouseleave="disappearMap(18)" ng-click="changePosition('15.100000, -88.000000', 18)" style=" position: absolute; left: 47%; top: 68%; height: 5%; width: 3%;"></div>
+             <div ng-mouseover="appearMap(18)" ng-mouseleave="disappearMap(18)" ng-click="changePosition('15.100000, -88.000000', 18)" style=" position: absolute; left: 49%; top: 71%; height: 3%; width: 4%;"></div>
+             <div ng-mouseover="appearMap(18)" ng-mouseleave="disappearMap(18)" ng-click="changePosition('15.100000, -88.000000', 18)" style=" position: absolute; left: 52%; top: 64%; height: 4%; width: 2%;"></div>
+             <div ng-mouseover="appearMap(18)" ng-mouseleave="disappearMap(18)" ng-click="changePosition('15.100000, -88.000000', 18)" style=" position: absolute; left: 48%; top: 66%; height: 2%; width: 1%;"></div>
+             <!-- Marcador 19  (imagen 9)-->
+             <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 50%; top: 50%; height: 14%; width:2%;"></div>
+             <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 52%; top: 60%; height: 5%; width:6%;"></div> 
+             <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 57%; top: 65%; height: 2%; width:1%;"></div> 
+             <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 51.5%; top: 57%; height: 3%; width:2%;"></div>
+              <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 47%; top: 55%; height: 5%; width:5%;"></div>
+              <div ng-mouseover="appearMap(19)" ng-mouseleave="disappearMap(19)" ng-click="changePosition('20.100000, -90.000000', 19)" style=" position: absolute; left: 49%; top: 53%; height: 10%; width:2%;"></div>
+             <!-- Marcador 20  (imagen 9)-->
+             <div ng-mouseover="appearMap(20)" ng-mouseleave="disappearMap(20)" ng-click="changePosition('18.100000, -90.000000', 20)" style=" position: absolute; left: 45%; top: 72%; height: 11%; width:2%;"></div>
+             <div ng-mouseover="appearMap(20)" ng-mouseleave="disappearMap(20)" ng-click="changePosition('18.100000, -90.000000', 20)" style=" position: absolute; left: 42%; top: 78%; height: 5%; width:3%;"></div>
+             <div ng-mouseover="appearMap(20)" ng-mouseleave="disappearMap(20)" ng-click="changePosition('18.100000, -90.000000', 20)" style=" position: absolute; left: 47%; top: 73%; height: 6%; width:6%;"></div>
+             <div ng-mouseover="appearMap(20)" ng-mouseleave="disappearMap(20)" ng-click="changePosition('18.100000, -90.000000', 20)" style=" position: absolute; left: 47%; top: 79%; height: 1%; width:5%;"></div>
+             <!-- Marcador 21  (imagen 9)-->
+             <div ng-mouseover="appearMap(21)" ng-mouseleave="disappearMap(21)" ng-click="changePosition('18.100000, -90.000000', 21)" style=" position: absolute; left: 40%; top: 76%; height: 3%; width:3%;"></div>
+             <!-- Marcador 22  (imagen 9)-->
+             <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 35%; top: 70%; height: 6%; width:10%;"></div>
+             <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 38%; top: 75%; height: 2%; width:2%;"></div>
+             <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 37%; top: 68%; height: 2%; width:3%;"></div>
+             <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 40%; top: 68%; height: 4%; width:7%;"></div>
+              <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 43%; top: 75%; height: 3%; width:2%;"></div>
+              <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 44%; top: 65%; height: 3%; width:4%;"></div>
+              <div ng-mouseover="appearMap(22)" ng-mouseleave="disappearMap(22)" ng-click="changePosition('18.100000, -93.000000', 22)" style=" position: absolute; left: 47%; top: 63%; height: 2%; width:2%;"></div>
+             <!-- Marcador 23  (imagen 9)-->
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 41%; top: 55%;  height: 6%; width:6%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 42%; top: 50%;  height: 5%; width:7%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 46%; top: 46%;  height: 5%; width:3%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 49%; top: 49%;  height: 4%; width:1%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 47%; top: 60%;  height: 4%; width:2.5%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 44%; top: 61%;  height: 4%; width:1%;"></div>
+              <div ng-mouseover="appearMap(23)" ng-mouseleave="disappearMap(23)" ng-click="changePosition('18.100000, -93.000000', 23)" style=" position: absolute; left: 42%; top: 63%;  height: 4%; width:3%;"></div>
+             <!-- Marcador 24  (imagen 9)-->
+             <div ng-mouseover="appearMap(24)" ng-mouseleave="disappearMap(24)" ng-click="changePosition('18.100000, -93.000000', 24)" style=" position: absolute; left: 45%; top: 61%;  height: 4%; width:3%;"></div>
+             <!-- Marcador 25  (imagen 9)-->
+             <div ng-mouseover="appearMap(25)" ng-mouseleave="disappearMap(25)" ng-click="changePosition('18.100000, -93.000000', 25)" style=" position: absolute; left: 40%; top: 61%;  height: 4%; width:4%;"></div>
+             <!-- Marcador 26  (imagen 9)-->
+             <div ng-mouseover="appearMap(26)" ng-mouseleave="disappearMap(26)" ng-click="changePosition('18.100000, -93.000000', 26)" style=" position: absolute; left: 36%; top: 61%;  height: 4%; width:4%;"></div>
+             <div ng-mouseover="appearMap(26)" ng-mouseleave="disappearMap(26)" ng-click="changePosition('18.100000, -93.000000', 26)" style=" position: absolute; left: 37%; top: 64%;  height: 4%; width:4.5%;"></div>
+              <div ng-mouseover="appearMap(26)" ng-mouseleave="disappearMap(26)" ng-click="changePosition('18.100000, -93.000000', 26)" style=" position: absolute; left: 36%; top: 58%;  height: 4%; width:4%;"></div>
+               <!-- Marcador 27  (imagen 9)-->
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 36%; top: 40%;  height: 18%; width:4%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 40%; top: 38%;  height: 18%; width:2%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 42%; top: 47%; height: 3%; width:4%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 42%; top: 38%; height: 14%; width:1%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 35%; top: 38%; height: 18%; width:1%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 32%; top: 44%; height: 6%; width:5%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 34%; top: 40%; height: 5%; width:1%;"></div>
+             <div ng-mouseover="appearMap(27)" ng-mouseleave="disappearMap(27)" ng-click="changePosition('20.100000, -93.000000', 27)" style=" position: absolute; left: 38%; top: 56%; height: 4%; width:3%;"></div>
+               <!-- Marcador 28  (imagen 9)-->
+               <div  ng-mouseover="appearMap(28)" ng-mouseleave="disappearMap(28)" ng-click="changePosition('23.100000, -98.000000', 28)" style=" position: absolute; left: 34%; top: 56%; height: 4%; width:3%;"></div>
+               <div  ng-mouseover="appearMap(28)" ng-mouseleave="disappearMap(28)" ng-click="changePosition('23.100000, -98.000000', 28)" style=" position: absolute; left: 32%; top: 51%; height: 5%; width:3%;"></div>
+               <div  ng-mouseover="appearMap(28)" ng-mouseleave="disappearMap(28)" ng-click="changePosition('23.100000, -98.000000', 28)" style=" position: absolute; left: 29%; top: 46%;  height: 5%; width:4%;"></div>
+               <div  ng-mouseover="appearMap(28)" ng-mouseleave="disappearMap(28)" ng-click="changePosition('23.100000, -98.000000', 28)" style=" position: absolute; left: 25%; top: 41%;  height: 5%; width:7%;"></div>
+               <div  ng-mouseover="appearMap(28)" ng-mouseleave="disappearMap(28)" ng-click="changePosition('23.100000, -98.000000', 28)" style=" position: absolute; left: 25%; top: 36%;  height: 5%; width:6%;"></div>
+               <!-- Marcador 29  (imagen 9)-->
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 45%; top: 22%;  height: 25%; width:6%;"></div>
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 43%; top: 25%;  height: 22%; width:3%;"></div>
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 43%; top: 47%;  height: 2%; width:2.5%;"></div>
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 48%; top: 47%;  height: 2.5%; width:3%;"></div>
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 41.5%; top: 27%;  height: 11%; width:2%;"></div>
+               <div ng-mouseover="appearMap(29)" ng-mouseleave="disappearMap(29)" ng-click="changePosition('26.100000, -98.000000', 29)" style=" position: absolute; left: 51%; top: 25%;  height: 11%; width:2%;"></div>
+               <!-- Marcador 30  (imagen 9)-->
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 28%; top: 9%;  height: 30%; width:13%;"></div>
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 41%; top: 23%;  height: 15%; width:1%;"></div>
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 42%; top: 23%;  height: 5%; width:1%;"></div>
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 29%; top: 38%;  height: 3%; width:6%;"></div>
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 31%; top: 41%;  height: 3%; width:3%;"></div>
+               <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 26%; top: 28%;  height: 4%; width:3%;"></div>
+                <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 27%; top: 30%;  height: 6%; width:3%;"></div>
+                <div ng-mouseover="appearMap(30)" ng-mouseleave="disappearMap(30)" ng-click="changePosition('26.100000, -98.000000', 30)" style=" position: absolute; left: 27%; top: 11%;  height: 16%; width:1%;"></div>
+               <!-- Marcador 31  (imagen 9)-->
+                <div ng-mouseover="appearMap(31)" ng-mouseleave="disappearMap(31)" ng-click="changePosition('30.100000, -105.000000', 31)" style=" position: absolute; left: 15%; top: 7%;  height: 20%; width:12%;"></div>
+                <div ng-mouseover="appearMap(31)" ng-mouseleave="disappearMap(31)" ng-click="changePosition('30.100000, -105.000000', 31)" style=" position: absolute; left: 10%; top: 3%;  height: 8%; width:5%;"></div>
+                <div ng-mouseover="appearMap(31)" ng-mouseleave="disappearMap(31)" ng-click="changePosition('30.100000, -105.000000', 31)" style=" position: absolute; left: 19%; top: 25%;  height: 8%; width:7%;"></div>
+                 <div ng-mouseover="appearMap(31)" ng-mouseleave="disappearMap(31)" ng-click="changePosition('30.100000, -105.000000', 31)" style=" position: absolute; left: 20%; top: 30%;  height: 8%; width:7%;"></div>
+               <!-- Marcador 32  (imagen 9)-->
+               <div ng-mouseover="appearMap(32)" ng-mouseleave="disappearMap(32)" ng-click="changePosition('25.100000, -105.000000', 32)" style=" position: absolute; left: 7%; top: 29%;  height: 30%; width:12%;"></div>
+               <div ng-mouseover="appearMap(32)" ng-mouseleave="disappearMap(32)" ng-click="changePosition('25.100000, -105.000000', 32)" style="position: absolute; left: 13%; top: 38%;  height: 22%; width:12%;"></div>
+               <!-- Marcador 33  (imagen 9)-->
+                <div ng-mouseover="appearMap(33)" ng-mouseleave="disappearMap(33)" ng-click="changePosition('32.100000, -109.000000', 33)" style=" position: absolute; left: 3%; top: 2%;  height: 20%; width:7%;"></div>
+                <div  ng-mouseover="appearMap(33)" ng-mouseleave="disappearMap(33)" ng-click="changePosition('32.100000, -109.000000', 33)" style=" position: absolute; left: 10%; top: 18%;  height: 11%; width:5%;"></div>
+               <!-- Marcador 34  (imagen 9)-->
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 51%; top: 32%;  height: 18%; width:4%;"></div>
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 51%; top: 40%;  height: 4%; width:7%;"></div>
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 51%; top: 44%;  height: 4%; width:8%;"></div>
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 52%; top: 50%;  height: 5%; width:3%;"></div>
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 52%; top: 55%;  height: 2%; width:2%;"></div>
+               <div ng-mouseover="appearMap(34)" ng-mouseleave="disappearMap(34)" ng-click="changePosition('25.100000, -90.000000', 34)" style=" position: absolute; left: 50%; top: 38%;  height: 4%; width:2%;"></div>
+               <!-- Marcador 35  (imagen 9)-->
+              <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 58%; top: 40%;  height: 21%; width:7%;"></div>
+              <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 55%; top: 48%;  height: 13%; width:7%;"></div>
+              <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 57%; top: 46%;  height: 2%; width:7%;"></div>
+              <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 54%; top: 54%;  height: 6%; width:2%;"></div>
+
+          </div>
+          </custom-marker>
+          <custom-marker  position="10.000000, -73.0000000">
+          <div class="sucursal-map-barra">
+            <i class="whiteFont fa fa-plus-circle fa-4x plus-icon" aria-hidden="true" ng-click="openMapMenu()" ></i>
+          </div>
+        </custom-marker>
+
+        <custom-marker  position="32.400000, -98.7000000"}>
+          <div class="sucursal-map-menu" id="sucursal-map-menu" ng-if="showMapMenu" style="opacity: 1">
+            <i class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
+            <h3>SUCURSALES</h3>
+              <div class="sucursal-map-grid">
+                <div class="sucursales-columna-izquierda">
+                  <div class="sucursales-menu-item" ng-repeat="sucursal in sucursalesColumna1" >
+                    <div style="position: relative; width: 80%; margin: auto; ">
+                      <h5>{{sucursal.nombre}}</h5>
+                    </div>
+                    <img src="/assets/img/fondo-top-sucursales-circulo-min.jpg" class="sucurasles-menu-item-image">
+                  </div>
+                </div>
+                <div class="sucursales-columna-derecha">
+                  <div class="sucursales-menu-item" ng-repeat="sucursal in sucursalesColumna2" >
+                    <div style="position: relative; width: 80%; margin: auto; ">
+                      <h5>{{sucursal.nombre}}</h5>
+                    </div>
+                    <img src="/assets/img/fondo-top-sucursales-circulo-min.jpg" class="sucurasles-menu-item-image">
+                  </div>
+                </div>
+              </div>
+          </div>
+        </custom-marker>
+      </ng-map>
+    </div>
+  </div>
+
+  <div class="sucursales-footer-div">
+    <div class="sucursales-cuerpo3-div">
+        <div class="footer-servicios-titulos">
+          <h1 class="text-center gray-text Oswald-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+          <h2 class="text-center gray-text Oswald-Bold">¡CONTÁCTANOS!</h2>
+          <h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
+          <h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
+          <h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+          <div class="leer-mas-servicios" ng-click="go('franquicias')">
+            <h6 class="whiteFont Lato-Regular">
+              <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+              Leer más
+            </h6>
+          </div>
+        </div>
+        
+      </div>
+      <div class="footer-servicios-brand">
+        <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--
+<div class="sucursales-cabecera">
+  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto1">
+    <h4>
+       Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
+    </h4>
+   
+  </div>
+  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto2">
+    <h4>
+       Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
+    </h4>
+  </div>
+</div>
+<div class="sucursales-div-circular">
+</div>
+
+   
+<div class="sucursales-cuerpo-absolute">
+  <div class="sucursales-fondo"></div>
+  <div class="sucursales-cuerpo2">
+    <div class="sucursales-cuerpo2-div-diagonal"></div>
+    <div class="sucursales-cuerpo2-contenido">
+      <div class="sucursales-cuerpo2-titulos-top" id="texto1-movil">
+        <h4 class="whiteFont text-center Lato-Italic" >
+           Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
+        </h4>
+      </div>
+      <div class="sucursales-cuerpo2-titulos-top" id="texto2-movil">
+        <h4 class="whiteFont text-center Lato-Italic">
+           Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
+        </h4>
+      </div>
+      <img src="./assets/img/silla-min.png" class="sucursales-cuerpo2-contenido-silla">
+      <div class="sucursales-cuerpo2-titulos">
+        <h4 class="whiteFont text-center Lato-Italic">
+          Gracias a ustedes nos encontramos en constante crecimiento y nos podrás encontrar en nuestras siguientes sucursales, donde lograrás vivir toda la experiencia Wall's Barbershop:
+        </h4>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="sucursales-cuerpo3">
+    <div class="sucursales-cuerpo-mapa" >
+      <div map-lazy-load="https://maps.google.com/maps/api/js"                  map-lazy-load-params="{{googleMapsUrl}}" class="google-maps-div">
+        <ng-map class = "ng-map"
+          zoom="5"
+          center="23.848025, -98.605808"
+          draggable="false"
+          disable-double-click-zoom="true"
+          scrollwheel="false"
+          disable-default-u-i="true">
+            shapes
+            <shape name="image"
+             url="./assets/img/BG-mapa-min.jpg"
+             bounds="[[5.10000, -125.100000], [40.400000, -72.300000]]">
+            </shape>
+
+            <shape name="image"
+             url="./assets/img/MapaWall's.png"
+             bounds="[[12.00000, -123.500000], [31.000000, -98.000000]]">
+            </shape>
+            Markers
+            <marker position="20.000000, -98.3000000" title="Cancún, Quintana Roo"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('cancun', 'Cancún, Quintana Roo')"></marker>
+
+              <marker position="18.800000, -97.7000000" title="Isla Mujeres, Quintana Roo"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('isla', 'Isla Mujeres, Quintana Roo')"></marker>
+
+             <marker position="17.500000, -98.0000000" title="Cozumel, Quintana Roo"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('cozumel', 'Cozumel, Quintana Roo')"></marker>
+
+            <marker position="18.800000, -98.8000000" title="Playa del carmen, Quintana Roo"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('playa', 'Playa del Carmen, Quintana Roo')"></marker>
+
+             <marker position="17.500000, -99.3000000" title="Chetumal, Quintana Roo"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('chetumal', 'Chetumal, Quintana Roo')"></marker>
+
+            <marker position="19.000000, -100.0000000" title="Merida, Yucatan"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('merida', 'Merida, Yucatan')"></marker>
+
+            <marker position="17.2000000,-101.0000000" title="Campeche"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('campeche', 'Campeche')"></marker>
+            <marker position="17.0000000,-106.0000000" title="Boca del rio, Veracruz"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('veracruz', 'Boca del Rio, Veracruz')"></marker>
+            <marker position="20.000000,-111.500000" title="Aguascalientes, AGS"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('aguasCalientes', 'Aguascalientes, AGS')"></marker>
+            <marker position="15.0000000,-102.5000000" title="Tuxtla GTZ, Chiapas"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('tuxtla', 'Tuxtla, GTZ')"></marker>
+            <marker position="17.700000,-108.600000" title="Ciudad de Mexico"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }"
+              on-click="cambiarSucursalDesktop('cdMx', 'CDMX - EDO MEX')"></marker>
+
+            <marker position="18.4000000,-112.5000000" title="Guadalajara, Jalisco"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('guadalajara', 'Guadalajara, Jalisco')"></marker>
+
+            <marker position="19.0000000,-109.4000000" title="Queretaro"
+            icon="{
+                url:'./assets/img/ubicacion-no-select.png',
+                scaledSize:[30,35]
+              }" on-click="cambiarSucursalDesktop('queretaro', 'Queretaro')"></marker>
+
+            Custom Markers
+            <custom-marker  position="31.000000, -115.0000000"}>
+              <div class="sucursal-state appear">
+                <h1 class="Oswald-Bold">{{actualMap}}</h1>
+              </div>
+            </custom-marker>
+
+            <custom-marker ng-repeat="sucursal in sucursales" position={{sucursal.position}}>
+              <div class="sucursal-map-div appear">
+                <div class="sucursales-map-image-div" >
+                  <div class="image-circular-margin" >
+                    <img width="100" src={{sucursal.img}} class="sucursal-map-sucursal-img">
+                  </div>
+                </div>
+                <div class="sucursales-map-info-div">  
+                  <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+                  <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+                  <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+                </div>
+              </div>
+            </custom-marker>
+          </ng-map>
+      </div>
+      <img src="./assets/img/marco-top.png" class="margin-map-top">
+      <img src="/assets/img/marco-bottom.png
+    </div>
+
+    <div class="sucursales-cuerpo-mapa-movil" >
+     
+      <div class="acordeon-contain">
+
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(1)">
+          <div class="sucursales-plus-button">
+            <h1>+</h1>
+          </div>
+          <div class="sucursales-map-bar-title">
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
+          </div>
+          <div class="sucursales-less-button">
+            <h1 ng-click="cerrarSucursalMovil(1)">-</h1>
+          </div>
+        </div>
+
+        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion1Show}">
+      
+          <div class="sucursales-map-div-columna1">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna1">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+
+          <div class="sucursales-map-div-columna2">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna2">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acordeon-contain">
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(2)">
+          <div class="sucursales-plus-button">
+            <h1>+</h1>
+          </div>
+          <div class="sucursales-map-bar-title">
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
+          </div>
+          <div class="sucursales-less-button">
+            <h1 ng-click="cerrarSucursalMovil(2)">-</h1>
+          </div>
+        </div>
+        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion2Show}">
+      
+          <div class="sucursales-map-div-columna1">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna1">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+
+          <div class="sucursales-map-div-columna2">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna2">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acordeon-contain">
+        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(3)">
+          <div class="sucursales-plus-button">
+            <h1>+</h1>
+          </div>
+          <div class="sucursales-map-bar-title">
+            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
+          </div>
+          <div class="sucursales-less-button">
+            <h1 ng-click="cerrarSucursalMovil(3)">-</h1>
+          </div>
+        </div>
+        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion3Show}">
+      
+          <div class="sucursales-map-div-columna1">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna1">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+
+          <div class="sucursales-map-div-columna2">
+            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna2">
+              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
+              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
+              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sucursales-cuerpo3-div-diagonal"></div>
+    <div class="sucursales-cuerpo3-div">
+      <div class="footer-servicios-titulos">
+        <h1 class="text-center gray-text Oswald-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+        <h2 class="text-center gray-text Oswald-Bold">¡CONTÁCTANOS!</h2>
+        <h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
+        <h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
+        <h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+        <div class="leer-mas-servicios" ng-click="go('franquicias')">
+          <h6 class="whiteFont Lato-Regular">
+            <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+            Leer más
+          </h6>
+        </div>
+      </div>
+      
+    </div>
+    <div class="footer-servicios-brand">
+      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
+    </div>
+  </div>
+</div>
+
+
+	</div> -->

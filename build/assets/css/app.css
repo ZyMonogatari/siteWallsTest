@@ -13311,8 +13311,7 @@ body {
   background-size: contain;
   position: absolute;
   width: 100%;
-  height: 700px;
-  top: 300px; }
+  height: 700px; }
 
 .sucursales-cuerpo3-div-diagonal {
   position: absolute;
@@ -13534,8 +13533,6 @@ body {
     background-repeat: no-repeat; }
   .sucursales-cuerpo3 {
     height: 1400px; }
-  .sucursales-cuerpo3-div {
-    top: 670px; }
   .sucursales-cuerpo3-div-diagonal {
     width: 150%;
     left: -30%;
@@ -13600,6 +13597,136 @@ body {
   .sucursales-div-circular {
     width: 220px;
     height: 220px; } }
+
+.sucursales-cabecerav2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/fondo-top-min.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.sucursales-cabecera-titulos-div {
+  position: absolute;
+  top: 300px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 90%;
+  text-align: center; }
+
+.sucursalesv2-cuerpo-absolute {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  height: 1800px;
+  background: blue; }
+
+.sucursales-cuerpo-sello {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background: black; }
+
+.sucursales-cuerpo-sello-img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: -235px;
+  transform: scale(0.8, 0.8);
+  -ms-transform: scale(0.8, 0.8);
+  -webkit-transform: scale(0.8, 0.8); }
+
+.sucursales-cuerpo-sello-mascara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); }
+
+.sucursales-cuerpo-sello-titulos-div {
+  position: absolute;
+  width: 60%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 250px;
+  text-align: center; }
+
+.sucursales-mapa-div {
+  position: absolute;
+  top: 400px;
+  width: 100%;
+  height: 800px; }
+
+.sucursales-footer-div {
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  top: 1200px; }
+
+.sucursal-map-instrucciones {
+  position: static;
+  background: #D8D9DB;
+  width: 200px;
+  height: 200px;
+  text-align: center; }
+
+.sucursal-map-barra {
+  position: absolute;
+  background: rgba(51, 51, 51, 0.6);
+  width: 70px;
+  height: 550px;
+  text-align: center; }
+
+.plus-icon {
+  position: absolute;
+  top: 275px;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.sucursal-map-menu {
+  opacity: 0;
+  position: absolute;
+  background: white;
+  width: 550px;
+  overflow: scroll;
+  height: 550px; }
+
+.sucursales-mapa-close {
+  position: absolute;
+  right: 3px; }
+
+.sucursal-map-grid {
+  position: absolute;
+  width: 100%;
+  background: black; }
+
+.sucursales-columna-izquierda {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 500px; }
+
+.sucursales-columna-derecha {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 500px; }
+
+.sucursales-menu-item {
+  position: relative;
+  margin-bottom: 5px;
+  width: 90%;
+  text-align: center; }
+
+.sucurasles-menu-item-image {
+  width: 200px;
+  height: 150px; }
+
+.state {
+  opacity: 0; }
 
 .galeria-overImg {
   width: 100%;
@@ -16557,3 +16684,15 @@ a {
   width: 100%;
   height: 100px;
   text-align: center; }
+
+.featureTextRight {
+  width: 500px; }
+
+.featureTextLeft {
+  width: 300px; }
+
+@media (min-width: 768px) {
+  .customContainer {
+    width: 200px; }
+  .featureTextRight {
+    width: 0px; } }

@@ -1,91 +1,3 @@
-<div ng-include="'/templates/navBar.html'"></div>
-<div ng-include="'/templates/navBarMovil.html'"></div>
-<div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
-<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
-<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
-
-<div zf-modal="" id="pointsModal" >
-<a zf-close="" class="close-button whiteFont">×</a>
-<div class="wallsCard-spinner-div" ng-if="!clientInfo & !clientInfoError">
-    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw whiteFont wallsCard-spinner" ></i>
-</div>
-<div class="wallsCard-logo-div" ng-show="clientInfo">
-<img src="./assets/img/logo.png" class="wallsCard-logo" >
-</div>
-<h3 class="whiteFont wallsCard-saludo" ng-show="clientInfo">Hola {{clientInfo[1]}} {{clientInfo[2]}}</h3>
-<div class="wallsCard-tab-content" ng-show="clientInfo">
-    <div class="wallsCard-tab-div wallsCard-modal-tab-border">
-        <div class="wallsCard-tab-fila">
-            <div class="wallsCard-modal-tab-border wallsCard-tab-left whiteFont">
-                Tu ultima visita fue:
-            </div>
-            <div class="wallsCard-modal-tab-border wallsCard-tab-right whiteFont">
-                {{clientInfo[0]}}
-            </div>
-        </div>
-        <div class="wallsCard-tab-fila">
-            <div class="wallsCard-modal-tab-border wallsCard-tab-left whiteFont">
-                Tu total de visitas es
-            </div>
-            <div class="wallsCard-modal-tab-border wallsCard-tab-right whiteFont">
-                {{clientInfo[3]}}
-            </div>
-        </div>
-        <div class="wallsCard-tab-fila">
-            <div class="wallsCard-modal-tab-border wallsCard-tab-center whiteFont">
-                Recuerda que cada 5 visitas tienes un corte <strong>Gratis!</strong>
-            </div>
-        </div>
-    </div>
-</div>
-<div ng-show="clientInfoError" class="wallsCard-error-div">
-    <h2 class="whiteFont">Usuario o contraseña incorrectos</h2>
-</div>
-</div>
-
-
-<div zf-modal="" id="terms" >
-<a zf-close="" class="close-button whiteFont">×</a>
-<div class="wallsCard-logo-div" >
-    <img src="./assets/img/logo.png" class="wallsCard-logo" >
-</div>
-    <div class="wallsCard-modal-content">
-        <h3 class="whiteFont wallsCard-modal-text" >Terminos y condiciones de Wall's Barbershop</h3>
-        <h4 class="whiteFont wallsCard-modal-text">Los Términos y Condiciones que a continuación se establecen regulan el uso del portal wallsbarbershop.com en Internet, perteneciente a Wall's Barbershio, el cual es puesto a disposición de los usuarios de Internet.</h4>
-        <h4 class="whiteFont wallsCard-modal-text">•Aspectos Generales.
-            La persona que utiliza el sitio web se le atribuye la calidad de usuario de wallsbarbershop.com (en adelante denominado el “Usuario”) y expresa la aceptación plena y sin reservas del Usuario en todos y cada uno de los Términos y Condiciones en la versión publicada por Wall's Barbershop en el momento mismo en que el usuario acceda a la plataforma wallsbarbershop.com En consecuencia, el usuario debe leer atentamente los Términos y Condiciones en cada una de las ocasiones en que se proponga utilizar a la plataforma.
-
-            Los Términos y Condiciones podrán ser modificados en todo o en parte únicamente por Wall's Barbershop y dichos cambios e implementación tendrán vigencia a partir del momento mismo en que sean publicados o insertados en el sitio o desde que sean notificados al usuario por cualquier medio, lo que ocurra primero. Las violaciones a los Términos y Condiciones generarán el derecho a favor de Wall's Barbershop a suspender o terminar la prestación del servicio al usuario que las haya realizado, por acción u omisión.
-        </h4>
-        <h4 class="whiteFont wallsCard-modal-text">
-            •El servicio.
-            El objeto de servicio de la plataforma wallsbarbershop.com es ofrecer al usuario y cliente de Wall's Barbershop información relevante sobre los servicios de la empresa, así como facilitar una plataforma de reservas en línea a través de dicho portal.
-        </h4>
-    </div>
-</div>
-
-<div zf-modal="" id="politicas" >
-<a zf-close="" class="close-button whiteFont">×</a>
-<div class="wallsCard-logo-div" >
-    <img src="./assets/img/logo.png" class="wallsCard-logo" >
-</div>
-    <div class="wallsCard-modal-content">
-        <h3 class="whiteFont wallsCard-modal-text">Politicas de Privacidad</h3>
-        <h4>Finalidad: Los datos serán utilizados para:</h4>
-        <h4 class="whiteFont wallsCard-modal-text">– El cumplimiento de obligaciones legales o contractuales contraídas con usted – Informar sobre nuestros productos y/o servicios y los cambios en los mismos – Adelantar procesos de evaluación sobre la calidad de nuestros productos y servicios – Proveer productos y servicios. – Información comercial, publicitaria o promocional sobre los productos y/o servicios, eventos y/o promociones de tipo comercial o no de estas, con el fin de impulsar, invitar, dirigir, ejecutar, informar y de manera general, llevar a cabo campañas, promociones o concursos de carácter comercial o publicitario – Transferencia y transmisión de sus datos personales a terceros.</h4>
-        <h4 class="whiteFont wallsCard-modal-text">
-        La información y datos personales suministrados a Wall's Barbershop podrán ser procesados, recolectados, almacenados, usados, circulados, suprimidos, compartidos, actualizados, las actividades mencionadas las podremos realizar a través de diferentes medios tales como correo físico, electrónico, celular o dispositivo móvil, vía mensajes de texto (1\1 S y/o MMS), o a través de cualquier medio análogo y/o digital de comunicación, conocido o por conocer.
-        </h4>
-        <h4 class="whiteFont wallsCard-modal-text">
-           Derechos: Los derechos que le asisten a nuestros clientes de sus datos personales son: conocer, actualizar y solicitar la rectificación o supresión de datos; conocer el uso que hace Wall's Barbershop de sus datos personales y revocar en cualquier momento la autorización de la inclusión de sus datos personales en las bases de datos de wallsbarbershop.com, no recolecta ni maneja información sobre datos sensibles. En el evento de llegar a solicitar información sobre este tipo de datos, se deja constancia que la repuesta es totalmente facultativa.
-        </h4>
-        <h4 class="whiteFont wallsCard-modal-text">
-            Autorización: Los Titulares podrán ejercer sus derechos de conocer, actualizar, rectificar y suprimir sus datos personales enviando su solicitud al correo machoscolombia@hotmail.com dentro de los treinta días (30) siguientes a la fecha de este comunicado. Si usted no da respuesta entenderemos que ha autorizado a Wall's Barbershop para continuar con el tratamiento de sus datos personales, tal como lo establece la ley 1581 de 2012.
-        </h4>
-    </div>
-</div>
-<zf-notification-set id="main-notifications" position="top-left" ></zf-notification-set>
-
     <!-- PRELOADER 
     <div class="spn_hol">
         <div class="spinner">
@@ -95,102 +7,83 @@
         </div>
     </div>
 
- END PRELOADER -->
+  END PRELOADER -->
 
  <!-- =========================
-     START ABOUT US SECTION
+     START 
 ============================== -->
-    <section class="wc-header wc-parallax home-parallax page" id="HOME" ng-style="{'height' : screenHeight}">
-
-      <!--   <div class="fondo-top-izquierdo"></div>    
-         <div class="fondo-top-derecho"></div> -->
+<div style="position: relative; height: 100%;"></div>
+    <section class="wc-header wc-parallax home-parallax page" id="HOME">
+    <h2></h2>
+     
          <div class="wc-fondo-diagonal"></div>      
-        <div class="wc-section_overlay" ng-style="{'height' : screenHeight}">
+        <div class="wc-section_overlay">
             <nav class="wc-navbar wc-navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                    
                     <!-- CAMBIAR AL MENÚ PARA WALL´S - CAMBIAR AL MENÚ PARA WALL´S -CAMBIAR AL MENÚ PARA WALL´S
                     <div ng-include="'/templates/navBar.html'"></div>
-<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div> -->
-                    
-                    
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+					<div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div> -->                    
                    
-                    <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container- -->
             </nav>
 
             <div class="container home-container">
-                <div class="row" style="margin-top: 100px;">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="wc-logo text-center">
-
-                                <!-- LOGO 
-                            <img width="125" height="55" src="./assets/img/logo.png" alt="">-->
+                                <!-- LOGO -->
+                            <img width="125" height="55" src="images/logo.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                       <div class="wc-feature_inner">
-            <div class="container customContainer">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-2 wc-right_no_padding wc-texto_top_derecha" id="fadeInLeftIcon2s">
+                    <div class="col-md-2 wc-right_no_padding wow fadeInLeft wc-texto_top_derecha" data-wow-duration="2s">
                         <!-- FEATURE -->
 
-                        <div class="wc-left_single_feature featureTextLeft">
+                        <div class="wc-left_single_feature">
                             <!-- ICON -->
                            
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <div ng-click="scrollToRegist()" style="cursor:pointer";><i class="wc-icono-registrase"></i></div>
-                            <h3>Registrarme</h3>
+                            <a href="#REGISTRO"> <div><i class="wc-icono-registrase"></i></div>
+                            <h3>Registrarme</h3></a>
 
                             
                         </div>
 
-                        <!-- END SINGLE FEATURE -->
+                    
 
 
-                        <!-- FEATURE -->
                         
-                        <!-- END SINGLE FEATURE -->
-
-
-                        <!-- FEATURE -->
-                        
-                        <!-- END SINGLE FEATURE -->
 
                     </div>
                     <div class="col-md-8 wc-col-md-8 wc-sello_imagen">
                         <div class="">
                             <!-- FEATURE IMAGE -->
-                            <img  id="selloBounce2s" src="./assets/img/sello-walls-card-min.png" alt="">
+                            <img class="wow bounceIn" data-wow-duration="2s" src="images/sello-walls-card-min.png" alt="">
                         </div>
                     </div>
-                    <div class="col-md-2 wc-left_no_padding wc-texto_top_izquierda" id="fadeInRight2sIcon">
+                    <div class="col-md-2 wc-left_no_padding wow fadeInRight wc-texto_top_izquierda" data-wow-duration="2s">
 
                         <!-- FEATURE -->
-                        <div class="wc-right_single_feature featureTextRight">
+                        <div class="wc-right_single_feature">
                             <!-- ICON -->
                             
 
-                            <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <div ng-click="scrollToPoints()" style="cursor:pointer"><i class="wc-iconos-mis-puntos"></i></div>
-                            <h3>Ver mis puntos</h3>
+                   
+                            <a href="#LOGIN"> <div><i class="wc-iconos-mis-puntos"></i></div>
+                            <h3>Ver mis puntos</h3></a>
                             
                         </div>
-                        <!-- END SINGLE FEATURE -->
+                     
 
 
-                        <!-- FEATURE -->
                         
-                        <!-- END SINGLE FEATURE -->
-
-
-                        <!-- FEATURE -->
-                        
-                        <!-- END SINGLE FEATURE -->
                     </div>
                 </div>
                   
@@ -215,7 +108,7 @@
                     <!-- FEATURES SECTION TITLE -->
                     <div class="wc-membrecia_title wow fadeIn" data-wow-duration="1s">
                         <h2>Conoce nuestra membrecía</h2>
-                         <div class="wc-imagenen-menbrecia-central"><img id="bounceIn1sMembrecia" src="./assets/img/menbrecia-min.png" alt=""></div>
+                         <div class="wc-imagenen-menbrecia-central"><img class="wow bounceIn" data-wow-duration="1s" src="images/menbrecia-min.png" alt=""></div>
                         <p>¡La única tarjeta que tiene más actitud que otras!</p>
                     </div>
                     <!-- END FEATURES SECTION TITLE -->
@@ -226,12 +119,12 @@
         <div class="wc-membrecia_inner">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 wc-right_no_padding" id="fadeInLeftIcons1s">
+                    <div class="col-md-4 wc-right_no_padding wow fadeInLeft" data-wow-duration="1s">
                         <!-- FEATURE -->
 
                         <div class="wc-left_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-like"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-cumple-mes-min.png" alt=""></div>
+                            <div><span class="pe-7s-like"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-cumple-mes-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>¡Gratis!</h3>
@@ -244,7 +137,7 @@
                         <!-- FEATURE -->
                         <div class="wc-left_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-science"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-torta-cumple-min.png" alt=""></div>
+                            <div><span class="pe-7s-science"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-torta-cumple-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>Cumpleaños</h3>
@@ -256,7 +149,7 @@
                         <!-- FEATURE -->
                         <div class="wc-left_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-look"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-3x2-min.png" alt=""></div>
+                            <div><span class="pe-7s-look"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-3x2-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>3x2</h3>
@@ -268,17 +161,17 @@
                     <div class="col-md-4">
                         <div class="wc-membrecia_iphone">
                             <!-- FEATURE PHONE IMAGE -->
-                            <img id="bounceInCard1s" src="./assets/img/tarejeta-walls-card-min.png" alt="">
+                            <img class="wow bounceIn" data-wow-duration="1s" src="images/tarejeta-walls-card-min.png" alt="">
                           <div class="wc-texto-menbrecia-beneficios">  <h3>Beneficios VIP de tu tarjeta Wall’s Card</h3></div>
                         </div>
                         
                     </div>
-                    <div class="col-md-4 wc-left_no_padding" id="fadeInRightIcons1s">
+                    <div class="col-md-4 wc-left_no_padding wow fadeInRight" data-wow-duration="1s">
 
                         <!-- FEATURE -->
                         <div class="wc-right_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-monitor"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-octavo-min.png" alt=""></div>
+                            <div><span class="pe-7s-monitor"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-octavo-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>El 8vo gratis!</h3>
@@ -290,7 +183,7 @@
                         <!-- FEATURE -->
                         <div class="wc-right_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-phone"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-tarjeta-walls-card-min.png" alt=""></div>
+                            <div><span class="pe-7s-phone"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-tarjeta-walls-card-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>10% de descuento</h3>
@@ -302,7 +195,7 @@
                         <!-- FEATURE -->
                         <div class="wc-right_single_membrecia">
                             <!-- ICON -->
-                            <div><span class="pe-7s-gleam"></span><img class="wow bounceIn" data-wow-duration="1s" src="./assets/img/icono-suma-puntos-min.png" alt=""></div>
+                            <div><span class="pe-7s-gleam"></span><img class="wow bounceIn" data-wow-duration="1s" src="images/icono-suma-puntos-min.png" alt=""></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
                             <h3>Suma Puntos</h3>
@@ -331,7 +224,7 @@
                             
                         </div>
                         
-                <div class="col-md-10 col-md-offset-1 " id="bounceInRegistraText1s">
+                <div class="col-md-10 col-md-offset-1 wow bounceIn">
                     <!-- Start Contact Section Title-->
                     <div class="wc-section_title">
                         <h2>Registra tu Wall’s Card</h2>
@@ -340,7 +233,7 @@
                 </div>
             </div>
 
-            <div class="wc-contact_form" id="bounceInForm1s">
+            <div class="wc-contact_form wow bounceIn">
                 <div class="container">
 
                 <!-- START ERROR AND SUCCESS MESSAGE -->
@@ -356,7 +249,7 @@
                 
                    <!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->   
                    
-                    <form ng-submit="sendRegist()" >
+                    <form action="sendmail.php" method="post" >
                 <input type="hidden" value="1" name="info[activo]" />
                 <div class="row">
                             <div class="col-md-4 wc-columna-ancho">
@@ -366,26 +259,20 @@
                             </div>
                             <div class="col-md-8 wc-col-md-8">
                              <div class="col-md-6">
-                             <input required name="info[nombre]" id="nombre" class="form-control" placeholder="Nombre" ng-model="regist.name">
+                             <input required name="info[nombre]" id="nombre" class="form-control" placeholder="Nombre">
                     
-					<input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos" ng-model="regist.lastname">
+					<input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos">
                     
-					<input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
+					<input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono">
                              
-                             <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email" ng-model="regist.email">
+                             <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email">
                              
-                             <input type="text" required id="fecha" name="info[fecha_nacimiento]" class="form-control" placeholder="Fecha de nacimiento (AAAA-MM-DD)" ng-model="regist.birthday"  onkeyup="
-                              var date = this.value;
-                              if (date.match(/^\d{4}$/) !== null) {
-                                 this.value = date + '-';
-                              } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
-                                 this.value = date + '-';
-                              }" maxlength="10">
+                             <input type="text" required id="fecha" name="info[fecha_nacimiento]" class="form-control" placeholder="Fecha de nacimiento">
                     
 					        </div>
                             
                             <div class="col-md-6">
-                            <select required name="info[id_estados]" id="estadoR" class="form-control" ng-model="regist.state" ng-change="loadSucursal()">
+                            <select required name="info[id_estados]" id="estadoR" class="form-control">
                     		<option value="" >-Seleccione Estado-</option>
 							<option value="1" >Aguascalientes</option>
         	            	<option value="2" >Baja California</option>
@@ -420,19 +307,18 @@
         	            	<option value="31" >Yucatan</option>
         	            	<option value="32" >Zacatecas</option>
 					</select>
-                    <select name="info[id_sucursales]" required id="sucursalesR" class="form-control" ng-model="regist.sucursal">
+                    <select name="info[id_sucursales]" required id="sucursalesR" class="form-control">
         	<option value="">-Sucursal-</option>
-            <option value="{{sucursal.id}}" ng-repeat="sucursal in sucursales">{{sucursal.nombre}}</option>
         </select>
                     
                             
-                            <input required id="no_tarjeta" pattern="\S{8}" onkeydown="return validarNumeros(event)" maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
+                            <input required id="no_tarjeta" pattern="\S{8}" onkeydown="return validarNumeros(event)" maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta">
                         
-						<input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña" ng-model="regist.password">
+						<input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña">
                         
                         <div class="wc-datos-acuerdo-formulario">
                             <label>
-						<input type="checkbox" required id="compartir_datos" name="compartir_datos" value="Si" ng-model="regist.agree">
+						<input type="checkbox" required id="compartir_datos" name="compartir_datos" value="Si">
               				Compartir mis datos de registro con los proveedores de contenido de Wall's Barbershop para fines de marketing. </label>
 						
                             </div>
@@ -441,9 +327,9 @@
 
  
                             <div class="col-md-12">
-                            	<div class="wc-datos-acuerdo-formulario-dos"><span>Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a target="_blank" zf-open="terms">términos y condiciones</a> y las <a target="_blank" zf-open="politicas">políticas de privacidad </a>de Wall's Barbershop</span></div>
+                            	<div class="wc-datos-acuerdo-formulario-dos"><span>Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a target="_blank" href="terminos_y_condiciones.php">términos y condiciones</a> y las <a target="_blank" href="politicas_de_privacidad.php">políticas de privacidad</a>de Wall's Barbershop</span></div>
                                
-                                <button type="submit" class="btn btn-default submit-btn form_submit wc-estilo-fondo-boton-formulario"> ENVIAR </button>
+                                <button type="button" class="btn btn-default submit-btn form_submit wc-estilo-fondo-boton-formulario"> ENVIAR </button>
                             </div>
                         </div>
                          </div>
@@ -467,7 +353,7 @@
         
         <div class="wc-fondo-diagonal-derecho wow fadeInLeft" data-wow-duration="5s" data-wow-delay=".5s">
                         <!-- FONDO DIAGONAL DERECHO -->
-                            <img src="./assets/img/cuerpo-fondo-diagonal-derecha-min.png" alt="">
+                            <img src="images/cuerpo-fondo-diagonal-derecha-min.png" alt="">
                         </div>
                         
        
@@ -476,7 +362,7 @@
                         
          <div class="wc-sello-izquierda wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                         <!-- SELLO LATERAL IZQUIERDO -->
-                            <img src="./assets/img/sello-izquierda-min.png" alt="">
+                            <img src="images/sello-izquierda-min.png" alt="">
                         </div>
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -508,7 +394,7 @@
     </div>
                 </div>
             </div>
-        </div>
+       
 
      </section>
     <!-- Fin cuerpo condiciones -->
@@ -530,7 +416,7 @@
                 
             </div>
 
-            <div class="wc-contact_form" id="bounceInPointsForm1s">
+            <div class="wc-contact_form wow bounceIn">
                 <div class="container">
 
                 <!-- START ERROR AND SUCCESS MESSAGE -->
@@ -549,7 +435,7 @@
                    
                   
                    
-                    <form ng-submit="getClientData()">
+                    <form>
                 
                 <div class="row">
                             <div class="col-md-4 wc-columna-ancho-login">
@@ -572,11 +458,11 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
                 </div>
                              <div class="col-md-6">
                            
-                             <input class="form-control" id="sTarjetaEmail" placeholder="Nº de tarjeta / Email" ng-model="clientData.cardMail">
+                             <input class="form-control" id="sTarjetaEmail" placeholder="Nº de tarjeta / Email">
 					        </div>
                             
                             <div class="col-md-6">
-                             <input class="form-control" id="sPassw" placeholder="contraseña" type="password" ng-model=" clientData.password">
+                             <input class="form-control" id="sPassw" placeholder="contraseña" type="password">
                            
 						
                             </div>
@@ -585,8 +471,8 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
 
  
                             <div class="col-md-12">
-                            	<div class="wc-datos-acuerdo-formulario-dos"><span>Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a zf-open="terms">términos y condiciones</a> y las <a zf-open="politicas">políticas de privacidad</a>de Wall's Barbershop</span></div>
-                               <!--<a class="various" data-fancybox-type="iframe" href="puntos.php"> --><button class="btn btn-default submit-btn form_submit wc-estilo-fondo-boton-formulario" id="consultaPuntos" type="submit"  >CONSULTAR</button>
+                            	<div class="wc-datos-acuerdo-formulario-dos"><span>Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a target="_blank" href="terminos_y_condiciones.php">términos y condiciones</a> y las <a target="_blank" href="politicas_de_privacidad.php">políticas de privacidad</a>de Wall's Barbershop</span></div>
+                               <!--<a class="various" data-fancybox-type="iframe" href="puntos.php"> --><button class="btn btn-default submit-btn form_submit wc-estilo-fondo-boton-formulario" id="consultaPuntos">CONSULTAR</button>
                                 
                             </div>
                         </div>
@@ -610,7 +496,7 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
                   
                     <div class="col-md-10 col-md-offset-1">
                     <!-- FEATURES SECTION TITLE -->
-                    <div class="wc-seccion_titulo_blanco_dos" id="fadeInLeftBigText2s">
+                    <div class="wc-seccion_titulo_blanco_dos wow fadeInLeftBig" data-wow-duration="2s">
                    
                         <h2>¡ABRE TU FRANQUICIA!</h2>
                         <p>Somos una empresa joven con gran espíritu de emprendimiento, con el propósito firme de lograr obtener la preferencia de nuestros clientes, por medio de la innovación y concepto modernista de nuestras franquicias.</p>
@@ -620,7 +506,7 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
                     </div>
                 </div>
             </div>
-        </div>
+      
     </section>
 
 
@@ -682,7 +568,7 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
 ============================== -->
 
     <section class="wc-copyright">
-        <h2></h2>
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -698,4 +584,22 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
     </section>
     <!-- END FOOTER -->
 
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery.fitvids.js"></script>
+   <!--   <script src="js/smoothscroll.js"></script>  -->
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+  
+   
+    <script src="js/wow.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/script.js"></script>
 
