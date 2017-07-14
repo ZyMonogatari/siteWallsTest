@@ -13690,7 +13690,7 @@ body {
   opacity: 0;
   position: absolute;
   background: white;
-  width: 550px;
+  width: 500px;
   overflow: scroll;
   height: 550px; }
 
@@ -13717,8 +13717,8 @@ body {
 
 .sucursales-menu-item {
   position: relative;
-  margin-bottom: 5px;
-  width: 90%;
+  margin-bottom: 10px;
+  width: 100%;
   text-align: center; }
 
 .sucurasles-menu-item-image {
@@ -13727,6 +13727,32 @@ body {
 
 .state {
   opacity: 0; }
+
+.sucursal-img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 150px;
+  top: 100px; }
+
+.sucursal-titulo {
+  position: absolute;
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0; }
+
+.sucursal-info {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 300px; }
 
 .galeria-overImg {
   width: 100%;

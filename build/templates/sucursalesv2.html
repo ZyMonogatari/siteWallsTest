@@ -34,7 +34,7 @@
         disable-double-click-zoom="true"
         scrollwheel="false"
         disable-default-u-i="true">
-
+        
         <shape name="image"
             url="./assets/img/Mapa-BN-min (1).jpg"
             bounds="[[5.10000, -134.100000], [40.400000, -64.200000]]"
@@ -55,6 +55,7 @@
         <custom-marker  position="{{estado3.position}}">
           <div >
             <img src="./assets/img/ESTADOS-grandes-optimizadas/2-min.png" ng-style="{'width':estado3.width, 'height': estado3.height}" class="state" >
+           
           </div>
           
           
@@ -82,6 +83,7 @@
         <custom-marker  position="{{estado7.position}}">
           <div style="">
             <img src="./assets/img/ESTADOS-grandes-optimizadas/5-min.png" ng-style="{'width': estado7.width, 'height': estado7.height}" class="state">
+
           </div>
         </custom-marker>
 
@@ -436,39 +438,80 @@
               <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 55%; top: 48%;  height: 13%; width:7%;"></div>
               <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 57%; top: 46%;  height: 2%; width:7%;"></div>
               <div ng-mouseover="appearMap(35)" ng-mouseleave="disappearMap(35)" ng-click="changePosition('22.100000, -87.000000', 35)" style=" position: absolute; left: 54%; top: 54%;  height: 6%; width:2%;"></div>
-
+              <!-- Cancun -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 64%; left: 93%;" ng-if="estadoSelect == 3" ng-click="selectCity('cancun')">
+               <!-- Playa del carmen -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 66%; left: 92%;" ng-if="estadoSelect == 3" ng-click="selectCity('playa')">
+               <!-- Chetumal -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 74%; left: 90%;" ng-if="estadoSelect == 3" ng-click="selectCity('chetumal')">
+               <!-- Isla mujeres -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 61%; left: 94%;" ng-if="estadoSelect == 3" ng-click="selectCity('isla')">
+               <!-- Cozumel -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 67%; left: 94%;" ng-if="estadoSelect == 3" ng-click="selectCity('cozumel')">
+               <!-- Merida -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 65%; left: 85%;" ng-if="estadoSelect == 4">
+               <!-- Campeche -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 71%; left: 83%;" ng-if="estadoSelect == 5">
+               <!-- Tuxtla -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 83%; left: 75%;" ng-if="estadoSelect == 7">
+               <!-- Boca del rio -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 73%; left: 64.5%;" ng-if="estadoSelect == 8">
+               <!-- CDMX -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 73.5%; left: 55.5%;" ng-if="estadoSelect == 12">
+               <!-- EdoMx -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 73%; left: 53%;" ng-if="estadoSelect == 13">
+               <!-- Queretaro -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 67%; left: 52%;" ng-if="estadoSelect == 17">
+               <!-- Aguascalientes -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 61%; left: 44.5%;" ng-if="estadoSelect == 24">
+               <!-- Guadalajara -->
+               <img src="./assets/img/marcaddor-50x50.png" style="position: absolute; top: 67%; left: 42%;" ng-if="estadoSelect == 22">
           </div>
           </custom-marker>
-          <custom-marker  position="10.000000, -73.0000000">
+          <custom-marker  position="{{barPosition}}">
           <div class="sucursal-map-barra">
             <i class="whiteFont fa fa-plus-circle fa-4x plus-icon" aria-hidden="true" ng-click="openMapMenu()" ></i>
+            <i class="fa fa-globe fa-4x whiteFont" aria-hidden="true" ng-click="restoreZoom()"></i>
           </div>
         </custom-marker>
 
-        <custom-marker  position="32.400000, -98.7000000"}>
+        <custom-marker  position="{{menuPosition}}">
           <div class="sucursal-map-menu" id="sucursal-map-menu" ng-if="showMapMenu" style="opacity: 1">
             <i class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
             <h3>SUCURSALES</h3>
               <div class="sucursal-map-grid">
-                <div class="sucursales-columna-izquierda">
-                  <div class="sucursales-menu-item" ng-repeat="sucursal in sucursalesColumna1" >
-                    <div style="position: relative; width: 80%; margin: auto; ">
-                      <h5>{{sucursal.nombre}}</h5>
+                <div class="sucursales-columna-izquierda" ng-show="!sucursal">
+                  <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna1" ng-click="selectSucursal(key)">
+                    <div style="position: relative; width: 100%; margin: auto; ">
+                      <h6>{{sucursal.shortName}}</h6>
                     </div>
-                    <img src="/assets/img/fondo-top-sucursales-circulo-min.jpg" class="sucurasles-menu-item-image">
+                    <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
                 </div>
-                <div class="sucursales-columna-derecha">
-                  <div class="sucursales-menu-item" ng-repeat="sucursal in sucursalesColumna2" >
-                    <div style="position: relative; width: 80%; margin: auto; ">
-                      <h5>{{sucursal.nombre}}</h5>
+                <div class="sucursales-columna-derecha" ng-show="!sucursal">
+                  <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna2" ng-click="selectSucursal(key)">
+                    <div style="position: relative; width: 100%; margin: auto; ">
+                      <h6>{{sucursal.shortName}}</h6>
                     </div>
-                    <img src="/assets/img/fondo-top-sucursales-circulo-min.jpg" class="sucurasles-menu-item-image">
+                    <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
                 </div>
               </div>
+              <div ng-show="sucursal" style="position: absolute; width: 100%; height: 100%">
+                <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ng-click="sucursal = false">Volver</i>
+                <div class="sucursal-titulo"> 
+                  <h3>{{actualSucursal.nombre}}</h3>
+                </div>
+                <img src="{{actualSucursal.img}}" class="sucursal-img">
+                <div class="sucursal-info">
+                  <h3>{{actualSucursal.direccion}}</h3>
+                  <h3>{{actualSucursal.contacto}}</h3>
+                </div>
+                
+              </div>
           </div>
         </custom-marker>
+        
       </ng-map>
     </div>
   </div>
