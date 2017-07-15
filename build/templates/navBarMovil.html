@@ -1,6 +1,7 @@
 <div class="navBar-movil" ng-style="{'position' : cabecera.position, 'top' : cabecera.top, 'background' : cabecera.background}" id="cabeceraDivMovil">
 		<div class="navBar-movil-image" >
-				<img src="{{cabecera.source}}" class="walls-logo">
+				<img src="{{cabecera.source}}" class="walls-logo" ng-click="go('home')"
+					style="cursor:pointer";>
 		</div>
 		<div class="grid-block navBar-movil-icon" ng-click="mostrarMenu()">
 			<i class="fa fa-bars fa-4x whiteFont" ng-style="{'color' : cabecera.fontColor}"></i>
@@ -52,10 +53,11 @@
 			</div>
 			<div class="grid-block navBar-item"
 						ng-mouseover="nosotrosBackground = 'rgba(56, 58, 57, .9)'" 
-						ng-mouseleave="nosotrosBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-mouseleave="nosotrosBackground = 'rgba(255, 255, 255, .9)'"
+						ng-click="go('contacto')"
 						ng-style="{'background' : nosotrosBackground}">
 				<h5 class="margin-left-10px Lato-Regular">
-					NOSOTROS
+					CONTACTO
 				</h5>
 			</div>
 			<div class="grid-block navBar-item"

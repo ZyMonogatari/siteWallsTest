@@ -53,7 +53,9 @@
 			</div>
 			<div class="grid-block" >
 				<img src="{{cabecera.source}}" class="walls-logo"
-				ng-style="{'transform' : logoTransform, '-ms-transform' : logoTransform, '-webkit-transform': logoTransform}">
+				ng-style="{'transform' : logoTransform, '-ms-transform' : logoTransform, '-webkit-transform': logoTransform}"
+				ng-click="go('home')"
+					style="cursor:pointer";>
 			</div>
 			<div class="grid-block">
 				<h5 
@@ -62,10 +64,11 @@
 					ng-mouseover="nosotrosText = 'underline'"  
 					ng-mouseleave="nosotrosText = ''" 
 					ng-style="{'text-decoration' : nosotrosText, 'color' : cabecera.fontColor}"
+					ng-click="go('contacto')"
 					style="cursor:pointer";
 
 				>
-					NOSOTROS
+					CONTACTO
 				</h5>
 			</div>
 			<div class="grid-block">

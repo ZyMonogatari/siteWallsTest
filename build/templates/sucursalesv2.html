@@ -5,20 +5,21 @@
 <div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
 
 <div class="sucursales-cabecerav2">
-  <div class="sucursales-cabecera-titulos-div">
-    <h2 class="whiteFont">Trabajamos desde el 2010, sin parar, con entuciasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
-  </div>
+  
 </div>
 
 <div class="sucursalesv2-cuerpo-absolute">
+  <div class="sucursales-cabecera-titulos-div">
+    <h2 class="whiteFont Lato-Italic">Trabajamos desde el 2010, sin parar, con entuciasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
+  </div>
   <div class="sucursales-cuerpo-sello">
     <img src="/assets/img/sello-sucursales-min.png" class="sucursales-cuerpo-sello-img">
     <div class="sucursales-cuerpo-sello-mascara"></div>
     <div class="sucursales-cuerpo-sello-titulos-div">
-      <h3 class="whiteFont">
+      <h3 class="whiteFont Lato-Bold">
         NOS PODRÁS ENCONTRAR EN NUESTRAS SIGUIENTES SUCURSALES, 
       </h3>
-      <h5 class="whiteFont">
+      <h5 class="whiteFont Lato-Italic">
         donde lograrás vivir toda la experiencia Wall´s Barbershop:
       </h5>
     </div>
@@ -33,8 +34,59 @@
         draggable="false"
         disable-double-click-zoom="true"
         scrollwheel="false"
-        disable-default-u-i="true">
-        
+        disable-default-u-i="true"
+        styles="[
+  {
+    featureType: 'administrative',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  },
+  {
+    featureType: 'landscape',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  },
+  {
+    featureType: 'poi',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  },
+  {
+    featureType: 'road',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  },
+  {
+    featureType: 'transit',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  },
+  {
+    featureType: 'water',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
+  }
+]
+"
+        >
         <shape name="image"
             url="./assets/img/Mapa-BN-min (1).jpg"
             bounds="[[5.10000, -134.100000], [40.400000, -64.200000]]"
@@ -44,8 +96,8 @@
 
         <custom-marker  position="10.000000, -115.0000000"}>
           <div class="sucursal-map-instrucciones" >
-            <h4>EXPLORA EL MAPA</h4>
-            <h5>Haga click en las zonas o marcadores, en la barra derecha para ver donde están nuestras franquicias</h5>
+            <h4 class="Lato-Regular">EXPLORA EL MAPA</h4>
+            <h5 class="Oswald-Regular">Haga click en las zonas o marcadores, en la barra derecha para ver donde están nuestras franquicias</h5>
           </div>
         </custom-marker >
         <custom-marker position="0, 0">
@@ -478,12 +530,12 @@
         <custom-marker  position="{{menuPosition}}">
           <div class="sucursal-map-menu" id="sucursal-map-menu" ng-if="showMapMenu" style="opacity: 1">
             <i class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
-            <h3>SUCURSALES</h3>
+            <h2 class="Oswald-Bold">SUCURSALES</h2>
               <div class="sucursal-map-grid">
                 <div class="sucursales-columna-izquierda" ng-show="!sucursal">
                   <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna1" ng-click="selectSucursal(key)">
                     <div style="position: relative; width: 100%; margin: auto; ">
-                      <h6>{{sucursal.shortName}}</h6>
+                      <h6 class="Oswald-Bold">{{sucursal.shortName}}</h6>
                     </div>
                     <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
@@ -491,21 +543,21 @@
                 <div class="sucursales-columna-derecha" ng-show="!sucursal">
                   <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna2" ng-click="selectSucursal(key)">
                     <div style="position: relative; width: 100%; margin: auto; ">
-                      <h6>{{sucursal.shortName}}</h6>
+                      <h6 class="Oswald-Bold">{{sucursal.shortName}}</h6>
                     </div>
                     <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
                 </div>
               </div>
               <div ng-show="sucursal" style="position: absolute; width: 100%; height: 100%">
-                <i class="fa fa-arrow-left fa-2x" aria-hidden="true" ng-click="sucursal = false">Volver</i>
+                <i class="fa fa-arrow-left fa-2x " aria-hidden="true" ng-click="sucursal = false"> <h6 class="Lato-Regular">Volver</h6> </i>
                 <div class="sucursal-titulo"> 
-                  <h3>{{actualSucursal.nombre}}</h3>
+                  <h3 class="Oswald-Bold">{{actualSucursal.nombre}}</h3>
                 </div>
                 <img src="{{actualSucursal.img}}" class="sucursal-img">
                 <div class="sucursal-info">
-                  <h3>{{actualSucursal.direccion}}</h3>
-                  <h3>{{actualSucursal.contacto}}</h3>
+                  <h3 class="Lato-Regular">{{actualSucursal.direccion}}</h3>
+                  <h3 class="Lato-Regular">{{actualSucursal.contacto}}</h3>
                 </div>
                 
               </div>
