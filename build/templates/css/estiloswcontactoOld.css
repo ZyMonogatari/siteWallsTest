@@ -373,7 +373,7 @@ tuor:visited {
     height: auto;
 }
 .wcont-seccion_abre_franquicia {
-    background: url(../images/fondo-cuerpo-dos-min.jpg);
+    background: url(../images/fondo-nosotros-cuerpo-dos-min.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 	
@@ -573,7 +573,7 @@ tuor:visited {
     width: 100%;
 }
 .wcont-right_single_feature {
-    padding-left: 278px;
+    padding-left: 180px;
     margin-bottom: 65px;
     margin-top: 35px;
 }
@@ -1144,7 +1144,7 @@ a {
 	width: 30%;
     top: 178px;
     position: absolute;
-    left: 60px;
+    left: 0px;
 	z-index:2;
  }
 }
@@ -1165,7 +1165,7 @@ a {
 
 @media (min-width: 1250px){   
 	.wcont-texto_top_izquierda {
-	left: 700px;
+	left: 620px;
     top: 162px;
     position: absolute;
     width: 40%;
@@ -1173,10 +1173,10 @@ a {
 }
 @media (max-width: 1249px){   
 	.wcont-texto_top_izquierda {
-	left: 600px;
+	left: 620px;
     top: 162px;
     position: absolute;
-    width: 45%;
+    width: 40%;
  }
 }
 @media (max-width: 1199px){   
@@ -1209,6 +1209,11 @@ a {
 	.wcont-texto_top_izquierda {
 	left: 0px;
    
+ }
+ .responsive-tittle{
+    top: 200px;
+    left: -15px;
+    position: absolute;
  }
 }
 @media (max-width: 992px){   

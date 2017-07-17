@@ -10,7 +10,7 @@
 
 <div class="sucursalesv2-cuerpo-absolute">
   <div class="sucursales-cabecera-titulos-div">
-    <h2 class="whiteFont Lato-Italic">Trabajamos desde el 2010, sin parar, con entuciasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
+    <h2 class="whiteFont Lato-Italic">Trabajamos desde el 2010, sin parar, con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
   </div>
   <div class="sucursales-cuerpo-sello">
     <img src="/assets/img/sello-sucursales-min.png" class="sucursales-cuerpo-sello-img">
@@ -308,7 +308,7 @@
         </custom-marker>
 
         <custom-marker  position="10.000000, -98.605808">
-          <div  ng-style="{'height': layout.height, 'width': layout.width}">
+          <div ng-if="!mobil"  ng-style="{'height': layout.height, 'width': layout.width}">
             <!-- Marcador 3 (imagen 1)-->
             <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 89%; top: 72%; height: 9%; width: 5%;"></div>
             <div ng-mouseover="appearMap(3)" ng-mouseleave="disappearMap(3)" ng-click="changePosition('15.100000, -79.000000', 3)" style=" position: absolute; left: 90%; top: 69%;  height: 3%; width: 4%;"></div>
@@ -532,7 +532,7 @@
 
         <custom-marker  position="{{menuPosition}}">
           <div class="sucursal-map-menu" id="sucursal-map-menu" ng-if="showMapMenu" style="opacity: 1">
-            <i class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
+            <i ng-show="!mobil" class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
             <div></div>
               <div class="sucursal-map-grid">
                 <h2 class="Oswald-Bold" ng-show="!sucursal">SUCURSALES</h2>
@@ -554,7 +554,7 @@
                 </div>
               </div>
               <div ng-show="sucursal" style="position: absolute; width: 100%; height: 100%">
-                <i class="fa fa-arrow-left fa-2x " aria-hidden="true" ng-click="sucursal = false"> <h6 class="Lato-Regular">Volver</h6> </i>
+                <i class="fa fa-arrow-left fa-2x " aria-hidden="true" ng-click="sucursal = false" style="position: relative; left: 20px;"> <h6 class="Lato-Regular">Volver</h6> </i>
                 <div class="sucursal-titulo"> 
                   <h3 class="Oswald-Bold">{{actualSucursal.nombre}}</h3>
                 </div>
@@ -562,6 +562,26 @@
                 <div class="sucursal-info">
                   <h3 class="Lato-Regular">{{actualSucursal.direccion}}</h3>
                   <h3 class="Lato-Regular">{{actualSucursal.contacto}}</h3>
+                  <div style="padding-top: 20px;">
+                    <a target="_blank" href="https://www.facebook.com/wallsbarbershop/" style="color:  #929191;">
+                      <span class="fa-stack fa-lg" ng-style="{'color': facebookColor}"
+                        ng-mouseover="facebookColor = '#3B5998'"  
+                        ng-mouseleave="facebookColor = '#929191'"
+                        >
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+
+                    <a target="_blank" href="https://www.instagram.com/wallsbarbershop/" style="color:  #929191;">
+                      <span class="fa-stack fa-lg" ng-style="{'color': instagramColor}"
+                        ng-mouseover="instagramColor = '#0BA4E0'"  
+                        ng-mouseleave="instagramColor = '#929191'">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </div>
                 </div>
                 
               </div>

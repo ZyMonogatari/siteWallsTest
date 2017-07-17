@@ -654,15 +654,17 @@ angular.module('application').controller('sucursalesCtrl',
     var displayMenu = 'none';
     var mapObject;
     var select;
+    $scope.mobil;
     var noSucursals = false;
     $scope.barPosition = "10.000000, -73.0000000";
     if(screen.width <= 768){
         $scope.menuPosition = "10.000000, -98.7000000";
+        $scope.mobil = true;
 
-      
     }
     else{
         $scope.menuPosition = "32.400000, -96.6000000";
+        $scope.mobil = false;
     }
     $scope.showMapMenu = false;
     $scope.sucursal = false;
