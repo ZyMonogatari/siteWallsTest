@@ -654,8 +654,16 @@ angular.module('application').controller('sucursalesCtrl',
     var displayMenu = 'none';
     var mapObject;
     var select;
+    var noSucursals = false;
     $scope.barPosition = "10.000000, -73.0000000";
-    $scope.menuPosition = "32.400000, -96.6000000";
+    if(screen.width <= 768){
+        $scope.menuPosition = "10.000000, -98.7000000";
+
+      
+    }
+    else{
+        $scope.menuPosition = "32.400000, -96.6000000";
+    }
     $scope.showMapMenu = false;
     $scope.sucursal = false;
     $scope.estadoSelect;
@@ -813,6 +821,8 @@ angular.module('application').controller('sucursalesCtrl',
         mapObject = map;
         console.log(map);
     });
+    
+
     $scope.selectCity = function(city){
         $scope.sucursalesColumna1 = {};
         $scope.sucursalesColumna2 = {};
@@ -845,7 +855,13 @@ angular.module('application').controller('sucursalesCtrl',
         select = null;
         $scope.disappearMap(selectAux);
         $scope.barPosition = "10.000000, -73.0000000";
-        $scope.menuPosition = "32.400000, -96.6000000";
+        if(screen.width <= 768){
+            $scope.menuPosition = "10.000000, -98.7000000";
+      
+        }
+        else{
+            $scope.menuPosition = "32.400000, -96.6000000";
+        }
         $scope.showMapMenu = false;
         $scope.sucursal = false;
         $scope.estadoSelect;
@@ -1005,7 +1021,7 @@ angular.module('application').controller('sucursalesCtrl',
         console.log($scope.actualSucursal);
     }
     $scope.selectState = function(state){
-
+        $scope.noSucursals = false;
        $scope.sucursalesColumna1 = {};
        $scope.sucursalesColumna2 = {};
        switch (state){
@@ -1048,6 +1064,9 @@ angular.module('application').controller('sucursalesCtrl',
         case 24:
             $scope.sucursalesColumna1['aguasCalientes'] = columna2aux.aguasCalientes;
            break;
+           default:
+                $scope.noSucursals = true;
+            break;
        }
        
 
@@ -1237,7 +1256,6 @@ angular.module('application').controller('sucursalesCtrl',
         
 
     }
-    //$scope.changePosition('15.000000, -85.000000');
 
     $scope.go = function(state){
         window.scrollTo(0, 0)
@@ -1289,7 +1307,11 @@ angular.module('application').controller('sucursalesCtrl',
         });
         console.log('open');;
     }
+    if(screen.width <= 768){ 
+      $scope.openMapMenu();
+    }
     $scope.closeMapMenu = function(e, key, state){
+        console.log('crrar')
         $scope.actualMap = state;
         $scope.showMapMenu = false;
         $scope.sucursal = false;
@@ -1824,7 +1846,16 @@ angular.module('application').controller('wallsCardCtrl',
         window.scrollTo(0, 0)
         $state.go(state);
     }
+    $scope.mostrarMenu = function (){
+            console.log($scope.displayMenu);
 
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
     $scope.appearItem = function(item){
       angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
       angular.element(document.querySelector('#' + item)).addClass('appear1S');

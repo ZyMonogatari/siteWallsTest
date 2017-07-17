@@ -96,8 +96,11 @@
 
         <custom-marker  position="10.000000, -115.0000000"}>
           <div class="sucursal-map-instrucciones" >
+          <div class="div-inner-sucursal">
             <h4 class="Lato-Regular">EXPLORA EL MAPA</h4>
-            <h5 class="Oswald-Regular">Haga click en las zonas o marcadores, en la barra derecha para ver donde están nuestras franquicias</h5>
+            <h5 class="Oswald-Regular">Haga click en las zonas o marcadores, en la barra derecha para ver en qué ciudades están nuestras franquicias.</h5>
+          </div>
+            
           </div>
         </custom-marker >
         <custom-marker position="0, 0">
@@ -530,8 +533,9 @@
         <custom-marker  position="{{menuPosition}}">
           <div class="sucursal-map-menu" id="sucursal-map-menu" ng-if="showMapMenu" style="opacity: 1">
             <i class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
-            <h2 class="Oswald-Bold">SUCURSALES</h2>
+            <div></div>
               <div class="sucursal-map-grid">
+                <h2 class="Oswald-Bold" ng-show="!sucursal">SUCURSALES</h2>
                 <div class="sucursales-columna-izquierda" ng-show="!sucursal">
                   <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna1" ng-click="selectSucursal(key)">
                     <div style="position: relative; width: 100%; margin: auto; ">
@@ -561,6 +565,7 @@
                 </div>
                 
               </div>
+              <h3 class="Oswald-Bold" style="position: absolute; text-align: center; top: 80px;" ng-if="noSucursals"> Por el momento no contamos con sucursales aquí, pero crecemos constantemente <br> Contáctanos para infórmate cómo adquirir una sucursal.</h3> 
           </div>
         </custom-marker>
         
