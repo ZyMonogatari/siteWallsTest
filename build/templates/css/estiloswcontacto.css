@@ -373,7 +373,7 @@ tuor:visited {
     height: auto;
 }
 .wcont-seccion_abre_franquicia {
-    background: url(../images/fondo-cuerpo-dos-min.jpg);
+    background: url(../images/fondo-nosotros-cuerpo-dos-min.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 	
@@ -573,7 +573,7 @@ tuor:visited {
     width: 100%;
 }
 .wcont-right_single_feature {
-    padding-left: 278px;
+    padding-left: 190px;
     margin-bottom: 65px;
     margin-top: 35px;
 }
