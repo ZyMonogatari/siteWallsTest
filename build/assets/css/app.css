@@ -11277,6 +11277,10 @@ body {
     padding-bottom: 70px !important;
     padding-right: 20% !important; } }
 
+@media (max-width: 412px) {
+  .responsive-tittle {
+    margin-top: 100px; } }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -13787,7 +13791,7 @@ body {
 .leer-mas-servicios {
   position: absolute;
   bottom: 10%;
-  width: 10%;
+  width: 15%;
   height: auto;
   margin: auto;
   left: 0;
@@ -13802,6 +13806,8 @@ body {
   background: #7A7A7A; }
 
 @media only screen and (max-width: 1280px) {
+  .cuerpo2-servicios {
+    top: 650px; }
   .cuerpo1-servicios {
     top: 90%; }
   .borde-sesgado-gris {
@@ -13837,6 +13843,8 @@ body {
     width: 30%; } }
 
 @media only screen and (max-width: 768px) {
+  .cuerpo2-servicios {
+    top: 600px; }
   .borde-sesgado-gris {
     top: -100px; }
   .cuerpo1-servicios {
@@ -13862,11 +13870,13 @@ body {
   .borde-sesgado-gris {
     top: -60px; }
   .cuerpo1-servicios-titulos {
-    font-size: 78%; }
+    font-size: 70%; }
   .cuerpo1-servicios-content {
     height: auto; }
   .cuerpo1-servicios-div {
     height: 200px; }
+  .invitation {
+    font-size: 80%; }
   .cuerpo-absolute {
     top: 42%; }
   .cuerpo2-servicios {
@@ -13889,6 +13899,8 @@ body {
     bottom: 5%; } }
 
 @media only screen and (max-width: 320px) {
+  .cuerpo2-servicios {
+    top: 620px; }
   .borde-sesgado-gris {
     top: -25%; }
   .cuerpo-absolute {
