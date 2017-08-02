@@ -1,6 +1,17 @@
 <div zf-modal="" id="basicModal" >
-<a zf-close="" class="close-button">×</a>
-	<img src="{{actualImage}}">
+<div style="width: 900px; height: 900px;">
+	<div style="position: absolute; width: 80%; left: 0; right: 0; margin: auto; top:10px; bottom: 0;}">
+		<div style="position: absolute; margin: auto; top: 0; bottom: 0;  height: auto; display: inline-table;">
+		<i class="fa fa-times-circle fa-2x whiteFont" aria-hidden="true" style="position: absolute; top: 0px; right: 0px;" zf-close=""></i>
+		<!--a zf-close="" class="close-button" >×</a-->
+		<img src="{{actualImage}}" >
+		</div>
+		<i class="fa fa-arrow-circle-left fa-4x whiteFont left-gallery-arrow" aria-hidden="true" ng-click="prevImg()" ng-show="leftArrow"></i>
+		<i class="fa fa-arrow-circle-right fa-4x whiteFont right-gallery-arrow" aria-hidden="true"  ng-click="nextImg()" ng-show="rightArrow"></i>
+	</div>
+</div>
+
+	
 </div>
 
 <div ng-include="'/templates/navBar.html'"></div>
@@ -54,19 +65,19 @@
 		<div class="galeria-cuerpo1-titulos">
 				<h1 class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
 					MAS
-					<br>
+					<br class="titulos-br">
 					QUE
-					<br>
+					<br class="titulos-br">
 					UN
-					<br>
+					<br class="titulos-br">
 					CORTE
 				</h1>
 				<br>
 				<h1 class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
 					CREAMOS
-					<br>
+					<br class="titulos-br">
 					UN
-					<br>
+					<br class="titulos-br">
 					ESTILO
 				</h1>
 		</div>
@@ -99,30 +110,31 @@
 			<h5 class="galeria-cuerpo2-titulos-1-text Lato-Regular">
 				Satisfacer las necesidades de nuestros clientes ofreciendo nuestro mejor servicio y asi conservar la fidelidad de nuestros clientes, estableciendo con ellos relaciones comerciales mutuamente benéficas para llegar a ser lideres en este campo.
 			</h5>
-			<div class="galeria-image-circular-margin" >
-        		<img width="100" src="./assets/img/galeria/22.jpg" class="galeria-image-circular-img">
-        	</div>
+			
 		</div>
+		<div class="galeria-image-circular-margin" >
+        	<img width="100" src="./assets/img/galeria/22.jpg" class="galeria-image-circular-img">
+        </div>
 		<div class="galeria-cuerpo2-content">
 			<img src="./assets/img/galeria/25.jpg" class="galeria-cuerpo2-content-img">
 			<div class="galeria-cuerpo2-content-titulos">
-				<h6 class="galeria-cuerpo2-content-titulos-text Lato-Regular">
+				<h4 class="galeria-cuerpo2-content-titulos-text Lato-Regular">
 					La mayoría de las personas que acude a Wall's Barbershop son hombres de entre 14 y 32 años o aún mayores desde 45 años hasta 65, estos serían nuestros potenciales clientes, para esto debemos tener una oferta para cada tipo de edad, esto es segmentar el mercado. Con nivel económico medio y medio alto. Los más jóvenes tambien son potenciales consumidores   
-				</h6>
+				</h4>
 			</div>
 		</div>
 	</div>
 
 	<div class="galeria-cuerpo3">
 		<div class="sucursales-cuerpo3-div-diagonal"></div>
-	    <div class="galeria-cuerpo3-div">
-	      <div class="footer-servicios-titulos">
+	    <div class="galeria-cuerpo3-div fondo-degradado">
+	      <div class="footer-servicios-titulos titulos-galeria">
 	        <h1 class="text-center gray-text RobotoCondensed-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
 	        <h2 class="text-center gray-text RobotoCondensed-Bold">¡CONTÁCTANOS!</h2>
 	        <h3 class="text-center gray-text RobotoCondensed-Bold"> LIC. AARON ALVARADO </h3>
 	        <h3 class="text-center gray-text RobotoCondensed-Bold"> TEL: 044 9981 45 96 50 </h3>
 	        <h3 class="text-center gray-text RobotoCondensed-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
-	        <div class="leer-mas-servicios" ng-click="go('franquicias')">
+	        <div class="leer-mas-servicios leer-mas-galerias" ng-click="go('franquicias')">
 	          <h6 class="whiteFont Lato-Regular">
 	            <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
 	            	Solicitar info.
@@ -132,7 +144,8 @@
 	      
 	    </div>
 	    <div class="footer-servicios-brand">
-	      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+	      <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+	      	<h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
 	    </div>
 	  </div>
 	</div>

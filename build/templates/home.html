@@ -3,33 +3,53 @@
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div ng-include="'/templates/icons.html'" class="grid-block iconsDiv"></div>
 <div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
-<div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div>
+<!--div ng-include="'/templates/iconsMovil.html'" class="grid-block iconsMovil"></div-->
 
 
 <!--Cabecera--> 
 <div ng-if="actualBody == 0" class="cabecera">
-	
-	
-	<div class="titulos-div-cabecera" style="overflow: hidden;">
+	<div class="video-servicios-div" ng-if="!mobile">
+		<iframe src="https://www.youtube.com/embed/VSVcZhWV1Rc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=0dbig-gLoCo" frameborder="0" allowfullscreen class="video-servicios"></iframe>
+		<div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+		</div>    
+	</div>
+	<div  class="cabecera-titulos-v2">
+		<div class="div-image-cabecera">
+			<img class="imageCabecera" src="./assets/img/W-B-franquicias-min.png">
+		</div>
+		<div class="titulos-div-cabecera-v2">
+			<h3 class="whiteFont RobotoCondensed-Bold">NEGOCIO + ACTITUD!</h3>
+			<div>
+			<p class="whiteFont item-1">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</p>
+			<p class="whiteFont item-2">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
+			<p class="whiteFont item-3">Actualmente somos 19 sucursales en toda la república mexicana.</p>
+			<p class="whiteFont item-4">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
+			<p class="whiteFont item-5">Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.</p>
+			<p class="whiteFont item-6">Espacios acogedores con servicios diseñados a tus necesidades.</p>
+			</div>
+			<div class="leerMas" ng-click="go('franquicias')">
+				<h6 class="whiteFont Lato-Regular">
+				<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+					Solicitar info.
+				</h6>
+			</div>
+		</div>
+	</div>
+	<!--div class="titulos-div-cabecera" style="overflow: hidden;">
 	
 		<h4 class="whiteFont text-center RobotoCondensed-Bold cabecera-titulo">WALL’S BARBERSHOP FRANQUICIAS</h4>
-		<!--
+		<!-$-
 		<h2 class="whiteFont text-center underline Lato-Regular slide-to-left" id="slide-text-1">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</h2>
-		<h2 class="whiteFont text-center underline Lato-Regular slide-to-left" id="slide-text-2">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</h2>-->
+		<h2 class="whiteFont text-center underline Lato-Regular slide-to-left" id="slide-text-2">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</h2>-$->
 		<p class="item-1 whiteFont text-center Lato-Regular">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</p>
 		<p class="item-2 whiteFont text-center Lato-Regular">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
 		<p class="item-3 whiteFont text-center Lato-Regular">Actualmente somos 19 sucursales en toda la república mexicana.</p>
 		<p class="item-4 whiteFont text-center Lato-Regular">Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.</p>
 		<p class="item-5 whiteFont text-center Lato-Regular">Espíritu emprendedor con potencial de crecimiento a escala.</p>
 		<p class="item-6 whiteFont text-center Lato-Regular">Espacios acogedores con servicios diseñados a tus necesidades.</p>
-	</div>
+	</div-->
 	<img src="./assets/img/sello.png" class="white-sello">
-	<div class="leerMas" ng-click="go('franquicias')">
-		<h6 class="whiteFont Lato-Regular">
-			<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
-			Solicitar info.
-		</h6>
-	</div>
+	
 
 	<div class="angleDiv">
 		<i class="fa fa-angle-down whiteFont fa-4x " aria-hidden="true"></i>
@@ -43,10 +63,10 @@
 	<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="video" frameborder="0" allowfullscreen>
 	</iframe>
 	<div class="grid-block small-up-1" id = "titulos-div-fondo-fixed">
-    <div class="grid-block">
+    <div class="grid-block frase-div">
 		<h3 class="whiteFont frase Lato-Italic">"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"</h3>
     </div>
-    <div class="grid-block">
+    <div class="grid-block ">
     	<img class="firma" src="./assets/img/FirmaOscar.png">
     </div>
 		
@@ -73,7 +93,7 @@
 </div>
 
 <!--cuerpo1-->
-<div  ng-style="{'height': body1Height}" class="cuerpo1" id="cuerpo1">
+<div  class="cuerpo1" id="cuerpo1">
 	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
 	<div class="cuerpo1-white-div">
 		<img src="./assets/img/bg_cuerpo_1_centro-min.jpg" class="cuerpo1-background">
@@ -116,11 +136,12 @@
 	<div class="cuerpo2-div" >
 		<img src="./assets/img/wCabecera.png" class="cabecera-logo">
         <div class="cuerpo2-titulos-div">
-        	<h2 class="RobotoCondensed-Bold">"Más que un corte, creamos un Estilo"</h2>
+        	<h2 class="RobotoCondensed-Bold cuerpo2-titulo">"Más que un corte,</h2>
+        	<h2 class="RobotoCondensed-Bold sublined cuerpo2-titulo">creamos un Estilo"</h2>
         </div>
 	</div>
-	<img src="./assets/img/sello-gris.png" class="sello-gris">
-	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom">
+	<!--img src="./assets/img/sello-gris.png" class="sello-gris"-->
+	<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom borde-sesgado-bottom2">
 </div>
 
 <!--cuerpo3-->
@@ -150,24 +171,26 @@
   			<!--
   			<marker position="21.133608, -86.856630" title="Wall's Barbershop las Torres"></marker>
   			<marker position="21.156970, -86.847210" title="Wall's Barbershop Kabah"></marker>-->
-  			<marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal" on-click="goMap('sucursales')"></marker>
-  			<marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres" on-click="goMap('sucursales')"></marker>
-  			<marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel" on-click="goMap('sucursales')"></marker>
-  			<marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen" on-click="goMap('sucursales')"></marker>
-  			<marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena" on-click="goMap('sucursales')"></marker><!--
+  			<marker position="18.4935655,-88.3035155" title="Wall's Barbershop Chetumal" on-click="goMap()"></marker>
+  			<marker position="21.2562127,-86.7478736" title="Wall's Barbershop Isla mujeres" on-click="goMap()"></marker>
+  			<marker position="20.505779,-86.9476516" title="Wall's Barbershop Cozumel" on-click="goMap()"></marker>
+  			<marker position="20.6274284,-87.0740925" title="Wall's Barbershop Playa del carmen" on-click="goMap()"></marker>
+  			<marker position="21.0195624,-89.6175703" title="Wall's Barbershop Merida Plaza Arena" on-click="goMap()"></marker><!--
   			<marker position="21.039818, -89.631276" title="Wall's Barbershop Galerias Merida"></marker>
   			<marker position="21.012636, -89.583264" title="Wall's Barbershop Merida Uptown"></marker>-->
-  			<marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche"></marker on-click="goMap('sucursales')">
-  			<marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz"></marker on-click="goMap('sucursales')">
-  			<marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes" on-click="goMap('sucursales')"></marker>
-  			<marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ" on-click="goMap('sucursales')"></marker>
-  			<marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite" on-click="goMap('sucursales')"></marker>
-  			<marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma" on-click="goMap('sucursales')"></marker>
-  			<marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara" on-click="goMap('sucursales')"></marker>
-  			<marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro" on-click="goMap('sucursales')"></marker>		
+  			<marker position="19.8263633,-90.5514795" title="Wall's Barbershop Campeche" on-click="goMap()"></marker >
+
+  			<marker position="19.1667616,-96.1441513" title="Wall's Barbershop Veracruz" on-click="goMap()"></marker>
+  			<marker position="21.910991,-102.311138" title="Wall's Barbershop Aguascalientes" on-click="goMap()"></marker>
+  			<marker position="16.7546576,-93.1413535" title="Wall's Barbershop Tluxtla GTZ" on-click="goMap()"></marker>
+  			<marker position="19.513484,-99.232877" title="Wall's Barbershop Satelite" on-click="goMap()"></marker>
+  			<marker position="19.4203243,-99.1712487" title="Wall's Barbershop la Roma" on-click="goMap()"></marker>
+  			<marker position="20.7298041,-103.4546805" title="Wall's Barbershop Guadalajara" on-click="goMap()"></marker>
+  			<marker position="20.5978203,-100.3616978" title="Wall's Barbershop Queretaro" on-click="goMap()"></marker>		
   		</ng-map>
   		<div class="footer-servicios-brand">
-	      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+  			<div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+  			<h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
 	    </div>
 	</div>
 </div>

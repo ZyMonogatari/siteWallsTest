@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="sucursales-mapa-div">
+  <div class="sucursales-mapa-div" id="map">
     <div map-lazy-load="https://maps.google.com/maps/api/js" 
       map-lazy-load-params="{{googleMapsUrl}}" >
       <ng-map class = "ng-map"
@@ -526,7 +526,7 @@
           <custom-marker  position="{{barPosition}}">
           <div class="sucursal-map-barra">
             <i class="whiteFont fa fa-plus-circle fa-4x plus-icon" aria-hidden="true" ng-click="openMapMenu()" ></i>
-            <i class="fa fa-globe fa-4x whiteFont" aria-hidden="true" ng-click="restoreZoom()"></i>
+            <i class="fa fa-globe fa-4x whiteFont" aria-hidden="true" ng-click="restoreZoom()" style="cursor: zoom-out"></i>
           </div>
         </custom-marker>
 
@@ -535,28 +535,33 @@
             <i ng-show="!mobil" class="fa fa-times fa-2x sucursales-mapa-close" aria-hidden="true" ng-click="closeMapMenu()"></i>
             <div></div>
               <div class="sucursal-map-grid">
-                <h2 class="RobotoCondensed-Bold" ng-show="!sucursal">SUCURSALES</h2>
+                <h2 class="RobotoCondensed-Bold sucursales-title" ng-show="!sucursal">SUCURSALES</h2>
                 <div class="sucursales-columna-izquierda" ng-show="!sucursal">
                   <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna1" ng-click="selectSucursal(key)">
-                    <div style="position: relative; width: 100%; margin: auto; ">
-                      <h6 class="RobotoCondensed-Bold">{{sucursal.shortName}}</h6>
+                    <div style="position: relative; width: 100%; margin-left: 33px; margin-right: 33px; ">
+                      <h6 class="RobotoCondensed-Bold sucursal-name">{{sucursal.shortName}}</h6>
                     </div>
                     <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
                 </div>
                 <div class="sucursales-columna-derecha" ng-show="!sucursal">
                   <div class="sucursales-menu-item" ng-repeat="(key, sucursal) in sucursalesColumna2" ng-click="selectSucursal(key)">
-                    <div style="position: relative; width: 100%; margin: auto; ">
-                      <h6 class="RobotoCondensed-Bold">{{sucursal.shortName}}</h6>
+                    <div style="position: relative; width: 100%; margin-left: 33px; margin-right: 33px;; ">
+                      <h6 class="RobotoCondensed-Bold sucursal-name">{{sucursal.shortName}}</h6>
                     </div>
                     <img src="{{sucursal.img}}" class="sucurasles-menu-item-image">
                   </div>
                 </div>
               </div>
               <div ng-show="sucursal" style="position: absolute; width: 100%; height: 100%">
-                <i class="fa fa-arrow-left fa-2x " aria-hidden="true" ng-click="sucursal = false" style="position: relative; left: 20px;"> <h6 class="Lato-Regular">Volver</h6> </i>
+              <div style="margin-top: 5px; margin-left: 10px;" ng-click="return()">
+                <h5 class="Lato-Regular" ng-click="return()"> <i class="fa fa-arrow-left fa-1x " aria-hidden="true" ng-click="return()"></i> Volver</h5>
+               
+
+              </div>
+                
                 <div class="sucursal-titulo"> 
-                  <h3 class="RobotoCondensed-Bold">{{actualSucursal.nombre}}</h3>
+                  <h3 class="RobotoCondensed-Bold sucursal-name-select">{{actualSucursal.nombre}}</h3>
                 </div>
                 <img src="{{actualSucursal.img}}" class="sucursal-img">
                 <div class="sucursal-info">
@@ -585,7 +590,10 @@
                 </div>
                 
               </div>
-              <h3 class="RobotoCondensed-Bold" style="position: absolute; text-align: center; top: 80px; " ng-if="noSucursals"> Por el momento no contamos con sucursales aquí, pero crecemos constantemente <br> Contáctanos para infórmate cómo adquirir una sucursal.</h3> 
+              <h3 class="RobotoCondensed-Bold" style="position: absolute; text-align: left;
+                top: 120px;
+                padding: 20px;
+                color: #7a7a7a;" ng-if="noSucursals"> Por el momento no contamos con sucursales aquí, pero crecemos constantemente <br> Contáctanos para infórmate cómo adquirir una sucursal.</h3> 
           </div>
         </custom-marker>
         
@@ -594,14 +602,14 @@
   </div>
 
   <div class="sucursales-footer-div">
-    <div class="sucursales-cuerpo3-div">
+    <div class="sucursales-cuerpo3-div fondo-degradado">
         <div class="footer-servicios-titulos">
           <h1 class="text-center gray-text RobotoCondensed-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
           <h2 class="text-center gray-text RobotoCondensed-Bold">¡CONTÁCTANOS!</h2>
           <h3 class="text-center gray-text RobotoCondensed-Bold"> LIC. AARON ALVARADO </h3>
           <h3 class="text-center gray-text RobotoCondensed-Bold"> TEL: 044 9981 45 96 50 </h3>
           <h3 class="text-center gray-text RobotoCondensed-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
-          <div class="leer-mas-servicios" ng-click="go('franquicias')">
+          <div class="leer-mas-servicios sucursales-leer-mas" ng-click="go('franquicias')">
             <h6 class="whiteFont Lato-Regular">
               <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
               Solicitar info.
@@ -611,302 +619,10 @@
         
       </div>
       <div class="footer-servicios-brand">
-        <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+      <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+        <h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
       </div>
     </div>
   </div>
 
 </div>
-<!--
-<div class="sucursales-cabecera">
-  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto1">
-    <h4>
-       Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
-    </h4>
-   
-  </div>
-  <div class="sucursales-cabecera-titulos Lato-Italic" id="texto2">
-    <h4>
-       Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
-    </h4>
-  </div>
-</div>
-<div class="sucursales-div-circular">
-</div>
-
-   
-<div class="sucursales-cuerpo-absolute">
-  <div class="sucursales-fondo"></div>
-  <div class="sucursales-cuerpo2">
-    <div class="sucursales-cuerpo2-div-diagonal"></div>
-    <div class="sucursales-cuerpo2-contenido">
-      <div class="sucursales-cuerpo2-titulos-top" id="texto1-movil">
-        <h4 class="whiteFont text-center Lato-Italic" >
-           Trabajamos desde el 2010, sin parar con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser líderes en este campo.
-        </h4>
-      </div>
-      <div class="sucursales-cuerpo2-titulos-top" id="texto2-movil">
-        <h4 class="whiteFont text-center Lato-Italic">
-           Al mismo tiempo, creemos en el espíritu de superación, buscando satisfacer las expectativas de quienes vienen a nuestras barberías, para lograr obtener la preferencia de nuestros clientes.
-        </h4>
-      </div>
-      <img src="./assets/img/silla-min.png" class="sucursales-cuerpo2-contenido-silla">
-      <div class="sucursales-cuerpo2-titulos">
-        <h4 class="whiteFont text-center Lato-Italic">
-          Gracias a ustedes nos encontramos en constante crecimiento y nos podrás encontrar en nuestras siguientes sucursales, donde lograrás vivir toda la experiencia Wall's Barbershop:
-        </h4>
-      </div>
-    </div>
-  </div>
-  
-
-  <div class="sucursales-cuerpo3">
-    <div class="sucursales-cuerpo-mapa" >
-      <div map-lazy-load="https://maps.google.com/maps/api/js"                  map-lazy-load-params="{{googleMapsUrl}}" class="google-maps-div">
-        <ng-map class = "ng-map"
-          zoom="5"
-          center="23.848025, -98.605808"
-          draggable="false"
-          disable-double-click-zoom="true"
-          scrollwheel="false"
-          disable-default-u-i="true">
-            shapes
-            <shape name="image"
-             url="./assets/img/BG-mapa-min.jpg"
-             bounds="[[5.10000, -125.100000], [40.400000, -72.300000]]">
-            </shape>
-
-            <shape name="image"
-             url="./assets/img/MapaWall's.png"
-             bounds="[[12.00000, -123.500000], [31.000000, -98.000000]]">
-            </shape>
-            Markers
-            <marker position="20.000000, -98.3000000" title="Cancún, Quintana Roo"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('cancun', 'Cancún, Quintana Roo')"></marker>
-
-              <marker position="18.800000, -97.7000000" title="Isla Mujeres, Quintana Roo"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('isla', 'Isla Mujeres, Quintana Roo')"></marker>
-
-             <marker position="17.500000, -98.0000000" title="Cozumel, Quintana Roo"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('cozumel', 'Cozumel, Quintana Roo')"></marker>
-
-            <marker position="18.800000, -98.8000000" title="Playa del carmen, Quintana Roo"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('playa', 'Playa del Carmen, Quintana Roo')"></marker>
-
-             <marker position="17.500000, -99.3000000" title="Chetumal, Quintana Roo"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('chetumal', 'Chetumal, Quintana Roo')"></marker>
-
-            <marker position="19.000000, -100.0000000" title="Merida, Yucatan"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('merida', 'Merida, Yucatan')"></marker>
-
-            <marker position="17.2000000,-101.0000000" title="Campeche"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('campeche', 'Campeche')"></marker>
-            <marker position="17.0000000,-106.0000000" title="Boca del rio, Veracruz"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('veracruz', 'Boca del Rio, Veracruz')"></marker>
-            <marker position="20.000000,-111.500000" title="Aguascalientes, AGS"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('aguasCalientes', 'Aguascalientes, AGS')"></marker>
-            <marker position="15.0000000,-102.5000000" title="Tuxtla GTZ, Chiapas"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('tuxtla', 'Tuxtla, GTZ')"></marker>
-            <marker position="17.700000,-108.600000" title="Ciudad de Mexico"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }"
-              on-click="cambiarSucursalDesktop('cdMx', 'CDMX - EDO MEX')"></marker>
-
-            <marker position="18.4000000,-112.5000000" title="Guadalajara, Jalisco"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('guadalajara', 'Guadalajara, Jalisco')"></marker>
-
-            <marker position="19.0000000,-109.4000000" title="Queretaro"
-            icon="{
-                url:'./assets/img/ubicacion-no-select.png',
-                scaledSize:[30,35]
-              }" on-click="cambiarSucursalDesktop('queretaro', 'Queretaro')"></marker>
-
-            Custom Markers
-            <custom-marker  position="31.000000, -115.0000000"}>
-              <div class="sucursal-state appear">
-                <h1 class="Oswald-Bold">{{actualMap}}</h1>
-              </div>
-            </custom-marker>
-
-            <custom-marker ng-repeat="sucursal in sucursales" position={{sucursal.position}}>
-              <div class="sucursal-map-div appear">
-                <div class="sucursales-map-image-div" >
-                  <div class="image-circular-margin" >
-                    <img width="100" src={{sucursal.img}} class="sucursal-map-sucursal-img">
-                  </div>
-                </div>
-                <div class="sucursales-map-info-div">  
-                  <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-                  <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-                  <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-                </div>
-              </div>
-            </custom-marker>
-          </ng-map>
-      </div>
-      <img src="./assets/img/marco-top.png" class="margin-map-top">
-      <img src="/assets/img/marco-bottom.png
-    </div>
-
-    <div class="sucursales-cuerpo-mapa-movil" >
-     
-      <div class="acordeon-contain">
-
-        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(1)">
-          <div class="sucursales-plus-button">
-            <h1>+</h1>
-          </div>
-          <div class="sucursales-map-bar-title">
-            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
-          </div>
-          <div class="sucursales-less-button">
-            <h1 ng-click="cerrarSucursalMovil(1)">-</h1>
-          </div>
-        </div>
-
-        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion1Show}">
-      
-          <div class="sucursales-map-div-columna1">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna1">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-
-          <div class="sucursales-map-div-columna2">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion1.columna2">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="acordeon-contain">
-        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(2)">
-          <div class="sucursales-plus-button">
-            <h1>+</h1>
-          </div>
-          <div class="sucursales-map-bar-title">
-            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
-          </div>
-          <div class="sucursales-less-button">
-            <h1 ng-click="cerrarSucursalMovil(2)">-</h1>
-          </div>
-        </div>
-        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion2Show}">
-      
-          <div class="sucursales-map-div-columna1">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna1">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-
-          <div class="sucursales-map-div-columna2">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion2.columna2">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="acordeon-contain">
-        <div class="sucursales-map-bar" ng-click="mostrarSucursalMovil(3)">
-          <div class="sucursales-plus-button">
-            <h1>+</h1>
-          </div>
-          <div class="sucursales-map-bar-title">
-            <h1 class="text-center Lato-Italic">SUCURSALES</h1>
-          </div>
-          <div class="sucursales-less-button">
-            <h1 ng-click="cerrarSucursalMovil(3)">-</h1>
-          </div>
-        </div>
-        <div class="sucursales-sucursales-div" id="sucursal-movil" ng-style="{'display' : seccion3Show}">
-      
-          <div class="sucursales-map-div-columna1">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna1">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-
-          <div class="sucursales-map-div-columna2">
-            <div class="sucursal text-center" ng-repeat="sucursal in sucursalesSeccion3.columna2">
-              <h4 class="Oswald-Bold">{{sucursal.nombre}}</h4>
-              <h6 class="Lato-Regular">{{sucursal.direccion}}</h6>
-              <h6 class="Lato-Regular">{{sucursal.contacto}}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="sucursales-cuerpo3-div-diagonal"></div>
-    <div class="sucursales-cuerpo3-div">
-      <div class="footer-servicios-titulos">
-        <h1 class="text-center gray-text Oswald-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
-        <h2 class="text-center gray-text Oswald-Bold">¡CONTÁCTANOS!</h2>
-        <h3 class="text-center gray-text Roboto-Bold"> LIC. AARON ALVARADO </h3>
-        <h3 class="text-center gray-text Roboto-Bold"> TEL: 044 9981 45 96 50 </h3>
-        <h3 class="text-center gray-text Roboto-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
-        <div class="leer-mas-servicios" ng-click="go('franquicias')">
-          <h6 class="whiteFont Lato-Regular">
-            <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
-            Leer más
-          </h6>
-        </div>
-      </div>
-      
-    </div>
-    <div class="footer-servicios-brand">
-      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <strong>Chicle y Pega Estudio Creativo</strong></h6>
-    </div>
-  </div>
-</div>
-
-
-	</div> -->

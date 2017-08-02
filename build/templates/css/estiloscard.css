@@ -761,9 +761,9 @@ tuor:visited {
 .wc-contact {
     background: #fff;
     padding-bottom: 150px;
-	background-image: url(images/fondo-degradado-footer.png);
+	/*background-image: url(images/fondo-degradado-footer.png);
     background-position: bottom;
-    background-repeat: repeat-x;
+    background-repeat: repeat-x;*/
 	position:relative;
 }
 .wc-contact_form {
