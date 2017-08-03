@@ -424,7 +424,13 @@ angular.module('application').controller('homeCtrl',
     }
     $scope.go = function(state){
         window.scrollTo(0, 0)
-        $state.go(state);
+        if(state == 'sucursales'){
+          $state.go(state).then(function(){
+            $window.location.reload();
+          })
+        }else{
+          $state.go(state);
+        }
     }
     $scope.gotoRegist = function(){
         window.scrollTo(0,0);        
