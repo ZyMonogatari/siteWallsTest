@@ -1,0 +1,119 @@
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+
+
+<div class="sucursales-cabecerav2">
+</div>
+
+<div class="sucursalesv2-cuerpo-absolute">
+  <div class="sucursales-cabecera-titulos-div">
+    <h2 class="whiteFont RobotoCondensed-Bold">Trabajamos desde el 2010, sin parar, con entusiasmo, creatividad y curiosidad, nos enfocamos por la calidad del servicio esencial para ser lideres en este campo</h2>
+  </div>
+  <div class="sucursales-cuerpo-sello">
+    <img src="/assets/img/sello-sucursales-min.png" class="sucursales-cuerpo-sello-img">
+    <div class="sucursales-cuerpo-sello-mascara"></div>
+    <div class="sucursales-cuerpo-sello-titulos-div">
+      <h3 class="whiteFont RobotoCondensed-Bold">
+        NOS PODRÁS ENCONTRAR EN NUESTRAS SIGUIENTES SUCURSALES, 
+      </h3>
+      <h5 class="whiteFont Lato-Italic">
+        donde lograrás vivir toda la experiencia Wall´s Barbershop:
+      </h5>
+    </div>
+  </div>
+
+  <div class="sucursales-mapa-div" id="map">
+    <div ng-include="'/templates/map.html'"></div>
+    <div class="sucursales-mobile-container">
+      <div class="sucursales-mobile-title-container" ng-repeat="(key, sucursal) in sucursales">
+        <div ng-click="selectSucursal(key)">
+          <div class="sucursales-mobile-image">
+            <img src="{{sucursal.imgMobile}}">
+          </div>
+          <div class="sucursales-mobile-title-div">
+            <h3 class="Lato-Bold">  {{sucursal.shortName}}</h3>
+          </div>
+          <div class="sucursales-mobile-flecha-div">
+            <i ng-show="!sucursal.select" class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+            <i ng-show="sucursal.select" class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+          </div>
+        </div>
+        
+        <div class="sucursales-mobile-info" ng-show="sucursal.select">
+          <div>
+            <div class="sucursales-mobile-info-div">
+              <p class="Lato-Light">{{sucursal.direccion}}</p>
+            </div>
+            <div class="sucursales-mobile-info-comollegar-container">
+              <a href="{{sucursal.mapsUrl}}" target="_blank" style="color: black">
+                <div class="sucursales-mobile-info-comollegar">
+                  <p class="Lato-Light">¿como llegar?</p>
+                </div>
+              </a>
+            </div>
+            
+          </div>
+          
+          <div >
+              <div class="tyc">
+                <h6 class="Lato-Bold">RESERVAS</h6>
+              </div>
+            </div>
+          <div style=" margin-top: 10px;">            
+            <div class="sucursales-mobile-contact">
+              <div>
+                <p class="Lato-Light" ng-if="sucursal.telefono">
+                    <i class="fa fa-phone sucursales-contact-icons" aria-hidden="true"></i> {{sucursal.telefono}}
+                  </p>
+              </div>
+              <div >
+                <p class="Lato-Light" ng-if="sucursal.whatsapp">
+                    <i class="fa fa-whatsapp sucursales-contact-icons" aria-hidden="true"></i>
+                    {{sucursal.whatsapp}}
+                  </p> 
+              </div>  
+            </div>
+            <div class="sucursales-mobile-social">
+                <a href="{{selectSucursal.fb}}">
+                  <i class="fa fa-facebook-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+                </a>
+                <a href="{{selectSucursal.instagram}}">
+                  <i class="fa fa-instagram fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+                </a>
+                <a href="{{selectSucursal.twitter}}" ng-if="selectSucursal.twitter">
+                  <i class="fa fa-twitter-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div style="height: 10px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </div>
+
+  <div class="sucursales-footer-div">
+    <div class="sucursales-cuerpo3-div fondo-degradado">
+        <div class="footer-servicios-titulos">
+          <h1 class="text-center gray-text RobotoCondensed-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
+          <h2 class="text-center gray-text RobotoCondensed-Bold">¡CONTÁCTANOS!</h2>
+          <h3 class="text-center gray-text RobotoCondensed-Bold"> LIC. AARON ALVARADO </h3>
+          <h3 class="text-center gray-text RobotoCondensed-Bold"> TEL: 044 9981 45 96 50 </h3>
+          <h3 class="text-center gray-text RobotoCondensed-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
+          <div class="leer-mas-servicios sucursales-leer-mas" ng-click="go('franquicias')">
+            <h6 class="whiteFont Lato-Regular">
+              <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
+              Solicitar info.
+            </h6>
+          </div>
+        </div>
+        
+      </div>
+      <div class="footer-servicios-brand">
+      <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+      <div ng-include="'/templates/socialIcons.html'" class="grid-block"></div></div>
+        <h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+      </div>
+    </div>
+  </div>
+
+</div>
