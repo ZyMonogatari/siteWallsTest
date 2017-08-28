@@ -778,7 +778,7 @@ angular.module('application').controller('homeCtrl',
     }*/
 
    $window.onscroll = function(event){
-    
+    console.log(document.getElementById('cuerpo2').getBoundingClientRect().top);
     if(document.getElementById('cabeceraDiv').getBoundingClientRect().top <= 0 & window.scrollY >= 50){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
@@ -796,21 +796,28 @@ angular.module('application').controller('homeCtrl',
         $scope.cabecera.position = 'absolute';
         angular.element(document.querySelector('#cabeceraDiv')).addClass('from-white');
         angular.element(document.querySelector('#cabeceraDivMovil')).addClass('from-white');
-        $scope.cabecera.top = '5%';
+        $scope.cabecera.top = '3%';
         $scope.logoTransform = 'scale(1, 1)';
         $scope.cabecera.fontColor = 'white';
         $scope.iconColor = 'white';
         $scope.cabecera.source = '/assets/img/logo.png';
         $scope.$apply();
       }
-    if(window.scrollY >= (body1Height/2)){
+    if((document.getElementById('cuerpo1').getBoundingClientRect().top) <= -100){
       $scope.actualBody = 1;
       $scope.$apply();
-    } else if(window.scrollY <= (body1Height/2)){
+    } else if((document.getElementById('cuerpo1').getBoundingClientRect().top) >=0){
       $scope.actualBody = 0;
       $scope.$apply();
     }
-    if(window.scrollY >= cuerpo2top){
+    if((document.getElementById('cuerpo2').getBoundingClientRect().top) <= -100){
+      $scope.actualBody =2;
+      $scope.$apply();
+    } else if((document.getElementById('cuerpo2').getBoundingClientRect().top) <= -50 ){
+      $scope.actualBody = 1;
+      $scope.$apply();
+    }
+    /*if(window.scrollY >= cuerpo2top){
       $scope.actualBody = 2;
       console.log('cuerpo2');
       $scope.$apply();
@@ -818,7 +825,7 @@ angular.module('application').controller('homeCtrl',
     else if(window.scrollY <= (cuerpo2top) & window.scrollY >= (body1Height/2) ){
       $scope.actualBody = 1;
       $scope.$apply();
-    }
+    }*/
    }
 }]);
 
@@ -884,34 +891,34 @@ angular.module('application').controller('serviciosCtrl',
     	console.log(document.getElementById('cuerpo-absolute').getBoundingClientRect().bottom + " - " + document.getElementById('cuerpo-absolute').getBoundingClientRect().top);
     	//console.log(document.getElementById('cuerpo1-servicios').getBoundingClientRect());
     	if((document.getElementById('foto-fila-1').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#foto-fila-1')).addClass('slide-left-to-right');
+    		angular.element(document.querySelector('#foto-fila-1')).addClass('slide-left-to-right2s');
     	}
     	if((document.getElementById('texto-fila-1').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#texto-fila-1')).addClass('slide-right-to-left');
+    		angular.element(document.querySelector('#texto-fila-1')).addClass('slide-right-to-left2s');
     	}
     	if((document.getElementById('foto-fila-2').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#foto-fila-2')).addClass('slide-right-to-left');
+    		angular.element(document.querySelector('#foto-fila-2')).addClass('slide-right-to-left2s');
     	}
     	if((document.getElementById('texto-fila-2').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#texto-fila-2')).addClass('slide-left-to-right');
+    		angular.element(document.querySelector('#texto-fila-2')).addClass('slide-left-to-right2s');
     	}
     	if((document.getElementById('foto-fila-3').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#foto-fila-3')).addClass('slide-left-to-right');
+    		angular.element(document.querySelector('#foto-fila-3')).addClass('slide-left-to-right2s');
     	}
     	if((document.getElementById('texto-fila-3').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#texto-fila-3')).addClass('slide-right-to-left');
+    		angular.element(document.querySelector('#texto-fila-3')).addClass('slide-right-to-left2s');
     	}
     	if((document.getElementById('foto-fila-4').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#foto-fila-4')).addClass('slide-right-to-left');
+    		angular.element(document.querySelector('#foto-fila-4')).addClass('slide-right-to-left2s');
     	}
     	if((document.getElementById('texto-fila-4').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#texto-fila-4')).addClass('slide-left-to-right');
+    		angular.element(document.querySelector('#texto-fila-4')).addClass('slide-left-to-right2s');
     	}
     	if((document.getElementById('foto-fila-5').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#foto-fila-5')).addClass('slide-left-to-right');
+    		angular.element(document.querySelector('#foto-fila-5')).addClass('slide-left-to-right2s');
     	}
     	if((document.getElementById('texto-fila-5').getBoundingClientRect().bottom - 700) <= screen.height){
-    		angular.element(document.querySelector('#texto-fila-5')).addClass('slide-right-to-left');
+    		angular.element(document.querySelector('#texto-fila-5')).addClass('slide-right-to-left2s');
     	}
     	if((document.getElementById('borde').getBoundingClientRect().top) <= 0){
     		if(!cuerpoAbsoluteTop){
@@ -2224,6 +2231,14 @@ angular.module('application').controller('sucursalesCtrlV2',
   ['$scope', '$window', 'NgMap', '$interval', '$timeout', '$state', function($scope, $window, NgMap, $interval, $timeout, $state){
     document.title = "Sucursales- Wall´s Barbershop";
     $scope.cabecera = {};
+    $scope.cabecera.source = '/assets/img/logo.png';
+    $scope.cabecera.position = 'absolute';
+    $scope.logoTransform = '';
+    $scope.displaySesion = 'none';
+    $scope.displayNumber = 'none';
+    $scope.cabecera.fontColor = 'white';
+    $scope.iconColor = 'white';
+    
     $scope.displaySesionN = 'none';
     $scope.sucursalInfoDiv;
     $scope.selectSucursal;

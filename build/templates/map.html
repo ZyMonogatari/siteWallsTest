@@ -26,7 +26,7 @@
               },
             {color:'#767676'}]},{featureType:'administrative.locality', elementType:'labels.text',stylers:[{visibility:'on'},{color:'#42464e'},{lightness:'-23'}]},{featureType:'administrative.locality',elementType:'labels.text.stroke',stylers:[{color:'#ffffff'}]},{featureType:'landscape',elementType:'all',stylers:[{color:'#f7f8f9'}]},{featureType:'poi',elementType:'all',stylers:[{visibility:'off'}]},{featureType:'road',elementType:'all',stylers:[{saturation:-100},{lightness:45}]},{featureType:'road.highway',elementType:'all',stylers:[{visibility:'simplified'}]},{featureType:'road.arterial',elementType:'labels.icon',stylers:[{visibility:'off'}]},{featureType:'transit',elementType:'all',stylers:[{visibility:'off'}]},{featureType:'water',elementType:'all',stylers:[{color:'#acd5cb'},{visibility:'on'},{lightness:'49'}]},{featureType:'water',elementType:'geometry.fill',stylers:[{color:'#3c3f45'},{lightness:49}]}]"
         >
-        <div  class="fadeIn fadeOut sucursales-v3-infoDiv" ng-show="sucursalInfoDiv" ng-style="{'top':mapSucursalDiv}">
+        <!--div  class="fadeIn fadeOut sucursales-v3-infoDiv" ng-show="sucursalInfoDiv" >
             <img src="{{selectSucursal.img}}" class="sucursales-v3-infoImage">
             <div class="sucursal-v3-title">
               <h4 class="Lato-Bold sucursal-v3-title-text"> {{selectSucursal.nombre}} </h4>
@@ -70,7 +70,56 @@
             </div>
             
             <div style="position: absolute; width: 25px; height: 25px; background: white; right: 60px; bottom: -15px; transform: rotate(-45deg); border-left: 3px solid black; border-bottom: 3px solid black; z-index: -1;"></div>
+        </div-->
+        <custom-marker  position = {{mapCenter}}>
+          <div style="position: absolute; top: -200px; left: -210px">
+            <div  class="fadeIn fadeOut sucursales-v3-infoDiv" ng-show="sucursalInfoDiv" >
+            <img src="{{selectSucursal.img}}" class="sucursales-v3-infoImage">
+            <div class="sucursal-v3-title">
+              <h4 class="Lato-Bold sucursal-v3-title-text"> {{selectSucursal.nombre}} </h4>
+            </div>
+            
+            <div class="sucursal-v3-info">
+              <p class="sucursal-v3-info-text Lato-Light">
+                {{selectSucursal.direccion}}
+              </p>
+            </div>
+
+            <div style="margin-top: -15px;">
+              <div class="tyc">
+                <h6 class="Lato-Bold">RESERVAS</h6>
+              </div>
+            </div>
+
+            
+            <div style="min-height: 50px;">
+              <div style=" display: inline-block;" >
+                <p class="Lato-Light" style="margin-bottom: 5px; font-size: 12px;" ng-if="selectSucursal.telefono" ng-style="{'margin-top': telefonoMarginTop}">
+                  <i class="fa fa-phone sucursales-contact-icons" aria-hidden="true"></i> {{selectSucursal.telefono}}
+                </p>
+                <p class="Lato-Light" style="margin-bottom: 5px; font-size: 12px;" ng-if="selectSucursal.whatsapp" ng-style="{'margin-top': whatsappMarginTop}">
+                  <i class="fa fa-whatsapp sucursales-contact-icons" aria-hidden="true"></i>
+                  {{selectSucursal.whatsapp}}
+                </p>
+              </div>
+              
+              <div class="sucursal-social-icons-div">
+              <a href="{{selectSucursal.fb}}">
+                <i class="fa fa-facebook-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+              </a>
+              <a href="{{selectSucursal.instagram}}">
+                <i class="fa fa-instagram fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+              </a>
+              <a href="{{selectSucursal.twitter}}" ng-if="selectSucursal.twitter">
+                <i class="fa fa-twitter-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
+              </a>
+              </div>
+            </div>
+            
+            <div style="position: absolute; width: 25px; height: 25px; background: white; right: 60px; bottom: -12px; transform: rotate(-45deg); border-left: 3px solid black; border-bottom: 3px solid black; z-index: 0;"></div>
         </div>
+          </div>
+        </custom-marker>
         <marker ng-repeat="(key, sucursal) in sucursales" position="{{sucursal.y}},{{sucursal.x}}" title="{{sucursal.nombre}}"
           optimized="false"
           icon="{
