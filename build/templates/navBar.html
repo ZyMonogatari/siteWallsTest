@@ -1,114 +1,106 @@
 <div class="cabeceraDiv" ng-style="{'position' : cabecera.position, 'top' : cabecera.top, 'background' : cabecera.background}" id="cabeceraDiv">
-		<div class="grid-block navBar">
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-mouseover="homeText = 'underline'"  
-					ng-mouseleave="homeText = ''" 
-					ng-style="{'text-decoration' : homeText, 'color' : cabecera.fontColor}"
-					ng-click="go('home')"
-					style="cursor:pointer";
-				>
-					HOME
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-mouseover="serviciosText = 'underline'"  
-					ng-mouseleave="serviciosText = ''" 
-					ng-style="{'text-decoration' : serviciosText, 'color' : cabecera.fontColor}"
-					ng-click="go('servicios')"
-					style="cursor:pointer";
-
-				>
-					SERVICIOS
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-click="go('sucursales')"
-					ng-mouseover="sucursalesText = 'underline'"  
-					ng-mouseleave="sucursalesText = ''" 
-					ng-style="{'text-decoration' : sucursalesText, 'color' : cabecera.fontColor}"
-					style="cursor:pointer";
-
-				>
-					SUCURSALES
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-click="go('galeria')"
-					ng-mouseover="galeriasText = 'underline'"  
-					ng-mouseleave="galeriasText = ''" 
-					ng-style="{'text-decoration' : galeriasText, 'color' : cabecera.fontColor}"
-					style="cursor:pointer";
-
-				>
-					GALERÍAS
-				</h5>
-			</div>
-			<div class="grid-block" >
-				<img src="{{cabecera.source}}" class="walls-logo"
-				ng-style="{'transform' : logoTransform, '-ms-transform' : logoTransform, '-webkit-transform': logoTransform}"
+	<div class="grid-block navBar">
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-mouseover="homeText = 'underline'"  
+				ng-mouseleave="homeText = ''" 
+				ng-style="{'text-decoration' : homeText, 'color' : cabecera.fontColor}"
 				ng-click="go('home')"
-					style="cursor:pointer";>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-
-					ng-mouseover="nosotrosText = 'underline'"  
-					ng-mouseleave="nosotrosText = ''" 
-					ng-style="{'text-decoration' : nosotrosText, 'color' : cabecera.fontColor}"
-					ng-click="go('contacto')"
-					style="cursor:pointer";
-
-				>
-					CONTACTO
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-
-					ng-mouseover="cardText = 'underline'"  
-					ng-mouseleave="cardText = ''" 
-					ng-style="{'text-decoration' : cardText, 'color' : cabecera.fontColor}"
-					ng-click="go('wallsCard')"
-					style="cursor:pointer";
-
-				>
-					WALL'S CARD
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-click="go('franquicias')"
-					ng-mouseover="franquiciasText = 'underline'"  
-					ng-mouseleave="franquiciasText = ''" 
-					ng-style="{'text-decoration' : franquiciasText, 'color' : cabecera.fontColor}"
-					style="cursor:pointer";
-
-				>
-					FRANQUICIAS
-				</h5>
-			</div>
-			<div class="grid-block">
-				<h5 
-					class="whiteFont RobotoCondensed-Bold"
-					ng-mouseover="blogText = 'underline'"  
-					ng-mouseleave="blogText = ''" 
-					ng-style="{'text-decoration' : blogText, 'color' : cabecera.fontColor}"
-					style="cursor:pointer";
-					
-				>
-					BLOG
-				</h5>
-			</div>
+				style="cursor:pointer";
+			>
+				HOME
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-mouseover="serviciosText = 'underline'"  
+				ng-mouseleave="serviciosText = ''" 
+				ng-style="{'text-decoration' : serviciosText, 'color' : cabecera.fontColor}"
+				ng-click="go('servicios')"
+				style="cursor:pointer";
+			>
+				SERVICIOS
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-click="go('sucursales')"
+				ng-mouseover="sucursalesText = 'underline'"  
+				ng-mouseleave="sucursalesText = ''" 
+				ng-style="{'text-decoration' : sucursalesText, 'color' : cabecera.fontColor}"
+				style="cursor:pointer";
+			>
+				SUCURSALES
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-click="go('galeria')"
+				ng-mouseover="galeriasText = 'underline'"  
+				ng-mouseleave="galeriasText = ''" 
+				ng-style="{'text-decoration' : galeriasText, 'color' : cabecera.fontColor}"
+				style="cursor:pointer";
+			>
+				GALERÍAS
+			</h5>
+		</div>
+		<div class="grid-block" >
+			<img src="{{cabecera.source}}" class="walls-logo"
+			ng-style="{'transform' : logoTransform, '-ms-transform' : logoTransform, '-webkit-transform': logoTransform}"
+			ng-click="go('home')"
+			style="cursor:pointer";
+			id="cabecera-walls-logo">
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-mouseover="nosotrosText = 'underline'"  
+				ng-mouseleave="nosotrosText = ''" 
+				ng-style="{'text-decoration' : nosotrosText, 'color' : cabecera.fontColor}"
+				ng-click="go('contacto')"
+				style="cursor:pointer";
+			>
+				CONTACTO
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-mouseover="cardText = 'underline'"  
+				ng-mouseleave="cardText = ''" 
+				ng-style="{'text-decoration' : cardText, 'color' : cabecera.fontColor}"
+				ng-click="go('wallsCard')"
+				style="cursor:pointer";
+			>
+				WALL'S CARD
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-click="go('franquicias')"
+				ng-mouseover="franquiciasText = 'underline'"  
+				ng-mouseleave="franquiciasText = ''" 
+				ng-style="{'text-decoration' : franquiciasText, 'color' : cabecera.fontColor}"
+				style="cursor:pointer";
+			>
+				FRANQUICIAS
+			</h5>
+		</div>
+		<div class="grid-block">
+			<h5 
+				class="whiteFont RobotoCondensed-Bold"
+				ng-mouseover="blogText = 'underline'"  
+				ng-mouseleave="blogText = ''" 
+				ng-style="{'text-decoration' : blogText, 'color' : cabecera.fontColor}"
+				style="cursor:pointer";	
+			>
+				BLOG
+			</h5>
 		</div>
 	</div>
+</div>

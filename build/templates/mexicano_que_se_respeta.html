@@ -1,0 +1,49 @@
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+<div class="mexicano-background">
+	<div class="mexicano-formulario-container">
+		<div class="mexicano-descripcion-container">
+			<p>Descargando tu cupón Walls y estarás participando en la rifa de un Kit completo de nuestros productos.</p>
+		</div>
+		<div class="mexicano-titulo-container">
+			<p>¡Registrate, descarga y gana!</p>
+		</div>
+		<div class="mexicano-form">
+			<div class="mexicano-formulario-header">
+				<img src="/assets/img/Logo_WallsBarberShop.png">
+			</div>
+			<form>
+				<div class="mexicano-form-fields" >
+					<div>
+						<input type="text" placeholder="Nombre completo:" required ng-model="user.name">
+						<input type="number" placeholder="Edad:" max="100" ng-model="user.age_range.min">
+						<input type="email" placeholder="Correo:" required ng-model="user.email">
+						<input type="text" placeholder="Celular:">
+						<select name="" id="">
+							<option value="">Breakfast</option>
+							<option value="">Bacon Pancakes</option>
+							<option value="">Mountain Dew</option>
+							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+						</select>
+						<select name="" id="">
+							<option value="">Breakfast</option>
+							<option value="">Bacon Pancakes</option>
+							<option value="">Mountain Dew</option>
+							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+						</select>
+						<a class="expand button" ng-click="login()"> <i class="fa fa-facebook-official" aria-hidden="true" ></i> Login with Facebook</a>
+					</div>
+				</div>
+				<input type="submit" class="mexicano-download-button" value="DESCARGAR CUPÓN">
+			</form>
+		</div>
+	</div>
+	<!--div>
+		<div>
+			<img src="assets/img/Logo_MexicanoQueSeRespeta.png">
+		</div>
+		<div>
+			<img src="assets/img/Persona.png">
+		</div>
+	</div-->
+</div>

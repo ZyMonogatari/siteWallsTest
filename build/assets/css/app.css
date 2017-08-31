@@ -10534,7 +10534,8 @@ blockquote p {
   border-radius: 20px; }
 
 .grid-content {
-  overflow-y: initial; }
+  overflow-y: initial;
+  padding: 0; }
 
 .home-borde-div {
   width: 107%;
@@ -10618,7 +10619,7 @@ body {
 .cabeceraDiv {
   width: 100%;
   height: 15%;
-  top: 6%;
+  top: 3%;
   z-index: 3; }
 
 .wallsLogo {
@@ -10755,7 +10756,6 @@ body {
   background-size: cover;
   width: 100%;
   position: fixed;
-  z-index: -1;
   background-repeat: no-repeat; }
 
 .fondo-footer {
@@ -10764,13 +10764,13 @@ body {
   background-size: cover;
   width: 100%;
   position: fixed;
-  z-index: -1;
   background-repeat: no-repeat;
   top: -40%; }
 
 .cuerpo1 {
   position: relative;
-  width: 100%; }
+  width: 100%;
+  margin: 45% 0 0 0; }
 
 .cuerpo2 {
   position: relative;
@@ -10780,7 +10780,7 @@ body {
 .cuerpo3 {
   position: relative;
   width: 100%;
-  margin: 60% 0 0;
+  margin: 50% 0 0;
   height: 700px; }
 
 .titulos-div-cabecera {
@@ -11028,6 +11028,10 @@ body {
     right: -5%; } }
 
 @media only screen and (max-width: 768px) {
+  .cuerpo1 {
+    position: relative;
+    width: 100%;
+    margin: 70% 0 0 0; }
   .home-sucursales-title-div {
     display: none; }
   .button-home {
@@ -11053,7 +11057,7 @@ body {
   .wallsCardDiv {
     display: none; }
   .titulos-div-footer {
-    margin: 13% 20%; }
+    margin: 13% 10%; }
   .home-cuerpo-absolute {
     top: 60%; }
   .cuerpo2 {
@@ -11236,7 +11240,7 @@ body {
   .titulos-div-footer, h1, h2, h3 {
     font-size: 100%; }
   .titulos-div-footer {
-    margin: 20%; }
+    margin: 20% 5%; }
   .titulos-div-footer div p {
     font-size: 25px; }
   /*
@@ -13973,22 +13977,23 @@ body {
   position: absolute;
   top: 3700px;
   width: 110%;
-  height: 95%;
   left: -5%; }
 
 .footer-servicios-div {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 80%;
-  top: 20%; }
+  overflow: auto;
+  margin: -5px 0 0 0; }
 
 .titulos-div-footer-sucursales {
-  position: relative; }
+  position: relative;
+  margin: 0 0 3% 0; }
 
 .titulos-div-footer-sucursales div p {
   font-size: 40px;
   text-align: center;
-  font-family: RobotoCondensed-Bold; }
+  font-family: RobotoCondensed-Bold;
+  color: #7B7B7B; }
 
 .footer-servicios-titulos {
   position: absolute;
@@ -14000,8 +14005,7 @@ body {
   height: 60%; }
 
 .footer-servicios-brand {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   height: 50px;
   width: 100%;
   background: #454545; }
@@ -14114,8 +14118,9 @@ body {
     top: 1100px;
     width: 100%; }
   .footer-servicios {
-    top: 3020px;
-    height: 70%; }
+    top: 3020px; }
+  .titulos-div-footer-sucursales div p {
+    font-size: 20px; }
   .borde-sesgado-servicios {
     top: -35px; }
   .video-servicios-div {
@@ -14128,9 +14133,7 @@ body {
   .footer-servicios-titulos {
     top: 30px; }
   .leer-mas-servicios {
-    bottom: 0%; }
-  .footer-servicios {
-    top: 3000px; } }
+    bottom: 0%; } }
 
 @media only screen and (max-width: 320px) {
   .cuerpo2-servicios {
@@ -14142,8 +14145,7 @@ body {
   .cuerpo1-servicios {
     top: 80%; }
   .footer-servicios {
-    top: 2850px;
-    height: 80%; }
+    top: 2900px; }
   .footer-servicios-brand {
     font-size: 80%; } }
 
@@ -14485,10 +14487,10 @@ body {
   top: 1400px; }
 
 .sucursales-cuerpo3-div {
-  background-size: contain;
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 500px; }
+  overflow: auto;
+  padding: 3% 0 0 0; }
 
 .sucursales-cuerpo3-div-diagonal {
   position: absolute;
@@ -14756,9 +14758,6 @@ body {
     height: 50px; }
   .sucursales-cuerpo-mapa-movil {
     width: 100%; }
-  .sucursales-cuerpo3-div {
-    top: 00px;
-    height: 350px; }
   .sucursales-cuerpo3 {
     height: 900px; } }
 
@@ -15123,10 +15122,6 @@ body {
   .sucursal-map-menu {
     padding: 10px;
     width: 550px; }
-  .sucursales-footer-div {
-    height: 600px; }
-  .sucursales-cuerpo3-div {
-    height: 600px; }
   .sucursales-leer-mas {
     bottom: -5%; }
   .tyc h6 {
@@ -15207,17 +15202,11 @@ body {
     top: 10px;
     left: -25px;
     margin: auto; }
-  .sucursales-footer-div {
-    width: 100%;
-    height: 400px; }
   .sucursalesv2-cuerpo-absolute {
     height: 1300px; }
   .sucursales-leer-mas {
     bottom: 0%;
-    width: 40%; }
-  .sucursales-cuerpo3-div {
-    top: 00px;
-    height: 350px; } }
+    width: 40%; } }
 
 @media only screen and (max-width: 375px) {
   .sucursales-leer-mas {
@@ -15424,25 +15413,23 @@ body {
 .galeria-cuerpo3 {
   position: absolute;
   top: 3200px;
-  width: 100%;
-  height: 600px; }
+  width: 100%; }
 
 .galeria-cuerpo3-div {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 500px;
-  top: 100px; }
+  overflow: auto; }
 
 .sucursales-cuerpo3-div-diagonal {
   position: absolute;
   width: 120%;
   left: -20%;
-  height: 170px;
-  top: 0%;
+  height: 33%;
+  top: -20%;
   background: white;
   /* IE 9 */
   /* Chrome, Safari, Opera */
-  transform: rotate(5deg);
+  transform: rotate(4deg);
   z-index: 0; }
 
 .galeria-fondo3-titulos1 {
@@ -15752,8 +15739,7 @@ body {
   .font-13px {
     font-size: 10px; }
   .galeria-cuerpo3 {
-    top: 1400px;
-    height: 400px; }
+    top: 1400px; }
   /*.sucursales-cuerpo3-div-diagonal{
 		width: 140%;
     	left: -35%;
@@ -15762,8 +15748,6 @@ body {
 	}*/
   .galeria-fondo2-titulos-text {
     font-size: 8px; }
-  .galeria-cuerpo3-div {
-    height: 300px; }
   .leer-mas-galerias {
     bottom: -10%; } }
 
@@ -18289,3 +18273,66 @@ a {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
   /* IE6-9 */ }
+
+.mexicano-background {
+  background-image: url(/assets/img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 10% 0 0 0; }
+
+.mexicano-formulario-container {
+  width: 40%;
+  position: relative; }
+
+.mexicano-descripcion-container {
+  width: 100%;
+  text-align: center;
+  padding: 0 20%; }
+
+.mexicano-descripcion-container p {
+  color: #590202;
+  font-size: 20px;
+  font-family: Oswald-Regular;
+  margin-bottom: 0; }
+
+.mexicano-titulo-container {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 8%; }
+
+.mexicano-titulo-container p {
+  color: #590202;
+  font-size: 40px;
+  font-family: Oswald-Regular; }
+
+.mexicano-formulario-header {
+  background: #590202;
+  border-radius: 10px;
+  padding: 0 33%; }
+
+.mexicano-formulario-header img {
+  margin: -30% 0; }
+
+.mexicano-form {
+  background: rgba(255, 255, 255, 0.4);
+  width: 45%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0; }
+
+.mexicano-form-fields {
+  padding: 11% 5% 0; }
+
+.mexicano-download-button {
+  background: #590202;
+  width: 100%;
+  border: none;
+  color: white;
+  font-size: 30px; }
+
+@media only screen and (max-width: 1700px) {
+  .mexicano-form {
+    width: 60%; } }

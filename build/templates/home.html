@@ -1,6 +1,7 @@
-
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
+<div style="position: absolute; width: 100%">
+
 
 <!--Cabecera--> 
 <div ng-show="actualBody == 0" class="cabecera">
@@ -25,32 +26,17 @@
 			</div>
 			<div class="leerMas" ng-click="go('franquicias')">
 				<h6 class="whiteFont Lato-Regular">
-				<i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
 					Solicitar info.
 				</h6>
 			</div>
 		</div>
 	</div>
-	<!--div class="titulos-div-cabecera" style="overflow: hidden;">
-	
-		<h4 class="whiteFont text-center RobotoCondensed-Bold cabecera-titulo">WALL’S BARBERSHOP FRANQUICIAS</h4>
-		<!-$-
-		<h2 class="whiteFont text-center underline Lato-Regular slide-to-left" id="slide-text-1">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</h2>
-		<h2 class="whiteFont text-center underline Lato-Regular slide-to-left" id="slide-text-2">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</h2>-$->
-		<p class="item-1 whiteFont text-center Lato-Regular">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</p>
-		<p class="item-2 whiteFont text-center Lato-Regular">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
-		<p class="item-3 whiteFont text-center Lato-Regular">Actualmente somos 19 sucursales en toda la república mexicana.</p>
-		<p class="item-4 whiteFont text-center Lato-Regular">Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.</p>
-		<p class="item-5 whiteFont text-center Lato-Regular">Espíritu emprendedor con potencial de crecimiento a escala.</p>
-		<p class="item-6 whiteFont text-center Lato-Regular">Espacios acogedores con servicios diseñados a tus necesidades.</p>
-	</div-->
 	<img src="./assets/img/sello.png" class="white-sello">
 	
 
 	<div class="angleDiv">
 		<i class="fa fa-angle-down whiteFont fa-4x " aria-hidden="true"></i>
 	</div>
-
 </div>
 
 <!--fondo-fixed-->
@@ -59,13 +45,14 @@
 	<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="video" frameborder="0" allowfullscreen>
 	</iframe>
 	<div class="grid-block small-up-1" id = "titulos-div-fondo-fixed">
-    <div class="grid-block frase-div">
-		<h3 class="whiteFont frase Lato-Italic">"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"</h3>
-    </div>
-    <div class="grid-block ">
-    	<img class="firma" src="./assets/img/FirmaOscar.png">
-    </div>
-		
+    	<div class="grid-block frase-div">
+			<h3 class="whiteFont frase Lato-Italic">
+				"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"
+			</h3>
+    	</div>
+    	<div class="grid-block ">
+    		<img class="firma" src="./assets/img/FirmaOscar.png">
+    	</div>
 	</div>
 </div>
 
@@ -90,117 +77,116 @@
 			</div>
 		</div>
 	</div>
-	
 </div>
 
 <!--cuerpo1-->
-<div class="home-cuerpo-absolute">
-	<div  class="cuerpo1" id="cuerpo1">
-		<div class="home-borde-div">
-			<img src="./assets/img/border_segado_top-min.png" style="width: 100%">
-		</div>
+<!--div class="home-cuerpo-absolute"-->
+<div  class="cuerpo1" id="cuerpo1">
+	<div class="home-borde-div">
+		<img src="./assets/img/border_segado_top-min.png" style="width: 100%">
+	</div>
 	
-		<div class="cuerpo1-white-div">
-			<div class="cabecera-logo-div">
-				<img src="./assets/img/wCabecera.png" class="cabecera-logo" >	
-			</div>
-	        
-	        <div class="cuerpo1-titulos-div">
-	         	<h1 class="walls-titulo RobotoCondensed-Bold">
-					WALL'S BARBERSHOP
-				</h1>
-				<h4 class="Lato-Regular">Barbería con un ambiente masculino y moderno.</h4>
-				<h4 class="Lato-Regular">Ideal para que el hombre que le gusta consentirse.</h4>
-				<h4 class="Lato-Regular">Nos gusta dar un excelente servicio al cliente, un trato personalizado y de calidad,</h4>
-				<h4 class="Lato-Regular">ofreciendo tanto cortes modernos como tradicionales a tijera.</h4>
-				<h4>Tratamos ir siempre un paso adelante.</h4>
-	        </div>
-
-			<div class="wallsCardLogoDiv">
-				<h6 class="text-center membresia-text RobotoCondensed-Bold">conoce nuestra membresía</h6>
-				<img src="./assets/img/wallscardcuadro.png" style="display: block; margin: 0 auto;">
-			</div>
-
-			<div class="wallsCardDiv">
-				<div>
-					<img class="wallscardImg" src="./assets/img/Frente-final.png">
-				</div>
-				<div class="grid-block sesion">
-					<div class="grid-block">
-						<a class="dark button Lato-Light button-home" ng-click="gotoRegist()">Registrarse</a>
-					</div>
-
-					<div class="grid-block">
-						<a class="dark button Lato-Light button-home" ng-click="gotoLogin()">Iniciar sesión</a>
-					</div>
-				</div>	
-			</div>
+	<div class="cuerpo1-white-div">
+		<div class="cabecera-logo-div">
+			<img src="./assets/img/wCabecera.png" class="cabecera-logo" >	
 		</div>
-		<div class="home-borde-div">
-			<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom">
+        
+        <div class="cuerpo1-titulos-div">
+         	<h1 class="walls-titulo RobotoCondensed-Bold">
+				WALL'S BARBERSHOP
+			</h1>
+			<h4 class="Lato-Regular">Barbería con un ambiente masculino y moderno.</h4>
+			<h4 class="Lato-Regular">Ideal para que el hombre que le gusta zonsentirse.</h4>
+			<h4 class="Lato-Regular">Nos gusta dar un excelente servicio al cliente, un trato personalizado y de calidad,</h4>
+			<h4 class="Lato-Regular">ofreciendo tanto cortes modernos como tradicionales a tijera.</h4>
+			<h4>Tratamos ir siempre un paso adelante.</h4>
+        </div>
+
+		<div class="wallsCardLogoDiv">
+			<h6 class="text-center membresia-text RobotoCondensed-Bold">conoce nuestra membresía</h6>
+			<img src="./assets/img/wallscardcuadro.png" style="display: block; margin: 0 auto;">
+		</div>
+
+		<div class="wallsCardDiv">
+			<div>
+				<img class="wallscardImg" src="./assets/img/Frente-final.png">
+			</div>
+			<div class="grid-block sesion">
+				<div class="grid-block">
+					<a class="dark button Lato-Light button-home" ng-click="gotoRegist()">Registrarse</a>
+				</div>
+
+				<div class="grid-block">
+					<a class="dark button Lato-Light button-home" ng-click="gotoLogin()">Iniciar sesión</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="home-borde-div">
+		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom">
+	</div>
+</div>
+
+<div  class="cuerpo2" id="cuerpo2">
+	<div class="home-borde-div">
+		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
+	</div>
+		
+	<div class="cuerpo2-div" >
+		<div style="width: 100%; padding: 0 33.3%">
+			<img src="./assets/img/wCabecera.png" class="cabecera-logo">	
+		</div>
+    	<div class="cuerpo2-titulos-div">
+        	<h2 class="RobotoCondensed-Bold cuerpo2-titulo">"Más que un corte,</h2>
+        	<h2 class="RobotoCondensed-Bold cuerpo2-titulo">creamos un Estilo"</h2>
+	    </div>
+	    <div class="wallsCardLogoDiv2">
+			<h6 class="text-center membresia-text RobotoCondensed-Bold">conoce nuestra membresía</h6>
+			<img src="./assets/img/wallscardcuadro.png" style="display: block; margin: 0 auto;">
+		</div>
+
+		<div class="wallsCardDiv2">
+			<div>
+				<img class="wallscardImg" src="./assets/img/Frente-final.png">
+			</div>
+			<div class="grid-block sesion">
+				<div class="grid-block">
+					<a class="dark button Lato-Light button-home" ng-click="gotoRegist()">Registrarse</a>
+				</div>
+
+				<div class="grid-block">
+					<a class="dark button Lato-Light button-home" ng-click="gotoLogin()">Iniciar sesión</a>
+				</div>
+			</div>	
 		</div>
 	</div>
 
-	<div  class="cuerpo2" id="cuerpo2">
+	<div class="home-borde-div">
+		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom borde-sesgado-bottom2">
+	</div>
+</div>
+
+<div class="cuerpo3">
+	<div class="home-sucursales-title-div">
 		<div class="home-borde-div">
 			<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
 		</div>
-		
-		<div class="cuerpo2-div" >
-			<div style="width: 100%; padding: 0 33.3%">
-				<img src="./assets/img/wCabecera.png" class="cabecera-logo">	
-			</div>
-	        <div class="cuerpo2-titulos-div">
-	        	<h2 class="RobotoCondensed-Bold cuerpo2-titulo">"Más que un corte,</h2>
-	        	<h2 class="RobotoCondensed-Bold cuerpo2-titulo">creamos un Estilo"</h2>
-	        </div>
-	        <div class="wallsCardLogoDiv2">
-				<h6 class="text-center membresia-text RobotoCondensed-Bold">conoce nuestra membresía</h6>
-				<img src="./assets/img/wallscardcuadro.png" style="display: block; margin: 0 auto;">
-			</div>
-
-			<div class="wallsCardDiv2">
-				<div>
-					<img class="wallscardImg" src="./assets/img/Frente-final.png">
-				</div>
-				<div class="grid-block sesion">
-					<div class="grid-block">
-						<a class="dark button Lato-Light button-home" ng-click="gotoRegist()">Registrarse</a>
-					</div>
-
-					<div class="grid-block">
-						<a class="dark button Lato-Light button-home" ng-click="gotoLogin()">Iniciar sesión</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-
-		<div class="home-borde-div">
-			<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom borde-sesgado-bottom2">
+		<div class="home-sucursales-title">
+			<p class="Lato-Bold">Sucursales</p>
 		</div>
 	</div>
-
-	<div class="cuerpo3">
-		<div class="home-sucursales-title-div">
-			<div class="home-borde-div">
-				<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
-			</div>
-			<div class="home-sucursales-title">
-				<p class="Lato-Bold">Sucursales</p>
-			</div>
-		</div>
 		
 		
 	    
-	    <div class="home-map-container" ng-include="'/templates/map.html'">
-	    </div>
-	  	<div class="home-footer-brand">
-	  		<div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
-			<div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
+    <div class="home-map-container" ng-include="'/templates/map.html'">
+    </div>
+  	<div class="home-footer-brand">
+  		<div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+		<div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
 
-	  		<h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
-		</div>
+  		<h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
 	</div>
+</div>
 </div>
 
 

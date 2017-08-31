@@ -74,13 +74,13 @@
               </div>  
             </div>
             <div class="sucursales-mobile-social">
-                <a href="{{selectSucursal.fb}}">
+                <a href="{{sucursal.fb}}">
                   <i class="fa fa-facebook-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
                 </a>
-                <a href="{{selectSucursal.instagram}}">
+                <a href="{{sucursal.instagram}}">
                   <i class="fa fa-instagram fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
                 </a>
-                <a href="{{selectSucursal.twitter}}" ng-if="selectSucursal.twitter">
+                <a href="{{sucursal.twitter}}">
                   <i class="fa fa-twitter-square fa-2x sucursal-v3-social-icon" aria-hidden="true"></i>
                 </a>
             </div>
@@ -93,24 +93,29 @@
 
   <div class="sucursales-footer-div">
     <div class="sucursales-cuerpo3-div fondo-degradado">
-        <div class="footer-servicios-titulos">
-          <h1 class="text-center gray-text RobotoCondensed-Bold">¿TE INTERESA ADQUIRIR UNA FRANQUICIA?</h1>
-          <h2 class="text-center gray-text RobotoCondensed-Bold">¡CONTÁCTANOS!</h2>
-          <h3 class="text-center gray-text RobotoCondensed-Bold"> LIC. AARON ALVARADO </h3>
-          <h3 class="text-center gray-text RobotoCondensed-Bold"> TEL: 044 9981 45 96 50 </h3>
-          <h3 class="text-center gray-text RobotoCondensed-Bold"> FRANQUICIAS@YOSOYWALLS.COM </h3>
-          <div class="leer-mas-servicios sucursales-leer-mas" ng-click="go('franquicias')">
-            <h6 class="whiteFont Lato-Regular">
-              <i class="fa fa-rocket whiteFont" aria-hidden="true"></i>
-              Solicitar info.
-            </h6>
+        <div class="titulos-div-footer-sucursales">
+          <div>
+            <p>
+              ¿TE INTERESA ADQUIRIR UNA FRANQUICIA? <br>
+              ¡CONTÁCTANOS! <br>
+              LIC. AARON ALVARADO <br>
+              TEL: 044 9981 45 96 50 <br>
+              FRANQUICIAS@YOSOYWALLS.COM 
+            </p>
+          </div>
+          <div class="leerMasFooter-div">
+            <div class="leerMasFooter" ng-click="go('franquicias')">
+              <h6 class="whiteFont Lato-Regular">
+                Solicitar info.
+              </h6>
+            </div>
           </div>
         </div>
         
       </div>
       <div class="footer-servicios-brand">
       <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
-      <div ng-include="'/templates/socialIcons.html'" class="grid-block"></div></div>
+      <div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
         <h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
       </div>
     </div>
