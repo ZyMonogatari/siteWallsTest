@@ -1,6 +1,26 @@
+<div zf-modal="" id="basicModal" >
+	<div style="background: blue;">
+		<div>
+			<p>¡FELICIDADES!</p>
+		</div>
+		<div>
+			<p>YA PUEDES HACER VALIDO TU CUPÓN Y YA ESTAS PARTICIPANDO EN NUESTRA RIFA</p>
+		</div>
+	</div>	
+</div>
+
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
 <div class="mexicano-background">
+	<div class="mexicano-toro-div">
+		<img src="/assets/img/img-fondo.png">
+	</div>
+	<div class="mexicano-persona-div">
+		<img src="assets/img/personaje-2.png" >
+	</div>
+	<div class="mexicano-logo-div">
+		<img src="assets/img/Mexicano-que-se.png">
+	</div>
 	<div class="mexicano-formulario-container">
 		<div class="mexicano-descripcion-container">
 			<p>Descargando tu cupón Walls y estarás participando en la rifa de un Kit completo de nuestros productos.</p>
@@ -10,7 +30,7 @@
 		</div>
 		<div class="mexicano-form">
 			<div class="mexicano-formulario-header">
-				<img src="/assets/img/Logo_WallsBarberShop.png">
+				<img src="/assets/img/logo-walls-negro-completo.jpg">
 			</div>
 			<form>
 				<div class="mexicano-form-fields" >
@@ -19,31 +39,45 @@
 						<input type="number" placeholder="Edad:" max="100" ng-model="user.age_range.min">
 						<input type="email" placeholder="Correo:" required ng-model="user.email">
 						<input type="text" placeholder="Celular:">
-						<select name="" id="">
+						<select name="" id="" required>
+							<option value="" selected disabled hidden>Estado de origen</option>
 							<option value="">Breakfast</option>
 							<option value="">Bacon Pancakes</option>
 							<option value="">Mountain Dew</option>
 							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
 						</select>
-						<select name="" id="">
-							<option value="">Breakfast</option>
+						<select name="" id="" required>
+							<option value="" selected disabled hidden>Sucursal a la que asistirás</option>
 							<option value="">Bacon Pancakes</option>
 							<option value="">Mountain Dew</option>
 							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+						</select>
+						<select name="" id="" >
+							<option value="" selected disabled hidden>¿Como te enteraste de esta promoción?</option>
+							<option value="">Facebook</option>
+							<option value="">Whatsapp</option>
+							<option value="">Email</option>
+							<option value="">Web</option>
 						</select>
 						<a class="expand button" ng-click="login()"> <i class="fa fa-facebook-official" aria-hidden="true" ></i> Login with Facebook</a>
 					</div>
 				</div>
-				<input type="submit" class="mexicano-download-button" value="DESCARGAR CUPÓN">
+				<input type="submit" class="mexicano-download-button" value="DESCARGAR CUPÓN" zf-open="basicModal">
 			</form>
 		</div>
 	</div>
-	<!--div>
+	
+	
+	<div class="terms-footer" id="terms-div">
 		<div>
-			<img src="assets/img/Logo_MexicanoQueSeRespeta.png">
+			<p class="whiteFont" ng-click="displayTerms()">Términos y condiciones <i class="fa fa-angle-up" aria-hidden="true"></i></p>
 		</div>
-		<div>
-			<img src="assets/img/Persona.png">
+		<div ng-show="terms">
+			<p class="whiteFont" >
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales vestibulum lectus nec convallis. Cras vel aliquet orci. Cras orci magna, tincidunt id aliquet eget, viverra eu nunc. Fusce efficitur erat sit amet nulla venenatis, ut ornare massa efficitur. Vivamus pretium eget ligula ac dignissim. Nam libero nunc, gravida quis fermentum nec, elementum ut sem. Maecenas commodo tincidunt ipsum. Curabitur placerat felis ut leo dignissim sodales. Aliquam dictum turpis consectetur, scelerisque ligula tempus, egestas ante. Proin ipsum sapien, lobortis vitae viverra ut, efficitur non ante. In eget mollis dui.
+			<br>
+			Maecenas vitae condimentum magna. Maecenas sed dolor a mi pharetra fringilla. Praesent cursus consectetur lacus, quis tempor est mollis sit amet. Cras a quam mi. Etiam ac ipsum vitae leo malesuada placerat. Maecenas viverra, elit id volutpat hendrerit, tellus neque auctor massa, ut facilisis diam lectus eu lacus. Nam dignissim mauris quis dignissim aliquet. Pellentesque nec varius erat. Aliquam at tempor dolor, finibus rutrum purus. In nisl lacus, eleifend at euismod in, fermentum sed mauris. Ut imperdiet enim nisi, eget scelerisque sem tempus sed. Quisque in libero eu massa cursus ultricies consectetur vel mi. Nullam lacus risus, euismod vitae mattis pretium, lobortis ornare elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent commodo leo ac lorem feugiat, ac aliquet nunc blandit. Fusce scelerisque ullamcorper enim ac laoreet.</p>
 		</div>
+		
 	</div-->
 </div>

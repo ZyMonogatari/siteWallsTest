@@ -206,22 +206,19 @@
 ============================== -->
     <section id="FEATURES" class="wc-membrecia page" >
     <div class="wc-fondo-diagonal-dos"></div> 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <!-- FEATURES SECTION TITLE -->
-                    <div class="wc-membrecia_title wow fadeIn" data-wow-duration="1s">
-                        <h2 class="RobotoCondensed-Bold">Conoce nuestra membresía</h2>
-                         <div class="wc-imagenen-menbrecia-central"><img id="bounceIn1sMembrecia" src="./assets/img/menbrecia-min.png" alt=""></div>
-                        <p>¡La única tarjeta que tiene más actitud que otras!</p>
-                    </div>
-                    <!-- END FEATURES SECTION TITLE -->
-                </div>
-            </div>
-        </div>
-
         <div class="wc-membrecia_inner">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <!-- FEATURES SECTION TITLE -->
+                        <div class="wc-membrecia_title wow fadeIn" data-wow-duration="1s">
+                            <h2 class="RobotoCondensed-Bold">Conoce nuestra membresía</h2>
+                             <div class="wc-imagenen-menbrecia-central"><img id="bounceIn1sMembrecia" src="./assets/img/menbrecia-min.png" alt=""></div>
+                            <p>¡La única tarjeta que tiene más actitud que otras!</p>
+                        </div>
+                        <!-- END FEATURES SECTION TITLE -->
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-4 wc-right_no_padding" id="fadeInLeftIcons1s">
                         <!-- FEATURE -->
@@ -423,7 +420,7 @@
         </select>
                     
                             
-                            <input required id="no_tarjeta" pattern="\S{8}" onkeydown="return validarNumeros(event)" maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
+                            <input required id="no_tarjeta" pattern="^(0|[1-9][0-9]*)$ \S{8}" onkeydown="return validarNumeros(event)" maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
                         
 						<input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña" ng-model="regist.password">
                         
@@ -633,7 +630,7 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
 ============================== -->
 <section class="wc-fondo_segado_dos"></section>
     <section class="wc-contact fondo-degradado page" id="CONTACT">
-        <div class="wc-section_overlay">
+        <div class="wc-section_overlay" style="padding:0 0 10%;">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 wow bounceIn">
                     <!-- Start Contact Section Title-->
@@ -670,11 +667,12 @@ SÓLO TIENES QUE SUMAR PUNTO Y DISFRUTAR DE LOS BENEFICIOS DE TU TARJETA!
                 </div>
             </div>            
         </div>
-        <div class="footer-servicios-brand" style="bottom: -30px; ">
-          <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
-          <div ng-include="'/templates/socialIcons.html'" class="grid-block"></div>
-
-            <h6 class="text-center whiteFont footer-text">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+        <div class="home-footer-brand">
+            <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+            <div ng-include="'/templates/socialIcons.html'" class="socialIconsDiv"></div>
+            <div class="footer-text">
+                <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+            </div>
         </div>
     </section>
     <!-- END CONTACT -->
