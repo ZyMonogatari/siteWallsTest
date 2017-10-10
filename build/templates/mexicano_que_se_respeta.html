@@ -1,24 +1,52 @@
-<div zf-modal="" id="basicModal" >
-	<div style="background: blue;">
-		<div>
-			<p>¡FELICIDADES!</p>
-		</div>
-		<div>
-			<p>YA PUEDES HACER VALIDO TU CUPÓN Y YA ESTAS PARTICIPANDO EN NUESTRA RIFA</p>
-		</div>
-	</div>	
-</div>
+
 
 <div ng-include="'/templates/navBar.html'"></div>
 <div ng-include="'/templates/navBarMovil.html'"></div>
+<div class="mexicano-modal" ng-show="dataReceived" >
+	<div id="mexicano-congrats-div" ng-show="registed">
+		<i class="fa fa-times-circle fa-4x close-modal" aria-hidden="true" ng-click="closeModal()"></i>
+		<div class="mexicano-congrats-titulo">
+			<p>¡FELICIDADES!</p>
+		</div>
+		<div class="mexicano-congrats-description">
+			<p>YA PUEDES HACER VALIDO TU CUPÓN Y <br> YA ESTAS PARTICIPANDO EN NUESTRA RIFA</p>
+		</div>
+		<div class="cajas">
+			<div class="mexicano-send-email" ng-click="sendToMail()"  zf-open="notify-correo" id="enviarCorreo">
+				<p>ENVIAR A MI CORREO</p>
+			</div>
+		
+			<!--a href="/public/pdf/cuponRifa.pdf" target="_self" download=""  id="descargarCupon">
+				<div class="mexicano-send-email" >
+					<p>DESCARGAR CUPÓN</p>
+				</div>
+			</a-->
+		</div>
+		
+	</div>
+	<div id="mexicano-used-mail" ng-show="!registed">
+		<i class="fa fa-times-circle fa-4x close-modal" aria-hidden="true" ng-click="closeModal()"></i>
+		<div class="mexicano-used-title">
+			<p>
+				LO SENTIMOS MUCHO
+			</p>
+		</div>
+		<div class="mexicano-used-description" >
+			<p>
+				ESTE CORREO YA HA SIDO REGISTRADO ANTERIORMENTE INTENTE CON OTRO CORREO
+			</p>
+		</div>
+	</div>
+</div>
 <div class="mexicano-background">
+
 	<div class="mexicano-toro-div">
 		<img src="/assets/img/img-fondo.png">
 	</div>
 	<div class="mexicano-persona-div">
 		<img src="assets/img/personaje-2.png" >
 	</div>
-	<div class="mexicano-logo-div">
+	<div class="mexicano-logo-div" ng-click="logout()">
 		<img src="assets/img/Mexicano-que-se.png">
 	</div>
 	<div class="mexicano-formulario-container">
@@ -32,52 +60,116 @@
 			<div class="mexicano-formulario-header">
 				<img src="/assets/img/logo-walls-negro-completo.jpg">
 			</div>
-			<form>
+			<form ng-submit="sendData()" id="mexicano-formulario">
 				<div class="mexicano-form-fields" >
 					<div>
-						<input type="text" placeholder="Nombre completo:" required ng-model="user.name">
-						<input type="number" placeholder="Edad:" max="100" ng-model="user.age_range.min">
-						<input type="email" placeholder="Correo:" required ng-model="user.email">
-						<input type="text" placeholder="Celular:">
-						<select name="" id="" required>
+						<input type="text" placeholder="Nombre completo:" required ng-model="concursante.name" oninvalid="this.setCustomValidity('Inresa tu nombre completo')" oninput="setCustomValidity('')">
+						<input type="number" placeholder="Edad:" max="100" ng-model="concursante.age">
+						<input type="email" placeholder="Correo:" required ng-model="concursante.email">
+						
+						<input type="text" placeholder="Celular:" ng-model="concursante.phone" pattern="^(0|[1-9][0-9]*)$"
+						 title="Debe tener al menos 10 digitos"  maxlength="10" minlength="10">
+
+						<select name="" id="" required ng-model="concursante.ciudad"  oninvalid="this.setCustomValidity('Selecciona tu estado')"
+    						oninput="setCustomValidity('')">
 							<option value="" selected disabled hidden>Estado de origen</option>
-							<option value="">Breakfast</option>
-							<option value="">Bacon Pancakes</option>
-							<option value="">Mountain Dew</option>
-							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+							<option value="Aguascalientes" >Aguascalientes</option>
+        	            	<option value="Baja California" >Baja California</option>
+        	            	<option value="Baja California Sur" >Baja California Sur</option>
+        	            	<option value="Campeche" >Campeche</option>
+        	            	<option value="Chiapas" >Chiapas</option>
+        	            	<option value="Chihuahua" >Chihuahua</option>
+        	            	<option value="Coahuila" >Coahuila</option>
+        	            	<option value="Colima" >Colima</option>
+        	            	<option value="Distrito Federal" >CDMX</option>
+        	            	<option value="Durango" >Durango</option>
+        	            	<option value="Guanajuato" >Guanajuato</option>
+        	            	<option value="Guerrero" >Guerrero</option>
+        	            	<option value="Hidalgo" >Hidalgo</option>
+        	            	<option value="Jalisco" >Jalisco</option>
+        	            	<option value="Mexico" >Estado de México</option>
+        	            	<option value="Michoacan" >Michoacan</option>
+        	            	<option value="Morelos" >Morelos</option>
+        	            	<option value="Nayarit" >Nayarit</option>
+        	            	<option value="Nuevo Leon" >Nuevo Leon</option>
+        	            	<option value="Oaxaca" >Oaxaca</option>
+        	            	<option value="Puebla" >Puebla</option>
+        	            	<option value="Queretaro" >Queretaro</option>
+        	            	<option value="Quintana Roo" >Quintana Roo</option>
+        	            	<option value="San Luis Potosi" >San Luis Potosi</option>
+        	            	<option value="Sinaloa" >Sinaloa</option>
+        	            	<option value="Sonora" >Sonora</option>
+        	            	<option value="Tabasco" >Tabasco</option>
+        	            	<option value="Tamaulipas" >Tamaulipas</option>
+        	            	<option value="Tlaxcala" >Tlaxcala</option>
+        	            	<option value="Veracruz" >Veracruz</option>
+        	            	<option value="Yucatan" >Yucatan</option>
+        	            	<option value="Zacatecas" >Zacatecas</option>
 						</select>
-						<select name="" id="" required>
+						<select name="" id="" required ng-model="concursante.sucursal" oninvalid="this.setCustomValidity('Selecciona tu sucursal')"
+    						oninput="setCustomValidity('')">
 							<option value="" selected disabled hidden>Sucursal a la que asistirás</option>
-							<option value="">Bacon Pancakes</option>
-							<option value="">Mountain Dew</option>
-							<option value="">Scrambled eggs with grilled zucchini, spinach, leeks, roasted tomatoes and mozzarella</option>
+							<option value="" selected disabled hidden>
+							<option value="Isla Mujeres">Isla Mujeres</option>
+							<option value="Cozumel">Cozumel</option>
+							<option value="Tuxtla">Tuxtla</option>
+							<option value="Boca del Rio">Boca del Rio</option>
+							<option value="La Roma">La Roma</option>
+							<option value="Satelite">Satélite</option>
+							<option value="Guadalajara">Guadalajara</option>
+							<option value="Campeche">Campeche</option>
+							<option value="Queretaro">Querétaro</option>
+							<option value="Bonampak - Cancun">Bonampak - Cancún</option>
+							<option value="Studio - Cancun">Studio - Cancún</option>
+							<option value="Plaza Arena - Merida">Plaza Arena - Mérida</option>
+							<option value="Galerias - Merida">Galerias - Mérida</option>
+							<option value="Uptown- Merida">Uptown- Mérida</option>
+							<option value="Chetumal">Chetumal</option>
+							<option value="Aguascalientes">Aguascalientes</option>
 						</select>
-						<select name="" id="" >
+						<select name="" id="" ng-model="concursante.medio">
 							<option value="" selected disabled hidden>¿Como te enteraste de esta promoción?</option>
-							<option value="">Facebook</option>
-							<option value="">Whatsapp</option>
-							<option value="">Email</option>
-							<option value="">Web</option>
+							<option value="Facebook">Facebook</option>
+							<option value="Whatsapp">Whatsapp</option>
+							<option value="Email">Email</option>
+							<option value="Web">Web</option>
 						</select>
+
+						<input id="fbLogin" type="checkbox" required="" ng-model="concursante.acepto"> Acépto los terminos y condiciones<br> <br>
 						<a class="expand button" ng-click="login()"> <i class="fa fa-facebook-official" aria-hidden="true" ></i> Login with Facebook</a>
 					</div>
 				</div>
-				<input type="submit" class="mexicano-download-button" value="DESCARGAR CUPÓN" zf-open="basicModal">
+				<input type="submit" class="mexicano-download-button" value="DESCARGAR CUPÓN" id="enviarDatos">
 			</form>
 		</div>
 	</div>
 	
 	
-	<div class="terms-footer" id="terms-div">
+	<div class="terms-footer" id="terms-div" ng-click="displayTerms()">
 		<div>
-			<p class="whiteFont" ng-click="displayTerms()">Términos y condiciones <i class="fa fa-angle-up" aria-hidden="true"></i></p>
+			<p class="whiteFont-title" >TÉRMINOS Y CONDICIONES 
+			<i class="fa fa-angle-up" aria-hidden="true" ng-show="!terms"></i>
+			<i class="fa fa-angle-down" aria-hidden="true" ng-show="terms"></i>
+			</p>
 		</div>
-		<div ng-show="terms">
-			<p class="whiteFont" >
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sodales vestibulum lectus nec convallis. Cras vel aliquet orci. Cras orci magna, tincidunt id aliquet eget, viverra eu nunc. Fusce efficitur erat sit amet nulla venenatis, ut ornare massa efficitur. Vivamus pretium eget ligula ac dignissim. Nam libero nunc, gravida quis fermentum nec, elementum ut sem. Maecenas commodo tincidunt ipsum. Curabitur placerat felis ut leo dignissim sodales. Aliquam dictum turpis consectetur, scelerisque ligula tempus, egestas ante. Proin ipsum sapien, lobortis vitae viverra ut, efficitur non ante. In eget mollis dui.
-			<br>
-			Maecenas vitae condimentum magna. Maecenas sed dolor a mi pharetra fringilla. Praesent cursus consectetur lacus, quis tempor est mollis sit amet. Cras a quam mi. Etiam ac ipsum vitae leo malesuada placerat. Maecenas viverra, elit id volutpat hendrerit, tellus neque auctor massa, ut facilisis diam lectus eu lacus. Nam dignissim mauris quis dignissim aliquet. Pellentesque nec varius erat. Aliquam at tempor dolor, finibus rutrum purus. In nisl lacus, eleifend at euismod in, fermentum sed mauris. Ut imperdiet enim nisi, eget scelerisque sem tempus sed. Quisque in libero eu massa cursus ultricies consectetur vel mi. Nullam lacus risus, euismod vitae mattis pretium, lobortis ornare elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent commodo leo ac lorem feugiat, ac aliquet nunc blandit. Fusce scelerisque ullamcorper enim ac laoreet.</p>
+		<div class="mexicano-terms">
+			<p class="terminos" >
+				 Cupón válido hasta el 30 de septiembre del 2017, <br> válido únicamente de domingo a jueves (aplica en sucursales que abren domingos). <br> No aplica en sucursales de Playa del carmen. <br> Válido mostrando este cupón en tu celular al momento de pagar. <br> El cupón es válido 1 por correo durante el tiempo que duré la promoción. <br> Cupón válido únicamente en corte de cabello.<br> Cualquier otro servicio adicional se cobrará a precio regular. <br> No acumulable con otras promociones, descuentos ni programas de lealtad. Su venta está prohibida. <br> * Aplica únicamente en las sucursales de Isla Mujeres, Cozumel, Tuxtla, Boca del Rio, La Roma, Satélite, Guadalajara, Campeche, Querétaro, Cancún, Mérida, Chetumal y Aguascalientes. 
+				 <br> <br>
+ Se rifará un kit con los siguientes productos: "2 Ceras Red One, 1 Blackmagic, 1 Triple Action Gde, 1 Mr. Barbas Tónico, 1 Playera Elegance, 1 Aceite Barba Almendra, 1 Walls Card, 2 Peines Mr. Barbas, 1 Llavero y 1 Gorra". Participarán todos lo cupones descargados del 1 al 31 de septiembre del 2017. El ganador se dará a conocer el Sábado 7 de octubre del 2017 en una transmisión en vivo EN LA PÁGINA DE FACEBOOK.
+
+				 
+			</p>
 		</div>
 		
-	</div-->
+	</div>
 </div>
+
+<!-- notification content -->
+<zf-notification-static id="notify-correo" zf-advise="" title="Enviando correo" color="alert" autoclose="3000">
+<p>En unos minutos revisa tu correo.</p>
+</zf-notification-static>
+
+<zf-notification-static id="notify-descarga" zf-advise="" title="Comenzando descarga" color="alert" >
+<p>En unos momentos comenzara tu descarga.</p>
+</zf-notification-static>

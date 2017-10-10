@@ -16,9 +16,18 @@
 						>
 				<a href="/#!/">
 					<h5 class="margin-left-10px RobotoCondensed-Bold">
-						HOME
+						INICIO
 					</h5>
 				</a>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="franquiciasBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="franquiciasBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : franquiciasBackground}"
+						ng-click="go('franquicias')">
+				<h5 class="margin-left-10px RobotoCondensed-Bold">
+					FRANQUICIAS
+				</h5>
 			</div>
 			<div class="grid-block navBar-item"
 						ng-mouseover="serviciosBackground = 'rgba(56, 58, 57, .9)'" 
@@ -42,25 +51,8 @@
 					SUCURSALES
 				</h5>
 			</div>
-			<div class="grid-block navBar-item"
-						ng-mouseover="galeriasBackground = 'rgba(56, 58, 57, .9)'" 
-						ng-mouseleave="galeriasBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : galeriasBackground}"
-						ng-click="go('galeria')"
-						>
-				<h5 class="margin-left-10px RobotoCondensed-Bold">
-					GALERÍAS
-				</h5>
-			</div>
-			<div class="grid-block navBar-item"
-						ng-mouseover="nosotrosBackground = 'rgba(56, 58, 57, .9)'" 
-						ng-mouseleave="nosotrosBackground = 'rgba(255, 255, 255, .9)'"
-						ng-click="go('contacto')"
-						ng-style="{'background' : nosotrosBackground}">
-				<h5 class="margin-left-10px RobotoCondensed-Bold">
-					CONTACTO
-				</h5>
-			</div>
+			
+			
 			<div class="grid-block navBar-item"
 						ng-mouseover="cardBackground = 'rgba(56, 58, 57, .9)'" 
 						ng-mouseleave="cardBackground = 'rgba(255, 255, 255, .9)'" 
@@ -71,12 +63,22 @@
 				</h5>
 			</div>
 			<div class="grid-block navBar-item"
-						ng-mouseover="franquiciasBackground = 'rgba(56, 58, 57, .9)'" 
-						ng-mouseleave="franquiciasBackground = 'rgba(255, 255, 255, .9)'" 
-						ng-style="{'background' : franquiciasBackground}"
-						ng-click="go('franquicias')">
+						ng-mouseover="galeriasBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="galeriasBackground = 'rgba(255, 255, 255, .9)'" 
+						ng-style="{'background' : galeriasBackground}"
+						ng-click="go('galeria')"
+						>
 				<h5 class="margin-left-10px RobotoCondensed-Bold">
-					FRANQUICIAS
+					GALERÍA
+				</h5>
+			</div>
+			<div class="grid-block navBar-item"
+						ng-mouseover="nosotrosBackground = 'rgba(56, 58, 57, .9)'" 
+						ng-mouseleave="nosotrosBackground = 'rgba(255, 255, 255, .9)'"
+						ng-click="go('contacto')"
+						ng-style="{'background' : nosotrosBackground}">
+				<h5 class="margin-left-10px RobotoCondensed-Bold">
+					CONTACTO
 				</h5>
 			</div>
 			<div class="grid-block navBar-item"

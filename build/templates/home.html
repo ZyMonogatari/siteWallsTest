@@ -4,40 +4,7 @@
 
 
 <!--Cabecera--> 
-<div ng-show="actualBody == 0" class="cabecera">
-	<div class="video-servicios-div" ng-if="!mobile">
-		<iframe src="https://www.youtube.com/embed/VSVcZhWV1Rc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=0dbig-gLoCo" frameborder="0" allowfullscreen class="video-servicios"></iframe>
-		<div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
-		</div>    
-	</div>
-	<div  class="cabecera-titulos-v2">
-		<div class="div-image-cabecera">
-			<img class="imageCabecera" src="./assets/img/W-B-franquicias-min.png">
-		</div>
-		<div class="titulos-div-cabecera-v2">
-			<h3 class="whiteFont RobotoCondensed-Bold">NEGOCIO + ACTITUD!</h3>
-			<div>
-			<p class="whiteFont item-1">Somos la cadena de barbería más importante de México con un nuevo concepto que crece en popularidad y presencia de marca.</p>
-			<p class="whiteFont item-2">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
-			<p class="whiteFont item-3">Actualmente somos 19 sucursales en toda la república mexicana.</p>
-			<p class="whiteFont item-4">Franquicias con conceptualización de espacios modernos y vanguardistas para una experiencia única en servicio de barbería.</p>
-			<p class="whiteFont item-5">Somos un ejemplo de superación y orgullo mexicano tras emprender un negocio único con particularidad y prestigio.</p>
-			<p class="whiteFont item-6">Espacios acogedores con servicios diseñados a tus necesidades.</p>
-			</div>
-			<div class="leerMas" ng-click="go('franquicias')">
-				<h6 class="whiteFont Lato-Regular">
-					Solicitar info.
-				</h6>
-			</div>
-		</div>
-	</div>
-	<img src="./assets/img/sello.png" class="white-sello">
-	
-
-	<div class="angleDiv">
-		<i class="fa fa-angle-down whiteFont fa-4x " aria-hidden="true"></i>
-	</div>
-</div>
+<div ng-include="'/templates/normal-header.html'" class=""></div>
 
 <!--fondo-fixed-->
 <div ng-show="actualBody == 1" class="fondo-fixed">

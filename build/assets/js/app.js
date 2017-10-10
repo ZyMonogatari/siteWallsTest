@@ -30,13 +30,13 @@
             url: "/wblog",
             //templateUrl: 'wblog/index.php'
             controller: 'blogCtrl'
-        })  
+        })
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: false,
       requireBase: false
     });
 
-    //$locationProvider.hashPrefix('!');
+    $locationProvider.hashPrefix('/#!');
   }
 
   function run() {
@@ -139,11 +139,23 @@ angular.module('application')
       },
       getClientData : function(clientData){
         return get('getClientInfo.php?cardMail=' + clientData.cardMail + '&password=' + clientData.password);
+      },
+      insertConcursantesMexicano : function(concursante){
+        return get('InsertConcursantesMexicanoQueSeRespeta.php?name=' + concursante.name + 
+          '&age=' + concursante.age + '&phone=' + concursante.phone + '&email=' 
+          + concursante.email + '&ciudad=' + concursante.ciudad + '&medio=' 
+          +concursante.medio + '&sucursal=' + concursante.sucursal);
+      },
+      checkEmail : function(email){
+        return get('emailCheckerMexicano.php?email=' + email);
+      },
+      updatePass : function(params){
+        return get('updatePass.php?email=' + params.email + '&newPass=' + params.pass + '&card=' + params.card);
       }
     }
   });
 angular.module('application').controller('franquiciasCtrl',
-  ['$scope', '$window', 'NgMap', '$state', '$messageApi', function($scope, $window, NgMap, $state, $messageApi){
+  ['$scope', '$window', 'NgMap', '$state', '$messageApi', 'FoundationApi', function($scope, $window, NgMap, $state, $messageApi, FoundationApi){
     document.title = "Franquicias - Wall´s Barbershop";    
     $scope.displaySesionN = 'none';
     $scope.mostrarMenu = function (){
@@ -162,7 +174,7 @@ angular.module('application').controller('franquiciasCtrl',
     }
     $scope.message = {};
     $scope.send = function(){
-        console.log($scope.message);
+        FoundationApi.publish('main-notifications', { title: 'Mensaje enviado', content: 'Se ha enviado su mensaje, muchas gracias'});
         $messageApi.sendMessage($scope.message);
     }
 
@@ -507,8 +519,7 @@ angular.module('application').controller('homeCtrl',
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/logo.png';
     $scope.cabecera.position = 'absolute';
-    $scope.cabecera.fontColor = 'white';
-    $scope.iconColor = 'white';
+    
     $scope.sucursales = $sharedData.getSucursales();
     
    
@@ -569,10 +580,10 @@ angular.module('application').controller('homeCtrl',
           $scope.cabecera.fontColor = 'black';
           $scope.iconColor = '#333';
           $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
-            angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
-            angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
-            angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
-            angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
+          angular.element(document.querySelector('#cabeceraDiv')).addClass('to-white');
+          angular.element(document.querySelector('#cabeceraDiv')).removeClass('from-white');
+          angular.element(document.querySelector('#cabeceraDivMovil')).addClass('to-white');
+          angular.element(document.querySelector('#cabeceraDivMovil')).removeClass('from-white');
           $scope.$apply();
         }
     if(window.scrollY <= 5){
@@ -614,7 +625,7 @@ angular.module('application').controller('homeCtrl',
 
 angular.module('application')
 .factory('$messageApi', function($http){
-    var baseUrl = 'https://www.mr-barbas.com/php/';
+    var baseUrl = 'http://www.wallsbarbershop.com.mx/php/';
 
     var post = function(url, body){
       body = body || {};
@@ -628,31 +639,66 @@ angular.module('application')
       sendMessage : function(message){
        return get('sendMessage.php?name=' + message.name + '&email=' + message.email + '&empresa=' + message.empresa +
         '&address=' + message.address + '&phone=' + message.phone + '&state=' + message.state +'&why=' + message.why);
+      },
+      sendEmailMexicano : function(email){
+        return get('mexicano_que_se_respeta_mailer.php?email=' + email);
+      },
+      sendPasswordCode : function(cardMail){
+        return get('passwordRecovery.php?cardMail=' + cardMail);
       }
     }
   });
 angular.module('application').controller('mexicanoCtrl',
-  ['$scope', '$window', '$state', 'Facebook', function($scope, $window,$state, Facebook){
+  ['$scope', '$window', '$state', 'Facebook', '$dbApi', '$messageApi', function($scope, $window,$state, Facebook, $dbApi, $messageApi){
     $scope.cabecera = {};
     $scope.cabecera.source = '/assets/img/wallslogo-negro-min.png';
     $scope.cabecera.position = 'absolute';
     $scope.cabecera.fontColor = 'black';
     $scope.iconColor = 'white';
-    $scope.user;
-    $scope.terms = false;
+    $scope.concursante;
+    $scope.dataReceived;
+    $scope.registed;
+    $scope.terms;
+    $scope.concursante = {};
+    $scope.mostrarMenu = function (){
+        if($scope.displayMenu == 'initial'){
+            $scope.displayMenu = 'none';
+        }
+        else{
+            $scope.displayMenu = 'initial';
+        }
+    }
+    $scope.closeModal = function(){
+      $scope.concursante = {};
+      FB.logout(function(response) {
+      });
+      $scope.dataReceived = false;
+
+    }
+    $scope.go = function(state){
+        window.scrollTo(0, 0);
+        $state.go(state);
+    }
     $scope.login = function() {
-      console.log('loggeando');
-      Facebook.login(function(response) {
+      FB.login(function(response) {
         me();
       });
     };
     var me = function() {
       Facebook.api('/me?fields=id,name,email,age_range' , function(response) {
-        $scope.user = response;
+        $scope.concursante.name = response.name;
+        $scope.concursante.email = response.email.trim();
+        $scope.concursante.age = response.age_range.min;
+        $dbApi.checkEmail($scope.concursante.email).then(function(emailResponse){
+         console.log(emailResponse);
+          if(emailResponse.data =='error'){
+              $scope.dataReceived = true;
+              $scope.registed = false;
+          }
+        });
       });
     };
     $scope.displayTerms = function(){
-        console.log('enter')
 
       if(!$scope.terms){
         angular.element(document.querySelector('#terms-div')).removeClass('slide-down');
@@ -665,7 +711,22 @@ angular.module('application').controller('mexicanoCtrl',
       }
     }
 
-    
+    $scope.sendData = function(){
+      $dbApi.insertConcursantesMexicano($scope.concursante).then(function(response){
+        $scope.dataReceived = true;
+        if(response.data == 'exito'){
+          $scope.registed = true;
+        }
+        else{
+          $scope.registed = false;
+        }
+      });
+
+    }
+
+    $scope.sendToMail = function(){
+      $messageApi.sendEmailMexicano($scope.concursante.email);
+    }
 
     $window.onscroll = function(event){
     if(document.getElementById('cabecera-walls-logo').getBoundingClientRect().top <= 0){
@@ -914,7 +975,7 @@ angular.module('application')
             instagram : 'https://www.instagram.com/wallsbarbershop_isla/',
             twitter: 'https://twitter.com/WallsBarbershop',
             select: false,
-            mapsUrl: "#"
+            mapsUrl: "https://www.google.com/maps/place/Wall's+Barbershop+Isla+Mujeres/@21.258107,-86.7517697,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x686539e8861cfae8!8m2!3d21.258107!4d-86.749581?hl=es-419"
         },
         cozumel: {
             nombre: 'WALL\'S COZUMEL',
@@ -960,7 +1021,7 @@ angular.module('application')
             instagram : 'https://www.instagram.com/wallsbarbershop_playa/',
             twitter: 'https://twitter.com/WallsBarbershop',
             select: false,
-            mapsUrl: "#"
+            mapsUrl: "https://www.google.com/maps/place/Walls+Barbershop+Playa+del+Carmen/@20.6274284,-87.0762812,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x9bec3d28d2a2f2ad!8m2!3d20.6274284!4d-87.0740925?hl=es-419"
         },
         meridaPlazaArena: {
             nombre: 'WALL\'S MERIDA PLAZA ARENA',
@@ -998,14 +1059,15 @@ angular.module('application')
             shortName: 'UPTOWN - MERIDA',
             direccion: 'Centro comercial Uptown Mérida, Calle 17 # 104 -A por calle 10 y calle 32-A Col. Vista alegre',
             whatsapp: '999 304 7933',
-            position: '8.000000, -85.0000000',
+            y: '21.012251',
+            x: '-89.583146',
             img: '/assets/img/sucursales/Uptown.jpg',
             imgMobile: '/assets/img/sucursales/UptownMobil.png',
             fb: 'https://www.facebook.com/wallsmerida/', 
             instagram : 'https://www.instagram.com/wallsmerida/',
             twitter: 'https://twitter.com/WallsBarbershop',
             select: false,
-            mapsUrl: "#"
+            mapsUrl: "https://www.google.com/maps?cid=2905519779488992636&hl=es-419&_ga=2.27414971.661748082.1505413378-60004342.1505244176"
         },
         campeche: {
             nombre: 'WALL\'S CAMPECHE',
@@ -1021,7 +1083,7 @@ angular.module('application')
             instagram : 'https://www.instagram.com/wallsbarbershop_campeche/',
             twitter: 'https://twitter.com/WallsBarbershop',
             select: false,
-            mapsUrl: "#"
+            mapsUrl: "https://www.google.com/maps/place/Wall's+Barbershop+Campeche/@19.8263683,-90.553577,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xf1158001b362b441!8m2!3d19.8263683!4d-90.5513883?hl=es-419"
         },
         veracruz: {
             nombre : 'WALL\'S BOCA DEL RIO',
@@ -1122,14 +1184,15 @@ angular.module('application')
             shortName: 'GUADALAJARA',
             direccion: 'Av. Aviación 3000, San Juan de Ocotán, 45019 Zapopan, Jal.Guadalajara (México)',
             telefono: '(044) 332 066 34 88',
-            position: '16.800000, -85.0000000',
+            y: '20.729825',
+            x: ' -103.452480',
             img: '/assets/img/sucursales/Guadalajara.jpg',
             imgMobile: '/assets/img/sucursales/GuadalajaraMobile.png',
             fb: 'https://www.facebook.com/wallsbarbershopgdl/', 
             instagram : 'https://www.instagram.com/wallsbarbershop_gdl/',
             twitter: 'https://twitter.com/WallsBarbershop',
             select: false,
-            mapsUrl: "#"
+            mapsUrl: "https://www.google.com/maps/place/Walls+Barbershop+Guadalajara/@20.7298452,-103.4546634,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xd97fb23bf0226750!8m2!3d20.7298452!4d-103.4524747?hl=es-419"
         }
     };
     return {
@@ -2507,15 +2570,18 @@ angular.module('application').controller('sucursalesCtrlV2',
     }
 }]);
 angular.module('application').controller('wallsCardCtrl',
-  ['$scope', '$window', '$state', '$dbApi', 'FoundationApi', function($scope, $window,  $state, $dbApi, FoundationApi){
+  ['$scope', '$window', '$state', '$dbApi', 'FoundationApi', '$messageApi', function($scope, $window,  $state, $dbApi, FoundationApi, $messageApi){
   	$scope.screenHeight = '720px';
   	console.log($scope.screenHeight);
   	$scope.displaySesionN = 'none';
     angular.element(document.querySelector('#selloBounce2s')).addClass('bounceIn2s');
     angular.element(document.querySelector('#fadeInLeftIcon2s')).addClass('fadeInLeft2s');
     angular.element(document.querySelector('#fadeInRight2sIcon')).addClass('fadeInRight2s');
-	
+	$scope.step1 = true;
 	$scope.cabecera = {};
+    $scope.passMissMatch;
+    $scope.codeMissMatch;
+    $scope.passwordRecovery = {};
     /*
     $scope.cabecera.position = 'absolute';
     $scope.cabecera.fontColor = 'black';
@@ -2546,14 +2612,57 @@ angular.module('application').controller('wallsCardCtrl',
             $scope.displayMenu = 'initial';
         }
     }
-    $scope.appearItem = function(item){
-      angular.element(document.querySelector('#' + item)).removeClass('disappear1S');
-      angular.element(document.querySelector('#' + item)).addClass('appear1S');
+    $scope.sendPasswordCode = function(){
+    	$scope.passwordSpinner = true;
+    	$scope.step1 = false;
+    	$messageApi.sendPasswordCode($scope.clientData.cardMail).then(function(response){
+    		$scope.passwordSpinner = false;
+    		console.log(response);
+    		if(response.data != 'error'){
+    			$scope.passwordRecovery.code = response.data.code;
+                $scope.passwordRecovery.card = response.data.num;
+                $scope.passwordRecovery.email = response.data.email;
+    			$scope.step2 = true;
+    		}
+    		else{
+    			$scope.step3 = true;
+    		}
+    	});
     }
-    $scope.disappearItem = function(item){
-      angular.element(document.querySelector('#' + item)).addClass('disappear1S');
+    $scope.passwordCompare = function(){
+
+    	if($scope.passwordRecovery.pass != $scope.passwordRecovery.pass2){
+            $scope.passwordRepit = 'red 2px solid';    
+            $scope.passMissMatch = true;    
+        }
+        else{
+            $scope.passwordRepit = '';
+            $scope.passMissMatch = false;    
+        }
     }
 
+    $scope.changePassword = function(){
+        if($scope.passwordRecovery.code != $scope.passwordRecovery.userCode){
+            $scope.recoveryCode = 'red 2px solid';
+            $scope.codeMissMatch = true;
+        }
+        else{
+            $scope.recoveryCode = '';
+            $scope.codeMissMatch = true;
+        }
+        if($scope.passwordRecovery.pass == $scope.passwordRecovery.pass2 & $scope.passwordRecovery.code == $scope.passwordRecovery.userCode){
+            $dbApi.updatePass($scope.passwordRecovery);
+            $scope.closeRecoveryPass();
+            FoundationApi.publish('main-notifications', { title: 'Cambiado', content: 'contraseña cambiada correctamente', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png', autoclose : '3000'});
+        }
+    }
+    $scope.closeRecoveryPass = function(){
+        $scope.passwordRecovery = {};
+        $scope.step1 = true;
+        $scope.step2 = false;
+        $scope.step3 = false;
+        FoundationApi.publish('password-recovery-modal', 'close');
+    }
     $scope.scrollToRegist = function(){
         var elementTop = document.getElementById('bounceInForm1s').getBoundingClientRect().top - 200;
         window.scrollTo(0, elementTop);
@@ -2571,9 +2680,17 @@ angular.module('application').controller('wallsCardCtrl',
 	$scope.clientInfo;
 	$scope.loadSucursal = function(){
 		switch($scope.regist.state){
+			case '1':
+				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP AGUASCALIENTES',
+										id: '24'}];
+				break;
 			case '14':
 				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP GUADALAJARA',
 										id: '23'}];
+				break;
+			case '15':
+				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP SATELITE',
+										id: '25'}];
 				break;
 			case '22':
 				$scope.sucursales = [{nombre : 'WALL´S BARBERSHOP QUERETARO' , id : '20'}];
@@ -2603,11 +2720,12 @@ angular.module('application').controller('wallsCardCtrl',
 	}
 	$scope.sendRegist = function(){
 		$dbApi.registUser($scope.regist).then(function(response){
-			console.log(response.data);
 			if(response.data == 'exito'){
-				FoundationApi.publish('main-notifications', { title: '¡Registrado!', content: 'Registrado correctamente', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png' });
+				FoundationApi.publish('main-notifications', { title: '¡Registrado!', content: 'Registrado correctamente', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png', autoclose : '3000'});
+				$scope.regist = {};
+				$scope.scrollToPoints();
 			}else{
-				FoundationApi.publish('main-notifications', { title: 'Error', content: 'cuenta ya registrada', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png' });
+				FoundationApi.publish('main-notifications', { title: 'Error', content: 'cuenta ya registrada', color: '#7A7A7A', image: './assets/img/icono-navajas-walls-min.png', autoclose : '3000'});
 			}
 		});
 	}
@@ -2617,11 +2735,9 @@ angular.module('application').controller('wallsCardCtrl',
 		FoundationApi.publish('pointsModal', 'open');
 		$dbApi.getClientData($scope.clientData).then(function(clientData){
 			if(clientData.data){
-				console.log("data")
 				$scope.clientInfo = clientData.data;
 			}
 			else{
-				console.log("error");
 				$scope.clientInfoError = true;
 			}
 			

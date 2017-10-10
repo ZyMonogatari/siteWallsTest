@@ -1,0 +1,636 @@
+<div ng-include="'/templates/navBar.html'"></div>
+<div ng-include="'/templates/navBarMovil.html'"></div>
+
+<div zf-modal="" id="pointsModal" >
+    <div class="modal-container">
+        <a zf-close="" class="close-button whiteFont">×</a>
+        <div class="wallsCard-spinner-div" ng-if="!clientInfo & !clientInfoError">
+            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw whiteFont wallsCard-spinner" ></i>
+        </div>
+        <div class="wallsCard-logo-div-modal" ng-show="clientInfo">
+            <img src="./assets/img/logo.png" class="wallsCard-logo" >
+        </div>
+        <h3 class="whiteFont wallsCard-saludo" ng-show="clientInfo">Hola {{clientInfo[1]}} {{clientInfo[2]}}</h3>
+        <div class="wallsCard-tab-content" ng-show="clientInfo">
+            <div class="wallsCard-tab-div wallsCard-modal-tab-border">
+                <div class="wallsCard-tab-fila">
+                    <div class="wallsCard-modal-tab-border wallsCard-tab-left whiteFont">
+                        Tu ultima visita fue:
+                </div>
+                <div class="wallsCard-modal-tab-border wallsCard-tab-right whiteFont">
+                    {{clientInfo[0]}}
+                </div>
+            </div>
+            <div class="wallsCard-tab-fila">
+                <div class="wallsCard-modal-tab-border wallsCard-tab-left whiteFont">
+                    Tu total de visitas es
+                </div>
+                <div class="wallsCard-modal-tab-border wallsCard-tab-right whiteFont">
+                    {{clientInfo[3]}}
+                </div>
+            </div>
+            <div class="wallsCard-tab-fila">
+                <div class="wallsCard-modal-tab-border wallsCard-tab-center whiteFont">
+                    Recuerda que cada 5 visitas tienes un corte <strong>Gratis!</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="clientInfoError" class="wallsCard-error-div">
+    <h2 class="whiteFont">Usuario o contraseña incorrectos</h2>
+</div>
+</div>
+
+<div zf-modal="" id="password-recovery-modal">
+    <div class="modal-container">
+        <a ng-click="closeRecoveryPass()" class="close-button whiteFont">×</a>
+        <div class="wallsCard-logo-div-modal" ng-if="!passwordSpinner">
+            <img src="./assets/img/logo.png" class="wallsCard-logo" >
+        </div>
+        <div ng-show="step1">
+            <form ng-submit="sendPasswordCode()">
+                <p class="whiteFont">Ingresa el correo con el que estas registrado o tu numero de Wall's card</p>
+                <input type="text" placeholder="Nº de tarjeta / Email" ng-model="clientData.cardMail">
+                <input type="submit" class="expand secondary button" value="Siguiente">
+            </form>
+        </div>
+        <div class="wallsCard-spinner-div" ng-if="passwordSpinner">
+            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw whiteFont wallsCard-spinner" ></i>
+        </div>
+        <div ng-show="step2">
+            <p>Hemos enviado un código a tu correo</p>
+            <form ng-submit="changePassword()">
+                <input type="password" placeholder="Ingresa tu nueva contraseña" ng-model="passwordRecovery.pass" ng-change="passwordCompare()" title="Debe tener al menos 6 caracteres"  pattern=".{6,}">
+                <p class="whiteFont" ng-show="passMissMatch">Las contraseñas no coinciden</p>
+                <input type="password" placeholder="Repite tu contraseña" ng-model="passwordRecovery.pass2" id="password-repit" ng-change="passwordCompare()" ng-style="{'outline' : passwordRepit }">
+                <p class="whiteFont" ng-show="codeMissMatch">Código incorrecto</p>
+                <input type="text" placeholder="Ingresa el código enviado a tu correo" ng-model="passwordRecovery.userCode" ng-style="{'outline' : recoveryCode}">
+                <input type="submit" class="expand secondary button" value="CAMBIAR">
+            </form>
+        </div>
+        <div ng-show="step3">
+            <p>Numero de Wall's card ó Correo no registrados</p>
+        </div>
+    </div>
+</div>
+
+<div zf-modal="" id="terms" >
+<a zf-close="" class="close-button whiteFont">×</a>
+<div class="wallsCard-logo-div" >
+    <img src="./assets/img/logo.png" class="wallsCard-logo" >
+</div>
+    <div class="wallsCard-modal-content">
+        <p class="whiteFont wallsCard-modal-title" >Terminos y condiciones de Wall's Barbershop</p>
+        <p class="whiteFont wallsCard-modal-text">Los Términos y Condiciones que a continuación se establecen regulan el uso del portal wallsbarbershop.com en Internet, perteneciente a Wall's Barbershio, el cual es puesto a disposición de los usuarios de Internet.</p>
+        <p class="whiteFont wallsCard-modal-text">•Aspectos Generales.
+            La persona que utiliza el sitio web se le atribuye la calidad de usuario de wallsbarbershop.com (en adelante denominado el “Usuario”) y expresa la aceptación plena y sin reservas del Usuario en todos y cada uno de los Términos y Condiciones en la versión publicada por Wall's Barbershop en el momento mismo en que el usuario acceda a la plataforma wallsbarbershop.com En consecuencia, el usuario debe leer atentamente los Términos y Condiciones en cada una de las ocasiones en que se proponga utilizar a la plataforma.
+            <br>
+            Los Términos y Condiciones podrán ser modificados en todo o en parte únicamente por Wall's Barbershop y dichos cambios e implementación tendrán vigencia a partir del momento mismo en que sean publicados o insertados en el sitio o desde que sean notificados al usuario por cualquier medio, lo que ocurra primero. Las violaciones a los Términos y Condiciones generarán el derecho a favor de Wall's Barbershop a suspender o terminar la prestación del servicio al usuario que las haya realizado, por acción u omisión.
+            <br>
+            •El servicio.
+            El objeto de servicio de la plataforma wallsbarbershop.com es ofrecer al usuario y cliente de Wall's Barbershop información relevante sobre los servicios de la empresa, así como facilitar una plataforma de reservas en línea a través de dicho portal.
+        </p>
+    </div>
+</div>
+
+<div zf-modal="" id="politicas" >
+<a zf-close="" class="close-button whiteFont">×</a>
+<div class="wallsCard-logo-div" >
+    <img src="./assets/img/logo.png" class="wallsCard-logo" >
+</div>
+    <div class="wallsCard-modal-content">
+        <p class="whiteFont wallsCard-modal-title">Politicas de Privacidad</p>
+        <p class="whiteFont wallsCard-modal-text">
+            Finalidad: Los datos serán utilizados para:
+            <br>
+            – El cumplimiento de obligaciones legales o contractuales contraídas con usted – Informar sobre nuestros productos y/o servicios y los cambios en los mismos – Adelantar procesos de evaluación sobre la calidad de nuestros productos y servicios – Proveer productos y servicios. – Información comercial, publicitaria o promocional sobre los productos y/o servicios, eventos y/o promociones de tipo comercial o no de estas, con el fin de impulsar, invitar, dirigir, ejecutar, informar y de manera general, llevar a cabo campañas, promociones o concursos de carácter comercial o publicitario – Transferencia y transmisión de sus datos personales a terceros.
+            <br>
+            La información y datos personales suministrados a Wall's Barbershop podrán ser procesados, recolectados, almacenados, usados, circulados, suprimidos, compartidos, actualizados, las actividades mencionadas las podremos realizar a través de diferentes medios tales como correo físico, electrónico, celular o dispositivo móvil, vía mensajes de texto (1\1 S y/o MMS), o a través de cualquier medio análogo y/o digital de comunicación, conocido o por conocer.
+            <br>
+            Derechos: Los derechos que le asisten a nuestros clientes de sus datos personales son: conocer, actualizar y solicitar la rectificación o supresión de datos; conocer el uso que hace Wall's Barbershop de sus datos personales y revocar en cualquier momento la autorización de la inclusión de sus datos personales en las bases de datos de wallsbarbershop.com, no recolecta ni maneja información sobre datos sensibles. En el evento de llegar a solicitar información sobre este tipo de datos, se deja constancia que la repuesta es totalmente facultativa.
+            <br>
+            Autorización: Los Titulares podrán ejercer sus derechos de conocer, actualizar, rectificar y suprimir sus datos personales enviando su solicitud al correo machoscolombia@hotmail.com dentro de los treinta días (30) siguientes a la fecha de este comunicado. Si usted no da respuesta entenderemos que ha autorizado a Wall's Barbershop para continuar con el tratamiento de sus datos personales, tal como lo establece la ley 1581 de 2012.
+        </p>
+    </div>
+</div>
+<zf-notification-set id="main-notifications" position="top-left" ></zf-notification-set>
+
+
+<div class="wallscard-top">
+    <div class="wallsCard-top-overlay"></div>
+    <div class="wallscard-top-content">
+        <div class="wallscard-top-content-left">
+            <div class="wallscard-top-left-container">
+                <div class="wallscard-left-icon">
+                    <i>
+                    </i>
+                </div>
+                <div class="wallscard-left-title">
+                    <h3>
+                        Registrarme
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="wallscard-top-content-center">
+            <div>
+                <div class="wallscard-top-franja">
+                    <img src="./assets/img/sello-walls-card-min.png">
+                </div>
+                <!--div class="wallscard-top-logo">
+                    
+                </div-->
+            </div>
+        </div>
+        <div class="wallscard-top-content-right">
+            <div class="wallscard-top-right-container">
+                <div class="wallscard-right-icon">
+                    <i>
+                    </i>
+                </div>
+                <div class="wallscard-right-title">
+                    <h3>
+                        Registrarme
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wallscard-conoce">
+    <div class="wallscard-membrecia">
+        <div class="wallscard-membrecia-titulo">
+            <h2>
+                conoce nuestra membresía
+            </h2>
+        </div>
+        <div> 
+            <img src="/assets/img/menbrecia-min.png">
+        </div>
+        <div class="wallscard-membrecia-descripcion">
+            <p>
+                ¡La única tarjeta que tiene más actitud que otras!
+            </p>
+        </div>
+    </div>
+    <div class="wallscard-beneficios">
+        <div class="wallscard-beneficios-left">
+            <div class="beneficios-feature">
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3 class="font-right">
+                            ¡Gratis!
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p class="font-right">
+                            El día de tu cumpleaños cualquier servicio es gratis!
+                        </p>
+                    </div>
+                </div>
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-cumple-mes-min.png">
+                </div>
+            </div>
+            
+            <div class="beneficios-feature">
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3 class="font-right">
+                            Cumpleaños
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p class="font-right">
+                            50 por ciento de descuento en todo el mes de tu cumpleaños
+                        </p>
+                    </div>
+                </div>
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-torta-cumple-min.png">
+                </div>
+            </div>
+
+            <div class="beneficios-feature">
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3 class="font-right">
+                            3x2
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p class="font-right">
+                            En servicio de cortes de cabello.
+                        </p>
+                    </div>
+                </div>
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-3x2-min.png">
+                </div>
+            </div>
+        </div>
+        
+        <div class="wallscard-beneficios-center">
+            <div>
+                <img src="/assets/img/tarejeta-walls-card-min.png">
+            </div>
+            <div>
+                <h3 >
+                    Beneficios VIP de tu tarjeta Wall’s Card
+                </h3>
+            </div>
+        </div>
+        
+        <div class="wallscard-beneficios-right">
+            
+             <div class="beneficios-feature">
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-octavo-min.png">
+                </div>
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3>
+                            El 8vo Gratis!
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p>
+                            Tu octavo corte es gratis!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beneficios-feature">
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-tarjeta-walls-card-min.png">
+                </div>
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3>
+                            10% de descuento
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p>
+                            Obten un 10 por ciento de descuento en todos productos y servicios (sólo martes y jueves).
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="beneficios-feature">
+                <div class="beneficios-feature-image">
+                    <img src="/assets/img/icono-suma-puntos-min.png">
+                </div>
+                <div class="beneficios-feature-textos">
+                    <div class="beneficios-feature-titulo">
+                        <h3>
+                            SUMA PUNTOS
+                        </h3>
+                    </div>
+                    <div class="beneficios-feature-descripcion">
+                        <p>
+                            Suma puntos y cámbialos por descuentos en servicios o productos
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wallscard-registra fondo-degradado">
+    <div class="wallscard-registra-diagonal"></div>
+    <div class="wallscard-registra-contenido">
+        <div class="wallscard-registra-titulos">
+            <div class="wallscard-registra-titulo">
+                <h2>
+                    Registra tu wall's card
+                </h2>
+            </div>
+            <div class="wallscard-registra-texto">
+                <p>
+                    Wall’s Card es propiedad de Wall’s Barber Shop y es válida para su uso en el programa de beneficios, vigente en las sucursales afiliadas participantes en la república mexicana.
+                </p>
+            </div>
+        </div>
+        <div class="wallscard-registra-content">
+            <div class="wallscard-registra-content-titulo">
+                <p>
+                    ¡La única 
+                    <br>
+                    tarjeta 
+                    <br>
+                    que tiene 
+                    <br>
+                    más
+                    <br>
+                    actitud
+                    <br>
+                    que 
+                    <br>
+                     otras!
+                </p>
+            </div>
+            <div class="wallscard-registra-content-titulo-resp">
+                <p>
+                    ¡La única 
+                    tarjeta 
+                    que tiene 
+                    más
+                    actitud
+                    que 
+                     otras!
+                </p>
+            </div>
+            <div class="wallscard-registra-content-form">
+                <div class="wallscard-registra-col-left">
+                    <input required name="info[nombre]" id="nombre" class="form-control" placeholder="Nombre" ng-model="regist.name">
+                        
+                    <input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos" ng-model="regist.lastname">
+                            
+                    <input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
+
+                    <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email" ng-model="regist.email">
+                                     
+                    <input type="text" required id="fecha" name="info[fecha_nacimiento]" class="form-control" placeholder="Fecha de nacimiento (AAAA-MM-DD)" ng-model="regist.birthday" onkeyup="var date = this.value;
+                                      if (date.match(/^\d{4}$/) !== null) {
+                                         this.value = date + '-';
+                                      } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
+                                         this.value = date + '-';
+                                      }" 
+                    maxlength="10">
+                </div>
+                <div class="wallscard-registra-col-right">
+                    <select required name="info[id_estados]" id="estadoR" class="form-control" ng-model="regist.state" ng-change="loadSucursal()">
+                        <option value="" >-Seleccione Estado-</option>
+                        <option value="1" >Aguascalientes</option>
+                        <option value="2" >Baja California</option>
+                        <option value="3" >Baja California Sur</option>
+                        <option value="4" >Campeche</option>
+                        <option value="5" >Chiapas</option>
+                        <option value="6" >Chihuahua</option>
+                        <option value="7" >Coahuila</option>
+                        <option value="8" >Colima</option>
+                        <option value="9" >CDMX</option>
+                        <option value="10" >Durango</option>
+                        <option value="15" >Estado de Mexico</option>
+                        <option value="11" >Guanajuato</option>
+                        <option value="12" >Guerrero</option>
+                        <option value="13" >Hidalgo</option>
+                        <option value="14" >Jalisco</option>
+                        <option value="16" >Michoacan</option>
+                        <option value="17" >Morelos</option>
+                        <option value="18" >Nayarit</option>
+                        <option value="19" >Nuevo Leon</option>
+                        <option value="20" >Oaxaca</option>
+                        <option value="21" >Puebla</option>
+                        <option value="22" >Queretaro</option>
+                        <option value="23" >Quintana Roo</option>
+                        <option value="24" >San Luis Potosi</option>
+                        <option value="25" >Sinaloa</option>
+                        <option value="26" >Sonora</option>
+                        <option value="27" >Tabasco</option>
+                        <option value="28" >Tamaulipas</option>
+                        <option value="29" >Tlaxcala</option>
+                        <option value="30" >Veracruz</option>
+                        <option value="31" >Yucatan</option>
+                        <option value="32" >Zacatecas</option>
+                    </select>
+                    
+                    <select name="info[id_sucursales]" required id="sucursalesR" class="form-control" ng-model="regist.sucursal">
+                        <option value="">-Sucursal-</option>
+                        <option value="{{sucursal.id}}" ng-repeat="sucursal in sucursales">{{sucursal.nombre}}</option>
+                    </select>
+                        
+                                
+                    <input required id="no_tarjeta" pattern="^(0|[1-9][0-9]*)"  maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
+                            
+                    <input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña" ng-model="regist.password">
+
+                    <label>
+                        <input type="checkbox" required id="compartir_datos" name="compartir_datos" value="Si" ng-model="regist.agree">
+                        Compartir mis datos de registro con los proveedores de contenido de Wall's Barbershop para fines de marketing. 
+                    </label>
+                </div>
+                <div class="wallscard-registra-row">
+                    <div class="wallscard-registra-span">
+                        <span>
+                            Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros términos y condiciones y las políticas de privacidad de Wall's Barbershop
+                        </span>
+                    </div>
+                    
+                    <button class="submit-btn">ENVIAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wallscard-condiciones ">
+    <div class="wallscard-condiciones-sello">
+        <img src="/assets/img/sello-izquierda-min.png">
+    </div>
+    <div class="wallscard-condiciones-diagonal"></div>
+    <div class="wallscard-condiciones-contenido">
+        <div class="wallscard-condiciones-titulo">
+            <div>
+                <h2>
+                    ¡Condiciones!
+                </h2>
+            </div>
+        </div>
+        
+        <div class="wallscard-condiciones-content">
+            <div class="wallscard-condiciones-content-titulo">
+                <p>
+                   ¡Condiciones! 
+                </p>
+            </div>
+            <div class="wallscard-condiciones-content-textos">
+                <div class="wallscard-condiciones-content-texto">
+                    <p>
+                        Wall’s Card es propiedad de Wall’s Barber Shop y es válida para su uso en el programa de beneficios, vigente en las sucursales afiliadas participantes en la república mexicana.
+                    </p>
+                </div>
+                <div class="wallscard-condiciones-content-texto">
+                    <p>
+                        Es necesario presentarla para tener derecho a dichos beneficios, para conocer los términos y condiciones, así como beneficios y vigencia del programa de Lealtad Cliente Frecuente consulte aquí indicando usuario y clave.
+                    </p>
+                </div>
+                <div class="wallscard-condiciones-content-texto">
+                    <p>
+                       Los beneficios no deberán ser considerados como dinero o valor monetario de ningún tipo, y esta tarjeta no deberá equiparse a una tarjeta de crédito, débito, ahorro o prepago. Los beneficios y la tarjeta son personales e intransferibles. Aplican restricciones. 
+                    </p>
+                </div>
+                <div class="wallscard-condiciones-content-texto">
+                    <p>
+                        Recuerda que cada visita es igual a un punto, esto quiere decir que después de reunir siete punto (7 Visitas) en tu visita número 8, el servicio que desees realizar será completamente ¡Gratis!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wallscard-puntos fondo-degradado">
+    <div class="wallscard-puntos-diagonal"></div>
+    <div class="wallscard-puntos-content">
+        <div class="wallscard-puntos-content-left">
+            <p>
+                Consulta tus puntos con la única 
+                <br> 
+                tarjeta que tiene más actitud que 
+                <br>
+                otras, y disfruta de servicios gratis en 
+                <br>
+                tu cumpleaños, y el mes de tu 
+                <br>
+                cumpleaños obtendrás 50% de 
+                <br>
+                descuento en cualquier servicio que 
+                <br>
+                solicites.
+                <br>
+                <br>
+
+                Tendrás un precio especial de un 3X2 
+                <br>
+                para los cortes de cabello, en tu octava 
+                <br>
+                visita el corte te sale gratis.
+                <br>
+                <br>
+                Con usar tu tarjeta obtendrás un 10% 
+                <br>
+                de descuento en todos productos y 
+                <br>
+                servicios (sólo martes y jueves).
+                <br>
+                <br>
+                SÓLO TIENES QUE SUMAR PUNTO Y 
+                <br>
+                DISFRUTAR DE LOS BENEFICIOS DE 
+                <br>
+                TU TARJETA!
+            </p>
+        </div>
+        <div class="wallscard-puntos-content-left-resp">
+            <p>
+                Consulta tus puntos con la única  
+                tarjeta que tiene más actitud que 
+                otras, y disfruta de servicios gratis en 
+                tu cumpleaños, y el mes de tu 
+                cumpleaños obtendrás 50% de 
+                descuento en cualquier servicio que 
+                solicites.
+                <br>
+                <br>
+
+                Tendrás un precio especial de un 3X2 
+                para los cortes de cabello, en tu octava 
+                visita el corte te sale gratis.
+                <br>
+                <br>
+                Con usar tu tarjeta obtendrás un 10% 
+                de descuento en todos productos y 
+                servicios (sólo martes y jueves).
+                <br>
+                <br>
+                SÓLO TIENES QUE SUMAR PUNTO Y 
+                DISFRUTAR DE LOS BENEFICIOS DE 
+                TU TARJETA!
+            </p>
+        </div>
+        <div class="wallscard-puntos-content-right">
+            <div class="wallscard-puntos-content-titulo">
+                <h2>Mis puntos</h2>
+            </div>
+            <div class="wallscard-puntos-content-texto">
+                <p>
+                    Wall’s Card es propiedad de Wall’s Barber Shop y es válida para su uso en el programa de beneficios, vigente en las sucursales afiliadas participantes en la república mexicana.
+                </p>
+            </div>
+            <div class="wallscard-puntos-form">
+                <div>
+                    <input class="form-control" id="sTarjetaEmail" placeholder="Nº de tarjeta / Email" ng-model="clientData.cardMail">
+                </div>
+                <div>
+                    <input class="form-control" id="sPassw" placeholder="contraseña" type="password" ng-model=" clientData.password">
+                </div>
+            </div>
+            <div class="wallscard-puntos-row">
+                <div class="wallscard-puntos-span">
+                    <span>
+                        Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros términos y condiciones y las políticas de privacidad de Wall's Barbershop
+                    </span>
+                </div>
+                    
+                <button class="submit-btn">CONSULTAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="franquicias-seccion3">
+  <div class="seccion3-overlay"></div>
+  <div class="seccion3-content">
+    <div>
+      <h2> ¡ABRE TU FRANQUICIA! </h2>
+    </div>
+    <div class="seccion3-parrafo">
+      <p>
+        Somos una empresa joven con gran espíritu de emprendimiento, con el propósito firme de lograr obtener la preferencia de nuestros clientes, por medio de la innovación y concepto modernista de nuestras franquicias.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="franquicias-info">
+  <div class="fondo_sesgado_dos"></div>
+  <div class="franquicias-info-container">
+    <div class="franquicias-info-form">
+      <div class="franquicias-info-text">
+        <h2>¡MÁS INFORMACIÓN!</h2>
+        <p>
+          Si está interesado, le podemos contactar a través de uno de nuestros agentes autorizados, a continuación rellene el siguiente formulario y en breve nos comunicaremos con usted.
+        </p>
+      </div>
+
+      <div class="footer-servicios-div fondo-degradado">
+    <div class="titulos-div-footer-sucursales">
+      <div>
+        <p>
+          
+          LIC. AARON ALVARADO <br>
+          TEL: 044 9981 45 96 50 <br>
+          FRANQUICIAS@YOSOYWALLS.COM 
+        </p>
+      </div>
+      <div class="leerMasFooter-div">
+        <div class="leerMasFooter" ng-click="go('franquicias')">
+          <h6 class="whiteFont Lato-Regular">
+            Solicitar info.
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-footer-brand">
+      <div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+    <div ng-include="'/templates/socialIcons.html'" class="socialIconsDiv"></div>
+    <div class="footer-text">
+      <h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
