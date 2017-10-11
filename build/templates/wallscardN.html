@@ -121,7 +121,7 @@
     <div class="wallsCard-top-overlay"></div>
     <div class="wallscard-top-content">
         <div class="wallscard-top-content-left">
-            <div class="wallscard-top-left-container">
+            <div class="wallscard-top-left-container" id="fadeInLeftIcon2s" ng-click="scrollToRegist()">
                 <div class="wallscard-left-icon">
                     <i>
                     </i>
@@ -136,7 +136,7 @@
         <div class="wallscard-top-content-center">
             <div>
                 <div class="wallscard-top-franja">
-                    <img src="./assets/img/sello-walls-card-min.png">
+                    <img src="./assets/img/sello-walls-card-min.png" id="selloBounce2s">
                 </div>
                 <!--div class="wallscard-top-logo">
                     
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="wallscard-top-content-right">
-            <div class="wallscard-top-right-container">
+            <div class="wallscard-top-right-container" id="fadeInRight2sIcon" ng-click="scrollToPoints()">
                 <div class="wallscard-right-icon">
                     <i>
                     </i>
@@ -167,7 +167,7 @@
             </h2>
         </div>
         <div> 
-            <img src="/assets/img/menbrecia-min.png">
+            <img src="/assets/img/menbrecia-min.png" id="bounceIn1sMembrecia">
         </div>
         <div class="wallscard-membrecia-descripcion">
             <p>
@@ -176,7 +176,7 @@
         </div>
     </div>
     <div class="wallscard-beneficios">
-        <div class="wallscard-beneficios-left">
+        <div class="wallscard-beneficios-left" id="fadeInLeftIcons1s">
             <div class="beneficios-feature">
                 <div class="beneficios-feature-textos">
                     <div class="beneficios-feature-titulo">
@@ -234,7 +234,7 @@
         
         <div class="wallscard-beneficios-center">
             <div>
-                <img src="/assets/img/tarejeta-walls-card-min.png">
+                <img src="/assets/img/tarejeta-walls-card-min.png" id="bounceInCard1s">
             </div>
             <div>
                 <h3 >
@@ -243,7 +243,7 @@
             </div>
         </div>
         
-        <div class="wallscard-beneficios-right">
+        <div class="wallscard-beneficios-right" id="fadeInRightIcons1s">
             
              <div class="beneficios-feature">
                 <div class="beneficios-feature-image">
@@ -307,7 +307,7 @@
 <div class="wallscard-registra fondo-degradado">
     <div class="wallscard-registra-diagonal"></div>
     <div class="wallscard-registra-contenido">
-        <div class="wallscard-registra-titulos">
+        <div class="wallscard-registra-titulos" id="bounceInRegistraText1s">
             <div class="wallscard-registra-titulo">
                 <h2>
                     Registra tu wall's card
@@ -319,7 +319,7 @@
                 </p>
             </div>
         </div>
-        <div class="wallscard-registra-content">
+        <div class="wallscard-registra-content" id="bounceInForm1s">
             <div class="wallscard-registra-content-titulo">
                 <p>
                     ¡La única 
@@ -349,84 +349,87 @@
                 </p>
             </div>
             <div class="wallscard-registra-content-form">
-                <div class="wallscard-registra-col-left">
-                    <input required name="info[nombre]" id="nombre" class="form-control" placeholder="Nombre" ng-model="regist.name">
-                        
-                    <input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos" ng-model="regist.lastname">
+                <form ng-submit="sendRegist()"> 
+                    <div class="wallscard-registra-col-left">
+                        <input required name="info[nombre]" id="nombre" class="form-control" placeholder="Nombre" ng-model="regist.name">
                             
-                    <input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
-
-                    <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email" ng-model="regist.email">
-                                     
-                    <input type="text" required id="fecha" name="info[fecha_nacimiento]" class="form-control" placeholder="Fecha de nacimiento (AAAA-MM-DD)" ng-model="regist.birthday" onkeyup="var date = this.value;
-                                      if (date.match(/^\d{4}$/) !== null) {
-                                         this.value = date + '-';
-                                      } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
-                                         this.value = date + '-';
-                                      }" 
-                    maxlength="10">
-                </div>
-                <div class="wallscard-registra-col-right">
-                    <select required name="info[id_estados]" id="estadoR" class="form-control" ng-model="regist.state" ng-change="loadSucursal()">
-                        <option value="" >-Seleccione Estado-</option>
-                        <option value="1" >Aguascalientes</option>
-                        <option value="2" >Baja California</option>
-                        <option value="3" >Baja California Sur</option>
-                        <option value="4" >Campeche</option>
-                        <option value="5" >Chiapas</option>
-                        <option value="6" >Chihuahua</option>
-                        <option value="7" >Coahuila</option>
-                        <option value="8" >Colima</option>
-                        <option value="9" >CDMX</option>
-                        <option value="10" >Durango</option>
-                        <option value="15" >Estado de Mexico</option>
-                        <option value="11" >Guanajuato</option>
-                        <option value="12" >Guerrero</option>
-                        <option value="13" >Hidalgo</option>
-                        <option value="14" >Jalisco</option>
-                        <option value="16" >Michoacan</option>
-                        <option value="17" >Morelos</option>
-                        <option value="18" >Nayarit</option>
-                        <option value="19" >Nuevo Leon</option>
-                        <option value="20" >Oaxaca</option>
-                        <option value="21" >Puebla</option>
-                        <option value="22" >Queretaro</option>
-                        <option value="23" >Quintana Roo</option>
-                        <option value="24" >San Luis Potosi</option>
-                        <option value="25" >Sinaloa</option>
-                        <option value="26" >Sonora</option>
-                        <option value="27" >Tabasco</option>
-                        <option value="28" >Tamaulipas</option>
-                        <option value="29" >Tlaxcala</option>
-                        <option value="30" >Veracruz</option>
-                        <option value="31" >Yucatan</option>
-                        <option value="32" >Zacatecas</option>
-                    </select>
-                    
-                    <select name="info[id_sucursales]" required id="sucursalesR" class="form-control" ng-model="regist.sucursal">
-                        <option value="">-Sucursal-</option>
-                        <option value="{{sucursal.id}}" ng-repeat="sucursal in sucursales">{{sucursal.nombre}}</option>
-                    </select>
-                        
+                        <input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos" ng-model="regist.lastname">
                                 
-                    <input required id="no_tarjeta" pattern="^(0|[1-9][0-9]*)"  maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
-                            
-                    <input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña" ng-model="regist.password">
+                        <input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
 
-                    <label>
-                        <input type="checkbox" required id="compartir_datos" name="compartir_datos" value="Si" ng-model="regist.agree">
-                        Compartir mis datos de registro con los proveedores de contenido de Wall's Barbershop para fines de marketing. 
-                    </label>
-                </div>
-                <div class="wallscard-registra-row">
-                    <div class="wallscard-registra-span">
-                        <span>
-                            Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros términos y condiciones y las políticas de privacidad de Wall's Barbershop
-                        </span>
+                        <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email" ng-model="regist.email">
+                                         
+                        <input type="text" required id="fecha" name="info[fecha_nacimiento]" class="form-control" placeholder="Fecha de nacimiento (AAAA-MM-DD)" ng-model="regist.birthday" onkeyup="var date = this.value;
+                                          if (date.match(/^\d{4}$/) !== null) {
+                                             this.value = date + '-';
+                                          } else if (date.match(/^\d{4}\-\d{2}$/) !== null) {
+                                             this.value = date + '-';
+                                          }" 
+                        maxlength="10">
                     </div>
-                    
-                    <button class="submit-btn">ENVIAR</button>
-                </div>
+                    <div class="wallscard-registra-col-right">
+                        <select required name="info[id_estados]" id="estadoR" class="form-control" ng-model="regist.state" ng-change="loadSucursal()">
+                            <option value="" >-Seleccione Estado-</option>
+                            <option value="1" >Aguascalientes</option>
+                            <option value="2" >Baja California</option>
+                            <option value="3" >Baja California Sur</option>
+                            <option value="4" >Campeche</option>
+                            <option value="5" >Chiapas</option>
+                            <option value="6" >Chihuahua</option>
+                            <option value="7" >Coahuila</option>
+                            <option value="8" >Colima</option>
+                            <option value="9" >CDMX</option>
+                            <option value="10" >Durango</option>
+                            <option value="15" >Estado de Mexico</option>
+                            <option value="11" >Guanajuato</option>
+                            <option value="12" >Guerrero</option>
+                            <option value="13" >Hidalgo</option>
+                            <option value="14" >Jalisco</option>
+                            <option value="16" >Michoacan</option>
+                            <option value="17" >Morelos</option>
+                            <option value="18" >Nayarit</option>
+                            <option value="19" >Nuevo Leon</option>
+                            <option value="20" >Oaxaca</option>
+                            <option value="21" >Puebla</option>
+                            <option value="22" >Queretaro</option>
+                            <option value="23" >Quintana Roo</option>
+                            <option value="24" >San Luis Potosi</option>
+                            <option value="25" >Sinaloa</option>
+                            <option value="26" >Sonora</option>
+                            <option value="27" >Tabasco</option>
+                            <option value="28" >Tamaulipas</option>
+                            <option value="29" >Tlaxcala</option>
+                            <option value="30" >Veracruz</option>
+                            <option value="31" >Yucatan</option>
+                            <option value="32" >Zacatecas</option>
+                        </select>
+                        
+                        <select name="info[id_sucursales]" required id="sucursalesR" class="form-control" ng-model="regist.sucursal">
+                            <option value="">-Sucursal-</option>
+                            <option value="{{sucursal.id}}" ng-repeat="sucursal in sucursales">{{sucursal.nombre}}</option>
+                        </select>
+                            
+                                    
+                        <input required id="no_tarjeta" pattern="^(0|[1-9][0-9]*)"  maxlength="8" name="info[num_tarjeta]" class="form-control" placeholder="Nº de tarjeta" ng-model="regist.card">
+                                
+                        <input required type="password" title="Debe tener al menos 6 caracteres"  pattern=".{6,}" id="contra1" name="info[password]" class="form-control" placeholder="Crea tu contraseña" ng-model="regist.password">
+
+                        <label>
+                            <input type="checkbox" required id="compartir_datos" name="compartir_datos" value="Si" ng-model="regist.agree">
+                            Compartir mis datos de registro con los proveedores de contenido de Wall's Barbershop para fines de marketing. 
+                        </label>
+
+                    </div>
+                    <div class="wallscard-registra-row">
+                        <div class="wallscard-registra-span">
+                            <span>
+                                Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a zf-open="terms">términos y condiciones</a> y las <a zf-open="politicas">políticas de privacidad </a> de Wall's Barbershop
+                            </span>
+                        </div>
+                        
+                        <button class="submit-btn">ENVIAR</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -481,7 +484,7 @@
 
 <div class="wallscard-puntos fondo-degradado">
     <div class="wallscard-puntos-diagonal"></div>
-    <div class="wallscard-puntos-content">
+    <div class="wallscard-puntos-content" id="bounceInPointsForm1s">
         <div class="wallscard-puntos-content-left">
             <p>
                 Consulta tus puntos con la única 
@@ -557,30 +560,35 @@
                     Wall’s Card es propiedad de Wall’s Barber Shop y es válida para su uso en el programa de beneficios, vigente en las sucursales afiliadas participantes en la república mexicana.
                 </p>
             </div>
-            <div class="wallscard-puntos-form">
-                <div>
-                    <input class="form-control" id="sTarjetaEmail" placeholder="Nº de tarjeta / Email" ng-model="clientData.cardMail">
+            <form ng-submit="getClientData()">
+                <div class="wallscard-puntos-form">
+                    <div>
+                        <input class="form-control" id="sTarjetaEmail" placeholder="Nº de tarjeta / Email" ng-model="clientData.cardMail">
+                    </div>
+                    <div>
+                        <input class="form-control" id="sPassw" placeholder="contraseña" type="password" ng-model=" clientData.password">
+                    </div>
                 </div>
-                <div>
-                    <input class="form-control" id="sPassw" placeholder="contraseña" type="password" ng-model=" clientData.password">
+                <div class="wallscard-puntos-row">
+                    <div class="wallscard-puntos-span">
+                        <span>
+                            Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros <a zf-open="terms">términos y condiciones</a> y las <a zf-open="politicas">políticas de privacidad </a>de Wall's Barbershop
+                        </span>
+                    </div>
+                        
+                    <button class="submit-btn">CONSULTAR</button>
                 </div>
-            </div>
-            <div class="wallscard-puntos-row">
-                <div class="wallscard-puntos-span">
-                    <span>
-                        Nos comprometemos a proteger tu privacidad y por tanto no alquilaremos ni venderemos tu dirección de correo electrónico. Al continuar, confirmas tu conformidad con nuestros términos y condiciones y las políticas de privacidad de Wall's Barbershop
-                    </span>
+                <div class="password-recovery-div">
+                    <a zf-open="password-recovery-modal" >¿Olvidaste tu contraseña? haz click aqui</a>
                 </div>
-                    
-                <button class="submit-btn">CONSULTAR</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>
 
 <div class="franquicias-seccion3">
   <div class="seccion3-overlay"></div>
-  <div class="seccion3-content">
+  <div class="seccion3-content" id="fadeInLeftBigText2s">
     <div>
       <h2> ¡ABRE TU FRANQUICIA! </h2>
     </div>

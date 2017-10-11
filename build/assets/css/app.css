@@ -10695,7 +10695,9 @@ body {
   cursor: pointer;
   width: auto;
   display: inline-block;
-  padding: 3px 5px; }
+  padding: 5px; }
+  .leerMasFooter h6 {
+    margin: 0; }
 
 .leerMasFooter-div {
   text-align: center; }
@@ -11443,7 +11445,8 @@ h3.whiteFont.wallsCard-saludo {
       float: left; }
       .wallscard-top .wallscard-top-content .wallscard-top-content-left .wallscard-top-left-container {
         margin: 45% 0% 45% 35%;
-        display: inline-block; }
+        display: inline-block;
+        cursor: pointer; }
         .wallscard-top .wallscard-top-content .wallscard-top-content-left .wallscard-top-left-container .wallscard-left-icon {
           position: relative;
           width: 90px;
@@ -11496,7 +11499,8 @@ h3.whiteFont.wallsCard-saludo {
       vertical-align: top; }
       .wallscard-top .wallscard-top-content .wallscard-top-content-right .wallscard-top-right-container {
         margin: 45% 0% 45% 35%;
-        display: inline-block; }
+        display: inline-block;
+        cursor: pointer; }
         .wallscard-top .wallscard-top-content .wallscard-top-content-right .wallscard-top-right-container .wallscard-right-icon {
           position: relative;
           width: 90px;
@@ -11857,7 +11861,7 @@ h3.whiteFont.wallsCard-saludo {
       color: #efefef;
       padding: 40px 22px 22px;
       line-height: 30px;
-      vertical-align: top; }
+      vertical-align: bottom; }
     .wallscard-puntos .wallscard-puntos-content .wallscard-puntos-content-left-resp {
       display: none; }
     .wallscard-puntos .wallscard-puntos-content .wallscard-puntos-content-right {
@@ -11956,6 +11960,10 @@ h3.whiteFont.wallsCard-saludo {
         margin: 20px 20px 50px;
         color: #7a7a7a;
         font-family: lato; }
+
+.password-recovery-div {
+  padding: 5% 0;
+  text-align: left; }
 
 @media only screen and (max-width: 1100px) {
   .wallscard-top-left-container, .wallscard-top-right-container {
@@ -17268,7 +17276,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin: 0% 10%;
   text-align: center; }
   .franquicias-top-content-center img {
-    width: 90%; }
+    width: 75%; }
 
 .franquicias-top-boton a {
   background: rgba(255, 255, 255, 0.75);
@@ -17335,7 +17343,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   .titulo-dos .sello {
     margin: -20% 0% 0% -1%; }
   .titulo-dos .titulo {
-    margin: 12% 0 0 -28%; }
+    margin: 12% 0 0 -15%; }
 
 .caracteristicas {
   width: 50%;
@@ -17458,7 +17466,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 100%;
     height: 100%; }
   .franquicias-seccion3 .seccion3-content {
-    padding: 5% 15%;
+    padding: 10% 15%;
     position: relative; }
     .franquicias-seccion3 .seccion3-content .seccion3-parrafo {
       padding: 0 10%; }
@@ -17570,15 +17578,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     text-transform: uppercase;
     text-align: center;
     position: relative;
-    color: #FFF;
+    color: #7B7B7B;
     font-size: 30px;
-    font-weight: 400;
-    background: #333;
+    font-weight: bold;
     margin-bottom: 40px;
     display: inline-block; }
+  .franquicias-info .franquicias-info-container .franquicias-info-form p {
+    color: #7B7B7B; }
   .franquicias-info .franquicias-info-container .franquicias-info-form .franquicias-info-text {
     text-align: center;
-    padding: 0 15%; }
+    padding: 0 25%; }
   .franquicias-info .franquicias-info-container .franquicias-info-form .franquicias-formulario-col {
     display: inline-block;
     width: 50%;
@@ -17698,6 +17707,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   position: absolute; }
 
 @media only screen and (max-width: 1095px) {
+  .titulo-dos {
+    position: absolute;
+    width: 30%; }
+    .titulo-dos img {
+      margin: -60% 0% 0% -1% !important; }
+    .titulo-dos .titulo {
+      display: none; }
+  .caracteristicas {
+    width: 100%;
+    margin: 0 3%; }
   .franquicias-top-content {
     margin: 15% 0 10%;
     width: 100%;
@@ -17728,16 +17747,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       display: inherit; } }
 
 @media only screen and (max-width: 900px) {
-  .titulo-dos {
-    position: absolute;
-    width: 30%; }
-    .titulo-dos img {
-      margin: -60% 0% 0% -1% !important; }
-    .titulo-dos .titulo {
-      display: none; }
-  .caracteristicas {
-    width: 100%;
-    margin: 0 3%; }
   .franquicias-nosotros-titulos {
     width: 94% !important;
     margin: 0% 3% 5% !important; }

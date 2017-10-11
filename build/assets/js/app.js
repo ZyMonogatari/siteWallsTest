@@ -36,7 +36,7 @@
       requireBase: false
     });
 
-    $locationProvider.hashPrefix('/#!');
+    $locationProvider.hashPrefix('/!');
   }
 
   function run() {
@@ -175,6 +175,7 @@ angular.module('application').controller('franquiciasCtrl',
     $scope.message = {};
     $scope.send = function(){
         FoundationApi.publish('main-notifications', { title: 'Mensaje enviado', content: 'Se ha enviado su mensaje, muchas gracias'});
+        console.log($scope.message);
         $messageApi.sendMessage($scope.message);
     }
 
@@ -203,6 +204,7 @@ angular.module('application').controller('franquiciasCtrl',
     angular.element(document.querySelector('#bounceIn-button')).addClass('bounceIn3s');
     
    $window.onscroll = function(event){
+        var delayTime = 100;
     if(document.getElementById('cabecera-walls-logo').getBoundingClientRect().top <= 0){
           $scope.cabecera.position = 'fixed';
           $scope.cabecera.top = '0px';
@@ -227,34 +229,34 @@ angular.module('application').controller('franquiciasCtrl',
         $scope.cabecera.source = '/assets/img/logo.png';
         $scope.$apply();
       }
-    if((document.getElementById('fadeInLeft-logo').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('fadeInLeft-logo').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#fadeInLeft-logo')).addClass('fadeInLeft1s');
     }
-    if((document.getElementById('fadeIn-text').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('fadeIn-text').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#fadeIn-text')).addClass('fadeInLeft1s');
     }
-    if((document.getElementById('single1').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('single1').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#single1')).addClass('fadeInUp1s');
     }
-    if((document.getElementById('single2').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('single2').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#single2')).addClass('fadeInUp1s');
     }
-    if((document.getElementById('single3').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('single3').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#single3')).addClass('fadeInUp1s');
     }
-    if((document.getElementById('fadeInLeftBig-title').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('fadeInLeftBig-title').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#fadeInLeftBig-title')).addClass('fadeInLeftBig2s');
     }
-    if((document.getElementById('fadeInLeft-text').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('fadeInLeft-text').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#fadeInLeft-text')).addClass('fadeInLeft1s');
     }
-    if((document.getElementById('single2').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('single2').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#single2')).addClass('fadeInUp1s');
     }
-    if((document.getElementById('single-area2').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('single-area2').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#single-area2')).addClass('fadeInUp1s');
     }
-    if((document.getElementById('info-bounce').getBoundingClientRect().top + 300) <= screen.height){
+    if((document.getElementById('info-bounce').getBoundingClientRect().top + delayTime) <= screen.height){
         angular.element(document.querySelector('#info-bounce')).addClass('bounceIn1s');
     }    
    }
@@ -637,8 +639,9 @@ angular.module('application')
 
     return {
       sendMessage : function(message){
-       return get('sendMessage.php?name=' + message.name + '&email=' + message.email + '&empresa=' + message.empresa +
-        '&address=' + message.address + '&phone=' + message.phone + '&state=' + message.state +'&why=' + message.why);
+        console.log(message);
+
+       return get('sendMessage.php?name=' + message.name + '&phone=' + message.phone + '&state=' + message.state +'&why=' + message.why + '&email=' + message.email + '&empresa=' + message.empresa + '&address=' + message.address);
       },
       sendEmailMexicano : function(email){
         return get('mexicano_que_se_respeta_mailer.php?email=' + email);
