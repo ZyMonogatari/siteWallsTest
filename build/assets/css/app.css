@@ -17470,7 +17470,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     position: relative; }
     .franquicias-seccion3 .seccion3-content .seccion3-parrafo {
       padding: 0 10%; }
-    .franquicias-seccion3 .seccion3-content h2 {
+    .franquicias-seccion3 .seccion3-content h3 {
       text-transform: uppercase;
       text-align: center;
       position: relative;
@@ -17483,7 +17483,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       display: inline-flex;
       width: 100%;
       font-family: RobotoCondensed-Bold; }
-    .franquicias-seccion3 .seccion3-content h2:before {
+    .franquicias-seccion3 .seccion3-content h3:before {
       content: "";
       margin: 20px 20px 20px 0px;
       top: 0;
@@ -17495,7 +17495,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       transition: all 0.3s ease-out 0s;
       display: block;
       border-radius: 5px; }
-    .franquicias-seccion3 .seccion3-content h2:after {
+    .franquicias-seccion3 .seccion3-content h3:after {
       content: "";
       margin: 20px 0px 20px 20px;
       top: 0;
@@ -17574,7 +17574,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     height: 100px; }
   .franquicias-info .franquicias-info-container .franquicias-info-form .franquicias-info-form-fields {
     padding: 5%; }
-  .franquicias-info .franquicias-info-container .franquicias-info-form h2 {
+  .franquicias-info .franquicias-info-container .franquicias-info-form .franquicias-info-titulo {
     text-transform: uppercase;
     text-align: center;
     position: relative;
@@ -17903,7 +17903,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 30%;
     display: inline-block;
     height: 100%; }
-    .contacto-contactanos .contacto-contactanos-left p {
+    .contacto-contactanos .contacto-contactanos-left h1 {
       text-align: center;
       font-size: 70px;
       text-transform: uppercase;
@@ -17924,7 +17924,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     vertical-align: top;
     padding: 5% 5% 0;
     margin: 0 0 0 30%; }
-    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo p {
+    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo h2 {
       text-transform: uppercase;
       text-align: center;
       position: relative;
@@ -17937,7 +17937,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       display: inline-flex;
       width: 100%;
       font-family: RobotoCondensed-Bold; }
-    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo p:before {
+    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo h2:before {
       content: "";
       margin: 20px 20px 20px 0px;
       top: 0;
@@ -17949,7 +17949,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       transition: all 0.3s ease-out 0s;
       display: block;
       border-radius: 5px; }
-    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo p:after {
+    .contacto-contactanos .contacto-contactanos-right .contactanos-titulo h2:after {
       content: "";
       margin: 20px 0px 20px 20px;
       top: 0;
@@ -18032,6 +18032,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       text-align: center !important;
       margin: 0% 0 15% !important; } }
 
+@media only screen and (max-width: 790px) {
+  .contacto-top-texto-left p, .contacto-top-texto-right p {
+    font-size: 70px !important; } }
+
 @media only screen and (max-width: 414px) {
   .contacto-top-texto-left p {
     font-size: 65px !important; }
@@ -18046,7 +18050,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     background: black !important;
     width: 100% !important;
     padding: 3% 0; }
-    .contacto-contactanos-left p {
+    .contacto-contactanos-left h1 {
       webkit-writing-mode: inherit !important;
       -ms-writing-mode: inherit !important;
       -webkit-writing-mode: inherit !important;
@@ -18058,9 +18062,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     margin: 0 !important;
     width: 100% !important;
     padding: 0% 5% !important; }
-    .contacto-contactanos-right .contactanos-titulo p {
+    .contacto-contactanos-right .contactanos-titulo h2 {
       padding-top: 0px !important;
       padding-bottom: 0px !important; } }
+
+@media only screen and (max-width: 790px) {
+  .contacto-top-texto-left p, .contacto-top-texto-right p {
+    font-size: 55px !important; } }
 
 @font-face {
   font-family: Lato-Regular;
