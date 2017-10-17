@@ -175,8 +175,7 @@ angular.module('application').controller('franquiciasCtrl',
     $scope.message = {};
     $scope.send = function(){
         FoundationApi.publish('main-notifications', { title: 'Mensaje enviado', content: 'Se ha enviado su mensaje, muchas gracias'});
-        console.log($scope.message);
-        $messageApi.sendMessage($scope.message);
+       //$messageApi.sendMessage($scope.message);
     }
 
     $scope.scroll = function(){
@@ -400,17 +399,10 @@ angular.module('application').controller('galeriaCtrl',
         $scope.logoTransform = 'scale(1, 1)';
         $scope.$apply();
       }
-    if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  <= 0 & (document.getElementById('cuerpo1').getBoundingClientRect().top) >= -1000){
-      $scope.actualBody = 2;
-      $scope.$apply();
-    } else if((document.getElementById('cuerpo1').getBoundingClientRect().top -50)  >= 0){
-      $scope.actualBody = 1;
-      $scope.$apply();
-    }
-    if((document.getElementById('cuerpo2').getBoundingClientRect().top -50)  <= 0){
+    /*if((document.getElementById('cuerpo2').getBoundingClientRect().top -50)  <= 0){
       $scope.actualBody = 3;
       $scope.$apply();
-    }
+    }*/
     for(var i = 0; i < document.getElementsByClassName('galleryBox').length; i++){
       if((document.getElementsByClassName('galleryBox')[i].getBoundingClientRect().top + 50) <= screen.height & screen.width > 768){
           angular.element(document.getElementsByClassName('galleryBox')[i]).addClass('appear');
@@ -793,7 +785,6 @@ angular.module('application').controller('serviciosCtrl',
     $scope.iconColor = 'white';
     $window.onscroll = function(event){
     	//console.log(document.getElementById('foto-fila-1').getBoundingClientRect().bottom + " - " + screen.height);
-    	console.log(document.getElementById('cuerpo-absolute').getBoundingClientRect().bottom + " - " + document.getElementById('cuerpo-absolute').getBoundingClientRect().top);
     	//console.log(document.getElementById('cuerpo1-servicios').getBoundingClientRect());
     	if((document.getElementById('foto-fila-1').getBoundingClientRect().bottom - 700) <= screen.height){
     		angular.element(document.querySelector('#foto-fila-1')).addClass('slide-left-to-right2s');

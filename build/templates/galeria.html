@@ -22,87 +22,111 @@
 	<img src="/assets/img/sello-galeria-min.png" class="sello-galeria">
 </div>
 
-<div class="galeria-fondo2" ng-show="actualBody == 2">
+<!--div class="galeria-fondo2" ng-show="actualBody == 2">
 	<div class="galeria-fondo2-titulos">
 		<h5 class="whiteFont galeria-fondo2-titulos-text Lato-BoldItalic">
 			SOMOS UNA EMPRESA JOVEN CON GRAN ESPÍRITU DE SUPERACIÓN 
 			BUSCAMOS LOGRAR OBTENER LA PREFERENCIA DE NUESTROS CLIENTES.
 		</h5>
 	</div>
-</div>
+</div-->
 
-<div class="galeria-fondo3" ng-show="actualBody == 3">
-	<div class="galeria-fondo3-titulos1">	
-		<h1 class="whiteFont RobotoCondensed-Bold">
-			VIDEOS
-		</h1>
-	</div>
-	<div class="galeria-videos-grid">
-		<div class="galeria-videos-col">
-			<img src="http://img.youtube.com/vi/GCSO2HcQBDs/hqdefault.jpg"
-			ng-click = "changeVideo('GCSO2HcQBDs')" class="galeria-video-item">
-			<img src="http://img.youtube.com/vi/UqTm41bPAIc/hqdefault.jpg"
-			ng-click = "changeVideo('UqTm41bPAIc')" class="galeria-video-item">
-			<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg" class="galeria-video-item"
-			ng-click = "changeVideo('yGQljG8kJvo')">
-		</div>
-		<iframe class="galeria-video" ng-src="{{actualVideo}}" frameborder="0" allowfullscreen>
-		</iframe>
-	</div>
-	<div class="galeria-fondo3-titulos2">
-		<h5 class="whiteFont font-13px Lato-Italic">
-			Somos apasionados en lo que hacemos, buscamos crear experiencias que satisfagan las necesidades de nuestros clientes, ofreciendo nuestro mejor servicio, la preparación para un afeitado prefecto. Trabajamos para quienes tienen mucha personalidad, eso nos motiva aún más a hacerlo bien. Queremos conservar la fidelidad de quienes confían en nosotros, estableciendo con ellos relaciones personales y comerciales para llegar así a ser líderes en este campo
-		</h5>
-		<h6 class="whiteFont font-13px Lato-BoldItalic"><strong>Pase y tome asiento!!!</strong></h6>
-	</div>
-</div>
+
 <div class="galeria-cuerpo-absolute">
 	<div class="galeria-diagonal diagonal-izquierda"></div>
 	<div class="galeria-diagonal diagonal-derecha"></div>
 	<div class="galeria-cuerpo1" id="cuerpo1">
 		<div class="galeria-cuerpo1-titulos">
-				<h1 class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
-					MAS
-					<br class="titulos-br">
-					QUE
-					<br class="titulos-br">
-					UN
-					<br class="titulos-br">
-					CORTE
-				</h1>
-				<br>
-				<h1 class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
-					CREAMOS
-					<br class="titulos-br">
-					UN
-					<br class="titulos-br">
-					ESTILO
-				</h1>
-		</div>
-		<div class="gallery grid-block small-up-3">
+			<p class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
+				MAS
+				<br class="">
+				QUE
+				<br class="titulos-br">
+				UN
+				<br class="titulos-br">
+				CORTE
+			</p>
+		</div><!--
+		--><div class="gallery ">
 			<div>
+				<h3>Galería</h3>
+			</div>
+			<div class="gallery-col">
 				<div zf-open="basicModal" ng-repeat="img in gallery.col1" ng-click="openModal(img)" class="galleryBox">
 					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
 
 				</div>
-			</div>
-			<div>
+			</div><!--
+			--><div class="gallery-col">
 				<div zf-open="basicModal" ng-repeat="img in gallery.col2" ng-click="openModal(img)" class="galleryBox">
 					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
 				</div>
-			</div>
-			<div>
+			</div><!--
+			--><div class="gallery-col">
 				<div zf-open="basicModal" ng-repeat="img in gallery.col3" ng-click="openModal(img)" class="galleryBox">
 					<div class="galeria-overImg"></div>
 					<img src="{{img}}" class="galleryItem">
 				</div>
 			</div>
+		</div><!--
+		--><div class="galeria-cuerpo1-titulos">
+			<p class="galeria-cuerpo1-titulos-text RobotoCondensed-Bold">
+				MAS
+				<br class="">
+				QUE
+				<br class="titulos-br">
+				UN
+				<br class="titulos-br">
+				CORTE
+			</p>
 		</div>
+		<div class="galeria-cuerpo2-diagonal"></div>
 	</div>
+	
 
-	<div class="galeria-cuerpo2" id="cuerpo2">
+	<div class="galeria-fondo3">
+		<div class="galeria-fondo3-titulos1">	
+			<h3 class="whiteFont RobotoCondensed-Bold">
+				VIDEOS
+			</h3>
+		</div>
+		<div class="galeria-videos-grid">
+			
+			<div class="galeria-col-2">
+				<div class="galeria-video">
+					<iframe ng-src="{{actualVideo}}" frameborder="0" allowfullscreen>
+					</iframe>
+				</div>	
+			</div>
+			<div class="galeria-videos-col">
+				<div>
+					<img src="http://img.youtube.com/vi/GCSO2HcQBDs/hqdefault.jpg"
+					ng-click = "changeVideo('GCSO2HcQBDs')" class="galeria-video-item thumbnail-1">
+				</div> <!--
+				-->
+				<div>
+					<img src="http://img.youtube.com/vi/UqTm41bPAIc/hqdefault.jpg"
+					ng-click = "changeVideo('UqTm41bPAIc')" class="galeria-video-item thumbnail-2">
+				</div><!--
+				-->
+				<div>
+					<img src="http://img.youtube.com/vi/yGQljG8kJvo/hqdefault.jpg" class="galeria-video-item thumbnail-3"
+					ng-click = "changeVideo('yGQljG8kJvo')">
+				</div><!--
+				-->
+			</div>
+			<div class="galeria-fondo3-titulos2">
+				<h5 class="whiteFont font-13px Lato-Italic">
+					Somos apasionados en lo que hacemos, buscamos crear experiencias que satisfagan las necesidades de nuestros clientes, ofreciendo nuestro mejor servicio, la preparación para un afeitado prefecto. Trabajamos para quienes tienen mucha personalidad, eso nos motiva aún más a hacerlo bien. Queremos conservar la fidelidad de quienes confían en nosotros, estableciendo con ellos relaciones personales y comerciales para llegar así a ser líderes en este campo
+				</h5>
+				<h6 class="whiteFont font-13px Lato-BoldItalic"><strong>Pase y tome asiento!!!</strong></h6>
+			</div>
+		</div>
+		
+	</div>
+	<!--div class="galeria-cuerpo2" id="cuerpo2">
 		<div class="galeria-cuerpo2-diagonal"></div>
 		<div class="galeria-cuerpo2-titulos-1">
 			<h5 class="galeria-cuerpo2-titulos-1-text Lato-Regular">
@@ -121,7 +145,7 @@
 				</h4>
 			</div>
 		</div>
-	</div>
+	</div!-->
 
 	<div class="galeria-cuerpo3">
 		<div class="sucursales-cuerpo3-div-diagonal"></div>

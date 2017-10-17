@@ -151,7 +151,7 @@
                 </div>
                 <div class="wallscard-right-title">
                     <h3>
-                        Registrarme
+                        ver mis puntos
                     </h3>
                 </div>
             </div>
@@ -355,7 +355,7 @@
                             
                         <input required name="info[apellidos]" id="apellidos" class="form-control" placeholder="Apellidos" ng-model="regist.lastname">
                                 
-                        <input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="\S{10}" onkeydown="return validarNumeros(event)" maxlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
+                        <input required name="info[telefono]" title="Debe tener al menos 10 digitos" pattern="^(0|[1-9][0-9]*)" maxlength="10" minlength="10" id="telefono" class="form-control" placeholder="Teléfono" ng-model="regist.phone">
 
                         <input required name="info[email]" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="email" class="form-control" placeholder="Email" ng-model="regist.email">
                                          
