@@ -7,44 +7,10 @@
 <div ng-include="'/templates/normal-header.html'" class=""></div>
 
 <!--fondo-fixed-->
-<div ng-show="actualBody == 1" class="fondo-fixed">
-
-	<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" class="video" frameborder="0" allowfullscreen>
-	</iframe>
-	<div class="grid-block small-up-1" id = "titulos-div-fondo-fixed">
-    	<div class="grid-block frase-div">
-			<h3 class="whiteFont frase Lato-Italic">
-				"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"
-			</h3>
-    	</div>
-    	<div class="grid-block ">
-    		<img class="firma" src="./assets/img/FirmaOscar.png">
-    	</div>
-	</div>
-</div>
 
 
 <!--fondo-footer-->
-<div ng-show="actualBody == 2" class="fondo-footer" >
-	<div class="titulos-div-footer">
-		<div>
-			<p>
-				¿TE INTERESA ADQUIRIR UNA FRANQUICIA? <br>
-				¡CONTÁCTANOS! <br>
-				LIC. AARON ALVARADO <br>
-				TEL: 044 9981 45 96 50 <br>
-				FRANQUICIAS@YOSOYWALLS.COM 
-			</p>
-		</div>
-		<div class="leerMasFooter-div">
-			<div class="leerMasFooter" ng-click="go('franquicias')">
-				<h6 class="whiteFont Lato-Regular">
-					Solicitar info.
-				</h6>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 <!--cuerpo1-->
 <!--div class="home-cuerpo-absolute"-->
@@ -100,6 +66,23 @@
 	</div>
 </div>
 
+<div class="fondo-fixed">
+	<div class="fondo-fixed-content">
+		<div class="galeria-video">
+			<iframe src="https://www.youtube.com/embed/yGQljG8kJvo?modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+		<div >
+			<h3 class="whiteFont Lato-Italic">
+				"Deja que tus sueños cambien tu realidad, no dejes que tu realidad cambie tus sueños"
+			</h3>
+		</div>
+		<div>
+    		<img  src="./assets/img/FirmaOscar.png">
+    	</div>
+	</div>
+</div>
+
 <div  class="cuerpo2" id="cuerpo2">
 	<div class="home-borde-div">
 		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-top">
@@ -138,7 +121,26 @@
 		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-bottom borde-sesgado-bottom2">
 	</div>
 </div>
-
+<div class="fondo-footer" >
+	<div class="titulos-div-footer">
+		<div>
+			<p>
+				¿TE INTERESA ADQUIRIR UNA FRANQUICIA? <br>
+				¡CONTÁCTANOS! <br>
+				LIC. AARON ALVARADO <br>
+				TEL: 044 9981 45 96 50 <br>
+				FRANQUICIAS@YOSOYWALLS.COM 
+			</p>
+		</div>
+		<div class="leerMasFooter-div">
+			<div class="leerMasFooter" ng-click="go('franquicias')">
+				<h6 class="whiteFont Lato-Regular">
+					Solicitar info.
+				</h6>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="cuerpo3">
 	<div class="home-sucursales-title-div">
 		<div class="home-borde-div">

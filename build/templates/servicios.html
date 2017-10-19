@@ -3,7 +3,8 @@
 <div ng-include="'/templates/navBarMovil.html'"></div>
 
 <!--Fondo Fixed Cebecera-->
-<div class="top" ng-if="actualBody == 0">
+<div style="overflow: auto;">
+<div class="top" ng-show="actualBody == 0">
 	<div class="columna-top-1">
 		<div class="titulo-columna-top slide-left-to-right">
 			<h2 class="whiteFont text-center RobotoCondensed-Bold">PROFESIONALES </h2>
@@ -31,11 +32,19 @@
 		</div>
 	</div>
 </div>
-
-<div class="cuerpo1-servicios" id="cuerpo1-servicios" ng-style="{'position' : cuerpo1.position, 'top' : cuerpo1.top, 'display' : cuerpo1.display}">
-	<div class="cuerpo1-servicios-div">
+<div class="video-servicios-div" ng-show="actualBody == 1">
+	<iframe src="https://www.youtube.com/embed/0dbig-gLoCo?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=0dbig-gLoCo" frameborder="0" allowfullscreen class="video-servicios"></iframe>
+	<div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+      </div>    
+</div>
+</div>
+<div class="cuerpo1-servicios">
+	<div>
 		<img src="/assets/img/fondo-sesgado-min.png" class="borde-sesgado-gris" id="borde">
-		<div class="cuerpo1-servicios-content">
+	</div>
+	<div  id="cuerpo1-servicios" ng-style="{ 'display' : cuerpo1.display}">
+		
+		<div class="cuerpo1-servicios-div">
 			<div class="cuerpo1-servicios-titulos"> 
 				<p class="text-left gray-text RobotoCondensed-Bold filosofia">
 					FILOSOFÍA
@@ -51,8 +60,69 @@
 		</div>
 	</div>
 </div>
-<!--cuerpo absolute-->
-<div class="cuerpo-absolute" id="cuerpo-absolute">
+<div class="cuerpo2-servicios" id="cuerpo2-servicios">
+	<div class="cuerpo2-columna">
+		<div ng-repeat="servicio in servicios">
+			<div class="servicios-container" ng-show="servicio.display1">
+				<div class="servicios-columna" ng-attr-id="{{servicio.id1}}">
+					<img src="{{servicio.img1}}">
+				</div><!--
+				--><div class="servicios-columna-texto" ng-attr-id="{{servicio.idT1}}">
+					<!--div class="columna-back-left"></div>
+					<div class="columna-back-right"></div-->
+					<div class="columna-left">
+						<p class="servicios-columna-titulo">
+							{{servicio.title1}}
+						</p>
+						<p class="servicios-columna-parrafo">
+							{{servicio.text1}}
+						</p>
+					</div><!--
+					--><div class="columna-right">
+						<p class="servicios-columna-titulo">
+							{{servicio.title1}}
+						</p>
+						<p class="servicios-columna-parrafo">
+							{{servicio.text1}}
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="servicios-container" ng-show="servicio.display2">
+				<div class="servicios-columna servicios-columna-reponsive" ng-attr-id="{{servicio.id2 + '-resp'}}">
+					<img src="{{servicio.img2}}">
+				</div><!--
+				--><div class="servicios-columna-texto" ng-attr-id="{{servicio.idT2}}">
+					<div class="columna-left">
+						<p class="servicios-columna-titulo">
+							{{servicio.title3}}
+						</p>
+						<p class="servicios-columna-parrafo">
+							{{servicio.text3}}
+						</p>
+					</div><!--
+					--><div class="columna-right">
+						<p class="servicios-columna-titulo">
+							{{servicio.title4}}
+						</p>
+						<p class="servicios-columna-parrafo">
+							{{servicio.text4}}
+						</p>
+					</div>
+				</div><!--
+				--><div class="servicios-columna-foto" ng-attr-id="{{servicio.id2}}">
+					<img src="{{servicio.img2}}">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!--div class="cuerpo-absolute" id="cuerpo-absolute">
 	<div class="cuerpo2-servicios">
 		<div class="cuerpo2-columna columna-1">
 			<div class="cuerpo2-fila" id="foto-fila-1">
@@ -200,12 +270,45 @@
 		</div>
 	</div>
 </div>
-<!--fondo fixed video-->
+<fondo fixed video>
 <div class="video-servicios-div" ng-show="actualBody == 1">
 	<iframe src="https://www.youtube.com/embed/0dbig-gLoCo?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=0dbig-gLoCo" frameborder="0" allowfullscreen class="video-servicios"></iframe>
 	<div style="position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
       </div>    
-</div>
+</div-->
+
+<!--div class="footer-servicios">
+	<div>
+		<img src="./assets/img/border_segado_top-min.png" class="borde-sesgado-servicios">
+	</div>
+	<div class="footer-servicios-div fondo-degradado">
+		<div class="titulos-div-footer-sucursales">
+			<div>
+				<p>
+					¿TE INTERESA ADQUIRIR UNA FRANQUICIA? <br>
+					¡CONTÁCTANOS! <br>
+					LIC. AARON ALVARADO <br>
+					TEL: 044 9981 45 96 50 <br>
+					FRANQUICIAS@YOSOYWALLS.COM 
+				</p>
+			</div>
+			<div class="leerMasFooter-div">
+				<div class="leerMasFooter" ng-click="go('franquicias')">
+					<h6 class="whiteFont Lato-Regular">
+						Solicitar info.
+					</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-footer-brand">
+  		<div ng-include="'/templates/socialIconsMovil.html'" class="socialIconsDivMovil"></div>
+		<div ng-include="'/templates/socialIcons.html'" class="socialIconsDiv"></div>
+		<div class="footer-text">
+			<h6 class="text-center whiteFont">©2015 All Rights Reserved  Diseño <a href="http://chicleypegacreativo.com/" target="_blank" style="color: inherit;"><strong>Chicle y Pega Estudio Creativo</strong></a></h6>
+		</div>
+	</div>
+</div-->
 
 <div class="footer-servicios">
 	<div>
