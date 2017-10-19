@@ -14519,8 +14519,7 @@ h3.whiteFont.wallsCard-saludo {
   font-size: 1.4375rem;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 1;
-  margin: 0; }
+  line-height: 1; }
 
 .servicios-columna-parrafo {
   font-family: Lato-Regular;
@@ -14640,6 +14639,16 @@ h3.whiteFont.wallsCard-saludo {
     margin: 60% 0 0; } }
 
 @media only screen and (max-width: 768px) {
+  .servicios-columna-parrafo {
+    font-size: 15px; }
+  .servicios-columna-titulo {
+    font-size: 20px;
+    margin: 5% 0; }
+  .footer-servicios {
+    background: white;
+    padding: 3% 0 0; }
+  .borde-sesgado-servicios {
+    display: none; }
   .video-servicios-div {
     display: none; }
   .cuerpo1-servicios {
@@ -14700,7 +14709,7 @@ h3.whiteFont.wallsCard-saludo {
   .servicios-columna-texto {
     width: 100%;
     position: relative;
-    height: 35vh; }
+    height: 30vh; }
   .servicios-columna-foto {
     width: 100%;
     margin: 0; }
@@ -14719,7 +14728,7 @@ h3.whiteFont.wallsCard-saludo {
   .servicios-columna-texto {
     width: 100%;
     position: relative;
-    height: 50vh; } }
+    height: 45vh; } }
 
 /*
 
